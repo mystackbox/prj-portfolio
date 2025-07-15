@@ -1,0 +1,7 @@
+@use 'abstracts/variables' as *;
+
+.container {
+  font-size: $global-font-size;
+  color: blue;
+  text-align: center;
+}
