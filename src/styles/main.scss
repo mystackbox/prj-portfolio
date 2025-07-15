@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+// styles/main.scss
+
+// 1. Abstracts
+@use 'abstracts/variables';
+// @use 'abstracts/mixins';
+// @use 'abstracts/functions';
+
+// // 2. Base
+// @use 'base/reset';
+// @use 'base/typography';
+// @use 'base/base';
+
+// // 3. Layout
+@use 'layout/grid';
+// @use 'layout/header';
+// @use 'layout/navbar';
+// @use 'layout/footer';
+
+// // 4. Components
+// @use 'components/buttons';
+// @use 'components/cards';
+// @use 'components/form';
+// @use 'components/spinner';
+
+// // 5. Pages
+// @use 'pages/home';
+// @use 'pages/about';
+// @use 'pages/contact';
+// @use 'pages/projects';
+// @use 'pages/weather';
+// @use 'pages/news';
+// @use 'pages/gallery';
+
+// // 6. Themes
+// @use 'themes/default';
+// @use 'themes/dark';
+
+// // 7. Utilities
+// @use 'utils/spacing';
+
+// // 8. Vendors
+// @use 'vendors/bootstrap';
