@@ -55,7 +55,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/prj-portfolio/",
+              "baseHref": "/prj-portfolio/browser",
               "budgets": [
                 {
                   "type": "initial",
