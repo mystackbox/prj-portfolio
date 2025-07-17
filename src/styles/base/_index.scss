@@ -1,0 +1,4 @@
+/* bind the following _partials to scss/main.scss */
+@forward 'reset';
+@forward 'typography';
+@forward 'base';

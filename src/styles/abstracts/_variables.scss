@@ -1,1 +1,25 @@
-$global-font-size: 50px;
+// /global colors, spacing, fonts.
+
+//Font and color variables
+$standard-font-color: #1b263b;
+$font-stack: 'Helvetica Neue', Arial, sans-serif;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 32px;
+
+//Background colors
+$primary-bg-color: #ffffff;
+$secondery-bg-color: #e5e5e5;
+$tertiary-bg-color: #f8f9fa;
+
+//Borders
+$border-color: #e9ecef;
+
+// Breakpoints for responsive design
+$breakpoints: (
+  "xs": 480px,
+  "sm": 768px,
+  "md": 992px,
+  "lg": 1200px,
+  "xl": 1440px
+);
