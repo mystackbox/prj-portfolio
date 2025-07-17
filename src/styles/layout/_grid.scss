@@ -1,7 +1,62 @@
 @use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
 
-#site-grid {
-  font-size: $global-font-size;
-  color: grey;
+// layout/_grid.scss
+.site-grid-container {
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
+  background-color: $primary-bg-color;
+
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header"
+    "carousel"
+    "navbar"
+    "page-intro"
+    "main-content"
+    "footer";
+
+  //Media queries for responsive design
+  @include respond-to("xs") {
+    //add css here
+  }
+  @include respond-to("sm") {
+    //test the breakpoint
+    background-color: green;
+  }
+
 }
+
+.grid-area-header {
+  grid-area: header;
+  background-color: $secondery-bg-color;
+}
+
+.grid-area-carousel {
+  grid-area: carousel;
+  background-color: $secondery-bg-color;
+}
+
+.grid-area-navbar {
+  grid-area: navbar;
+  background-color: $secondery-bg-color;
+}
+
+.grid-area-page-intro {
+  grid-area: page-intro;
+  background-color: $secondery-bg-color;
+}
+
+.grid-area-main-content {
+  grid-area: main-content;
+}
+
+.grid-area-footer {
+  grid-area: footer;
+  background-color: $secondery-bg-color;
+}
+
