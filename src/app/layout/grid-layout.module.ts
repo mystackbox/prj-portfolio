@@ -6,6 +6,7 @@ import { FooterComponent } from './footer/footer/footer.component';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { CarouselComponent } from './carousel/carousel/carousel.component';
 import { PageIntroductionComponent } from './page-introduction/page-introduction/page-introduction.component';
+import { AppRoutingModule } from "../app-routing.module";
 
 @NgModule({
   declarations: [
@@ -17,8 +18,9 @@ import { PageIntroductionComponent } from './page-introduction/page-introduction
     PageIntroductionComponent
   ],
   imports: [
-    CommonModule
-  ],
+    CommonModule,
+    AppRoutingModule
+],
   exports: [
     GridLayoutComponent
   ]
