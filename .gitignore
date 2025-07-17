@@ -19,7 +19,7 @@ pnpm-debug.log*
 /node_modules/
 
 # Environment files (if sensitive info is used)
-# src/environments/environment*.ts
+src/environments/environment*.ts
 
 # IDE/editor settings
 .vscode/
