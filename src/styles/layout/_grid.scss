@@ -1,7 +1,7 @@
 @use 'abstracts/variables' as *;
 
-.container {
+#site-grid {
   font-size: $global-font-size;
-  color: blue;
+  color: grey;
   text-align: center;
 }
