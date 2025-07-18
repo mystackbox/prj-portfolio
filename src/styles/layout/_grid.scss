@@ -5,13 +5,13 @@
 .site-grid-container {
 
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   text-align: center;
-  background-color: $primary-bg-color;
+
 
   display: grid;
-  gap: 20px;
+  gap: 5px;
   grid-template-columns: 1fr;
   grid-template-areas: "header"
     "carousel"
@@ -24,6 +24,7 @@
   @include respond-to("xs") {
     //add css here
   }
+
   @include respond-to("sm") {
     //test the breakpoint
     background-color: green;
@@ -31,24 +32,31 @@
 
 }
 
+.grid-area-carousel,
+.grid-area-navbar,
+.grid-area-page-intro,
+.grid-area-main-content,
+.grid-area-footer {
+  padding: $spacing-md;
+}
+
 .grid-area-header {
   grid-area: header;
-  background-color: $secondery-bg-color;
 }
 
 .grid-area-carousel {
   grid-area: carousel;
-  background-color: $secondery-bg-color;
+  background-color: $tertiary-bg-color;
 }
 
 .grid-area-navbar {
   grid-area: navbar;
-  background-color: $secondery-bg-color;
+  background-color: $tertiary-bg-color;
 }
 
 .grid-area-page-intro {
   grid-area: page-intro;
-  background-color: $secondery-bg-color;
+  background-color: $tertiary-bg-color;
 }
 
 .grid-area-main-content {
@@ -57,6 +65,5 @@
 
 .grid-area-footer {
   grid-area: footer;
-  background-color: $secondery-bg-color;
+  background-color: $tertiary-bg-color;
 }
-
