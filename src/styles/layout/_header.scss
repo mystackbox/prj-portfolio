@@ -75,11 +75,11 @@
         }
     }
 
-}
+    
 
 //Media queries for responsive design
 @include respond-to("pre-sm") {
-    #site-identity {
+
         grid-template-columns: 1fr;
         margin: 5px 0;
 
@@ -139,7 +139,7 @@
                 justify-content: start;
 
                 .contact-number {
-                    font-size: $font-size-sm +1px;
+                    font-size: $font-size-sm + 1px;
                 }
 
                 .theme-button {
@@ -156,16 +156,15 @@
             }
         }
 
-    }
-
 }
 
 @include respond-to("sm") {
-    #site-identity {
-
+    
         .site-contact-details {
             justify-content: start;
             flex-direction: column;
         }
     }
+
 }
+
