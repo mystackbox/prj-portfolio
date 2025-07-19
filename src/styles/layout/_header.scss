@@ -1,30 +1,171 @@
+@use 'abstracts' as *;
+
 #site-identity {
 
-    text-align: left;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-between; 
+    grid-template-columns: 1fr 2fr;
+    justify-content: space-between;
     padding: 0;
-    margin: 15px 0;
-    
+    margin: 10px 0;
+    text-align: left;
+
     .site-names {
- 
+
         display: flex;
         flex-direction: row;
+        // border: 1px solid $light-border-color;
+
         .site-logo {
             margin-right: 15px;
+            //  border: 1px solid $light-border-color;
+
             img {
                 width: 100%;
-                height: 60px;
+                height: 70px;
+                min-width: 70PX;
+            }
+        }
+
+        .site-title-and-description {
+            //  border: 1px solid $light-border-color;
+            width: 100%;
+
+            .site-title {
+
+                .site-theme {
+                    display: none;
+                }
+            }
+
+            .site-description {
+                color: $comp-default-font-color;
+            }
+        }
+    }
+
+    .site-contact-details {
+        display: flex;
+        flex-direction: column;
+
+        .contact-details {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+
+            .site-contact-text {
+                margin: 0 5px;
+                font-size: $font-size-md;
+
+                .contact-icon {
+
+                    margin-right: $spacing-xs +1px;
+
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $light-default-font-color;
+                }
+            }
+
+        }
+
+        .current-weather {
+            display: none;
+        }
+    }
+
+}
+
+//Media queries for responsive design
+@include respond-to("pre-sm") {
+    #site-identity {
+        grid-template-columns: 1fr;
+        margin: 5px 0;
+
+        .site-names {
+
+            padding-bottom: $spacing-md;
+
+            .site-logo {
+                margin-right: 15px;
+
+                img {
+                    width: 100%;
+                    height: 50px;
+                    min-width: 55px;
+                }
+            }
+
+            .site-title-and-description {
+                .site-title {
+
+                    display: flex;
+                    justify-content: space-between;
+                    column-gap: 15px;
+
+                    .title-name {
+                        font-size: $font-size-sm + 1px;
+                        // border: 1px solid $light-border-color;
+                    }
+
+                    .site-theme {
+                        display: block;
+                        // border: 1px solid $light-border-color;
+                    }
+                }
+
+                .site-description {
+                    font-size: $font-size-sm + 2px;
+                }
+            }
+
+        }
+
+        .site-contact-details {
+
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            justify-content: space-between;
+
+            border-top: 1px solid $light-border-color;
+            padding-top: $spacing-sm + 4px;
+            font-size: $font-size-xs;
+
+            .contact-details {
+                // border: 1px solid $light-border-color;
+
+                flex-direction: column;
+                justify-content: start;
+
+                .contact-number {
+                    font-size: $font-size-sm +1px;
+                }
+
+                .theme-button {
+                    display: none;
+                }
+
+            }
+
+            .current-weather {
+                // border: 1px solid $light-border-color;
+                display: block;
+                text-align: right;
+                font-size: $font-size-md;
             }
         }
 
     }
 
-    .site-contact-details {
-        display: flex;
-        flex-direction: row;
-        justify-content: end;
-    }
+}
 
+@include respond-to("sm") {
+    #site-identity {
+
+        .site-contact-details {
+            justify-content: start;
+            flex-direction: column;
+        }
+    }
 }
