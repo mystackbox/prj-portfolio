@@ -19,26 +19,24 @@
         }
 
         .item-technology {
-            .items-wrapper {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                justify-items: left;
-                // border: 1px solid $light-border-color;
-
+            ul {
                 margin-left: $spacing-md + 2px;
 
-                .tech-item {
-                    display: flex;
+                li {
+                    list-style: square;
+                    margin-bottom: $spacing-xs;
+                    font-size: $font-size-md;
+                    margin-left: $spacing-md + 2px;
 
-                    img {
-                        //  border: 1px solid $light-border-color;
-                        height: 16px;
-                        margin-bottom: $spacing-sm + 2px;
-                        display: no;
-                    }
 
-                    span {
-                        margin-left: $spacing-sm;
+
+                    a {
+                        color: $light-primary-font-color;
+                        text-decoration: none;
+
+                        &:hover {
+                            text-decoration: none;
+                        }
                     }
                 }
             }
@@ -67,7 +65,48 @@
 
         }
 
-        .item-contact-details {}
+        .item-contact-details {
+
+            .contact-items {
+                .contact-item {
+                    margin-bottom: $spacing-md;
+
+                    .bi {
+                        text-transform: uppercase;
+                        font-style: normal;
+                        margin-bottom: $spacing-md;
+                        font-size: $font-size-md;
+                        color: $comp-default-font-color
+                    }
+
+                    .item {
+                        margin-top: $spacing-sm;
+                        margin-left: $spacing-md;
+
+
+                        a {
+                            color: $light-primary-font-color;
+                            text-decoration: none;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+
+                        .contact-pages {
+                            display: flex;
+                            flex-direction: row;
+                            gap: $spacing-md;
+                            i {
+                                font-size: $font-size-lg;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+
+        }
 
         .footer-item {
             text-align: left;
@@ -86,25 +125,23 @@
 
     .footer-bottom-section {
         background-color: $light-default-bg-color;
-        padding: $spacing-md 0;
+        padding: $spacing-md;
     }
 
-
     //Media queries for responsive design
-    @include respond-to("pre-sm") {
-
+    @include respond-to("pro-sm") {
         .footer-top-section {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
             row-gap: 15px;
         }
     }
 
-    @include respond-to("sm") {
+    @include respond-to("pro-xs") {
         .footer-top-section {
+            display: grid;
             grid-template-columns: 1fr;
-            row-gap: 15px;
 
-            .item-technology,.item-resources {
+            .item-resources {
                 display: none;
             }
         }
