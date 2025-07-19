@@ -1,5 +1,4 @@
-@use 'abstracts/variables' as *;
-@use 'abstracts/mixins' as *;
+@use 'abstracts' as *;
 
 // layout/_grid.scss
 .site-grid-container {
@@ -7,6 +6,7 @@
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
+  padding: $spacing-md;
   text-align: center;
 
 
@@ -26,8 +26,7 @@
   }
 
   @include respond-to("sm") {
-    //test the breakpoint
-    background-color: green;
+    //add css here
   }
 
 }
@@ -46,17 +45,17 @@
 
 .grid-area-carousel {
   grid-area: carousel;
-  background-color: $tertiary-bg-color;
+  background-color: $light-primary-bg-color;
 }
 
 .grid-area-navbar {
   grid-area: navbar;
-  background-color: $tertiary-bg-color;
+  background-color: $light-primary-bg-color;
 }
 
 .grid-area-page-intro {
   grid-area: page-intro;
-  background-color: $tertiary-bg-color;
+  background-color: $light-primary-bg-color;
 }
 
 .grid-area-main-content {
@@ -65,5 +64,5 @@
 
 .grid-area-footer {
   grid-area: footer;
-  background-color: $tertiary-bg-color;
+  background-color: $light-primary-bg-color;
 }

@@ -1,26 +1,82 @@
 // /global colors, spacing, fonts.
 
-//Font and color variables
-$standard-font-color: #1b263b;
+/* -- LIGHT THEME COLORS -- */
+
+//Light Primary - Font and color variables
+$light-default-font-color: #415a77;
+$light-primary-font-color: #284b63;
+$light-secondery-font-color: #778da9;
+$light-tertiary-font-color: #e0e1dd;
+
+//Light Primary - Background colors
+$light-default-bg-color: #ffffff;
+$light-primary-bg-color: #f8f9fa;
+$light-secondery-bg-color: #e5e5e5;
+$light-tertiary-bg-color: #778da9;
+$light-tertiary-bg-color: #284b63;
+
+
+/* -- COMPLIMENTORY COLORS -- */
+
+//Light Primary - Font and color variables
+$comp-default-font-color: #9b2226;
+$light-primary-font-color: #284b63;
+$light-secondery-font-color: #778da9;
+$light-tertiary-font-color: #e0e1dd;
+
+//Light Primary - Background colors
+$light-default-bg-color: #ffffff;
+$light-primary-bg-color: #f8f9fa;
+$light-secondery-bg-color: #e5e5e5;
+$light-tertiary-bg-color: #778da9;
+$light-tertiary-bg-color: #284b63;
+
+
+/* -- DARK THEME COLORS -- */
+
+//Light Primary - Font and color variables
+$light-default-font-color: #415a77;
+$light-primary-font-color: #284b63;
+$light-secondery-font-color: #778da9;
+$light-tertiary-font-color: #e0e1dd;
+
+//Light Primary - Background colors
+$light-default-bg-color: #ffffff;
+$light-primary-bg-color: #f8f9fa;
+$light-secondery-bg-color: #e5e5e5;
+$light-tertiary-bg-color: #778da9;
+$light-tertiary-bg-color: #284b63;
+
+
+
+/* -- DOES NOT CHANGE OFTER -- */
+
 $font-stack: 'Helvetica Neue', Arial, sans-serif;
 
 //Spacing variables
+$font-size-xs: 10px;
+$font-size-sm: 12px;
+$font-size-md: 14px;
+$font-size-lg: 18px;
+$font-size-xl: 32px;
+
+//Spacing variables
+$spacing-xs: 4px;
 $spacing-sm: 8px;
 $spacing-md: 16px;
 $spacing-lg: 24px;
 $spacing-xl: 32px;
 
-//Background colors
-$primary-bg-color: #ffffff;
-$secondery-bg-color: #e5e5e5;
-$tertiary-bg-color: #f8f9fa;
+
 
 //Borders
-$border-color: #e9ecef;
+$light-border-color: #e9ecef;
 
 // Breakpoints for responsive design
 $breakpoints: (
   "xs": 480px,
+  "pro-xm": 548px,
+  "pre-sm": 700px,
   "sm": 768px,
   "md": 992px,
   "lg": 1200px,
