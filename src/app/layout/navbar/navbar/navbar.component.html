@@ -1,1 +1,21 @@
-<p>navbar works!</p>
+
+<div id="main-navbar">
+<nav class="navbar">
+
+  <button class="navbar__toggle" (click)="toggleMenu()" aria-label="Toggle Menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <ul class="navbar__menu" [class.active]="isMenuOpen">
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/about">About</a></li>
+    <li><a routerLink="/projects">Projects</a></li>
+    <li><a routerLink="/services">Services</a></li>
+    <li><a routerLink="/contact">Contact</a></li>
+  </ul>
+</nav>
+</div>
+
+

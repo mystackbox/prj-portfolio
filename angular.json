@@ -47,7 +47,8 @@
                 "src/styles"
               ]
             },            
-            "scripts": [],
+            "scripts": [
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {

@@ -14,8 +14,8 @@
   gap: 5px;
   grid-template-columns: 1fr;
   grid-template-areas: "header"
-    "carousel"
     "navbar"
+    "carousel"
     "page-intro"
     "main-content"
     "footer";
@@ -37,6 +37,7 @@
 .grid-area-main-content,
 .grid-area-footer {
   padding: $spacing-md;
+  height: auto;
 }
 
 .grid-area-header {
@@ -51,6 +52,7 @@
 .grid-area-navbar {
   grid-area: navbar;
   background-color: $light-primary-bg-color;
+  padding: 0;
 }
 
 .grid-area-page-intro {
