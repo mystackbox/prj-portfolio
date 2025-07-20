@@ -15,7 +15,7 @@
         .item-introduction {
             p {
                 margin-left: $spacing-md + 2px;
-             
+
                 .introduction-img {
 
                     border: 8px solid $light-border-color;
@@ -82,6 +82,7 @@
                         margin-top: $spacing-sm;
                         padding-left: $spacing-md;
                         border-left: 1px solid $light-primary-font-color;
+
                         a {
                             color: $light-primary-font-color;
                             text-decoration: none;
@@ -140,11 +141,12 @@
     }
 
     @include respond-to("pro-xs") {
-        .footer-top-section {
-            display: grid;
-            grid-template-columns: 1fr;
 
-            .item-resources {
+        .footer-top-section {
+            display: flex;
+            flex-direction: column;
+
+            .item-resources, .item-introduction {
                 display: none;
             }
         }

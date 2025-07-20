@@ -20,17 +20,8 @@
     "main-content"
     "footer";
 
-  //Media queries for responsive design
-  @include respond-to("xs") {
-    //add css here
-  }
 
-  @include respond-to("sm") {
-    //add css here
-  }
-
-}
-
+    
 .grid-area-carousel,
 .grid-area-navbar,
 .grid-area-page-intro,
@@ -68,3 +59,23 @@
   grid-area: footer;
   background-color: $light-primary-bg-color;
 }
+
+
+}
+
+  //Media queries for responsive design
+  @include respond-to("xs") {
+    //add css here
+    .site-grid-container {
+        grid-template-areas:"navbar"
+                            "header"
+                            "carousel"
+                            "page-intro"
+                            "main-content"
+                            "footer";
+    }
+  }
+
+  @include respond-to("sm") {
+    //add css here
+  }
