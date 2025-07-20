@@ -69,21 +69,11 @@
 
             .contact-items {
                 .contact-item {
-                    margin-bottom: $spacing-md;
-
-                    .bi {
-                        text-transform: uppercase;
-                        font-style: normal;
-                        margin-bottom: $spacing-md;
-                        font-size: $font-size-md;
-                        color: $comp-default-font-color
-                    }
 
                     .item {
                         margin-top: $spacing-sm;
-                        margin-left: $spacing-md;
-
-
+                        padding-left: $spacing-md;
+                        border-left: 1px solid $light-primary-font-color;
                         a {
                             color: $light-primary-font-color;
                             text-decoration: none;
@@ -96,13 +86,18 @@
                         .contact-pages {
                             display: flex;
                             flex-direction: row;
-                            gap: $spacing-md;
+                            column-gap: $spacing-md;
+
                             i {
                                 font-size: $font-size-lg;
+                                color: $comp-default-font-color
                             }
-                            
                         }
                     }
+                }
+
+                .first-item {
+                    margin-bottom: $spacing-md;
                 }
             }
 
