@@ -15,6 +15,14 @@
         .item-introduction {
             p {
                 margin-left: $spacing-md + 2px;
+             
+                .introduction-img {
+
+                    border: 8px solid $light-border-color;
+                    float: left;
+                    height: 60px;
+                    margin-right: 10px;
+                }
             }
         }
 
