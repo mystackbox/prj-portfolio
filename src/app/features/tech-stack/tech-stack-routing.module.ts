@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProjectsComponent } from './pages/projects/projects.component';
+import { TechStackComponent } from './pages/tech-stack/tech-stack.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ProjectsComponent,
+    component: TechStackComponent,
     data: {
-      title: 'Projects',
+      title: 'Tech Stack',
       metaTags: [
-        { name: 'short-desc', content: 'recently completed project' },
+        { name: 'short-desc', content: ' front-end developer skills set' },
         {
           name: 'page-desc',
           content: 'A brief about the portfolio and the developer',
@@ -23,4 +23,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ProjectsRoutingModule {}
+export class TechStackRoutingModule {}

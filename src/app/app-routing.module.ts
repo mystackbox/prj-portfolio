@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 
   {
@@ -48,6 +49,8 @@ const routes: Routes = [
         (m) => m.NotFoundModule
       ),
   },
+  
+  { path: 'tech-stack', loadChildren: () => import('./features/tech-stack/tech-stack.module').then(m => m.TechStackModule) },
   { path: '**', redirectTo: 'not-found' },
 ];
 

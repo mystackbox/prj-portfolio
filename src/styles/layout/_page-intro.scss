@@ -1,0 +1,77 @@
+@use 'abstracts' as *;
+
+#page-instroduction {
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: $spacing-sm;
+
+    .page-title {
+        text-transform: uppercase;
+        font-size: $font-size-lg + 2px;
+        font-weight: bolder;
+    }
+
+    .page-heading {
+        text-transform: uppercase;
+        font-size: $font-size-xl - 2px;
+    }
+
+    .page-intro-buttons {
+
+        display: flex;
+        flex-direction: row;
+        column-gap: 10px;
+        justify-content: center;
+        margin: 10px 0;
+
+        .button {
+            min-width: 130px;
+            padding: 7px 20px;
+            text-transform: uppercase;
+            color: $light-neutral-font-color;
+            cursor: pointer;
+            border: none;
+            border-radius: 0px;
+        }
+
+        .projects {
+            background-color: red;
+            &:hover {
+                  background-color: brown;
+            }
+        }
+
+        .contact {
+            background-color: $light-secondery-font-color;
+              &:hover {
+                  background-color: $light-secondery-bg-color;
+            }
+        }
+    }
+}
+
+@include respond-to("pre-sm") {
+    #page-instroduction {
+        .page-heading {
+            text-transform: uppercase;
+            font-size: $font-size-md + 4px;
+        }
+    }
+
+}
+
+@include respond-to("sm") {
+    #page-instroduction {
+        .page-intro-buttons {
+
+            .button {
+                min-width: 115px;
+                padding: 7px 10px;
+                font-size: $font-size-sm;
+            }
+        }
+    }
+
+}
