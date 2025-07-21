@@ -5,12 +5,10 @@ import { AppComponent } from './app.component';
 import { GridLayoutModule } from './layout/grid-layout.module';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { WeatherComponent } from './features/weather/pages/weather/weather.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherComponent, 
   ],
   imports: [
     GridLayoutModule,
