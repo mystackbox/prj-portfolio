@@ -8,6 +8,8 @@
     padding: 10px 0;
     // border: 1px solid $light-border-color;
     text-align: left;
+    margin-bottom: -18px;
+
     .site-names {
 
         display: flex;
@@ -73,13 +75,17 @@
         }
     }
 
-    
 
-//Media queries for responsive design
-@include respond-to("pre-sm") {
+    //Media queries for responsive design
+
+    @include respond-to("xs") {
+
+        margin: -15px 0;
+    }
+
+    @include respond-to("pre-sm") {
 
         grid-template-columns: 1fr;
-        margin: 5px 0;
 
         .site-names {
 
@@ -128,17 +134,13 @@
 
             border-top: 1px solid $light-border-color;
             padding-top: $spacing-sm + 4px;
-            font-size: $font-size-xs;
+
 
             .contact-details {
                 // border: 1px solid $light-border-color;
 
                 flex-direction: column;
                 justify-content: start;
-
-                .contact-number {
-                    font-size: $font-size-sm + 1px;
-                }
 
                 .theme-button {
                     display: none;
@@ -153,11 +155,11 @@
                 font-size: $font-size-md;
             }
         }
+    }
 
-}
+    @include respond-to("sm") {
+        // margin: -15px 0 ;
 
-@include respond-to("sm") {
-    
         .site-contact-details {
             justify-content: start;
             flex-direction: column;
@@ -165,4 +167,3 @@
     }
 
 }
-
