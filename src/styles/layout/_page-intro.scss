@@ -46,7 +46,7 @@
         .contact {
             background-color: $light-secondery-font-color;
               &:hover {
-                  background-color: $light-secondery-bg-color;
+                  background-color: $light-dark-bg-color;
             }
         }
     }
@@ -65,10 +65,9 @@
 @include respond-to("sm") {
     #page-instroduction {
         .page-intro-buttons {
-
             .button {
-                min-width: 115px;
-                padding: 7px 10px;
+                min-width: 112px;
+                padding: 8px 6px;
                 font-size: $font-size-sm;
             }
         }
