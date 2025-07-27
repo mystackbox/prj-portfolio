@@ -6,7 +6,7 @@
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: $spacing-md - 2px;
+  padding: $spacing-sm;
   text-align: center;
  background-color: $light-default-bg-color;
 
@@ -60,7 +60,6 @@
   grid-area: footer;
    padding: 0;
 }
-
 
 }
 

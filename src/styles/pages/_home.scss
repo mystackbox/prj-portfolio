@@ -42,7 +42,7 @@
 
             .card-title {
                 text-transform: uppercase;
-                font-weight: bold;
+                color: $comp-default-font-color;
             }
 
             .card-button {
@@ -62,32 +62,12 @@
                     }
                 }
             }
+
+            &.card-git {
+                display: none;
+            }
         }
 
-        .card-git {
-            display: none;
-        }
-    }
-
-    //horizontal-line section
-    .horizontal-line {
-        border: none;
-        border-top: 1px solid $light-border-color;
-        color: $light-default-font-color;
-        font-weight: bold;
-        overflow: visible;
-        text-align: center;
-        height: 5px;
-        margin: 28px 300px;
-
-        &::after {
-            background: #fff;
-            content: "features";
-            position: relative;
-            top: -13px;
-            padding: 0 40px;
-            text-transform: uppercase;
-        }
     }
 
     //features section
@@ -123,6 +103,7 @@
                     .img-button {
                         font-size: $font-size-sm;
                         padding: 3px 12px;
+                        border-radius: 6px;
 
                         &.github {
                             background-color: $light-secondery-font-color;
@@ -193,7 +174,7 @@
             display: flex;
             flex-direction: column;
             text-align: left;
-            row-gap: 10px;
+            row-gap: 5px;
 
             .feed-title {
                 text-transform: uppercase;
@@ -311,22 +292,23 @@
     @include respond-to("pro-sm") {
 
         .cards-container {
-
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            row-gap: 15px;
-
             justify-content: space-evenly;
             padding-top: $spacing-md;
+            column-gap: 5px;
 
             .card {
-                display: flex;
-                flex-direction: column;
-                row-gap: 5px;
-                width: 90%;
+                column-gap: 5px;
 
-                .card-git {
-                    display: block;
+                .card-description {
+                    min-height: 35%;
+                }
+
+                .card {
+                    width: 55%;
+                }
+
+                &.card-git {
+                    display: none;
                 }
             }
         }
@@ -482,6 +464,10 @@
     @include respond-to("sm") {
 
         .cards-container {
+
+            .card-description {
+                min-height: 35%;
+            }
 
             // font-size: $font-size-sm;
             .card {
@@ -644,9 +630,12 @@
     @include respond-to("pre-sm") {
 
         .cards-container {
+            .card-title {
+                font-size: $font-size-sm + 2px;
+            }
 
             .card-description {
-                min-height: 32%;
+                font-size: $font-size-sm;
             }
         }
 
@@ -778,13 +767,14 @@
 
     @include respond-to("pro-xs") {
         .cards-container {
+            padding: 0;
 
             .card {
                 width: 95%;
                 font-size: $font-size-sm;
 
                 .card-description {
-                    min-height: 38%;
+                    min-height: 34%;
                 }
 
                 .card-button {
@@ -804,7 +794,7 @@
                 flex-direction: row;
                 column-gap: 15px;
 
-               .recent-project-img {
+                .recent-project-img {
                     display: none;
                 }
 
@@ -916,22 +906,46 @@
     }
 
     @include respond-to("xs") {
+
         .cards-container {
-        gap: 15px;
-        justify-content: space-between;
+
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            justify-content: space-between;
+            padding: 0;
+
             .card {
+
                 width: 100%;
                 font-size: $font-size-sm;
-                // padding: $spacing-xs;
 
-                .card-description {
-                    min-height: 38%;
+                .card-icon {
+                    margin-bottom: 10px;
+
+                    .bi {
+                        font-size: 0.8rem;
+                        border-radius: 29px;
+                        height: 46px;
+                        width: 40px;
+
+                        color: $light-neutral-font-color;
+                        background-color: $light-dark-bg-color;
+                        padding: 10px 12px;
+
+                    }
+
                 }
 
-                .card-button {
-                    .explore {
-                        font-size: $font-size-xs;
-                    }
+
+                .card-description {
+                    min-height: 32%;
+                }
+
+                &.card-git {
+                    display: block;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 5px;
                 }
             }
         }
@@ -989,7 +1003,7 @@
                                 padding: $spacing-xs - 2px;
                                 background-color: $light-secondery-bg-color;
                                 border-radius: 8px;
-                                font-size: $font-size-sm;
+                                font-size: $font-size-xs;
                                 color: $comp-default-font-color;
                             }
 
