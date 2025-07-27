@@ -1,0 +1,322 @@
+@use 'abstracts' as *;
+
+#homepage-containter {
+    display: grid;
+    grid-template-rows: 1fr;
+    row-gap: 25px;
+
+    //cards section
+    .cards-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+        padding: $spacing-md;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+
+            width: 240px;
+            min-height: 100%;
+            padding: $spacing-lg;
+            // border-radius: 10px;
+            background-color: $light-primary-bg-color;
+
+            .card-icon {
+                margin-bottom: 10px;
+
+                .bi {
+                    font-size: 1.2rem;
+                    border-radius: 29px;
+                    height: 46px;
+                    width: 40px;
+
+                    color: $light-neutral-font-color;
+                    background-color: $light-dark-bg-color;
+                    padding: 11px 13px;
+
+                }
+
+            }
+
+            .card-title {
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+
+            .card-button {
+                .explore {
+
+                    background-color: #ff8fab;
+                    min-width: 100px;
+                    padding: 5px 20px;
+                    text-transform: uppercase;
+                    color: $light-neutral-font-color;
+                    cursor: pointer;
+                    border: none;
+                    // border-radius: 7px;
+
+                    &:hover {
+                        background-color: red;
+                    }
+                }
+            }
+        }
+
+        .card-git {
+            display: none;
+        }
+    }
+
+    //horizontal-line section
+    .horizontal-line {
+        border: none;
+        border-top: 1px solid $light-border-color;
+        color: $light-default-font-color;
+        overflow: visible;
+        text-align: center;
+        height: 5px;
+        margin: 20px 300px;
+        
+
+        &::after {
+            background: #fff;
+            content: "features";
+            position: relative;
+            top: -13px;
+            padding: 0 15px;
+            text-transform: uppercase;
+        }
+    }
+
+     //features section
+    .feeds-container {
+        display: grid;
+        grid-template-columns: 6fr 4fr;
+        column-gap: 20px;
+
+        .feed {
+            border: 1px solid $light-border-color;
+            padding: $spacing-md;
+        }
+
+        .recent-project-container {
+            display: flex;
+            flex-direction: row;
+            column-gap: 15px;
+
+            .recent-project-img {
+
+                .project-img {
+                    height: 130px;
+                }
+
+                .project-img-buttons {
+                    display: flex;
+                    flex-direction: row;
+                    column-gap: 5px;
+                    justify-content: space-around;
+
+                    .img-button {
+                        padding: $spacing-xs - 2px $spacing-md - 3px;
+                        // border-radius: $spacing-xs;
+                        font-size: $font-size-sm;
+
+                        &.github {
+                            background-color: $light-secondery-font-color;
+                            color: #fff;
+                        }
+
+                        &.view {
+                            background-color: orange;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            .project-details {
+                // border: 1px solid $light-border-color;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                .details {
+                    text-align: left;
+                    // font-size: $font-size-md;
+                }
+
+                .prject-name {
+                    // font-weight: bold;
+                    text-transform: uppercase;
+                    margin-bottom: $spacing-xs;
+                }
+
+                .project-description {
+                    margin-bottom: $spacing-xs;
+                    color: $comp-default-font-color;
+                }
+
+                .tech-stack {
+                    .project-tech {
+                        font-weight: bold;
+                        margin-bottom: $spacing-xs;
+                    }
+
+                    .project-tech-item {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 5px;
+                        padding-left: $spacing-sm;
+                        flex-wrap: wrap;
+                        background-color: $light-primary-bg-color;
+                        padding: $spacing-sm;
+                        border-radius: $spacing-xs;
+
+                        .tech-item {
+                            height: 24px;
+                            padding: $spacing-xs - 2px;
+                            background-color: $light-secondery-bg-color;
+                            border-radius: 8px;
+                            font-size: $font-size-sm;
+                            color: $comp-default-font-color;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .news-feed-container {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            row-gap: 5px;
+
+            .feed-title {
+                text-transform: uppercase;
+            }
+
+            .news-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                column-gap: 15px;
+
+                .news {
+                    .news-img {
+                        height: 70px;
+                        width: 100%;
+                    }
+
+                    .news-headline {
+                        text-transform: uppercase;
+                        font-size: $font-size-sm - 2px;
+                        font-weight: bold;
+                        background-color: $light-primary-bg-color;
+                        padding: $spacing-xs;
+                    }
+
+                    .news-button {
+                        padding: $spacing-xs - 2px $spacing-md - 3px;
+                        background-color: orange;
+                        color: #fff;
+                    }
+                }
+            }
+
+            .weather-container {
+                display: inline;
+                // height: 26px;
+                padding: $spacing-xs - 1px;
+                padding-left: $spacing-xs + 1px;
+                background-color: $light-primary-bg-color;
+                // border-radius: 8px;
+                font-size: $font-size-sm;
+                color: $comp-default-font-color;
+                // text-align: center;
+
+                .weather-item {
+                    margin-right: 5px;
+                    font-size: $font-size-sm + 1px;
+
+                    &.title {
+                        font-weight: bold;
+                        text-transform: uppercase;
+                    }
+                }
+
+            }
+        }
+
+
+    }
+
+    //Media queries for responsive design
+    @include respond-to("pro-sm") {
+
+        .cards-container {
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 15px;
+
+            justify-content: space-evenly;
+            padding-top: $spacing-md;
+
+            .card {
+                display: flex;
+                flex-direction: column;
+                row-gap: 5px;
+                width: 90%;
+
+                .card-git {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    @include respond-to("sm") {
+
+        .cards-container {
+            // font-size: $font-size-sm;
+
+            .card {
+                width: 95%;
+            }
+
+
+        }
+    }
+
+    @include respond-to("pre-sm") {
+
+        .cards-container {
+
+            .card-description {
+                min-height: 32%;
+            }
+        }
+    }
+
+    @include respond-to("pro-xs") {
+        .cards-container {
+
+            .card {
+                width: 95%;
+                font-size: $font-size-sm;
+
+                .card-description {
+                    min-height: 38%;
+                }
+
+                .card-button {
+                    .explore {
+                        font-size: $font-size-xs;
+                    }
+                }
+            }
+        }
+    }
+}

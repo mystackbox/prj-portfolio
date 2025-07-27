@@ -5,11 +5,14 @@
     display: flex;
     flex-direction: column;
     row-gap: $spacing-md;
+    background-color: $light-primary-bg-color;
+    padding: $spacing-md;
+    // border-radius: $spacing-sm;
 
     .footer-top-section {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        column-gap: 15px;
+        gap: 20px;
         font-size: $font-size-md;
 
         .item-introduction {
@@ -118,6 +121,7 @@
             // border: 1px solid $light-border-color;
             background-color: $light-default-bg-color;
             padding: $spacing-md;
+            // border-radius: $spacing-sm;
 
             h4 {
                 text-transform: uppercase;
