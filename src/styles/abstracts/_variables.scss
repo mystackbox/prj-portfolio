@@ -55,6 +55,7 @@ $light-tertiary-bg-color: #284b63;
 $font-stack: 'Helvetica Neue', Arial, sans-serif;
 
 //Spacing variables
+$font-size-xxs: 8px;
 $font-size-xs: 10px;
 $font-size-sm: 12px;
 $font-size-md: 14px;
@@ -76,11 +77,11 @@ $light-border-color: #e9ecef;
 $breakpoints: (
   "pre-xs": 375px,
   "xs": 480px,
-  "pro-xs": 548px,
+  "pro-xs": 550px,
   "pre-sm": 680px,
   "sm": 768px,
   "pro-sm": 920px,
   "md": 992px,
   "lg": 1200px,
-  "xl": 1440px
+  "xl": 1400px
 );

@@ -74,23 +74,23 @@
         border: none;
         border-top: 1px solid $light-border-color;
         color: $light-default-font-color;
+        font-weight: bold;
         overflow: visible;
         text-align: center;
         height: 5px;
-        margin: 20px 300px;
-        
+        margin: 28px 300px;
 
         &::after {
             background: #fff;
             content: "features";
             position: relative;
             top: -13px;
-            padding: 0 15px;
+            padding: 0 40px;
             text-transform: uppercase;
         }
     }
 
-     //features section
+    //features section
     .feeds-container {
         display: grid;
         grid-template-columns: 6fr 4fr;
@@ -115,13 +115,14 @@
                 .project-img-buttons {
                     display: flex;
                     flex-direction: row;
-                    column-gap: 5px;
-                    justify-content: space-around;
+                    justify-content: flex-start;
+                    column-gap: 10px;
+                    // justify-content: space-between;
+                    // border: 1px solid $light-primary-font-color;
 
                     .img-button {
-                        padding: $spacing-xs - 2px $spacing-md - 3px;
-                        // border-radius: $spacing-xs;
                         font-size: $font-size-sm;
+                        padding: 3px 12px;
 
                         &.github {
                             background-color: $light-secondery-font-color;
@@ -192,7 +193,7 @@
             display: flex;
             flex-direction: column;
             text-align: left;
-            row-gap: 5px;
+            row-gap: 10px;
 
             .feed-title {
                 text-transform: uppercase;
@@ -238,7 +239,7 @@
 
                 .weather-item {
                     margin-right: 5px;
-                    font-size: $font-size-sm + 1px;
+                    font-size: $font-size-sm ;
 
                     &.title {
                         font-weight: bold;
@@ -248,11 +249,65 @@
 
             }
         }
-
-
     }
 
     //Media queries for responsive design
+    @include respond-to("md") {
+
+        //features section
+        .feeds-container {
+            .recent-project-container {
+                .project-details {
+                    .tech-stack {
+                        .project-tech-item {
+                            .tech-item {
+                                font-size: $font-size-xs;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .news-feed-container {
+
+                .news-container {
+                    .news {
+                        .news-img {
+                            height: 60px;
+                            width: 100%;
+                        }
+
+                        .news-headline {
+                            text-transform: uppercase;
+                            font-size: $font-size-xs;
+                            font-weight: bold;
+                            background-color: $light-primary-bg-color;
+                            padding: $spacing-xs;
+                        }
+
+                        .news-button {
+                            padding: $spacing-xs - 2px $spacing-md - 3px;
+                            background-color: orange;
+                            color: #fff;
+                        }
+                    }
+                }
+
+                .weather-container {
+                    .weather-item {
+                        padding: $spacing-xs;
+                        padding-right: $spacing-xs - 4px;
+                        font-size: $font-size-sm;
+
+                        &.title {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     @include respond-to("pro-sm") {
 
         .cards-container {
@@ -275,18 +330,314 @@
                 }
             }
         }
+
+        //features section
+        .feeds-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: 10px;
+
+            .feed {
+                border: 1px solid $light-border-color;
+                padding: $spacing-md;
+            }
+
+            .recent-project-container {
+                display: flex;
+                flex-direction: row;
+                column-gap: 15px;
+
+                .recent-project-img {
+
+                    .project-img {
+                        height: 130px;
+                    }
+
+                    .project-img-buttons {
+                        display: flex;
+                        flex-direction: row;
+                        column-gap: 5px;
+                        justify-content: space-around;
+
+                        .img-button {
+                            padding: $spacing-xs - 2px $spacing-md - 3px;
+                            // border-radius: $spacing-xs;
+                            font-size: $font-size-sm;
+
+                            &.github {
+                                background-color: $light-secondery-font-color;
+                                color: #fff;
+                            }
+
+                            &.view {
+                                background-color: orange;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+
+                .project-details {
+                    // border: 1px solid $light-border-color;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    .details {
+                        text-align: left;
+                        // font-size: $font-size-md;
+                    }
+
+                    .prject-name {
+                        // font-weight: bold;
+                        text-transform: uppercase;
+                        margin-bottom: $spacing-xs;
+                    }
+
+                    .project-description {
+                        margin-bottom: $spacing-xs;
+                        color: $comp-default-font-color;
+                    }
+
+                    .tech-stack {
+                        .project-tech {
+                            font-weight: bold;
+                            margin-bottom: $spacing-xs;
+                        }
+
+                        .project-tech-item {
+                            display: flex;
+                            flex-direction: row;
+                            gap: 5px;
+                            padding-left: $spacing-sm;
+                            flex-wrap: wrap;
+                            background-color: $light-primary-bg-color;
+                            padding: $spacing-sm;
+                            border-radius: $spacing-xs;
+
+                            .tech-item {
+                                height: 24px;
+                                padding: $spacing-xs - 2px;
+                                background-color: $light-secondery-bg-color;
+                                border-radius: 8px;
+                                font-size: $font-size-sm;
+                                color: $comp-default-font-color;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            .news-feed-container {
+
+                .feed-title {
+                    text-transform: uppercase;
+                }
+
+                .news-container {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    column-gap: 25px;
+
+                    .news {
+                        .news-img {
+                            height: 146px;
+                            width: 100%;
+                        }
+
+                        .news-headline {
+                            text-transform: uppercase;
+                            font-size: $font-size-sm;
+                            // font-weight: bold;
+                            background-color: $light-primary-bg-color;
+                            padding: $spacing-xs;
+                            padding-left: $spacing-sm;
+
+                        }
+
+                        .news-button {
+                            padding: $spacing-xs - 2px $spacing-md - 3px;
+                            background-color: orange;
+                            color: #fff;
+                        }
+                    }
+                }
+
+                .weather-container {
+                    padding: $spacing-sm;
+
+                    .weather-item {
+
+                        //  padding: $spacing-xs;
+                        &.title {
+                            display: inline;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @include respond-to("sm") {
 
         .cards-container {
-            // font-size: $font-size-sm;
 
+            // font-size: $font-size-sm;
             .card {
                 width: 95%;
             }
+        }
 
+        //features section
+        .feeds-container {
 
+            .feed {
+                border: 1px solid $light-border-color;
+                padding: $spacing-md;
+            }
+
+            .recent-project-container {
+                display: flex;
+                flex-direction: row;
+                column-gap: 15px;
+
+                .recent-project-img {
+
+                    .project-img {
+                        height: 130px;
+                    }
+
+                    .project-img-buttons {
+                        display: flex;
+                        flex-direction: row;
+                        column-gap: 5px;
+                        justify-content: space-around;
+
+                        .img-button {
+                            padding: $spacing-xs - 2px $spacing-md - 3px;
+                            // border-radius: $spacing-xs;
+                            font-size: $font-size-sm;
+
+                            &.github {
+                                background-color: $light-secondery-font-color;
+                                color: #fff;
+                            }
+
+                            &.view {
+                                background-color: orange;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+
+                .project-details {
+                    // border: 1px solid $light-border-color;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    .details {
+                        text-align: left;
+                        // font-size: $font-size-md;
+                    }
+
+                    .prject-name {
+                        // font-weight: bold;
+                        text-transform: uppercase;
+                        margin-bottom: $spacing-xs;
+                    }
+
+                    .project-description {
+                        margin-bottom: $spacing-xs;
+                        color: $comp-default-font-color;
+                    }
+
+                    .tech-stack {
+                        .project-tech {
+                            font-weight: bold;
+                            margin-bottom: $spacing-xs;
+                        }
+
+                        .project-tech-item {
+                            display: flex;
+                            flex-direction: row;
+                            gap: 5px;
+                            padding-left: $spacing-sm;
+                            flex-wrap: wrap;
+                            background-color: $light-primary-bg-color;
+                            padding: $spacing-sm;
+                            border-radius: $spacing-xs;
+
+                            .tech-item {
+                                height: 24px;
+                                padding: $spacing-xs - 2px;
+                                background-color: $light-secondery-bg-color;
+                                border-radius: 8px;
+                                font-size: $font-size-sm;
+                                color: $comp-default-font-color;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            .news-feed-container {
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                row-gap: 10px;
+
+                .feed-title {
+                    text-transform: uppercase;
+                }
+
+                .news-container {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    column-gap: 20px;
+
+                    .news {
+                        .news-img {
+                            height: 125px;
+                            width: 100%;
+                        }
+
+                        .news-headline {}
+
+                        .news-button {
+                            padding: $spacing-xs - 2px $spacing-md - 3px;
+                            background-color: orange;
+                            color: #fff;
+                        }
+                    }
+                }
+
+                .weather-container {
+                    display: inline;
+                    // height: 26px;
+                    padding: $spacing-xs - 1px;
+                    padding-left: $spacing-xs + 1px;
+                    background-color: $light-primary-bg-color;
+                    // border-radius: 8px;
+                    font-size: $font-size-sm;
+                    color: $comp-default-font-color;
+                    // text-align: center;
+
+                    .weather-item {
+                        margin-right: 5px;
+                        font-size: $font-size-sm + 1px;
+
+                        &.title {
+                            font-weight: bold;
+                            text-transform: uppercase;
+                        }
+                    }
+
+                }
+            }
         }
     }
 
@@ -296,6 +647,131 @@
 
             .card-description {
                 min-height: 32%;
+            }
+        }
+
+        //features section
+        .feeds-container {
+
+            .feed {
+                border: 1px solid $light-border-color;
+                padding: $spacing-md;
+            }
+
+            .recent-project-container {
+
+
+                .recent-project-img {
+
+                    .project-img {
+                        height: 120px;
+                    }
+                }
+
+                .project-details {
+                    // border: 1px solid $light-border-color;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    .details {
+                        text-align: left;
+                        // font-size: $font-size-md;
+                    }
+
+                    .prject-name {
+                        // font-weight: bold;
+                        text-transform: uppercase;
+                        margin-bottom: $spacing-xs - 2px;
+                    }
+
+                    .project-description {
+                        margin-bottom: $spacing-xs;
+                        color: $comp-default-font-color;
+                    }
+
+                    .tech-stack {
+                        .project-tech {
+                            font-weight: bold;
+                            margin-bottom: $spacing-xs;
+                            font-size: $font-size-sm;
+                        }
+
+                        .project-tech-item {
+
+                            .tech-item {
+                                height: 24px;
+                                padding: $spacing-xs - 2px;
+                                background-color: $light-secondery-bg-color;
+                                border-radius: 8px;
+                                font-size: $font-size-xs;
+                                color: $comp-default-font-color;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            .news-feed-container {
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                row-gap: 10px;
+
+                .feed-title {
+                    text-transform: uppercase;
+                }
+
+                .news-container {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    column-gap: 20px;
+
+                    .news {
+                        .news-img {
+                            height: 100px;
+                            width: 100%;
+                        }
+
+                        .news-headline {
+                            // text-transform: uppercase;
+                            // font-size: $font-size-sm - 2px;
+                            // font-weight: bold;
+                            // background-color: $light-primary-bg-color;
+                            // padding: $spacing-xs;
+                        }
+
+                        .news-button {
+                            padding: $spacing-xs - 2px $spacing-md - 3px;
+                            background-color: orange;
+                            color: #fff;
+                        }
+                    }
+                }
+
+                .weather-container {
+                    display: inline;
+                    // height: 26px;
+                    padding: $spacing-xs - 1px;
+                    padding-left: $spacing-xs + 1px;
+                    background-color: $light-primary-bg-color;
+                    // border-radius: 8px;
+                    font-size: $font-size-sm;
+                    color: $comp-default-font-color;
+                    // text-align: center;
+
+                    .weather-item {
+                        margin-right: 5px;
+                        font-size: $font-size-sm + 1px;
+
+                        &.title {
+                            font-weight: bold;
+                            text-transform: uppercase;
+                        }
+                    }
+
+                }
             }
         }
     }
@@ -318,5 +794,256 @@
                 }
             }
         }
+
+        //features section
+        .feeds-container {
+
+
+            .recent-project-container {
+                display: flex;
+                flex-direction: row;
+                column-gap: 15px;
+
+               .recent-project-img {
+                    display: none;
+                }
+
+                .project-details {
+                    // border: 1px solid $light-border-color;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    .details {
+                        text-align: left;
+                        // font-size: $font-size-md;
+                    }
+
+                    .prject-name {
+                        // font-weight: bold;
+                        text-transform: uppercase;
+                        margin-bottom: $spacing-xs;
+                    }
+
+                    .project-description {
+                        margin-bottom: $spacing-xs;
+                        color: $comp-default-font-color;
+                    }
+
+                    .tech-stack {
+                        .project-tech {
+                            font-weight: bold;
+                            margin-bottom: $spacing-xs;
+                        }
+
+                        .project-tech-item {
+                            display: flex;
+                            flex-direction: row;
+                            gap: 5px;
+                            padding-left: $spacing-sm;
+                            flex-wrap: wrap;
+                            background-color: $light-primary-bg-color;
+                            padding: $spacing-sm;
+                            border-radius: $spacing-xs;
+
+                            .tech-item {
+                                height: 24px;
+                                padding: $spacing-xs - 2px;
+                                background-color: $light-secondery-bg-color;
+                                border-radius: 8px;
+                                font-size: $font-size-sm;
+                                color: $comp-default-font-color;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            .news-feed-container {
+                .feed-title {
+                    text-transform: uppercase;
+                }
+
+                .news-container {
+
+                    .news {
+                        .news-img {
+                            height: 75px;
+                            width: 100%;
+                        }
+
+                        .news-headline {
+                            // text-transform: uppercase;
+                            font-size: $font-size-sm - 1px;
+                            font-weight: normal;
+                            // background-color: $light-primary-bg-color;
+                            // padding: $spacing-xs;
+                        }
+
+                        .news-button {
+                            padding: $spacing-xs - 2px $spacing-md - 3px;
+                            background-color: orange;
+                            color: #fff;
+                        }
+                    }
+                }
+
+                .weather-container {
+                    display: inline;
+                    // height: 26px;
+                    padding: $spacing-xs - 1px;
+                    padding-left: $spacing-xs + 1px;
+                    background-color: $light-primary-bg-color;
+                    // border-radius: 8px;
+                    font-size: $font-size-xs;
+                    color: $comp-default-font-color;
+                    // text-align: center;
+
+                    .weather-item {
+                        margin-right: 5px;
+                        font-size: $font-size-sm + 1px;
+
+                        &.title {
+                            font-weight: bold;
+                            text-transform: uppercase;
+                        }
+                    }
+
+                }
+            }
+        }
     }
+
+    @include respond-to("xs") {
+        .cards-container {
+        gap: 15px;
+        justify-content: space-between;
+            .card {
+                width: 100%;
+                font-size: $font-size-sm;
+                // padding: $spacing-xs;
+
+                .card-description {
+                    min-height: 38%;
+                }
+
+                .card-button {
+                    .explore {
+                        font-size: $font-size-xs;
+                    }
+                }
+            }
+        }
+
+        //features section
+        .feeds-container {
+
+
+            .recent-project-container {
+
+                .recent-project-img {
+                    display: none;
+                }
+
+                .project-details {
+                    // border: 1px solid $light-border-color;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    .details {
+                        text-align: left;
+                        // font-size: $font-size-md;
+                    }
+
+                    .prject-name {
+                        // font-weight: bold;
+                        text-transform: uppercase;
+                        margin-bottom: $spacing-xs;
+                    }
+
+                    .project-description {
+                        margin-bottom: $spacing-xs;
+                        color: $comp-default-font-color;
+                    }
+
+                    .tech-stack {
+                        .project-tech {
+                            font-weight: bold;
+                            margin-bottom: $spacing-xs;
+                        }
+
+                        .project-tech-item {
+                            display: flex;
+                            flex-direction: row;
+                            gap: 5px;
+                            padding-left: $spacing-sm;
+                            flex-wrap: wrap;
+                            background-color: $light-primary-bg-color;
+                            padding: $spacing-sm;
+                            border-radius: $spacing-xs;
+
+                            .tech-item {
+                                height: 24px;
+                                padding: $spacing-xs - 2px;
+                                background-color: $light-secondery-bg-color;
+                                border-radius: 8px;
+                                font-size: $font-size-sm;
+                                color: $comp-default-font-color;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            .news-feed-container {
+                .feed-title {
+                    text-transform: uppercase;
+                }
+
+                .news-container {
+                    column-gap: 10px;
+
+                    .news {
+                        .news-img {
+                            height: 65px;
+                            width: 100%;
+                        }
+
+                        .news-headline {
+                            // text-transform: uppercase;
+                            font-size: $font-size-sm - 4px;
+                            font-weight: normal;
+                            // background-color: $light-primary-bg-color;
+                            // padding: $spacing-xs;
+                        }
+
+                        .news-button {
+                            padding: $spacing-xs - 2px $spacing-md - 3px;
+                            background-color: orange;
+                            color: #fff;
+                        }
+                    }
+                }
+
+                .weather-container {
+                    padding: $spacing-xs;
+                    font-size: $font-size-xs;
+
+                    .weather-item {
+                        margin-right: 0px;
+                        font-size: $font-size-sm - 1px;
+
+                        &.title {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
 }

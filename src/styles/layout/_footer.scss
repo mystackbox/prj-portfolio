@@ -141,6 +141,10 @@
         .footer-top-section {
             grid-template-columns: 1fr 1fr;
             row-gap: 15px;
+
+            .item-introduction, .item-resources {
+                display: none;
+            }
         }
     }
 
