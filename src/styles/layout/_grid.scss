@@ -8,7 +8,7 @@
   margin: 0 auto;
   padding: $spacing-md - 2px;
   text-align: center;
-
+ background-color: $light-default-bg-color;
 
   display: grid;
   row-gap: 25px;
@@ -27,7 +27,7 @@
 .grid-area-page-intro,
 .grid-area-main-content,
 .grid-area-footer {
-  padding: $spacing-md;
+  // padding: $spacing-md;
   height: auto;
 }
 
@@ -49,16 +49,16 @@
 
 .grid-area-page-intro {
   grid-area: page-intro;
-  background-color: $light-primary-bg-color;
 }
 
 .grid-area-main-content {
   grid-area: main-content;
+   padding: 0;
 }
 
 .grid-area-footer {
   grid-area: footer;
-  background-color: $light-primary-bg-color;
+   padding: 0;
 }
 
 

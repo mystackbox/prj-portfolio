@@ -88,7 +88,6 @@
         grid-template-columns: 1fr;
 
         .site-names {
-
             padding-bottom: $spacing-md;
 
             .site-logo {
@@ -123,7 +122,6 @@
                     font-size: $font-size-sm + 2px;
                 }
             }
-
         }
 
         .site-contact-details {
@@ -135,9 +133,7 @@
             border-top: 1px solid $light-border-color;
             padding-top: $spacing-sm + 4px;
 
-
             .contact-details {
-                // border: 1px solid $light-border-color;
 
                 flex-direction: column;
                 justify-content: start;
@@ -145,11 +141,10 @@
                 .theme-button {
                     display: none;
                 }
-
             }
 
             .current-weather {
-                // border: 1px solid $light-border-color;
+
                 display: block;
                 text-align: right;
                 font-size: $font-size-md;
@@ -158,8 +153,6 @@
     }
 
     @include respond-to("sm") {
-        // margin: -15px 0 ;
-
         .site-contact-details {
             justify-content: start;
             flex-direction: column;

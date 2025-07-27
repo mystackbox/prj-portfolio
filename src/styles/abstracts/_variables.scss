@@ -18,8 +18,6 @@ $light-tertiary-bg-color: #778da9;
 $light-dark-bg-color: #284b63;
 
 
-
-
 /* -- COMPLIMENTORY COLORS -- */
 
 //Light Primary - Font and color variables
@@ -65,8 +63,8 @@ $font-size-xl: 26px;
 $font-size-xxl: 32px;
 
 //Spacing variables
-$spacing-xs: 4px;
-$spacing-sm: 8px;
+$spacing-xs: 6px;
+$spacing-sm: 10px;
 $spacing-md: 16px;
 $spacing-lg: 24px;
 $spacing-xl: 32px;
@@ -76,9 +74,10 @@ $light-border-color: #e9ecef;
 
 // Breakpoints for responsive design
 $breakpoints: (
+  "pre-xs": 375px,
   "xs": 480px,
   "pro-xs": 548px,
-  "pre-sm": 700px,
+  "pre-sm": 680px,
   "sm": 768px,
   "pro-sm": 920px,
   "md": 992px,
