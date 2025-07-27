@@ -18,6 +18,7 @@
     .page-heading {
         text-transform: uppercase;
         font-size: $font-size-xl - 4px;
+        color: $comp-default-font-color;
     }
 
     .page-intro-buttons {
@@ -28,41 +29,39 @@
         justify-content: center;
         margin: 10px 0;
 
-        .button {
+        button {
             min-width: 130px;
             padding: 10px 20px;
             text-transform: uppercase;
             color: $light-neutral-font-color;
             cursor: pointer;
             border: none;
-            // border-radius: 7px;
-        }
 
-        .projects {
-            background-color:orange;
+            &.projects {
+                background-color: orange;
 
-            &:hover {
-                background-color: brown;
+                &:hover {
+                    background-color: brown;
+                }
             }
-        }
 
-        .contact {
-            background-color: $light-secondery-font-color;
+            &.contact {
+                background-color: $light-secondery-font-color;
 
-            &:hover {
-                background-color: $light-dark-bg-color;
+                &:hover {
+                    background-color: $light-dark-bg-color;
+                }
             }
         }
     }
 }
-
-
 
 @include respond-to("sm") {
     #page-instroduction {
         .page-heading {
             font-size: $font-size-md + 3px;
         }
+
         .page-intro-buttons {
             .button {
                 min-width: 112px;
@@ -77,7 +76,22 @@
     #page-instroduction {
         .page-heading {
             font-size: $font-size-md;
-            font-weight: bold;
+            font-weight: 600;
+        }
+
+        .page-intro-buttons {
+
+            display: flex;
+            flex-direction: row;
+            column-gap: 10px;
+            justify-content: center;
+            margin: 5px 0;
+
+            .button {
+                min-width: 115px;
+                padding: 5px 15px;
+                font-size: $font-size-sm;
+            }
         }
     }
 
