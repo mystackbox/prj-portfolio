@@ -7,7 +7,7 @@
     row-gap: $spacing-md;
     background-color: $light-primary-bg-color;
     padding: $spacing-md;
-    // border-radius: $spacing-sm;
+    border-radius: $spacing-sm;
 
     .footer-top-section {
         display: grid;
@@ -19,12 +19,16 @@
             p {
                 margin-left: $spacing-md + 2px;
 
-                .introduction-img {
+                img {
+                    border-radius: $spacing-sm;
+                }
 
-                    border: 8px solid $light-border-color;
+                .introduction-img {
+                    border: 5px solid $light-border-color;
                     float: left;
                     height: 60px;
-                    margin-right: 10px;
+                    margin: 0 12px 2px 0;
+                    border-radius: $spacing-sm;
                 }
             }
         }
@@ -80,11 +84,12 @@
 
             .contact-items {
                 .contact-item {
+                    margin-bottom: $spacing-md;
 
                     .item {
-                        margin-top: $spacing-sm;
+                        margin: $spacing-sm 0;
                         padding-left: $spacing-md;
-                        border-left: 1px solid $light-primary-font-color;
+                        border-left: 1px solid lightgrey;
 
                         a {
                             color: $light-primary-font-color;
@@ -107,10 +112,6 @@
                         }
                     }
                 }
-
-                .first-item {
-                    margin-bottom: $spacing-md;
-                }
             }
 
         }
@@ -121,19 +122,19 @@
             // border: 1px solid $light-border-color;
             background-color: $light-default-bg-color;
             padding: $spacing-md;
-            // border-radius: $spacing-sm;
+            border-radius: $spacing-sm;
 
-            h4 {
+            .footer-item-title {
                 text-transform: uppercase;
-                margin-bottom: $spacing-md;
+                margin-bottom: $spacing-sm;
             }
         }
-
     }
 
     .footer-bottom-section {
         background-color: $light-default-bg-color;
         padding: $spacing-md;
+        border-radius: $spacing-sm;
     }
 
     //Media queries for responsive design
@@ -142,7 +143,8 @@
             grid-template-columns: 1fr 1fr;
             row-gap: 15px;
 
-            .item-introduction, .item-resources {
+            .item-introduction,
+            .item-resources {
                 display: none;
             }
         }
@@ -154,7 +156,9 @@
             display: flex;
             flex-direction: column;
 
-            .item-resources, .item-introduction {
+            .item-resources,
+            .item-introduction,
+            .item-technology {
                 display: none;
             }
         }

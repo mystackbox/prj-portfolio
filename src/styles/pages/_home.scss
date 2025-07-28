@@ -16,11 +16,12 @@
             display: flex;
             flex-direction: column;
             row-gap: 5px;
+            cursor: pointer;
 
             width: 240px;
             min-height: 100%;
             padding: $spacing-lg;
-            // border-radius: 10px;
+            border-radius: $spacing-sm;
             background-color: $light-primary-bg-color;
 
             .card-icon {
@@ -55,7 +56,7 @@
                     color: $light-neutral-font-color;
                     cursor: pointer;
                     border: none;
-                    // border-radius: 7px;
+                    border-radius: $spacing-xs;
 
                     &:hover {
                         background-color: red;
@@ -79,6 +80,7 @@
         .feed {
             border: 1px solid $light-border-color;
             padding: $spacing-md;
+            border-radius: $spacing-sm;
         }
 
         .recent-project-container {
@@ -87,6 +89,7 @@
             column-gap: 15px;
 
             .recent-project-img {
+                cursor: pointer;
 
                 .project-img {
                     height: 130px;
@@ -97,13 +100,12 @@
                     flex-direction: row;
                     justify-content: flex-start;
                     column-gap: 10px;
-                    // justify-content: space-between;
-                    // border: 1px solid $light-primary-font-color;
 
                     .img-button {
                         font-size: $font-size-sm;
                         padding: 3px 12px;
                         border-radius: 6px;
+
 
                         &.github {
                             background-color: $light-secondery-font-color;
@@ -186,6 +188,8 @@
                 column-gap: 15px;
 
                 .news {
+                    cursor: pointer;
+
                     .news-img {
                         height: 70px;
                         width: 100%;
@@ -196,7 +200,13 @@
                         font-size: $font-size-sm - 2px;
                         font-weight: bold;
                         background-color: $light-primary-bg-color;
-                        padding: $spacing-xs;
+    
+                        padding: $spacing-xs $spacing-xs $spacing-xs $spacing-sm;
+
+                        &:hover {
+                            background-color: red;
+                            color: #fff;
+                        }
                     }
 
                     .news-button {

@@ -6,7 +6,7 @@
     flex-direction: column;
     row-gap: $spacing-sm;
     padding: $spacing-md;
-    // border-radius: $spacing-sm;
+    border-radius: $spacing-sm;
     background-color: $light-primary-bg-color;
 
     .page-title {
@@ -36,6 +36,7 @@
             color: $light-neutral-font-color;
             cursor: pointer;
             border: none;
+            border-radius: $spacing-xs;
 
             &.projects {
                 background-color: orange;
@@ -74,6 +75,10 @@
 
 @include respond-to("pre-sm") {
     #page-instroduction {
+        .page-title {
+            font-size: $font-size-lg + 2px;
+        }
+
         .page-heading {
             font-size: $font-size-md;
             font-weight: 600;
