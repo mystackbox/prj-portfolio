@@ -71,6 +71,31 @@
 
     }
 
+    .featured-items-hr {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 0 15em;
+        font-size: $font-size-lg;
+        margin-bottom: $spacing-xs;
+
+        &::before,
+        &::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid lightgrey;
+        }
+
+        &:not(:empty)::before {
+            margin-right: 1.50em;
+        }
+
+        &:not(:empty)::after {
+            margin-left: 1.50em;
+        }
+    }
+
     //features section
     .feeds-container {
         display: grid;
@@ -93,6 +118,7 @@
 
                 .project-img {
                     height: 130px;
+                    border-radius: $spacing-xs;
                 }
 
                 .project-img-buttons {
@@ -121,7 +147,6 @@
             }
 
             .project-details {
-                // border: 1px solid $light-border-color;
                 display: flex;
                 flex-direction: column;
                 width: 100%;
@@ -132,7 +157,6 @@
                 }
 
                 .prject-name {
-                    // font-weight: bold;
                     text-transform: uppercase;
                     margin-bottom: $spacing-xs;
                 }
@@ -140,6 +164,8 @@
                 .project-description {
                     margin-bottom: $spacing-xs;
                     color: $comp-default-font-color;
+                    border-left: 6px solid red;
+                    padding-left: $spacing-sm;
                 }
 
                 .tech-stack {
@@ -176,7 +202,7 @@
             display: flex;
             flex-direction: column;
             text-align: left;
-            row-gap: 5px;
+            row-gap: 8px;
 
             .feed-title {
                 text-transform: uppercase;
@@ -186,6 +212,7 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
                 column-gap: 15px;
+                border-radius: $spacing-xs;
 
                 .news {
                     cursor: pointer;
@@ -193,6 +220,7 @@
                     .news-img {
                         height: 70px;
                         width: 100%;
+                        border-radius: $spacing-xs;
                     }
 
                     .news-headline {
@@ -200,7 +228,7 @@
                         font-size: $font-size-sm - 2px;
                         font-weight: bold;
                         background-color: $light-primary-bg-color;
-    
+                        border-radius: $spacing-xs;
                         padding: $spacing-xs $spacing-xs $spacing-xs $spacing-sm;
 
                         &:hover {
@@ -323,11 +351,23 @@
             }
         }
 
+        .featured-items-hr {
+            padding: 0 10em;
+
+            &:not(:empty)::before {
+                margin-right: 1.50em;
+            }
+
+            &:not(:empty)::after {
+                margin-left: 1.50em;
+            }
+        }
+
         //features section
         .feeds-container {
             display: grid;
             grid-template-columns: 1fr;
-            row-gap: 10px;
+            row-gap: 15px;
 
             .feed {
                 border: 1px solid $light-border-color;
@@ -482,6 +522,18 @@
             // font-size: $font-size-sm;
             .card {
                 width: 95%;
+            }
+        }
+
+        .featured-items-hr {
+            padding: 0 7em;
+
+            &:not(:empty)::before {
+                margin-right: 1.50em;
+            }
+
+            &:not(:empty)::after {
+                margin-left: 1.50em;
             }
         }
 
@@ -649,6 +701,18 @@
             }
         }
 
+        .featured-items-hr {
+            padding: 0 5em;
+
+            &:not(:empty)::before {
+                margin-right: 1.50em;
+            }
+
+            &:not(:empty)::after {
+                margin-left: 1.50em;
+            }
+        }
+
         //features section
         .feeds-container {
 
@@ -776,6 +840,7 @@
     }
 
     @include respond-to("pro-xs") {
+
         .cards-container {
             padding: 0;
 
@@ -793,6 +858,10 @@
                     }
                 }
             }
+        }
+
+        .featured-items-hr {
+            padding: 0 4em;
         }
 
         //features section
@@ -960,6 +1029,11 @@
             }
         }
 
+        .featured-items-hr {
+            padding: 0 3em;
+            font-size: $font-size-md + 2px;
+        }
+
         //features section
         .feeds-container {
 
@@ -1066,6 +1140,13 @@
                     }
                 }
             }
+        }
+    }
+
+    @include respond-to("pre-xs") {
+        .featured-items-hr {
+            padding: 0 2em;
+
         }
     }
 
