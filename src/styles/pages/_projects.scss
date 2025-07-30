@@ -1,0 +1,590 @@
+@use 'abstracts' as *;
+
+#projectspage-container {
+    display: grid;
+    grid-template-rows: 1fr;
+
+    section {
+        padding: $spacing-md;
+
+        .section-heading {
+            text-align: left;
+            text-transform: uppercase;
+            border-left: 5px solid red;
+            padding-left: $spacing-sm;
+        }
+    }
+
+    .recent-project {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .project-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            column-gap: 10px;
+            border-bottom: 1px solid $light-border-color;
+            justify-items: stretch;
+            padding-bottom: $spacing-lg + 4px;
+
+            // border-radius: $spacing-sm;
+            .project-detail-item {
+                text-align: left;
+
+                .item-heading {
+                    text-transform: uppercase;
+                    background-color: $light-primary-bg-color;
+                    border-radius: $spacing-sm;
+                    padding: $spacing-xs $spacing-xs $spacing-xs $spacing-sm;
+                    font-size: $font-size-sm;
+                    font-weight: bold;
+                    margin-bottom: $spacing-sm;
+                }
+
+                .item-details {
+                    margin-left: $spacing-sm;
+                    font-size: $font-size-md;
+
+                    p {
+                        margin-bottom: $spacing-xs;
+                    }
+
+                    ul {
+                        li {
+                            list-style: none;
+                            margin-bottom: $spacing-xs - 1px;
+                        }
+                    }
+                }
+            }
+
+            .project-img {
+                justify-items: stretch;
+                background-color: $light-primary-bg-color;
+                border-radius: $spacing-sm;
+                padding: $spacing-xs - 2px;
+
+                .project-image-container {
+                    cursor: pointer;
+
+                    img {
+                        height: 145px;
+                        width: 100%;
+                        border-radius: $spacing-sm;
+                    }
+                }
+
+                .project-name {
+                    text-transform: uppercase;
+                    color: $comp-default-font-color;
+                    font-size: $font-size-md - 2px;
+                    text-align: left;
+                    padding-left: $spacing-xs - 2px;
+                }
+
+                .project-status {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 5px;
+                    flex-wrap: wrap;
+                    background-color: $light-primary-bg-color;
+                    border-radius: $spacing-xs;
+                    padding: $spacing-xs - 2px;
+                    // margin: 8px 0;
+                    // border: 1px solid $light-border-color;
+
+                    .current-status {
+                        height: 22px;
+                        padding: $spacing-xs - 2px;
+                        background-color: $light-secondery-bg-color;
+                        border-radius: 6px;
+                        font-size: $font-size-xs;
+                        color: $comp-default-font-color;
+
+                        &.git-status {
+                            color: #000;
+                        }
+
+                        &.online-status {
+                            color: red;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    .featured-projects {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .section-statement {
+            text-align: left;
+            padding-left: $spacing-sm + 4px;
+        }
+
+        .cards-section {
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            justify-items: center;
+
+            .project-card {
+                border-radius: $spacing-sm;
+                background-color: $light-primary-bg-color;
+                width: 210px;
+                padding: $spacing-sm;
+
+                .project-image-container {
+                    cursor: pointer;
+
+                    img {
+                        height: 115px;
+                        width: 100%;
+                        border-radius: $spacing-sm;
+                    }
+                }
+
+                .project-name {
+                    text-transform: uppercase;
+                    color: $comp-default-font-color;
+                    font-size: $font-size-md - 2px;
+                    text-align: left;
+                    margin: 5px 0;
+                }
+
+                .project-status {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 5px;
+                    flex-wrap: wrap;
+                    background-color: $light-primary-bg-color;
+                    border-radius: $spacing-xs;
+                    // border: 1px solid $light-border-color;
+
+                    .current-status {
+                        height: 22px;
+                        padding: $spacing-xs - 2px;
+                        background-color: $light-secondery-bg-color;
+                        border-radius: 6px;
+                        font-size: $font-size-xs;
+                        color: $comp-default-font-color;
+
+                        &.git-status {
+                            color: #000;
+                        }
+
+                        &.online-status {
+                            color: red;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+
+    @include respond-to("pro-sm") {
+        display: grid;
+        grid-template-rows: 1fr;
+        row-gap: 25px;
+
+        section {
+            border: 1px solid $light-border-color;
+            padding: $spacing-md;
+
+        }
+
+        .all-projects {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+
+            .section-heading {
+                text-transform: uppercase;
+            }
+
+            .cards-section {
+
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 5px;
+                justify-items: center;
+
+
+                .project-card {
+                    border-radius: $spacing-sm;
+                    background-color: $light-primary-bg-color;
+                    width: 205px;
+                    padding: $spacing-sm - 2px;
+
+                    .project-image-container {
+
+                        img {
+                            height: 115px;
+                            width: 100%;
+                            border-radius: $spacing-sm $spacing-sm 0 0;
+                        }
+                    }
+
+                    .project-name {
+                        text-transform: uppercase;
+                        color: $comp-default-font-color;
+                        font-size: $font-size-md - 2px;
+                        text-align: left;
+                        margin: 5px 0;
+                    }
+
+                    .project-status {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 5px;
+                        flex-wrap: wrap;
+                        background-color: $light-primary-bg-color;
+                        border-radius: $spacing-xs;
+                        // border: 1px solid $light-border-color;
+
+                        .current-status {
+                            height: 22px;
+                            padding: $spacing-xs - 2px;
+                            background-color: $light-secondery-bg-color;
+                            border-radius: 6px;
+                            font-size: $font-size-xs;
+                            color: $comp-default-font-color;
+                        }
+
+                    }
+                }
+            }
+        }
+
+    }
+
+    @include respond-to("pre-sm") {
+        display: grid;
+        grid-template-rows: 1fr;
+        row-gap: 25px;
+
+        section {
+            border: 1px solid $light-border-color;
+            padding: $spacing-md;
+
+        }
+
+        .all-projects {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+
+            .section-heading {
+                text-transform: uppercase;
+            }
+
+            .cards-section {
+
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                justify-items: center;
+
+
+                .project-card {
+                    border-radius: $spacing-sm;
+                    background-color: $light-primary-bg-color;
+                    width: 235px;
+                    padding: $spacing-sm + 2px;
+
+                    .project-image-container {
+
+                        img {
+                            height: 120px;
+                            width: 100%;
+                            border-radius: $spacing-sm $spacing-sm 0 0;
+                        }
+                    }
+
+                    .project-name {
+                        text-transform: uppercase;
+                        color: $comp-default-font-color;
+                        font-size: $font-size-md - 2px;
+                        text-align: left;
+                        margin: 5px 0;
+                    }
+
+                    .project-status {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 5px;
+                        flex-wrap: wrap;
+                        background-color: $light-primary-bg-color;
+                        border-radius: $spacing-xs;
+                        // border: 1px solid $light-border-color;
+
+                        .current-status {
+                            height: 22px;
+                            padding: $spacing-xs - 2px;
+                            background-color: $light-secondery-bg-color;
+                            border-radius: 6px;
+                            font-size: $font-size-xs;
+                            color: $comp-default-font-color;
+                        }
+
+                    }
+                }
+            }
+        }
+
+    }
+
+    @include respond-to("pro-xs") {
+        display: grid;
+        grid-template-rows: 1fr;
+        row-gap: 25px;
+
+        section {
+            border: 1px solid $light-border-color;
+            padding: $spacing-md;
+
+        }
+
+        .all-projects {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+
+            .section-heading {
+                text-transform: uppercase;
+            }
+
+            .cards-section {
+
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                justify-items: center;
+
+
+                .project-card {
+                    border-radius: $spacing-sm;
+                    background-color: $light-primary-bg-color;
+                    width: 205px;
+                    padding: $spacing-sm + 2px;
+
+                    .project-image-container {
+
+                        img {
+                            height: 110px;
+                            width: 100%;
+                            border-radius: $spacing-sm $spacing-sm 0 0;
+                        }
+                    }
+
+                    .project-name {
+                        text-transform: uppercase;
+                        color: $comp-default-font-color;
+                        font-size: $font-size-md - 2px;
+                        text-align: left;
+                        margin: 5px 0;
+                    }
+
+                    .project-status {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 5px;
+                        flex-wrap: wrap;
+                        background-color: $light-primary-bg-color;
+                        border-radius: $spacing-xs;
+                        // border: 1px solid $light-border-color;
+
+                        .current-status {
+                            height: 22px;
+                            padding: $spacing-xs - 2px $spacing-xs;
+                            background-color: $light-secondery-bg-color;
+                            border-radius: 6px;
+                            font-size: $font-size-xs;
+                            color: $comp-default-font-color;
+
+                            &.complete-status {
+                                display: none;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+    }
+
+    @include respond-to("xs") {
+        display: grid;
+        grid-template-rows: 1fr;
+        row-gap: 25px;
+
+        section {
+            border: 1px solid $light-border-color;
+            padding: $spacing-md;
+
+        }
+
+        .all-projects {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+
+            .section-heading {
+                text-transform: uppercase;
+            }
+
+            .cards-section {
+
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 5px;
+                row-gap: 15px;
+                justify-items: center;
+
+
+                .project-card {
+                    border-radius: $spacing-sm;
+                    background-color: $light-primary-bg-color;
+                    width: 155px;
+                    padding: $spacing-sm;
+
+                    .project-image-container {
+
+                        img {
+                            height: 80px;
+                            width: 100%;
+                            border-radius: $spacing-sm $spacing-sm 0 0;
+                        }
+                    }
+
+                    .project-name {
+                        min-height: 40px;
+                    }
+
+                    .project-status {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 5px;
+
+                        flex-wrap: wrap;
+                        background-color: $light-primary-bg-color;
+                        border-radius: $spacing-xs;
+                        // border: 1px solid $light-border-color;
+
+                        .current-status {
+                            height: 22px;
+                            padding: $spacing-xs - 2px $spacing-xs;
+                            background-color: $light-secondery-bg-color;
+                            border-radius: 6px;
+                            font-size: $font-size-xs;
+                            color: $comp-default-font-color;
+
+                            &.complete-status {
+                                display: none;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+    }
+
+    @include respond-to("pre-xs") {
+        display: grid;
+        grid-template-rows: 1fr;
+        row-gap: 25px;
+
+        section {
+            border: 1px solid $light-border-color;
+            padding: $spacing-md;
+
+        }
+
+        .all-projects {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+
+            .section-heading {
+                text-transform: uppercase;
+            }
+
+
+
+            .cards-section {
+
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 10px;
+                justify-items: center;
+
+
+                .project-card {
+                    border-radius: $spacing-sm;
+                    background-color: $light-primary-bg-color;
+                    width: 315px;
+                    padding: $spacing-sm + 2px;
+
+                    .project-image-container {
+
+                        img {
+                            height: 180px;
+                            width: 100%;
+                            border-radius: $spacing-sm $spacing-sm 0 0;
+                        }
+                    }
+
+                    .project-name {
+
+
+                        text-align: left;
+                        margin: 5px 0;
+                        min-height: 20px;
+                    }
+
+                    .project-status {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 5px;
+                        flex-wrap: wrap;
+                        background-color: $light-primary-bg-color;
+                        border-radius: $spacing-xs;
+                        // border: 1px solid $light-border-color;
+
+                        .current-status {
+                            height: 22px;
+                            padding: $spacing-xs - 2px $spacing-xs;
+                            background-color: $light-secondery-bg-color;
+                            border-radius: 6px;
+                            font-size: $font-size-xs;
+                            color: $comp-default-font-color;
+
+                            &.complete-status {
+                                display: block;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+    }
+
+
+}

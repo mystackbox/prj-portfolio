@@ -1,93 +1,95 @@
 @use 'abstracts' as *;
+
 $primary: #2c3e50;
 $light: #ecf0f1;
 $breakpoint: 768px;
 
 #main-navbar {
-    .navbar {
-  background-color: $primary;
-  // border-radius: $spacing-sm;
-  color: $light;
-  padding: 0.8rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-
-  &__brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-
-  &__toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 20px;
-    width: 25px;
-    background: none;
-    border: none;
-    cursor: pointer;
-
-    .bar {
-      height: 3px;
-      width: 100%;
-      background-color: $light;
-      transition: all 0.3s ease;
-    }
-
-    @media (min-width: $breakpoint) {
-      display: none;
-    }
-  }
-
-  &__menu {
-    list-style: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
+  .navbar {
     background-color: $primary;
-    flex-direction: column;
-    display: none;
+    color: $light;
+    padding: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 
-    li {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      text-align: center;
+    &__brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
 
-      a {
-        display: block;
-        padding: 1rem;
-        color: $light;
-        text-decoration: none;
-        //  border-radius: $spacing-sm;
+    &__toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 20px;
+      width: 25px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 0px;
 
-        &:hover {
-          background-color: red;
-        }
+      .bar {
+        height: 3px;
+        width: 100%;
+        background-color: $light;
+        transition: all 0.3s ease;
+      }
+
+      @media (min-width: $breakpoint) {
+        display: none;
+        border-radius: 0px;
       }
     }
 
-    &.active {
-      display: flex;
-    }
-
-    @media (min-width: $breakpoint) {
-      display: flex !important;
-      position: static;
-      flex-direction: row;
-      width: auto;
+    &__menu {
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: $primary;
+      flex-direction: column;
+      display: none;
 
       li {
-        border: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
 
         a {
-          padding: 0.3rem 1rem;
+          display: block;
+          padding: 1rem;
+          color: $light;
+          text-decoration: none;
+          //  border-radius: $spacing-sm;
+
+          &:hover {
+            background-color: red;
+          }
+        }
+      }
+
+      &.active {
+        display: flex;
+      }
+
+      @media (min-width: $breakpoint) {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        border-radius: 0px;
+
+        li {
+          border: none;
+
+          a {
+            padding: 0.3rem 1rem;
+          }
         }
       }
     }
   }
-}
 
 }
-
