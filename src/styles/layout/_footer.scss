@@ -148,6 +148,10 @@
                 display: none;
             }
         }
+
+         .footer-bottom-section {
+            font-size: $font-size-sm;
+        }
     }
 
     @include respond-to("pro-xs") {
@@ -161,7 +165,6 @@
             .item-technology {
                 display: none;
             }
-        }
+        }  
     }
-
 }
