@@ -1,60 +1,17 @@
-// /global colors, spacing, fonts.
 
-/* -- LIGHT THEME COLORS -- */
+/* ------------ LIGHT THEME COLORS ------------ */
 
-$light-neutral-font-color: #ffffff;
-
-//Light Primary - Font and color variables
-$light-default-font-color: #415a77;
-$light-primary-font-color: #284b63;
-$light-secondery-font-color: #778da9;
-$light-tertiary-font-color: #e0e1dd;
-
-//Light Primary - Background colors
-$light-default-bg-color: #ffffff;
-$light-primary-bg-color: #f8f9fa;
-$light-secondery-bg-color: #e5e5e5;
-$light-tertiary-bg-color: #778da9;
-$light-dark-bg-color: #284b63;
-
-
-/* -- COMPLIMENTORY COLORS -- */
-
-//Light Primary - Font and color variables
-$comp-default-font-color: #9b2226;
-$light-primary-font-color: #284b63;
-$light-secondery-font-color: #778da9;
-$light-tertiary-font-color: #e0e1dd;
-
-//Light Primary - Background colors
-$light-default-bg-color: #ffffff;
-$light-primary-bg-color: #f8f9fa;
-$light-secondery-bg-color: #e5e5e5;
-$light-tertiary-bg-color: #778da9;
-$light-tertiary-bg-color: #284b63;
-
-
-/* -- DARK THEME COLORS -- */
-
-//Light Primary - Font and color variables
-$light-default-font-color: #415a77;
-$light-primary-font-color: #284b63;
-$light-secondery-font-color: #778da9;
-$light-tertiary-font-color: #e0e1dd;
-
-//Light Primary - Background colors
-$light-default-bg-color: #ffffff;
-$light-primary-bg-color: #f8f9fa;
-$light-secondery-bg-color: #e5e5e5;
-$light-tertiary-bg-color: #778da9;
-$light-tertiary-bg-color: #284b63;
-
-
-/* -- DOES NOT CHANGE OFTER -- */
-
+/* -- FONT FAMILY -- */
 $font-stack: 'Helvetica Neue', Arial, sans-serif;
 
-//Spacing variables
+/* -- LIGHT FONT COLORS -- */
+$light-neutral-font-color: #ffffff;
+$light-default-font-color: #415a77;
+$light-primary-font-color: #284b63;
+$light-secondery-font-color: #778da9;
+$light-tertiary-font-color: #e0e1dd;
+
+/* -- FONT SIZES -- */
 $font-size-xxs: 8px;
 $font-size-xs: 10px;
 $font-size-sm: 12px;
@@ -63,17 +20,25 @@ $font-size-lg: 18px;
 $font-size-xl: 26px;
 $font-size-xxl: 32px;
 
-//Spacing variables
+/* -- LIGHT BACKGROUND COLORS -- */
+$light-neutral-bg-color: #ffffff;
+$light-primary-bg-color: #f8f9fa;
+$light-secondery-bg-color: #e5e5e5;
+$light-tertiary-bg-color: #778da9;
+
+
+/* -- NEUTRAL COLORS -- */
+$comp-default-font-color: #9b2226;
+$light-dark-bg-color: #284b63;
+
+/* -- SPACING SIZES -- */
 $spacing-xs: 6px;
 $spacing-sm: 10px;
 $spacing-md: 16px;
 $spacing-lg: 24px;
 $spacing-xl: 32px;
 
-//Borders
-$light-border-color: #e9ecef;
-
-//Breakpoints for responsive design
+/* -- MEDIA QUERY BREAKPOINTS -- */
 $breakpoints: (
   "pre-xs": 375px,
   "xs": 480px,

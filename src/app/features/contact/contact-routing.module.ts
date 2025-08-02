@@ -6,8 +6,8 @@ const routes: Routes = [{ path: '', component: ContactComponent,
    data: {
             title: 'Contact',
             metaTags: [
-              { name: 'short-desc', content: 'Let me know your thoughts' },
-              { name: 'page-desc', content: 'A brief about the portfolio and the developer' },
+              { name: 'short-desc', content: 'what is your thought?' },
+              { name: 'page-desc', content: 'Please drop a comment using the contact form below.' },
             ]
         } 
       }];

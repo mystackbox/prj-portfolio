@@ -1,6 +1,6 @@
 @use 'abstracts' as *;
 
-#projectspage-container {
+#projects-page-main {
     display: grid;
     grid-template-rows: 1fr;
 
@@ -24,7 +24,7 @@
             display: grid;
             grid-template-columns: 58% 40%;
             column-gap: 20px;
-            border-bottom: 1px solid $light-border-color;
+            border-bottom: 1px solid #e5e5e5;
             justify-items: stretch;
             padding-bottom: $spacing-lg + 4px;
             font-size: $font-size-sm + 1px;
@@ -68,7 +68,7 @@
                     //     border-radius: $spacing-xs;
                     //     padding: $spacing-xs - 2px;
                     //     // margin: 8px 0;
-                    //     // border: 1px solid $light-border-color;
+                    //     // border: 1px solid #e5e5e5;
 
                     //     .current-status {
                     //         height: 22px;
@@ -132,8 +132,8 @@
                 .project-concepts,
                 .project-features {
                     .list-container {
-                        display: flex;
-                        flex-direction: column;
+                        display: grid;
+                       grid-template-columns: 1fr;
                     }
                 }
             }
@@ -222,7 +222,7 @@
                     flex-wrap: wrap;
                     background-color: $light-primary-bg-color;
                     border-radius: $spacing-xs;
-                    // border: 1px solid $light-border-color;
+                    // border: 1px solid #e5e5e5;
 
                     .current-status {
                         height: 22px;
@@ -260,7 +260,7 @@
                 display: grid;
                 grid-template-columns: 1fr;
                 row-gap: 10px;
-                border-bottom: 1px solid $light-border-color;
+                border-bottom: 1px solid #e5e5e5;
                 justify-items: stretch;
                 padding-bottom: $spacing-lg + 4px;
                 font-size: $font-size-sm + 1px;
@@ -314,7 +314,7 @@
                     .project-concepts,
                     .project-features {
                         .list-container {
-                            flex-direction: row;
+                            grid-template-columns: 1fr 1fr;
                         }
                     }
                 }
@@ -363,7 +363,7 @@
             .cards-section {
 
                 display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
                 gap: 5px;
                 justify-items: center;
 
@@ -371,14 +371,14 @@
                 .project-card {
                     border-radius: $spacing-sm;
                     background-color: $light-primary-bg-color;
-                    width: 205px;
+                    width: 185px;
                     padding: $spacing-sm - 2px;
 
                     .project-image-container {
 
                         img {
-                            height: 115px;
-                            width: 100%;
+                            height: 110px;
+                            // width: 100%;
                             border-radius: $spacing-sm $spacing-sm 0 0;
                         }
                     }
@@ -398,7 +398,7 @@
                         flex-wrap: wrap;
                         background-color: $light-primary-bg-color;
                         border-radius: $spacing-xs;
-                        // border: 1px solid $light-border-color;
+                        // border: 1px solid #e5e5e5;
 
                         .current-status {
                             height: 22px;
@@ -407,6 +407,10 @@
                             border-radius: 6px;
                             font-size: $font-size-xs;
                             color: $comp-default-font-color;
+
+                             &.complete-status {
+                                display: none;
+                            }
                         }
 
                     }
@@ -429,7 +433,7 @@
                 display: grid;
                 grid-template-columns: 1fr;
                 row-gap: 10px;
-                border-bottom: 1px solid $light-border-color;
+                border-bottom: 1px solid #e5e5e5;
                 justify-items: stretch;
                 padding-bottom: $spacing-lg + 4px;
                 font-size: $font-size-sm + 1px;
@@ -478,12 +482,7 @@
                 .right-container {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
-
                     column-gap: 10px;
-
-                    .project-concepts {}
-
-                    .project-features {}
                 }
 
                 // border-radius: $spacing-sm;
@@ -530,7 +529,7 @@
             .cards-section {
 
                 display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
                 gap: 5px;
                 justify-items: center;
 
@@ -538,14 +537,14 @@
                 .project-card {
                     border-radius: $spacing-sm;
                     background-color: $light-primary-bg-color;
-                    width: 205px;
+                    width: 175px;
                     padding: $spacing-sm - 2px;
 
                     .project-image-container {
 
                         img {
-                            height: 115px;
-                            width: 100%;
+                            // height: 112px;
+                            // width: 100%;
                             border-radius: $spacing-sm $spacing-sm 0 0;
                         }
                     }
@@ -556,6 +555,7 @@
                         font-size: $font-size-md - 2px;
                         text-align: left;
                         margin: 5px 0;
+                        min-height: 35px;
                     }
 
                     .project-status {
@@ -565,7 +565,7 @@
                         flex-wrap: wrap;
                         background-color: $light-primary-bg-color;
                         border-radius: $spacing-xs;
-                        // border: 1px solid $light-border-color;
+                        // border: 1px solid #e5e5e5;
 
                         .current-status {
                             height: 22px;
@@ -574,6 +574,10 @@
                             border-radius: 6px;
                             font-size: $font-size-xs;
                             color: $comp-default-font-color;
+
+                            &.complete-status {
+                                display: none;
+                            }
                         }
 
                     }
@@ -588,7 +592,7 @@
         row-gap: 15px;
 
         section {
-            border: 1px solid $light-border-color;
+            border: 1px solid #e5e5e5;
             border-radius: $spacing-sm;
             padding: $spacing-md;
         }
@@ -734,6 +738,7 @@
                         font-size: $font-size-md - 2px;
                         text-align: left;
                         margin: 5px 0;
+                        min-height: 0px;
                     }
 
                     .project-status {
@@ -743,7 +748,7 @@
                         flex-wrap: wrap;
                         background-color: $light-primary-bg-color;
                         border-radius: $spacing-xs;
-                        // border: 1px solid $light-border-color;
+                        // border: 1px solid #e5e5e5;
 
                         .current-status {
                             height: 22px;
@@ -752,6 +757,10 @@
                             border-radius: 6px;
                             font-size: $font-size-xs;
                             color: $comp-default-font-color;
+
+                             &.complete-status {
+                                display: block;
+                            }
                         }
 
                     }
@@ -766,7 +775,7 @@
         row-gap: 15px;
 
         section {
-            border: 1px solid $light-border-color;
+            border: 1px solid #e5e5e5;
             border-radius: $spacing-sm;
             padding: $spacing-md;
         }
@@ -873,7 +882,6 @@
             flex-direction: column;
             gap: 15px;
 
-
             .section-heading {
                 text-transform: uppercase;
             }
@@ -885,7 +893,6 @@
                 gap: 10px;
                 justify-items: center;
 
-
                 .project-card {
                     border-radius: $spacing-sm;
                     background-color: $light-primary-bg-color;
@@ -895,8 +902,8 @@
                     .project-image-container {
 
                         img {
-                            height: 120px;
-                            width: 100%;
+                            height: 130px;
+                            // width: 100%;
                             border-radius: $spacing-sm $spacing-sm 0 0;
                         }
                     }
@@ -907,6 +914,7 @@
                         font-size: $font-size-md - 2px;
                         text-align: left;
                         margin: 5px 0;
+                        min-height: 0px;
                     }
 
                     .project-status {
@@ -916,7 +924,7 @@
                         flex-wrap: wrap;
                         background-color: $light-primary-bg-color;
                         border-radius: $spacing-xs;
-                        // border: 1px solid $light-border-color;
+                        // border: 1px solid #e5e5e5;
 
                         .current-status {
                             height: 22px;
@@ -925,6 +933,10 @@
                             border-radius: 6px;
                             font-size: $font-size-xs;
                             color: $comp-default-font-color;
+
+                            &.complete-status {
+                                display: block;
+                            }
                         }
 
                     }
@@ -1084,7 +1096,7 @@
                         flex-wrap: wrap;
                         background-color: $light-primary-bg-color;
                         border-radius: $spacing-xs;
-                        // border: 1px solid $light-border-color;
+                        // border: 1px solid #e5e5e5;
 
                         .current-status {
                             height: 22px;
@@ -1267,7 +1279,7 @@
                         flex-wrap: wrap;
                         background-color: $light-primary-bg-color;
                         border-radius: $spacing-xs;
-                        // border: 1px solid $light-border-color;
+                        // border: 1px solid #e5e5e5;
 
                         .current-status {
                             height: 22px;
@@ -1429,7 +1441,7 @@
                         flex-wrap: wrap;
                         background-color: $light-primary-bg-color;
                         border-radius: $spacing-xs;
-                        // border: 1px solid $light-border-color;
+                        // border: 1px solid #e5e5e5;
 
                         .current-status {
                             height: 22px;

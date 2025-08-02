@@ -1,0 +1,112 @@
+@use 'abstracts' as *;
+
+#about-page-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 25px;
+
+    //standard local styles
+    section {
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        column-gap: 15px;
+
+        .section-heading {
+            text-align: right;
+            font-size: $font-size-sm + 1px;
+            text-transform: uppercase;
+            padding: 4px $spacing-sm;
+            border-right: 5px solid red;
+        }
+
+        .section-content {
+            text-align: left;
+            padding: 0 $spacing-sm;
+            font-size: $font-size-sm;
+
+            .skill-set-container {
+                font-size: $font-size-sm - 1px;
+
+                .set-heading {
+                    margin-bottom: $spacing-xs + 4px;
+                    text-transform: uppercase;
+
+                    background-color: $light-secondery-bg-color;
+                    border-radius: $spacing-xs;
+                    padding: 4px $spacing-sm;
+                    font-weight: bold;
+                }
+
+                .set-container {
+                    padding-left: 0;
+                    font-size: $font-size-sm;
+
+                    .skill {
+                        min-width: 30%;
+                        padding: $spacing-xs - 3px;
+                        padding-left: $spacing-xs - 2px;
+                        background-color: $light-primary-bg-color;
+                        border-radius: 8px;
+                        // color: $comp-default-font-color;
+                    }
+                }
+            }
+
+
+        }
+    }
+
+    .introduction-section {
+
+        .section-content {
+
+            p {
+                // background-color: $light-primary-bg-color;
+                border-radius: $spacing-xs;
+                padding: 4px $spacing-sm;
+                font-size: $font-size-sm + 1px;
+            }
+        }
+    }
+
+    .skills-section {
+
+        .section-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+
+            .ui-design,
+            .concepts,
+            .framework,
+            .dev-tools {
+                .set-container {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    gap: 5px;
+                }
+            }
+        }
+    }
+
+    .certification-section {
+
+        .section-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+
+            .set-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+
+                .set-sub-container {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 10px;
+                }
+            }
+        }
+    }
+}

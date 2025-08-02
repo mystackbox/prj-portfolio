@@ -1,6 +1,6 @@
 @use 'abstracts' as *;
 
-#homepage-containter {
+#home-page-main {
     display: grid;
     grid-template-rows: 1fr;
     row-gap: 25px;
@@ -84,7 +84,7 @@
         &::after {
             content: '';
             flex: 1;
-            border-bottom: 1px solid lightgrey;
+            border-bottom: 1px solid #e5e5e5;
         }
 
         &:not(:empty)::before {
@@ -103,7 +103,7 @@
         column-gap: 20px;
 
         .feed {
-            border: 1px solid $light-border-color;
+            border: 1px solid #e5e5e5;
             padding: $spacing-md;
             border-radius: $spacing-sm;
         }
@@ -130,7 +130,7 @@
                     .img-button {
                         font-size: $font-size-sm;
                         padding: 3px 12px;
-                        border-radius: 6px;
+                        border-radius: $spacing-xs;
 
 
                         &.github {
@@ -370,7 +370,7 @@
             row-gap: 15px;
 
             .feed {
-                border: 1px solid $light-border-color;
+                border: 1px solid #e5e5e5;
                 padding: $spacing-md;
             }
 
@@ -410,7 +410,7 @@
                 }
 
                 .project-details {
-                    // border: 1px solid $light-border-color;
+                    // border: 1px solid #e5e5e5;
                     display: flex;
                     flex-direction: column;
                     width: 100%;
@@ -541,7 +541,7 @@
         .feeds-container {
 
             .feed {
-                border: 1px solid $light-border-color;
+                border: 1px solid #e5e5e5;
                 padding: $spacing-md;
             }
 
@@ -581,7 +581,7 @@
                 }
 
                 .project-details {
-                    // border: 1px solid $light-border-color;
+                    // border: 1px solid #e5e5e5;
                     display: flex;
                     flex-direction: column;
                     width: 100%;
@@ -717,7 +717,7 @@
         .feeds-container {
 
             .feed {
-                border: 1px solid $light-border-color;
+                border: 1px solid #e5e5e5;
                 padding: $spacing-md;
             }
 
@@ -729,7 +729,7 @@
                 }
 
                 .project-details {
-                    // border: 1px solid $light-border-color;
+                    // border: 1px solid #e5e5e5;
                     display: flex;
                     flex-direction: column;
                     width: 100%;
@@ -875,7 +875,7 @@
                 }
 
                 .project-details {
-                    // border: 1px solid $light-border-color;
+                    // border: 1px solid #e5e5e5;
                     display: flex;
                     flex-direction: column;
                     width: 100%;
@@ -1042,7 +1042,7 @@
                 }
 
                 .project-details {
-                    // border: 1px solid $light-border-color;
+                    // border: 1px solid #e5e5e5;
                     display: flex;
                     flex-direction: column;
                     width: 100%;
