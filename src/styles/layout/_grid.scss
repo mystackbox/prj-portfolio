@@ -8,7 +8,7 @@
   margin: 0 auto;
   padding: $spacing-sm;
   text-align: center;
- background-color: $light-neutral-bg-color;
+  background-color: $light-neutral-bg-color;
 
   display: grid;
   row-gap: 25px;
@@ -21,58 +21,60 @@
     "footer";
 
 
-    
-.grid-area-carousel,
-.grid-area-navbar,
-.grid-area-page-intro,
-.grid-area-main-content,
-.grid-area-footer {
-  // padding: $spacing-md;
-  height: auto;
-}
 
-.grid-area-header {
-  grid-area: header;
-}
+  .grid-area-carousel,
+  .grid-area-navbar,
+  .grid-area-page-intro,
+  .grid-area-main-content,
+  .grid-area-footer {
+    // padding: $spacing-md;
+    height: auto;
+  }
 
-// .grid-area-carousel {
-//   grid-area: carousel;
-//   background-color: $light-primary-bg-color;
+  .grid-area-header {
+    grid-area: header;
+  }
 
-// }
+  // .grid-area-carousel {
+  //   grid-area: carousel;
+  //   background-color: $light-primary-bg-color;
 
-.grid-area-navbar {
-  grid-area: navbar;
-  background-color: $light-primary-bg-color;
-  padding: 0;
-}
+  // }
 
-.grid-area-page-intro {
-  grid-area: page-intro;
-}
+  .grid-area-navbar {
+    grid-area: navbar;
+    background-color: $light-primary-bg-color;
+    padding: 0;
+  }
 
-.grid-area-main-content {
-  grid-area: main-content;
-   padding: 0;
-}
+  .grid-area-page-intro {
+    grid-area: page-intro;
+  }
 
-.grid-area-footer {
-  grid-area: footer;
-   padding: 0;
-}
+  .grid-area-main-content {
+    grid-area: main-content;
+    padding: 0;
+  }
+
+  .grid-area-footer {
+    grid-area: footer;
+    padding: 0;
+  }
 
 }
 
 //Media queries for responsive design
 @include respond-to("xs") {
+
   //add css here
   .site-grid-container {
-      grid-template-areas:"navbar"
-                          "header"
-                          // "carousel"
-                          "page-intro"
-                          "main-content"
-                          "footer";
+     row-gap: 15px;
+    grid-template-areas: "navbar"
+      "header"
+      // "carousel"
+      "page-intro"
+      "main-content"
+      "footer";
   }
 }
 

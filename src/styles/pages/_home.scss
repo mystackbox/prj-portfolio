@@ -3,29 +3,30 @@
 #home-page-main {
     display: grid;
     grid-template-rows: 1fr;
-    row-gap: 25px;
+    row-gap: 15px;
+    font-size: $font-size-sm;
 
     //cards section
     .cards-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 25px;
         justify-items: center;
-        padding: $spacing-md;
+        font-size: $font-size-sm + 2px;
 
         .card {
             display: flex;
             flex-direction: column;
-            row-gap: 5px;
+            row-gap: 8px;
             cursor: pointer;
 
-            width: 240px;
-            min-height: 100%;
-            padding: $spacing-lg;
-            border-radius: $spacing-sm;
+            width: 210px;
+            padding: $spacing-md;
+            border-radius: $spacing-md;
             background-color: $light-primary-bg-color;
 
             .card-icon {
-                margin-bottom: 10px;
+                margin: 8px 0;
 
                 .bi {
                     font-size: 1.2rem;
@@ -38,17 +39,16 @@
                     padding: 11px 13px;
 
                 }
-
             }
 
             .card-title {
                 text-transform: uppercase;
                 color: $comp-default-font-color;
+                font-weight: bold;
             }
 
             .card-button {
                 .explore {
-
                     background-color: #ff8fab;
                     min-width: 100px;
                     padding: 5px 20px;
@@ -57,144 +57,141 @@
                     cursor: pointer;
                     border: none;
                     border-radius: $spacing-xs;
-
-                    &:hover {
-                        background-color: red;
-                    }
+                    font-size: $font-size-xs;
                 }
             }
 
             &.card-git {
                 display: none;
             }
-        }
 
-    }
-
-    .featured-items-hr {
-        display: flex;
-        align-items: center;
-        text-align: center;
-        text-transform: uppercase;
-        padding: 0 15em;
-        font-size: $font-size-lg;
-        margin-bottom: $spacing-xs;
-
-        &::before,
-        &::after {
-            content: '';
-            flex: 1;
-            border-bottom: 1px solid #e5e5e5;
-        }
-
-        &:not(:empty)::before {
-            margin-right: 1.50em;
-        }
-
-        &:not(:empty)::after {
-            margin-left: 1.50em;
+            &:hover {
+                .explore {
+                    background-color: red;
+                }
+            }
         }
     }
+
+    //hr line styles
+    @include page-content-intro-hr;
 
     //features section
     .feeds-container {
         display: grid;
-        grid-template-columns: 6fr 4fr;
-        column-gap: 20px;
-
-        .feed {
-            border: 1px solid #e5e5e5;
-            padding: $spacing-md;
-            border-radius: $spacing-sm;
-        }
+        grid-template-columns: 7fr 4fr;
+        padding: 0 $spacing-md;
+        column-gap: 15px;
 
         .recent-project-container {
-            display: flex;
-            flex-direction: row;
-            column-gap: 15px;
+            display: grid;
+            grid-template-columns: 1fr;
+            text-align: left;
 
-            .recent-project-img {
-                cursor: pointer;
-
-                .project-img {
-                    height: 130px;
-                    border-radius: $spacing-xs;
-                }
-
-                .project-img-buttons {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: flex-start;
-                    column-gap: 10px;
-
-                    .img-button {
-                        font-size: $font-size-sm;
-                        padding: 3px 12px;
-                        border-radius: $spacing-xs;
-
-
-                        &.github {
-                            background-color: $light-secondery-font-color;
-                            color: #fff;
-                        }
-
-                        &.view {
-                            background-color: orange;
-                            color: #fff;
-                        }
-                    }
-                }
+            .details-heading {
+                margin-bottom: $spacing-xs + 4px;
+                text-transform: uppercase;
+                background-color: $light-primary-bg-color;
+                border-radius: $spacing-xs;
+                padding: $spacing-xs $spacing-sm;
+                font-weight: bold;
             }
 
-            .project-details {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
+            .recent-project-details {
+                display: grid;
+                grid-template-columns: 1fr 4fr;
+                column-gap: 15px;
 
-                .details {
-                    text-align: left;
-                    // font-size: $font-size-md;
-                }
+                .recent-project-img {
+                    cursor: pointer;
 
-                .prject-name {
-                    text-transform: uppercase;
-                    margin-bottom: $spacing-xs;
-                }
-
-                .project-description {
-                    margin-bottom: $spacing-xs;
-                    color: $comp-default-font-color;
-                    border-left: 6px solid red;
-                    padding-left: $spacing-sm;
-                }
-
-                .tech-stack {
-                    .project-tech {
-                        font-weight: bold;
-                        margin-bottom: $spacing-xs;
+                    .project-img {
+                        height: 135px;
+                        border-radius: $spacing-xs;
                     }
 
-                    .project-tech-item {
+                    .project-img-buttons {
                         display: flex;
                         flex-direction: row;
-                        gap: 5px;
-                        padding-left: $spacing-sm;
-                        flex-wrap: wrap;
-                        background-color: $light-primary-bg-color;
-                        padding: $spacing-sm;
-                        border-radius: $spacing-xs;
+                        justify-content: flex-start;
+                        column-gap: 10px;
 
-                        .tech-item {
-                            height: 24px;
-                            padding: $spacing-xs - 2px;
-                            background-color: $light-secondery-bg-color;
-                            border-radius: 8px;
+                        .img-button {
                             font-size: $font-size-sm;
-                            color: $comp-default-font-color;
+                            padding: 3px 12px;
+                            border-radius: $spacing-xs;
+
+
+                            &.github {
+                                background-color: $light-secondery-font-color;
+                                color: #fff;
+                            }
+
+                            &.view {
+                                background-color: orange;
+                                color: #fff;
+                            }
                         }
+                    }
+                }
+
+                .project-details {
+                    display: flex;
+                    flex-direction: column;
+
+                    .details {
+                        text-align: left;
+                    }
+
+                    .heading {
+                        margin-bottom: $spacing-xs;
+                        text-transform: uppercase;
+                        background-color: $light-primary-bg-color;
+                        border-radius: 0 $spacing-xs $spacing-xs 0;
+                        border-left: 5px solid red;
+                        padding: $spacing-xs $spacing-sm;
+                    }
+
+                    .project-description {
+
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        row-gap: 6px;
+                        font-size: $font-size-sm;
+
+                        .description {
+                            background-color: $light-primary-bg-color;
+                            padding: $spacing-sm;
+                            border-radius: $spacing-xs;
+
+                            .read-more {
+                                display: none;
+                                color: red;
+                            }
+                        }
+
+                        .online-options {
+                            display: flex;
+                            flex-direction: row;
+                            gap: 10px;
+                            flex-wrap: wrap;
+                            margin-top: 5px;
+
+                            .online {
+                                padding: $spacing-xs - 3px $spacing-md $spacing-xs - 3px $spacing-sm;
+                                background-color: $light-secondery-bg-color;
+                                border-radius: $spacing-xs - 1px;
+                                font-size: $font-size-xs;
+                                min-width: 90px;
+                                background-color: brown;
+                                color: $light-neutral-font-color;
+                            }
+                        }
+
 
                     }
                 }
+
             }
         }
 
@@ -206,12 +203,16 @@
 
             .feed-title {
                 text-transform: uppercase;
+                background-color: $light-primary-bg-color;
+                border-radius: $spacing-xs;
+                padding: $spacing-xs $spacing-sm;
+                font-weight: bold;
             }
 
             .news-container {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
-                column-gap: 15px;
+                column-gap: 8px;
                 border-radius: $spacing-xs;
 
                 .news {
@@ -227,20 +228,14 @@
                         text-transform: uppercase;
                         font-size: $font-size-sm - 2px;
                         font-weight: bold;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-xs;
+                        background-color: $light-secondery-bg-color;
+                        border-radius: $spacing-xs - 1px;
                         padding: $spacing-xs $spacing-xs $spacing-xs $spacing-sm;
 
                         &:hover {
                             background-color: red;
                             color: #fff;
                         }
-                    }
-
-                    .news-button {
-                        padding: $spacing-xs - 2px $spacing-md - 3px;
-                        background-color: orange;
-                        color: #fff;
                     }
                 }
             }
@@ -251,7 +246,7 @@
                 padding: $spacing-xs - 1px;
                 padding-left: $spacing-xs + 1px;
                 background-color: $light-primary-bg-color;
-                // border-radius: 8px;
+                border-radius: $spacing-xs;
                 font-size: $font-size-sm;
                 color: $comp-default-font-color;
                 // text-align: center;
@@ -275,47 +270,24 @@
 
         //features section
         .feeds-container {
-            .recent-project-container {
-                .project-details {
-                    .tech-stack {
-                        .project-tech-item {
-                            .tech-item {
-                                font-size: $font-size-xs;
-                            }
-                        }
-                    }
-                }
-            }
-
             .news-feed-container {
-
                 .news-container {
                     .news {
                         .news-img {
                             height: 60px;
-                            width: 100%;
                         }
 
                         .news-headline {
-                            text-transform: uppercase;
-                            font-size: $font-size-xs;
-                            font-weight: bold;
-                            background-color: $light-primary-bg-color;
-                            padding: $spacing-xs;
+                            font-size: $font-size-xs - 1px;
                         }
 
-                        .news-button {
-                            padding: $spacing-xs - 2px $spacing-md - 3px;
-                            background-color: orange;
-                            color: #fff;
-                        }
                     }
                 }
 
                 .weather-container {
                     .weather-item {
                         padding: $spacing-xs;
-                        padding-right: $spacing-xs - 4px;
+                        padding-right: $spacing-xs - 6px;
                         font-size: $font-size-sm;
 
                         &.title {
@@ -338,7 +310,7 @@
                 column-gap: 5px;
 
                 .card-description {
-                    min-height: 35%;
+                    min-height: 25%;
                 }
 
                 .card {
@@ -351,157 +323,24 @@
             }
         }
 
-        .featured-items-hr {
-            padding: 0 10em;
-
-            &:not(:empty)::before {
-                margin-right: 1.50em;
-            }
-
-            &:not(:empty)::after {
-                margin-left: 1.50em;
-            }
-        }
-
         //features section
         .feeds-container {
-            display: grid;
             grid-template-columns: 1fr;
-            row-gap: 15px;
-
-            .feed {
-                border: 1px solid #e5e5e5;
-                padding: $spacing-md;
-            }
-
-            .recent-project-container {
-                display: flex;
-                flex-direction: row;
-                column-gap: 15px;
-
-                .recent-project-img {
-
-                    .project-img {
-                        height: 130px;
-                    }
-
-                    .project-img-buttons {
-                        display: flex;
-                        flex-direction: row;
-                        column-gap: 5px;
-                        justify-content: space-around;
-
-                        .img-button {
-                            padding: $spacing-xs - 2px $spacing-md - 3px;
-                            // border-radius: $spacing-xs;
-                            font-size: $font-size-sm;
-
-                            &.github {
-                                background-color: $light-secondery-font-color;
-                                color: #fff;
-                            }
-
-                            &.view {
-                                background-color: orange;
-                                color: #fff;
-                            }
-                        }
-                    }
-                }
-
-                .project-details {
-                    // border: 1px solid #e5e5e5;
-                    display: flex;
-                    flex-direction: column;
-                    width: 100%;
-
-                    .details {
-                        text-align: left;
-                        // font-size: $font-size-md;
-                    }
-
-                    .prject-name {
-                        // font-weight: bold;
-                        text-transform: uppercase;
-                        margin-bottom: $spacing-xs;
-                    }
-
-                    .project-description {
-                        margin-bottom: $spacing-xs;
-                        color: $comp-default-font-color;
-                    }
-
-                    .tech-stack {
-                        .project-tech {
-                            font-weight: bold;
-                            margin-bottom: $spacing-xs;
-                        }
-
-                        .project-tech-item {
-                            display: flex;
-                            flex-direction: row;
-                            gap: 5px;
-                            padding-left: $spacing-sm;
-                            flex-wrap: wrap;
-                            background-color: $light-primary-bg-color;
-                            padding: $spacing-sm;
-                            border-radius: $spacing-xs;
-
-                            .tech-item {
-                                height: 24px;
-                                padding: $spacing-xs - 2px;
-                                background-color: $light-secondery-bg-color;
-                                border-radius: 8px;
-                                font-size: $font-size-sm;
-                                color: $comp-default-font-color;
-                            }
-
-                        }
-                    }
-                }
-            }
+            row-gap: 20px;
 
             .news-feed-container {
-
-                .feed-title {
-                    text-transform: uppercase;
-                }
-
                 .news-container {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr 1fr;
                     column-gap: 25px;
 
                     .news {
                         .news-img {
                             height: 146px;
-                            width: 100%;
-                        }
-
-                        .news-headline {
-                            text-transform: uppercase;
-                            font-size: $font-size-sm;
-                            // font-weight: bold;
-                            background-color: $light-primary-bg-color;
-                            padding: $spacing-xs;
-                            padding-left: $spacing-sm;
-
-                        }
-
-                        .news-button {
-                            padding: $spacing-xs - 2px $spacing-md - 3px;
-                            background-color: orange;
-                            color: #fff;
                         }
                     }
                 }
 
                 .weather-container {
-                    padding: $spacing-sm;
-
                     .weather-item {
-
-                        //  padding: $spacing-xs;
                         &.title {
                             display: inline;
                         }
@@ -525,165 +364,23 @@
             }
         }
 
-        .featured-items-hr {
-            padding: 0 7em;
-
-            &:not(:empty)::before {
-                margin-right: 1.50em;
-            }
-
-            &:not(:empty)::after {
-                margin-left: 1.50em;
-            }
-        }
-
         //features section
         .feeds-container {
-
-            .feed {
-                border: 1px solid #e5e5e5;
-                padding: $spacing-md;
-            }
-
-            .recent-project-container {
-                display: flex;
-                flex-direction: row;
-                column-gap: 15px;
-
-                .recent-project-img {
-
-                    .project-img {
-                        height: 130px;
-                    }
-
-                    .project-img-buttons {
-                        display: flex;
-                        flex-direction: row;
-                        column-gap: 5px;
-                        justify-content: space-around;
-
-                        .img-button {
-                            padding: $spacing-xs - 2px $spacing-md - 3px;
-                            // border-radius: $spacing-xs;
-                            font-size: $font-size-sm;
-
-                            &.github {
-                                background-color: $light-secondery-font-color;
-                                color: #fff;
-                            }
-
-                            &.view {
-                                background-color: orange;
-                                color: #fff;
-                            }
-                        }
-                    }
-                }
-
-                .project-details {
-                    // border: 1px solid #e5e5e5;
-                    display: flex;
-                    flex-direction: column;
-                    width: 100%;
-
-                    .details {
-                        text-align: left;
-                        // font-size: $font-size-md;
-                    }
-
-                    .prject-name {
-                        // font-weight: bold;
-                        text-transform: uppercase;
-                        margin-bottom: $spacing-xs;
-                    }
-
-                    .project-description {
-                        margin-bottom: $spacing-xs;
-                        color: $comp-default-font-color;
-                    }
-
-                    .tech-stack {
-                        .project-tech {
-                            font-weight: bold;
-                            margin-bottom: $spacing-xs;
-                        }
-
-                        .project-tech-item {
-                            display: flex;
-                            flex-direction: row;
-                            gap: 5px;
-                            padding-left: $spacing-sm;
-                            flex-wrap: wrap;
-                            background-color: $light-primary-bg-color;
-                            padding: $spacing-sm;
-                            border-radius: $spacing-xs;
-
-                            .tech-item {
-                                height: 24px;
-                                padding: $spacing-xs - 2px;
-                                background-color: $light-secondery-bg-color;
-                                border-radius: 8px;
-                                font-size: $font-size-sm;
-                                color: $comp-default-font-color;
-                            }
-
-                        }
-                    }
-                }
-            }
-
             .news-feed-container {
-                display: flex;
-                flex-direction: column;
-                text-align: left;
-                row-gap: 10px;
-
-                .feed-title {
-                    text-transform: uppercase;
-                }
-
                 .news-container {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr 1fr;
-                    column-gap: 20px;
-
                     .news {
                         .news-img {
                             height: 125px;
-                            width: 100%;
-                        }
-
-                        .news-headline {}
-
-                        .news-button {
-                            padding: $spacing-xs - 2px $spacing-md - 3px;
-                            background-color: orange;
-                            color: #fff;
                         }
                     }
                 }
 
                 .weather-container {
                     display: inline;
-                    // height: 26px;
-                    padding: $spacing-xs - 1px;
-                    padding-left: $spacing-xs + 1px;
-                    background-color: $light-primary-bg-color;
-                    // border-radius: 8px;
-                    font-size: $font-size-sm;
-                    color: $comp-default-font-color;
-                    // text-align: center;
 
                     .weather-item {
                         margin-right: 5px;
-                        font-size: $font-size-sm + 1px;
-
-                        &.title {
-                            font-weight: bold;
-                            text-transform: uppercase;
-                        }
                     }
-
                 }
             }
         }
@@ -701,134 +398,27 @@
             }
         }
 
-        .featured-items-hr {
-            padding: 0 5em;
-
-            &:not(:empty)::before {
-                margin-right: 1.50em;
-            }
-
-            &:not(:empty)::after {
-                margin-left: 1.50em;
-            }
-        }
-
         //features section
         .feeds-container {
-
-            .feed {
-                border: 1px solid #e5e5e5;
-                padding: $spacing-md;
-            }
-
-            .recent-project-container {
-                .recent-project-img {
-                    .project-img {
-                        height: 120px;
-                    }
-                }
-
-                .project-details {
-                    // border: 1px solid #e5e5e5;
-                    display: flex;
-                    flex-direction: column;
-                    width: 100%;
-
-                    .details {
-                        text-align: left;
-                        // font-size: $font-size-md;
-                    }
-
-                    .prject-name {
-                        // font-weight: bold;
-                        text-transform: uppercase;
-                        margin-bottom: $spacing-xs - 2px;
-                    }
-
-                    .project-description {
-                        margin-bottom: $spacing-xs;
-                        color: $comp-default-font-color;
-                    }
-
-                    .tech-stack {
-                        .project-tech {
-                            font-weight: bold;
-                            margin-bottom: $spacing-xs;
-                            font-size: $font-size-sm;
-                        }
-
-                        .project-tech-item {
-
-                            .tech-item {
-                                height: 24px;
-                                padding: $spacing-xs - 2px;
-                                background-color: $light-secondery-bg-color;
-                                border-radius: 8px;
-                                font-size: $font-size-xs;
-                                color: $comp-default-font-color;
-                            }
-
-                        }
-                    }
-                }
-            }
-
             .news-feed-container {
-                display: flex;
-                flex-direction: column;
-                text-align: left;
                 row-gap: 10px;
 
-                .feed-title {
-                    text-transform: uppercase;
-                }
-
                 .news-container {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr 1fr;
-                    column-gap: 20px;
+                    column-gap: 25px;
 
                     .news {
                         .news-img {
                             height: 100px;
-                            width: 100%;
-                        }
-
-                        .news-headline {
-                            // text-transform: uppercase;
-                            // font-size: $font-size-sm - 2px;
-                            // font-weight: bold;
-                            // background-color: $light-primary-bg-color;
-                            // padding: $spacing-xs;
-                        }
-
-                        .news-button {
-                            padding: $spacing-xs - 2px $spacing-md - 3px;
-                            background-color: orange;
-                            color: #fff;
                         }
                     }
                 }
 
                 .weather-container {
                     display: inline;
-                    // height: 26px;
-                    padding: $spacing-xs - 1px;
-                    padding-left: $spacing-xs + 1px;
-                    background-color: $light-primary-bg-color;
-                    // border-radius: 8px;
-                    font-size: $font-size-sm;
-                    color: $comp-default-font-color;
-                    // text-align: center;
 
                     .weather-item {
                         margin-right: 5px;
-                        font-size: $font-size-sm + 1px;
 
-                        &.title {
-                            font-weight: bold;
-                            text-transform: uppercase;
-                        }
                     }
 
                 }
@@ -837,162 +427,13 @@
     }
 
     @include respond-to("pro-xs") {
+        row-gap: 10px;
 
         .cards-container {
             padding: 0;
+            gap: 15px;
 
             .card {
-                width: 95%;
-                font-size: $font-size-sm;
-
-                .card-description {
-                    min-height: 34%;
-                }
-
-                .card-button {
-                    .explore {
-                        font-size: $font-size-xs;
-                    }
-                }
-            }
-        }
-
-        .featured-items-hr {
-            padding: 0 4em;
-        }
-
-        //features section
-        .feeds-container {
-
-
-            .recent-project-container {
-                display: flex;
-                flex-direction: row;
-                column-gap: 15px;
-
-                .recent-project-img {
-                    display: none;
-                }
-
-                .project-details {
-                    // border: 1px solid #e5e5e5;
-                    display: flex;
-                    flex-direction: column;
-                    width: 100%;
-
-                    .details {
-                        text-align: left;
-                        // font-size: $font-size-md;
-                    }
-
-                    .prject-name {
-                        // font-weight: bold;
-                        text-transform: uppercase;
-                        margin-bottom: $spacing-xs;
-                    }
-
-                    .project-description {
-                        margin-bottom: $spacing-xs;
-                        color: $comp-default-font-color;
-                    }
-
-                    .tech-stack {
-                        .project-tech {
-                            font-weight: bold;
-                            margin-bottom: $spacing-xs;
-                        }
-
-                        .project-tech-item {
-                            display: flex;
-                            flex-direction: row;
-                            gap: 5px;
-                            padding-left: $spacing-sm;
-                            flex-wrap: wrap;
-                            background-color: $light-primary-bg-color;
-                            padding: $spacing-sm;
-                            border-radius: $spacing-xs;
-
-                            .tech-item {
-                                height: 24px;
-                                padding: $spacing-xs - 2px;
-                                background-color: $light-secondery-bg-color;
-                                border-radius: 8px;
-                                font-size: $font-size-sm;
-                                color: $comp-default-font-color;
-                            }
-
-                        }
-                    }
-                }
-            }
-
-            .news-feed-container {
-                .feed-title {
-                    text-transform: uppercase;
-                }
-
-                .news-container {
-
-                    .news {
-                        .news-img {
-                            height: 75px;
-                            width: 100%;
-                        }
-
-                        .news-headline {
-                            // text-transform: uppercase;
-                            font-size: $font-size-sm - 1px;
-                            font-weight: normal;
-                            // background-color: $light-primary-bg-color;
-                            // padding: $spacing-xs;
-                        }
-
-                        .news-button {
-                            padding: $spacing-xs - 2px $spacing-md - 3px;
-                            background-color: orange;
-                            color: #fff;
-                        }
-                    }
-                }
-
-                .weather-container {
-                    display: inline;
-                    // height: 26px;
-                    padding: $spacing-xs - 1px;
-                    padding-left: $spacing-xs + 1px;
-                    background-color: $light-primary-bg-color;
-                    // border-radius: 8px;
-                    font-size: $font-size-xs;
-                    color: $comp-default-font-color;
-                    // text-align: center;
-
-                    .weather-item {
-                        margin-right: 5px;
-                        font-size: $font-size-sm + 1px;
-
-                        &.title {
-                            font-weight: bold;
-                            text-transform: uppercase;
-                        }
-                    }
-
-                }
-            }
-        }
-    }
-
-    @include respond-to("xs") {
-
-        .cards-container {
-
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-            justify-content: space-between;
-            padding: 0;
-
-            .card {
-
-                width: 100%;
                 font-size: $font-size-sm;
 
                 .card-icon {
@@ -1009,127 +450,108 @@
                         padding: 10px 12px;
 
                     }
-
                 }
 
+                .card-description {
+                    min-height: 30%;
+                }
+
+                .card-button {
+                    .explore {
+                        font-size: $font-size-xs;
+                    }
+                }
+            }
+        }
+
+        //features section
+        .feeds-container {
+            padding: 0;
+            row-gap: 15px;
+
+            .feed {
+                border: 1px solid #e5e5e5;
+                padding: $spacing-sm + 2px;
+                border-radius: $spacing-xs;
+            }
+
+            .recent-project-container {
+                .recent-project-details {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    column-gap: 15px;
+
+                    .recent-project-img {
+                        display: none;
+                    }
+                }
+            }
+
+            .news-feed-container {
+                .news-container {
+                    .news {
+                        .news-img {
+                            height: 85px;
+                        }
+
+                        .news-headline {
+                            font-size: $font-size-sm - 3px;
+                            font-weight: normal;
+                        }
+                    }
+                }
+
+                .weather-container {
+                    .weather-item {
+                        margin-right: 0px;
+                    }
+                }
+            }
+        }
+    }
+
+    @include respond-to("xs") {
+
+        .cards-container {
+
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            justify-content: space-between;
+
+            .card {
+                font-size: $font-size-sm;
 
                 .card-description {
-                    min-height: 32%;
+                    min-height: 20%;
                 }
 
                 &.card-git {
                     display: block;
                     display: flex;
                     flex-direction: column;
-                    row-gap: 5px;
+                    row-gap: 8px;
                 }
             }
-        }
-
-        .featured-items-hr {
-            padding: 0 3em;
-            font-size: $font-size-md + 2px;
         }
 
         //features section
         .feeds-container {
-
-
-            .recent-project-container {
-
-                .recent-project-img {
-                    display: none;
-                }
-
-                .project-details {
-                    // border: 1px solid #e5e5e5;
-                    display: flex;
-                    flex-direction: column;
-                    width: 100%;
-
-                    .details {
-                        text-align: left;
-                        // font-size: $font-size-md;
-                    }
-
-                    .prject-name {
-                        // font-weight: bold;
-                        text-transform: uppercase;
-                        margin-bottom: $spacing-xs;
-                    }
-
-                    .project-description {
-                        margin-bottom: $spacing-xs;
-                        color: $comp-default-font-color;
-                    }
-
-                    .tech-stack {
-                        .project-tech {
-                            font-weight: bold;
-                            margin-bottom: $spacing-xs;
-                        }
-
-                        .project-tech-item {
-                            display: flex;
-                            flex-direction: row;
-                            gap: 5px;
-                            padding-left: $spacing-sm;
-                            flex-wrap: wrap;
-                            background-color: $light-primary-bg-color;
-                            padding: $spacing-sm;
-                            border-radius: $spacing-xs;
-
-                            .tech-item {
-                                height: 24px;
-                                padding: $spacing-xs - 2px;
-                                background-color: $light-secondery-bg-color;
-                                border-radius: 8px;
-                                font-size: $font-size-xs;
-                                color: $comp-default-font-color;
-                            }
-
-                        }
-                    }
-                }
-            }
-
             .news-feed-container {
-                .feed-title {
-                    text-transform: uppercase;
-                }
-
                 .news-container {
                     column-gap: 10px;
 
                     .news {
                         .news-img {
-                            height: 65px;
-                            width: 100%;
-                        }
-
-                        .news-headline {
-                            // text-transform: uppercase;
-                            font-size: $font-size-sm - 4px;
-                            font-weight: normal;
-                            // background-color: $light-primary-bg-color;
-                            // padding: $spacing-xs;
-                        }
-
-                        .news-button {
-                            padding: $spacing-xs - 2px $spacing-md - 3px;
-                            background-color: orange;
-                            color: #fff;
+                            height: 75px;
                         }
                     }
                 }
 
                 .weather-container {
-                    padding: $spacing-xs;
-                    font-size: $font-size-xs;
 
                     .weather-item {
                         margin-right: 0px;
-                        font-size: $font-size-sm - 1px;
+                        font-size: $font-size-sm;
 
                         &.title {
                             display: none;
@@ -1139,13 +561,5 @@
             }
         }
     }
-
-    @include respond-to("pre-xs") {
-        .featured-items-hr {
-            padding: 0 2em;
-
-        }
-    }
-
 
 }

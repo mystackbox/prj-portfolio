@@ -2,92 +2,70 @@
 
 #projects-page-main {
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+    font-size: $font-size-sm;
 
-    section {
-        padding: $spacing-md;
+    //hr line styles
+    @include page-content-intro-hr;
 
-        .section-heading {
+    .project-details {
+        display: grid;
+        row-gap: 10px;
+        padding: 0 $spacing-sm;
+    
+        .details-container {
             text-align: left;
-            text-transform: uppercase;
-            border-left: 6px solid red;
-            padding-left: $spacing-sm;
+
+            .heading {
+                margin-bottom: $spacing-xs + 4px;
+                text-transform: uppercase;
+                background-color: $light-primary-bg-color;
+                border-radius: $spacing-xs;
+                padding: $spacing-xs $spacing-sm;
+                font-weight: bold;
+            }
+
+            .details {
+                margin-left: $spacing-sm;
+
+                p {
+                    margin-bottom: $spacing-xs;
+                }
+
+                ul li {
+                    list-style: none;
+                    margin-bottom: $spacing-xs - 4px;
+
+                    .bi {
+                        margin-right: $spacing-xs;
+                    }
+                }
+            }
         }
-    }
 
-    .recent-project {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-
-        .project-details {
+        .top-container {
             display: grid;
-            grid-template-columns: 58% 40%;
-            column-gap: 20px;
-            border-bottom: 1px solid #e5e5e5;
-            justify-items: stretch;
-            padding-bottom: $spacing-lg + 4px;
-            font-size: $font-size-sm + 1px;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 10px;
+            cursor: pointer;
 
-            .left-container {
+            .top-left-details {
                 display: grid;
-                grid-template-columns: 35% 65%;
+                grid-template-columns: 2fr 3fr;
                 column-gap: 10px;
 
-                .project-img {
-                    justify-items: stretch;
+                .project-img-container {
                     background-color: $light-primary-bg-color;
                     border-radius: $spacing-sm;
-                    padding: $spacing-xs - 2px;
+                    padding: $spacing-sm;
 
-                    .project-image-container {
-                        cursor: pointer;
+                    img {
 
-                        img {
-                            height: 145px;
-                            width: 100%;
-                            border-radius: $spacing-sm;
-                        }
+                        height: 125px;
+                        width: 100%;
+                        border-radius: $spacing-sm;
                     }
-
-                    .project-name {
-                        text-transform: uppercase;
-                        color: $comp-default-font-color;
-                        font-size: $font-size-md ;
-                        text-align: center;
-                        padding-left: $spacing-xs - 2px;
-                        font-weight: bold;
-                    }
-
-                    // .project-status {
-                    //     display: flex;
-                    //     flex-direction: row;
-                    //     gap: 5px;
-                    //     flex-wrap: wrap;
-                    //     background-color: $light-primary-bg-color;
-                    //     border-radius: $spacing-xs;
-                    //     padding: $spacing-xs - 2px;
-                    //     // margin: 8px 0;
-                    //     // border: 1px solid #e5e5e5;
-
-                    //     .current-status {
-                    //         height: 22px;
-                    //         padding: $spacing-xs - 2px;
-                    //         background-color: $light-secondery-bg-color;
-                    //         border-radius: 6px;
-                    //         font-size: $font-size-xs;
-                    //         color: $comp-default-font-color;
-
-                    //         &.git-status {
-                    //             color: #000;
-                    //         }
-
-                    //         &.online-status {
-                    //             color: red;
-                    //         }
-                    //     }
-
-                    // }
                 }
 
                 .project-description {
@@ -100,7 +78,6 @@
                         flex-wrap: wrap;
                         border-radius: $spacing-xs;
                         margin-left: $spacing-sm;
-
 
                         .current-status {
                             padding: $spacing-xs - 2px $spacing-md $spacing-xs - 2px $spacing-xs;
@@ -119,56 +96,23 @@
                         }
 
                     }
-
-                }
-
-            }
-
-            .right-container {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                column-gap: 10px;
-
-                .project-concepts,
-                .project-features {
-                    .list-container {
-                        display: grid;
-                       grid-template-columns: 1fr;
-                    }
                 }
             }
 
-            // border-radius: $spacing-sm;
-            .project-detail-item {
-                text-align: left;
+            .top-right-details {}
 
-                .item-heading {
-                    text-transform: uppercase;
-                    background-color: $light-primary-bg-color;
-                    border-radius: $spacing-xs;
-                    padding: $spacing-xs $spacing-xs $spacing-xs $spacing-sm;
-                    margin-bottom: $spacing-sm;
-                }
+        }
 
-                .item-details {
-                    margin-left: $spacing-sm;
+        .bottom-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 10px;
 
-                    p {
-                        margin-bottom: $spacing-xs;
-                    }
-
-                    ul {
-                        li {
-                            list-style: none;
-                            margin-bottom: $spacing-xs - 1px;
-                            font-size: $font-size-sm;
-
-                            .bi {
-                                margin-right: $spacing-xs;
-                            }
-
-                        }
-                    }
+            .project-concepts,
+            .project-features {
+                .list-container {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
                 }
             }
         }
@@ -247,113 +191,16 @@
     }
 
     @include respond-to("md") {
-        display: grid;
-        grid-template-rows: 1fr;
-        row-gap: 0px;
-
-        .recent-project {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-
-            .project-details {
-                display: grid;
-                grid-template-columns: 1fr;
-                row-gap: 10px;
-                border-bottom: 1px solid #e5e5e5;
-                justify-items: stretch;
-                padding-bottom: $spacing-lg + 4px;
-                font-size: $font-size-sm + 1px;
-
-                .left-container {
-                    display: grid;
-                    grid-template-columns: 25% 75%;
-                    column-gap: 10px;
-
-                    .project-img {
-                        justify-items: stretch;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-sm;
-                        padding: $spacing-xs - 2px;
-
-                        .project-image-container {
-                            cursor: pointer;
-
-                            img {
-                                height: 145px;
-                                width: 100%;
-                                border-radius: $spacing-sm;
-                            }
-                        }
-
-                        .project-name {
-                            text-transform: uppercase;
-                            color: $comp-default-font-color;
-                            font-size: $font-size-md ;
-                            padding-left: $spacing-xs - 2px;
-                        }
-                    }
-
-                    .project-description {
-                        p {
-                            font-size: $font-size-md ;
-                        }
-
-                        .project-large-status {
-                            margin-top: 10px;
-                        }
-                    }
-                }
-
-                .right-container {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-
-                    column-gap: 10px;
-
-                    .project-concepts,
-                    .project-features {
-                        .list-container {
-                            grid-template-columns: 1fr 1fr;
-                        }
-                    }
-                }
-
-                // border-radius: $spacing-sm;
-                .project-detail-item {
-                    text-align: left;
-
-                    .item-heading {
-                        text-transform: uppercase;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-sm;
-                        padding: $spacing-xs $spacing-xs $spacing-xs $spacing-sm;
-                        margin-bottom: $spacing-sm;
-                    }
-
-                    .item-details {
-                        margin-left: $spacing-sm;
-
-                        p {
-                            margin-bottom: $spacing-xs;
-                        }
-
-                        ul {
-                            li {
-                                list-style: none;
-                                margin-bottom: $spacing-xs - 1px;
-                                font-size: $font-size-sm;
-                            }
-                        }
-                    }
-                }
-            }
-        }
 
         .featured-projects {
             display: flex;
             flex-direction: column;
             gap: 15px;
+
+
+            border: 1px solid #e5e5e5;
+            border-radius: $spacing-sm;
+            padding: $spacing-md;
 
 
             .section-heading {
@@ -408,7 +255,7 @@
                             font-size: $font-size-xs;
                             color: $comp-default-font-color;
 
-                             &.complete-status {
+                            &.complete-status {
                                 display: none;
                             }
                         }
@@ -420,101 +267,6 @@
     }
 
     @include respond-to("pro-sm") {
-        display: grid;
-        grid-template-rows: 1fr;
-        row-gap: 0px;
-
-        .recent-project {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-
-            .project-details {
-                display: grid;
-                grid-template-columns: 1fr;
-                row-gap: 10px;
-                border-bottom: 1px solid #e5e5e5;
-                justify-items: stretch;
-                padding-bottom: $spacing-lg + 4px;
-                font-size: $font-size-sm + 1px;
-
-                .left-container {
-                    display: grid;
-                    grid-template-columns: 25% 75%;
-                    column-gap: 10px;
-
-                    .project-img {
-                        justify-items: stretch;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-sm;
-                        padding: $spacing-xs - 2px;
-
-                        .project-image-container {
-                            cursor: pointer;
-
-                            img {
-                                height: 120px;
-                                // width: 100%;
-                                border-radius: $spacing-sm;
-                            }
-                        }
-
-                        .project-name {
-                            text-transform: uppercase;
-                            color: $comp-default-font-color;
-                            font-size: $font-size-md ;
-                            padding-left: $spacing-xs - 2px;
-                        }
-                    }
-
-                    .project-description {
-                        p {
-                            font-size: $font-size-md - 1px;
-                        }
-
-                        .project-large-status {
-                            margin-top: 8px;
-                        }
-                    }
-
-                }
-
-                .right-container {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    column-gap: 10px;
-                }
-
-                // border-radius: $spacing-sm;
-                .project-detail-item {
-                    text-align: left;
-
-                    .item-heading {
-                        text-transform: uppercase;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-sm;
-                        padding: $spacing-xs $spacing-xs $spacing-xs $spacing-sm;
-                        margin-bottom: $spacing-sm;
-                    }
-
-                    .item-details {
-                        margin-left: $spacing-sm;
-
-                        p {
-                            margin-bottom: $spacing-xs;
-                        }
-
-                        ul {
-                            li {
-                                list-style: none;
-                                margin-bottom: $spacing-xs - 1px;
-                                font-size: $font-size-sm;
-                            }
-                        }
-                    }
-                }
-            }
-        }
 
         .featured-projects {
             display: flex;
@@ -587,117 +339,6 @@
     }
 
     @include respond-to("sm") {
-        display: grid;
-        grid-template-rows: 1fr;
-        row-gap: 15px;
-
-        section {
-            border: 1px solid #e5e5e5;
-            border-radius: $spacing-sm;
-            padding: $spacing-md;
-        }
-
-        .recent-project {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-
-            .project-details {
-                display: grid;
-                grid-template-columns: 1fr;
-                row-gap: 15px;
-                border-bottom: none;
-                justify-items: stretch;
-                padding-bottom: 0;
-                font-size: $font-size-sm + 1px;
-
-                .left-container {
-                    display: grid;
-                    grid-template-columns: 30% 70%;
-                    column-gap: 10px;
-
-                    .project-img {
-                        justify-items: stretch;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-sm;
-                        padding: $spacing-xs - 2px;
-
-                        .project-image-container {
-                            cursor: pointer;
-
-                            img {
-                                height: 120px;
-                                // width: 100%;
-                                border-radius: $spacing-sm;
-                            }
-                        }
-
-                        .project-name {
-                            text-transform: uppercase;
-                            color: $comp-default-font-color;
-                            font-size: $font-size-md ;
-                            padding-left: $spacing-xs - 2px;
-                        }
-                    }
-
-                    .project-description {
-                        p {
-                            font-size: $font-size-md - 2px;
-                        }
-
-                        .project-large-status {
-                            margin-top: 5px;
-                        }
-                    }
-
-                }
-
-                .right-container {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    column-gap: 10px;
-
-                    .project-concepts,
-                    .project-features {
-                        .list-container {
-                            .item-details li {
-                                font-size: $font-size-xs;
-                            }
-
-                        }
-                    }
-                }
-
-                // border-radius: $spacing-sm;
-                .project-detail-item {
-                    text-align: left;
-
-                    .item-heading {
-                        text-transform: uppercase;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-sm;
-                        padding: $spacing-xs $spacing-xs $spacing-xs $spacing-sm;
-                        margin-bottom: $spacing-sm;
-                    }
-
-                    .item-details {
-                        margin-left: $spacing-sm;
-
-                        p {
-                            margin-bottom: $spacing-xs;
-                        }
-
-                        ul {
-                            li {
-                                list-style: none;
-                                margin-bottom: $spacing-xs - 1px;
-                                font-size: $font-size-sm;
-                            }
-                        }
-                    }
-                }
-            }
-        }
 
         .featured-projects {
             display: flex;
@@ -758,7 +399,7 @@
                             font-size: $font-size-xs;
                             color: $comp-default-font-color;
 
-                             &.complete-status {
+                            &.complete-status {
                                 display: block;
                             }
                         }
@@ -770,112 +411,6 @@
     }
 
     @include respond-to("pre-sm") {
-        display: grid;
-        grid-template-rows: 1fr;
-        row-gap: 15px;
-
-        section {
-            border: 1px solid #e5e5e5;
-            border-radius: $spacing-sm;
-            padding: $spacing-md;
-        }
-
-        .recent-project {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-
-            .project-details {
-                display: grid;
-                grid-template-columns: 1fr;
-                row-gap: 15px;
-                border-bottom: none;
-                justify-items: stretch;
-                padding-bottom: 0;
-                font-size: $font-size-sm + 1px;
-
-                .left-container {
-                    display: grid;
-                    grid-template-columns: 30% 70%;
-                    column-gap: 10px;
-
-                    .project-img {
-                        justify-items: stretch;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-sm;
-                        padding: $spacing-xs - 2px;
-
-                        .project-image-container {
-                            cursor: pointer;
-
-                            img {
-                                height: 120px;
-                                // width: 100%;
-                                border-radius: $spacing-sm;
-                            }
-                        }
-
-                        .project-name {
-                            text-transform: uppercase;
-                            color: $comp-default-font-color;
-                            font-size: $font-size-md ;
-                            padding-left: $spacing-xs - 2px;
-                        }
-                    }
-
-                    .project-description {
-                        p {
-                            font-size: $font-size-md - 2px;
-                        }
-
-                        .project-large-status {
-                            margin-top: 5px;
-                        }
-                    }
-
-                }
-
-                .right-container {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-
-                    column-gap: 10px;
-
-                    .project-concepts {}
-
-                    .project-features {}
-                }
-
-                // border-radius: $spacing-sm;
-                .project-detail-item {
-                    text-align: left;
-
-                    .item-heading {
-                        text-transform: uppercase;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-sm;
-                        padding: $spacing-xs $spacing-xs $spacing-xs $spacing-sm;
-                        margin-bottom: $spacing-sm;
-                    }
-
-                    .item-details {
-                        margin-left: $spacing-sm;
-
-                        p {
-                            margin-bottom: $spacing-xs;
-                        }
-
-                        ul {
-                            li {
-                                list-style: none;
-                                margin-bottom: $spacing-xs - 1px;
-                                font-size: $font-size-sm;
-                            }
-                        }
-                    }
-                }
-            }
-        }
 
         .featured-projects {
             display: flex;
@@ -946,107 +481,6 @@
     }
 
     @include respond-to("pro-xs") {
-        display: grid;
-        grid-template-rows: 1fr;
-        row-gap: 15px;
-
-        .recent-project {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-
-            .project-details {
-                display: grid;
-                grid-template-columns: 1fr;
-                row-gap: 15px;
-                justify-items: stretch;
-                font-size: $font-size-sm + 1px;
-
-                .left-container {
-                    display: grid;
-                    grid-template-columns: 35% 65%;
-                    column-gap: 10px;
-
-                    .project-img {
-                        justify-items: stretch;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-sm;
-                        padding: $spacing-xs - 2px;
-
-                        .project-image-container {
-                            cursor: pointer;
-
-                            img {
-                                height: 100px;
-                                // width: 100%;
-                                border-radius: $spacing-sm;
-                            }
-                        }
-
-                        .project-name {
-                            text-transform: uppercase;
-                            color: $comp-default-font-color;
-                            font-size: $font-size-md ;
-                            padding-left: $spacing-xs - 2px;
-                        }
-                    }
-
-                    .project-description {
-                        p {
-                            font-size: $font-size-md - 2px;
-                        }
-
-                        .project-large-status {
-                            margin-top: 5px;
-                        }
-                    }
-
-                }
-
-                .right-container {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-
-                    column-gap: 10px;
-
-                    .project-concepts,
-                    .project-features {
-                        .list-container {
-                            flex-direction: column;
-                        }
-                    }
-                }
-
-                // border-radius: $spacing-sm;
-                .project-detail-item {
-                    text-align: left;
-
-                    .item-heading {
-                        text-transform: uppercase;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-sm;
-                        padding: $spacing-xs $spacing-xs $spacing-xs $spacing-sm;
-                        margin-bottom: $spacing-sm;
-                    }
-
-                    .item-details {
-                        margin-left: $spacing-sm;
-
-                        p {
-                            margin-bottom: $spacing-xs;
-                        }
-
-                        ul {
-                            li {
-                                list-style: none;
-                                margin-bottom: $spacing-xs - 1px;
-                                font-size: $font-size-sm;
-                            }
-                        }
-                    }
-                }
-            }
-        }
 
         .featured-projects {
             display: flex;
@@ -1115,123 +549,9 @@
                 }
             }
         }
-
     }
 
     @include respond-to("xs") {
-        display: grid;
-        grid-template-rows: 1fr;
-        row-gap: 15px;
-
-        section {
-            padding: $spacing-md;
-
-            .section-heading {
-                text-align: left;
-                text-transform: uppercase;
-                border-left: 5px solid red;
-                padding-left: $spacing-sm;
-            }
-        }
-
-        .recent-project {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-
-            .project-details {
-                display: grid;
-                grid-template-columns: 1fr;
-                row-gap: 15px;
-                justify-items: stretch;
-                font-size: $font-size-sm + 1px;
-
-                .left-container {
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    row-gap: 10px;
-
-                    .project-img {
-                        display: flex;
-                        flex-direction: column;
-                        row-gap: 20px;
-
-                        justify-items: stretch;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-sm;
-                        padding: $spacing-xs - 2px;
-
-                        .project-image-container {
-                            cursor: pointer;
-
-                            img {
-                                height: 100px;
-                                // width: 100%;
-                                border-radius: $spacing-sm;
-                            }
-
-                            display: none;
-                        }
-
-                        .project-name {
-                            text-transform: uppercase;
-                            color: $comp-default-font-color;
-                            font-size: $font-size-md ;
-                            padding-left: $spacing-xs - 2px;
-                            text-align: left;
-                        }
-
-                    }
-
-                    .project-description {
-                        p {
-                            font-size: $font-size-md - 2px;
-                        }
-
-                        .project-large-status {
-                            margin-top: 10px;
-                        }
-                    }
-
-                }
-
-                .right-container {
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    row-gap: 10px;
-
-                    .project-concepts {}
-
-                    .project-features {}
-                }
-
-                // border-radius: $spacing-sm;
-                .project-detail-item {
-                    text-align: left;
-
-                    .item-heading {
-                        text-transform: uppercase;
-                        font-size: $font-size-sm;
-                    }
-
-                    .item-details {
-                        margin-left: $spacing-sm;
-
-                        p {
-                            margin-bottom: $spacing-xs;
-                        }
-
-                        ul {
-                            li {
-                                list-style: none;
-                                margin-bottom: $spacing-xs - 1px;
-                                font-size: $font-size-sm;
-                            }
-                        }
-                    }
-                }
-            }
-        }
 
         .featured-projects {
             display: flex;
@@ -1298,7 +618,6 @@
                 }
             }
         }
-
     }
 
     @include respond-to("pre-xs") {
@@ -1306,16 +625,6 @@
         grid-template-rows: 1fr;
         row-gap: 25px;
 
-        section {
-            padding: $spacing-md;
-
-            .section-heading {
-                text-align: left;
-                text-transform: uppercase;
-                border-left: 5px solid red;
-                padding-left: $spacing-sm;
-            }
-        }
 
         .recent-project {
             display: flex;
@@ -1329,7 +638,7 @@
                 justify-items: stretch;
                 font-size: $font-size-sm + 1px;
 
-                .left-container {
+                .top-container {
 
                     .project-img {
                         justify-items: stretch;
@@ -1357,7 +666,7 @@
                     }
                 }
 
-                .right-container {
+                .bottom-container {
                     display: grid;
                     grid-template-columns: 1fr;
                     row-gap: 10px;
@@ -1368,15 +677,15 @@
                 }
 
                 // border-radius: $spacing-sm;
-                .project-detail-item {
+                .details-container {
                     text-align: left;
 
-                    .item-heading {
+                    .heading {
                         text-transform: uppercase;
                         font-size: $font-size-sm;
                     }
 
-                    .item-details {
+                    .details {
                         margin-left: $spacing-sm;
 
                         p {

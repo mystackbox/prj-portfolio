@@ -4,9 +4,9 @@
 
     display: flex;
     flex-direction: column;
-    row-gap: $spacing-sm;
-    padding: $spacing-md;
-    border-radius: $spacing-sm;
+    row-gap: $spacing-md;
+    padding: $spacing-lg;
+    border-radius: $spacing-xs;
     background-color: $light-primary-bg-color;
 
     .page-title {
@@ -15,9 +15,9 @@
         font-weight: bolder;
     }
 
-    .page-heading {
+    .page-description {
         text-transform: uppercase;
-        font-size: $font-size-md + 4px;
+        font-size: $font-size-lg;
         color: $comp-default-font-color;
         font-weight: 100;
     }
@@ -37,7 +37,7 @@
             color: $light-neutral-font-color;
             cursor: pointer;
             border: none;
-            // border-radius: $spacing-xs;
+            border-radius: $spacing-xs;
 
             &.projects {
                 background-color: orange;
@@ -64,6 +64,10 @@
             font-size: $font-size-md + 3px;
         }
 
+        .page-description {
+            font-size: $font-size-md;
+        }
+
         .page-intro-buttons {
             .button {
                 min-width: 112px;
@@ -74,29 +78,23 @@
     }
 }
 
-@include respond-to("pre-sm") {
+@include respond-to("xs") {
     #page-instroduction {
         .page-title {
             font-size: $font-size-lg + 2px;
         }
 
         .page-heading {
-            font-size: $font-size-md;
             font-weight: 600;
         }
 
         .page-intro-buttons {
-
-            display: flex;
-            flex-direction: row;
-            column-gap: 10px;
-            justify-content: center;
             margin: 5px 0;
 
             .button {
-                min-width: 115px;
-                padding: 5px 15px;
-                font-size: $font-size-sm;
+                min-width: 110px;
+                padding: 6px 12px;
+                font-size: $font-size-xs;
             }
         }
     }

@@ -1,0 +1,11 @@
+@use 'abstracts' as *;
+
+#contact-page-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+    font-size: $font-size-sm;
+
+    //hr line styles
+    @include page-content-intro-hr;
+}

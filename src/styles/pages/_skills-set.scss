@@ -1,0 +1,83 @@
+@use 'abstracts' as *;
+
+#skils-set-page-main {
+
+     display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+    font-size: $font-size-sm;
+
+     //hr line styles
+    @include page-content-intro-hr;
+
+    .sets-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 25px;
+        column-gap: 15px;
+        text-align: left;
+        padding: 0 $spacing-sm;
+
+        .set-container {
+
+            .heading {
+                margin-bottom: $spacing-xs + 4px;
+                text-transform: uppercase;
+                background-color: $light-primary-bg-color;
+                border-radius: $spacing-xs;
+                padding: $spacing-xs $spacing-sm;
+                font-weight: bold;
+            }
+
+            .set {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 5px;
+                padding-left: 0;
+
+                .skill {
+                    padding: $spacing-xs - 3px;
+                    padding-left: $spacing-xs - 2px;
+                    background-color: $light-primary-bg-color;
+                    border-radius: $spacing-xs;
+
+                    i {
+                        padding-right: 3px ;
+                    }
+                }
+            }
+        }
+    }
+
+    @include respond-to("pro-sm") {
+
+        .sets-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: 25px;
+            column-gap: 15px;
+        }
+
+    }
+
+    @include respond-to("xs") {
+
+        .sets-container {
+            padding: $spacing-xs 0;
+
+            .set-container {
+
+                .set {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 5px;
+                    padding-left: 0;
+                    font-size: $font-size-sm;
+
+                }
+            }
+        }
+
+    }
+
+}

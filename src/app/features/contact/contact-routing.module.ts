@@ -7,7 +7,7 @@ const routes: Routes = [{ path: '', component: ContactComponent,
             title: 'Contact',
             metaTags: [
               { name: 'short-desc', content: 'what is your thought?' },
-              { name: 'page-desc', content: 'Please drop a comment using the contact form below.' },
+              { name: 'page-desc', content: 'let me know whats your thoughts' },
             ]
         } 
       }];
