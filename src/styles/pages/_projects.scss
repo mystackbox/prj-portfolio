@@ -4,7 +4,6 @@
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 15px;
-    font-size: $font-size-sm;
 
     //hr line styles
     @include page-content-intro-hr;
@@ -12,8 +11,7 @@
     .project-details {
         display: grid;
         row-gap: 10px;
-        padding: 0 $spacing-sm;
-    
+
         .details-container {
             text-align: left;
 
@@ -24,6 +22,12 @@
                 border-radius: $spacing-xs;
                 padding: $spacing-xs $spacing-sm;
                 font-weight: bold;
+
+                &.project {
+                    border-radius: 0 $spacing-xs $spacing-xs 0;
+                    border-left: 5px solid red;
+                    font-weight: normal;
+                }
             }
 
             .details {
@@ -57,20 +61,20 @@
 
                 .project-img-container {
                     background-color: $light-primary-bg-color;
-                    border-radius: $spacing-sm;
+                    border-radius: $spacing-xs;
                     padding: $spacing-sm;
 
                     img {
 
                         height: 125px;
                         width: 100%;
-                        border-radius: $spacing-sm;
+                        border-radius: $spacing-xs;
                     }
                 }
 
                 .project-description {
 
-                    .project-large-status {
+                    .project-views {
                         display: flex;
                         flex-direction: row;
                         justify-content: flex-start;
@@ -79,18 +83,20 @@
                         border-radius: $spacing-xs;
                         margin-left: $spacing-sm;
 
-                        .current-status {
-                            padding: $spacing-xs - 2px $spacing-md $spacing-xs - 2px $spacing-xs;
+                        .view {
+                            padding: $spacing-xs - 2px $spacing-md;
                             background-color: $light-secondery-bg-color;
                             border-radius: $spacing-xs - 1px;
                             font-size: $font-size-xs;
-                            color: $comp-default-font-color;
+                            min-width: 70px;
+                            color: $light-neutral-font-color;
+                            cursor: pointer;
 
-                            &.git-status {
-                                color: #000;
+                            &.git-view {
+                                background-color: $light-dark-bg-color;
                             }
 
-                            &.online-status {
+                            &.online-view {
                                 color: red;
                             }
                         }
@@ -98,9 +104,6 @@
                     }
                 }
             }
-
-            .top-right-details {}
-
         }
 
         .bottom-container {
@@ -159,7 +162,7 @@
                     margin: 5px 0;
                 }
 
-                .project-status {
+                .project-view {
                     display: flex;
                     flex-direction: row;
                     gap: 5px;
@@ -168,7 +171,7 @@
                     border-radius: $spacing-xs;
                     // border: 1px solid #e5e5e5;
 
-                    .current-status {
+                    .view {
                         height: 22px;
                         padding: $spacing-xs - 2px;
                         background-color: $light-secondery-bg-color;
@@ -176,11 +179,11 @@
                         font-size: $font-size-xs;
                         color: $comp-default-font-color;
 
-                        &.git-status {
+                        &.git-view {
                             color: #000;
                         }
 
-                        &.online-status {
+                        &.online-view {
                             color: red;
                         }
                     }
@@ -191,17 +194,14 @@
     }
 
     @include respond-to("md") {
-
         .featured-projects {
             display: flex;
             flex-direction: column;
             gap: 15px;
 
-
             border: 1px solid #e5e5e5;
             border-radius: $spacing-sm;
             padding: $spacing-md;
-
 
             .section-heading {
                 text-transform: uppercase;
@@ -238,7 +238,7 @@
                         margin: 5px 0;
                     }
 
-                    .project-status {
+                    .project-view {
                         display: flex;
                         flex-direction: row;
                         gap: 5px;
@@ -247,7 +247,7 @@
                         border-radius: $spacing-xs;
                         // border: 1px solid #e5e5e5;
 
-                        .current-status {
+                        .view {
                             height: 22px;
                             padding: $spacing-xs - 2px;
                             background-color: $light-secondery-bg-color;
@@ -255,7 +255,7 @@
                             font-size: $font-size-xs;
                             color: $comp-default-font-color;
 
-                            &.complete-status {
+                            &.complete-view {
                                 display: none;
                             }
                         }
@@ -268,11 +268,33 @@
 
     @include respond-to("pro-sm") {
 
+        section {
+            border: 1px solid #e5e5e5;
+            padding: $spacing-sm + 2px;
+            border-radius: $spacing-xs;
+        }
+
+        .project-details {
+            .top-container {
+                grid-template-columns: 1fr;
+                row-gap: 10px;
+
+                .top-left-details {
+                    grid-template-columns: 1fr 4fr;
+
+                    .project-img-container {
+                        img {
+                            height: 100px;
+                        }
+                    }
+                }
+            }
+        }
+
         .featured-projects {
             display: flex;
             flex-direction: column;
             gap: 15px;
-
 
             .section-heading {
                 text-transform: uppercase;
@@ -310,7 +332,7 @@
                         min-height: 35px;
                     }
 
-                    .project-status {
+                    .project-view {
                         display: flex;
                         flex-direction: row;
                         gap: 5px;
@@ -319,7 +341,7 @@
                         border-radius: $spacing-xs;
                         // border: 1px solid #e5e5e5;
 
-                        .current-status {
+                        .view {
                             height: 22px;
                             padding: $spacing-xs - 2px;
                             background-color: $light-secondery-bg-color;
@@ -327,7 +349,7 @@
                             font-size: $font-size-xs;
                             color: $comp-default-font-color;
 
-                            &.complete-status {
+                            &.complete-view {
                                 display: none;
                             }
                         }
@@ -339,6 +361,21 @@
     }
 
     @include respond-to("sm") {
+
+        .project-details {
+            .top-container {
+
+                .top-left-details {
+                    grid-template-columns: 2fr 6fr;
+
+                    .project-img-container {
+                        img {
+                            height: 100px;
+                        }
+                    }
+                }
+            }
+        }
 
         .featured-projects {
             display: flex;
@@ -382,7 +419,7 @@
                         min-height: 0px;
                     }
 
-                    .project-status {
+                    .project-view {
                         display: flex;
                         flex-direction: row;
                         gap: 5px;
@@ -391,7 +428,7 @@
                         border-radius: $spacing-xs;
                         // border: 1px solid #e5e5e5;
 
-                        .current-status {
+                        .view {
                             height: 22px;
                             padding: $spacing-xs - 2px;
                             background-color: $light-secondery-bg-color;
@@ -399,7 +436,7 @@
                             font-size: $font-size-xs;
                             color: $comp-default-font-color;
 
-                            &.complete-status {
+                            &.complete-view {
                                 display: block;
                             }
                         }
@@ -411,6 +448,38 @@
     }
 
     @include respond-to("pre-sm") {
+
+        .project-details {
+            .top-container {
+                margin-bottom: 6px;
+
+                .top-left-details {
+                    grid-template-columns: 2fr 5fr;
+
+                    .project-img-container {
+                        margin-bottom: 6px;
+
+                        img {
+                            height: 100px;
+                        }
+                    }
+                }
+            }
+
+            .bottom-container {
+                display: grid;
+                grid-template-columns: 1fr;
+                row-gap: 10px;
+
+                .project-concepts,
+                .project-features {
+                    .list-container {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                    }
+                }
+            }
+        }
 
         .featured-projects {
             display: flex;
@@ -452,7 +521,7 @@
                         min-height: 0px;
                     }
 
-                    .project-status {
+                    .project-view {
                         display: flex;
                         flex-direction: row;
                         gap: 5px;
@@ -461,7 +530,7 @@
                         border-radius: $spacing-xs;
                         // border: 1px solid #e5e5e5;
 
-                        .current-status {
+                        .view {
                             height: 22px;
                             padding: $spacing-xs - 2px;
                             background-color: $light-secondery-bg-color;
@@ -469,7 +538,7 @@
                             font-size: $font-size-xs;
                             color: $comp-default-font-color;
 
-                            &.complete-status {
+                            &.complete-view {
                                 display: block;
                             }
                         }
@@ -481,6 +550,21 @@
     }
 
     @include respond-to("pro-xs") {
+        row-gap: 10px;
+        .project-details {
+            .top-container {
+
+                .top-left-details {
+                    grid-template-columns: 3fr 5fr;
+
+                    .project-img-container {
+                        img {
+                            height: 105px;
+                        }
+                    }
+                }
+            }
+        }
 
         .featured-projects {
             display: flex;
@@ -523,7 +607,7 @@
                         margin: 5px 0;
                     }
 
-                    .project-status {
+                    .project-view {
                         display: flex;
                         flex-direction: row;
                         gap: 5px;
@@ -532,7 +616,7 @@
                         border-radius: $spacing-xs;
                         // border: 1px solid #e5e5e5;
 
-                        .current-status {
+                        .view {
                             height: 22px;
                             padding: $spacing-xs - 2px $spacing-xs;
                             background-color: $light-secondery-bg-color;
@@ -540,7 +624,7 @@
                             font-size: $font-size-xs;
                             color: $comp-default-font-color;
 
-                            &.complete-status {
+                            &.complete-view {
                                 display: none;
                             }
                         }
@@ -552,6 +636,31 @@
     }
 
     @include respond-to("xs") {
+
+        .project-details {
+            .top-container {
+                .top-left-details {
+                    grid-template-columns: 1fr;
+                   row-gap: 10px;
+
+                    .project-img-container {
+                        img {
+                            min-height: 265px;
+                        }
+                    }
+                }
+
+                .top-right-details {
+                    display: none;
+                }
+            }
+
+            .bottom-container {
+                .project-concepts {
+                    display: none;
+                }
+            }
+        }
 
         .featured-projects {
             display: flex;
@@ -591,7 +700,7 @@
                         min-height: 40px;
                     }
 
-                    .project-status {
+                    .project-view {
                         display: flex;
                         flex-direction: row;
                         gap: 5px;
@@ -601,7 +710,7 @@
                         border-radius: $spacing-xs;
                         // border: 1px solid #e5e5e5;
 
-                        .current-status {
+                        .view {
                             height: 22px;
                             padding: $spacing-xs - 2px $spacing-xs;
                             background-color: $light-secondery-bg-color;
@@ -609,7 +718,7 @@
                             font-size: $font-size-xs;
                             color: $comp-default-font-color;
 
-                            &.complete-status {
+                            &.complete-view {
                                 display: none;
                             }
                         }
@@ -621,83 +730,18 @@
     }
 
     @include respond-to("pre-xs") {
-        display: grid;
-        grid-template-rows: 1fr;
-        row-gap: 25px;
 
+        .project-details {
+            .top-container {
 
-        .recent-project {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-
-            .project-details {
-                display: grid;
-                grid-template-columns: 1fr;
-                row-gap: 15px;
-                justify-items: stretch;
-                font-size: $font-size-sm + 1px;
-
-                .top-container {
-
-                    .project-img {
-                        justify-items: stretch;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-sm;
-                        padding: $spacing-xs - 2px;
-
-                        .project-name {
-                            text-transform: uppercase;
-                            color: $comp-default-font-color;
-                            font-size: $font-size-md ;
-                            padding-left: $spacing-xs - 2px;
-                        }
-                    }
-
-                    .project-description {
-                        p {
-                            font-size: $font-size-md - 2px;
-                        }
-
-                        .project-large-status {
-                            margin-top: 10px;
-
-                        }
-                    }
-                }
-
-                .bottom-container {
-                    display: grid;
+                .top-left-details {
                     grid-template-columns: 1fr;
                     row-gap: 10px;
 
-                    .project-concepts {}
-
-                    .project-features {}
-                }
-
-                // border-radius: $spacing-sm;
-                .details-container {
-                    text-align: left;
-
-                    .heading {
-                        text-transform: uppercase;
-                        font-size: $font-size-sm;
-                    }
-
-                    .details {
-                        margin-left: $spacing-sm;
-
-                        p {
-                            margin-bottom: $spacing-xs;
-                        }
-
-                        ul {
-                            li {
-                                list-style: none;
-                                margin-bottom: $spacing-xs - 1px;
-                                font-size: $font-size-sm;
-                            }
+                    .project-img-container {
+ 
+                        img {
+                            min-height: 205px;
                         }
                     }
                 }
@@ -743,7 +787,7 @@
                         min-height: 20px;
                     }
 
-                    .project-status {
+                    .project-view {
                         display: flex;
                         flex-direction: row;
                         gap: 5px;
@@ -752,7 +796,7 @@
                         border-radius: $spacing-xs;
                         // border: 1px solid #e5e5e5;
 
-                        .current-status {
+                        .view {
                             height: 22px;
                             padding: $spacing-xs - 2px $spacing-xs;
                             background-color: $light-secondery-bg-color;
@@ -760,7 +804,7 @@
                             font-size: $font-size-xs;
                             color: $comp-default-font-color;
 
-                            &.complete-status {
+                            &.complete-view {
                                 display: block;
                             }
                         }

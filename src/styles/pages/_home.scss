@@ -22,7 +22,7 @@
 
             width: 210px;
             padding: $spacing-md;
-            border-radius: $spacing-md;
+            border-radius: $spacing-sm;
             background-color: $light-primary-bg-color;
 
             .card-icon {
@@ -86,15 +86,17 @@
         .recent-project-container {
             display: grid;
             grid-template-columns: 1fr;
+            row-gap: 10px;
             text-align: left;
 
             .details-heading {
-                margin-bottom: $spacing-xs + 4px;
-                text-transform: uppercase;
-                background-color: $light-primary-bg-color;
-                border-radius: $spacing-xs;
-                padding: $spacing-xs $spacing-sm;
-                font-weight: bold;
+                .heading {
+                    text-transform: uppercase;
+                    background-color: $light-primary-bg-color;
+                    border-radius: $spacing-xs;
+                    padding: $spacing-xs $spacing-sm;
+                    font-weight: bold;
+                }
             }
 
             .recent-project-details {
@@ -153,7 +155,7 @@
                     }
 
                     .project-description {
-                        font-size: $font-size-md;
+                        font-size: $font-size-sm;
 
                         .description {
                             padding: $spacing-sm;
@@ -170,14 +172,14 @@
                                 background-color: $light-secondery-bg-color;
                                 border-radius: $spacing-xs - 1px;
                                 font-size: $font-size-xs;
-                                min-width: 90px;
+                                min-width: 70px;
                                 color: $light-neutral-font-color;
                                 cursor: pointer;
                             }
 
                             .git-hub-repo {
                                 // color: #000;
-                                background-color: $light-secondery-font-color;
+                                background-color: $light-dark-bg-color;
                             }
 
                             .live-site {
@@ -556,10 +558,11 @@
                 .recent-project-details {
                     display: grid;
                     grid-template-columns: 1fr;
-                    column-gap: 15px;
+                    row-gap: 5px;
 
                     .recent-project-img {
                         display: block;
+
                         img {
                             min-height: 265px;
                             width: 100%;
@@ -567,7 +570,8 @@
                     }
 
                     .project-details {
-                         margin-top: 5px;
+                        margin-top: 5px;
+
                         .project-description {
                             font-size: $font-size-md;
                         }
@@ -581,7 +585,11 @@
 
                     .news {
                         .news-img {
-                            height: 75px;
+                            height: 70px;
+                        }
+
+                        .news-headline {
+                            font-size: $font-size-xs - 2px;
                         }
                     }
                 }
@@ -600,7 +608,7 @@
         }
     }
 
-      @include respond-to("pre-xs") {
+    @include respond-to("pre-xs") {
 
         //features section
         .feeds-container {
@@ -609,6 +617,7 @@
                 .recent-project-details {
                     .recent-project-img {
                         display: block;
+
                         img {
                             min-height: 210px;
                             width: 100%;
@@ -617,15 +626,13 @@
 
                     .project-details {
                         margin-top: 5px;
+
                         .project-description {
                             font-size: $font-size-md;
                         }
                     }
                 }
             }
-
         }
     }
-
-
 }
