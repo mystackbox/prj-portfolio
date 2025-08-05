@@ -21,14 +21,14 @@
     text-align: center;
     text-transform: uppercase;
     padding: 0 20em;
-    font-size: $font-size-md + 2px;
+    font-size: $font-size-lg;
     margin: $spacing-md;
 
     &::before,
     &::after {
       content: '';
       flex: 1;
-      border-bottom: 1px solid #e5e5e5;
+      border-bottom: 2px solid #e5e5e5;
     }
 
     &:not(:empty)::before {
@@ -37,6 +37,20 @@
 
     &:not(:empty)::after {
       margin-left: 1.70em;
+    }
+  }
+
+   @include respond-to("md") {
+    .page-content-intro-hr {
+      padding: 0 18em;
+
+      &:not(:empty)::before {
+        margin-right: 1.60em;
+      }
+
+      &:not(:empty)::after {
+        margin-left: 1.60em;
+      }
     }
   }
 
@@ -93,7 +107,7 @@
   @include respond-to("xs") { 
      .page-content-intro-hr {
             padding: 0 3em;
-            font-size: $font-size-sm;
+            font-size: $font-size-md + 2px;
         }
   }
 

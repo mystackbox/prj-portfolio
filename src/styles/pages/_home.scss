@@ -144,54 +144,53 @@
                     }
 
                     .heading {
-                        margin-bottom: $spacing-xs;
                         text-transform: uppercase;
                         background-color: $light-primary-bg-color;
                         border-radius: 0 $spacing-xs $spacing-xs 0;
                         border-left: 5px solid red;
                         padding: $spacing-xs $spacing-sm;
+                        cursor: pointer;
                     }
 
                     .project-description {
-
-                        display: grid;
-                        grid-template-columns: 1fr;
-                        row-gap: 6px;
-                        font-size: $font-size-sm;
+                        font-size: $font-size-md;
 
                         .description {
-                            background-color: $light-primary-bg-color;
                             padding: $spacing-sm;
-                            border-radius: $spacing-xs;
-
-                            .read-more {
-                                display: none;
-                                color: red;
-                            }
                         }
 
                         .online-options {
                             display: flex;
                             flex-direction: row;
-                            gap: 10px;
+                            column-gap: 10px;
                             flex-wrap: wrap;
-                            margin-top: 5px;
 
                             .online {
-                                padding: $spacing-xs - 3px $spacing-md $spacing-xs - 3px $spacing-sm;
+                                padding: $spacing-xs - 2px $spacing-md;
                                 background-color: $light-secondery-bg-color;
                                 border-radius: $spacing-xs - 1px;
                                 font-size: $font-size-xs;
                                 min-width: 90px;
-                                background-color: brown;
                                 color: $light-neutral-font-color;
+                                cursor: pointer;
+                            }
+
+                            .git-hub-repo {
+                                // color: #000;
+                                background-color: $light-secondery-font-color;
+                            }
+
+                            .live-site {
+                                color: red;
+                            }
+
+                            .more {
+                                color: $light-neutral-font-color;
+                                background-color: orangered;
                             }
                         }
-
-
                     }
                 }
-
             }
         }
 
@@ -400,6 +399,16 @@
 
         //features section
         .feeds-container {
+            .recent-project-container {
+                .recent-project-details {
+                    .project-details {
+                        .project-description {
+                            font-size: $font-size-sm;
+                        }
+                    }
+                }
+            }
+
             .news-feed-container {
                 row-gap: 10px;
 
@@ -484,6 +493,12 @@
                     .recent-project-img {
                         display: none;
                     }
+
+                    .project-details {
+                        .project-description {
+                            font-size: $font-size-md;
+                        }
+                    }
                 }
             }
 
@@ -536,6 +551,30 @@
 
         //features section
         .feeds-container {
+
+            .recent-project-container {
+                .recent-project-details {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    column-gap: 15px;
+
+                    .recent-project-img {
+                        display: block;
+                        img {
+                            min-height: 265px;
+                            width: 100%;
+                        }
+                    }
+
+                    .project-details {
+                         margin-top: 5px;
+                        .project-description {
+                            font-size: $font-size-md;
+                        }
+                    }
+                }
+            }
+
             .news-feed-container {
                 .news-container {
                     column-gap: 10px;
@@ -548,7 +587,6 @@
                 }
 
                 .weather-container {
-
                     .weather-item {
                         margin-right: 0px;
                         font-size: $font-size-sm;
@@ -561,5 +599,33 @@
             }
         }
     }
+
+      @include respond-to("pre-xs") {
+
+        //features section
+        .feeds-container {
+
+            .recent-project-container {
+                .recent-project-details {
+                    .recent-project-img {
+                        display: block;
+                        img {
+                            min-height: 210px;
+                            width: 100%;
+                        }
+                    }
+
+                    .project-details {
+                        margin-top: 5px;
+                        .project-description {
+                            font-size: $font-size-md;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
 
 }

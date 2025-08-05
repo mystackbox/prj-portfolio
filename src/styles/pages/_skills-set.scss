@@ -66,6 +66,7 @@
             padding: $spacing-xs 0;
 
             .set-container {
+                                    text-align: center;
 
                 .set {
                     display: grid;
@@ -73,6 +74,10 @@
                     gap: 5px;
                     padding-left: 0;
                     font-size: $font-size-sm;
+
+                    i {
+                        display: none;
+                    }
 
                 }
             }

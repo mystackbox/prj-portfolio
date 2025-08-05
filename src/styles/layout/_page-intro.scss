@@ -19,7 +19,7 @@
         text-transform: uppercase;
         font-size: $font-size-lg;
         color: $comp-default-font-color;
-        font-weight: 100;
+        // font-weight: 100;
     }
 
     .page-intro-buttons {
@@ -64,10 +64,6 @@
             font-size: $font-size-md + 3px;
         }
 
-        .page-description {
-            font-size: $font-size-md;
-        }
-
         .page-intro-buttons {
             .button {
                 min-width: 112px;
@@ -84,8 +80,8 @@
             font-size: $font-size-lg + 2px;
         }
 
-        .page-heading {
-            font-weight: 600;
+         .page-description {
+            font-size: $font-size-md + 2px;
         }
 
         .page-intro-buttons {
