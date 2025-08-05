@@ -13,8 +13,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 20px;
-        font-size: $font-size-md;
-
+        
         .item-introduction {
             p {
                 margin-left: $spacing-xs;
@@ -39,7 +38,6 @@
                 li {
                     list-style: square;
                     margin-bottom: $spacing-xs - 4px;
-                    font-size: $font-size-md;
                     margin-left: $spacing-lg;
 
                     a {
@@ -61,7 +59,6 @@
                 li {
                     list-style: square;
                     margin-bottom: $spacing-xs - 4px;
-                    font-size: $font-size-md;
                     margin-left: $spacing-lg;
 
                     a {
@@ -123,7 +120,7 @@
                 background-color: $light-primary-bg-color;
                 border-radius: $spacing-xs;
                 padding: $spacing-xs $spacing-sm;
-                font-size: $font-size-sm;
+                font-weight: bold;
             }
         }
     }
