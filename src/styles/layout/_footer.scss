@@ -7,13 +7,13 @@
     row-gap: $spacing-md;
 
     border-top: 1px solid #e5e5e5;
-    padding-top: $spacing-lg;
+    padding-top: $spacing-md;
 
     .footer-top-section {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 20px;
-        
+
         .item-introduction {
             p {
                 margin-left: $spacing-xs;
@@ -115,7 +115,7 @@
             border-radius: $spacing-xs;
 
             .footer-item-title {
-                   margin-bottom: $spacing-xs + 4px;
+                margin-bottom: $spacing-xs + 4px;
                 text-transform: uppercase;
                 background-color: $light-primary-bg-color;
                 border-radius: $spacing-xs;
@@ -154,8 +154,7 @@
             grid-template-columns: 1fr 1fr;
 
             .item-resources,
-            .item-introduction
-             {
+            .item-introduction {
                 display: none;
             }
         }
@@ -163,13 +162,31 @@
 
     @include respond-to("xs") {
 
+        border: none;
+
         .footer-top-section {
-            grid-template-columns: 1fr ;
+            grid-template-columns: 1fr;
 
             .item-resources,
             .item-introduction,
             .item-technology {
                 display: none;
+            }
+
+            .footer-item {
+                text-align: center;
+
+                .contact-items {
+                .contact-item {
+                   .item {
+                        row-gap: 8px; 
+                    }
+                }
+                }
+
+                .contact-pages { 
+                justify-content: center;
+             }
             }
         }
     }

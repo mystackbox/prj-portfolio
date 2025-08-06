@@ -3,14 +3,16 @@
 #projects-page-main {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 15px;
+    row-gap: 20px;
 
     //hr line styles
     @include page-content-intro-hr;
 
     .project-details {
         display: grid;
-        row-gap: 10px;
+        row-gap: 15px;
+        padding-bottom: $spacing-md;
+        border-bottom: 1px solid lightgrey;
 
         .details-container {
             text-align: left;
@@ -52,7 +54,6 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             column-gap: 10px;
-            cursor: pointer;
 
             .top-left-details {
                 display: grid;
@@ -60,15 +61,10 @@
                 column-gap: 10px;
 
                 .project-img-container {
-                    background-color: $light-primary-bg-color;
-                    border-radius: $spacing-xs;
-                    padding: $spacing-sm;
+                    cursor: pointer;
 
                     img {
-
                         height: 125px;
-                        width: 100%;
-                        border-radius: $spacing-xs;
                     }
                 }
 
@@ -122,149 +118,88 @@
     }
 
     .featured-projects {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 10px;
 
         .section-statement {
             text-align: left;
             padding-left: $spacing-sm + 4px;
         }
 
-        .cards-section {
+        .project-container {
 
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 10px;
-            justify-items: center;
+            grid-template-columns: 2fr 5fr;
+            column-gap: 5px;
+            border-radius: $spacing-xs;
+            padding: $spacing-sm;
+            border: 1px solid lightgrey;
 
-            .project-card {
-                border-radius: $spacing-sm;
-                background-color: $light-primary-bg-color;
-                width: 210px;
-                padding: $spacing-sm;
+            .project-image-container {
+                cursor: pointer;
 
-                .project-image-container {
-                    cursor: pointer;
-
-                    img {
-                        height: 115px;
-                        width: 100%;
-                        border-radius: $spacing-xs;
-                    }
+                img {
+                    height: 80px;
+                    border-radius: $spacing-xs;
                 }
+            }
+
+            .project-details-container {
+                display: flex;
+                flex-direction: column;
+                row-gap: 0px;
+                text-align: left;
 
                 .project-name {
                     text-transform: uppercase;
-                    color: $comp-default-font-color;
-                    font-size: $font-size-md - 2px;
-                    text-align: left;
-                    margin: 5px 0;
+                    background-color: $light-primary-bg-color;
+                    border-radius: 0 $spacing-xs $spacing-xs 0;
+                    border-left: 5px solid red;
+                    padding: $spacing-xs - 2px $spacing-sm;
+                    cursor: pointer;
                 }
 
-                .project-view {
+                .project-summary {
+                    padding: $spacing-xs - 1px;
+                }
+
+                .project-view-btns {
                     display: flex;
                     flex-direction: row;
-                    gap: 5px;
+                    column-gap: 5px;
                     flex-wrap: wrap;
-                    background-color: $light-primary-bg-color;
-                    border-radius: $spacing-xs;
-                    // border: 1px solid #e5e5e5;
 
-                    .view {
-                        height: 22px;
-                        padding: $spacing-xs - 2px;
+                    .view-btn {
+                        padding: $spacing-xs - 2px $spacing-sm;
                         background-color: $light-secondery-bg-color;
-                        border-radius: 6px;
-                        font-size: $font-size-xs;
-                        color: $comp-default-font-color;
-
-                        &.git-view {
-                            color: #000;
-                        }
-
-                        &.online-view {
-                            color: red;
-                        }
+                        border-radius: $spacing-xs - 1px;
+                        font-size: $font-size-xs - 2px;
+                        min-width: 60px;
+                        color: $light-neutral-font-color;
+                        cursor: pointer;
                     }
 
+                    .git-hub-repo {
+                        // color: #000;
+                        background-color: $light-dark-bg-color;
+                    }
+
+                    .live-site {
+                        color: red;
+                    }
+
+                    .more {
+                        color: $light-neutral-font-color;
+                        background-color: orangered;
+                    }
                 }
+
             }
         }
     }
 
-    @include respond-to("md") {
-        .featured-projects {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-
-            border: 1px solid #e5e5e5;
-            border-radius: $spacing-sm;
-            padding: $spacing-md;
-
-            .section-heading {
-                text-transform: uppercase;
-            }
-
-            .cards-section {
-
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-                gap: 5px;
-                justify-items: center;
-
-
-                .project-card {
-                    border-radius: $spacing-sm;
-                    background-color: $light-primary-bg-color;
-                    width: 185px;
-                    padding: $spacing-sm - 2px;
-
-                    .project-image-container {
-
-                        img {
-                            height: 110px;
-                            // width: 100%;
-                            border-radius: $spacing-sm $spacing-sm 0 0;
-                        }
-                    }
-
-                    .project-name {
-                        text-transform: uppercase;
-                        color: $comp-default-font-color;
-                        font-size: $font-size-md - 2px;
-                        text-align: left;
-                        margin: 5px 0;
-                    }
-
-                    .project-view {
-                        display: flex;
-                        flex-direction: row;
-                        gap: 5px;
-                        flex-wrap: wrap;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-xs;
-                        // border: 1px solid #e5e5e5;
-
-                        .view {
-                            height: 22px;
-                            padding: $spacing-xs - 2px;
-                            background-color: $light-secondery-bg-color;
-                            border-radius: 6px;
-                            font-size: $font-size-xs;
-                            color: $comp-default-font-color;
-
-                            &.complete-view {
-                                display: none;
-                            }
-                        }
-
-                    }
-                }
-            }
-        }
-    }
+    @include respond-to("md") {}
 
     @include respond-to("pro-sm") {
 
@@ -284,76 +219,8 @@
 
                     .project-img-container {
                         img {
-                            height: 100px;
+                            height: 120px;
                         }
-                    }
-                }
-            }
-        }
-
-        .featured-projects {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-
-            .section-heading {
-                text-transform: uppercase;
-            }
-
-            .cards-section {
-
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-                gap: 5px;
-                justify-items: center;
-
-
-                .project-card {
-                    border-radius: $spacing-sm;
-                    background-color: $light-primary-bg-color;
-                    width: 175px;
-                    padding: $spacing-sm - 2px;
-
-                    .project-image-container {
-
-                        img {
-                            // height: 112px;
-                            // width: 100%;
-                            border-radius: $spacing-sm $spacing-sm 0 0;
-                        }
-                    }
-
-                    .project-name {
-                        text-transform: uppercase;
-                        color: $comp-default-font-color;
-                        font-size: $font-size-md - 2px;
-                        text-align: left;
-                        margin: 5px 0;
-                        min-height: 35px;
-                    }
-
-                    .project-view {
-                        display: flex;
-                        flex-direction: row;
-                        gap: 5px;
-                        flex-wrap: wrap;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-xs;
-                        // border: 1px solid #e5e5e5;
-
-                        .view {
-                            height: 22px;
-                            padding: $spacing-xs - 2px;
-                            background-color: $light-secondery-bg-color;
-                            border-radius: 6px;
-                            font-size: $font-size-xs;
-                            color: $comp-default-font-color;
-
-                            &.complete-view {
-                                display: none;
-                            }
-                        }
-
                     }
                 }
             }
@@ -367,84 +234,10 @@
 
                 .top-left-details {
                     grid-template-columns: 2fr 6fr;
-
-                    .project-img-container {
-                        img {
-                            height: 100px;
-                        }
-                    }
                 }
             }
         }
 
-        .featured-projects {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-
-
-            .section-heading {
-                text-transform: uppercase;
-            }
-
-            .cards-section {
-
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 10px;
-                justify-items: center;
-
-
-                .project-card {
-                    border-radius: $spacing-sm;
-                    background-color: $light-primary-bg-color;
-                    width: 235px;
-                    padding: $spacing-sm + 2px;
-
-                    .project-image-container {
-
-                        img {
-                            height: 120px;
-                            width: 100%;
-                            border-radius: $spacing-sm $spacing-sm 0 0;
-                        }
-                    }
-
-                    .project-name {
-                        text-transform: uppercase;
-                        color: $comp-default-font-color;
-                        font-size: $font-size-md - 2px;
-                        text-align: left;
-                        margin: 5px 0;
-                        min-height: 0px;
-                    }
-
-                    .project-view {
-                        display: flex;
-                        flex-direction: row;
-                        gap: 5px;
-                        flex-wrap: wrap;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-xs;
-                        // border: 1px solid #e5e5e5;
-
-                        .view {
-                            height: 22px;
-                            padding: $spacing-xs - 2px;
-                            background-color: $light-secondery-bg-color;
-                            border-radius: 6px;
-                            font-size: $font-size-xs;
-                            color: $comp-default-font-color;
-
-                            &.complete-view {
-                                display: block;
-                            }
-                        }
-
-                    }
-                }
-            }
-        }
     }
 
     @include respond-to("pre-sm") {
@@ -458,10 +251,6 @@
 
                     .project-img-container {
                         margin-bottom: 6px;
-
-                        img {
-                            height: 100px;
-                        }
                     }
                 }
             }
@@ -480,156 +269,17 @@
                 }
             }
         }
-
-        .featured-projects {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-
-            .section-heading {
-                text-transform: uppercase;
-            }
-
-            .cards-section {
-
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 10px;
-                justify-items: center;
-
-                .project-card {
-                    border-radius: $spacing-sm;
-                    background-color: $light-primary-bg-color;
-                    width: 235px;
-                    padding: $spacing-sm + 2px;
-
-                    .project-image-container {
-
-                        img {
-                            height: 130px;
-                            // width: 100%;
-                            border-radius: $spacing-sm $spacing-sm 0 0;
-                        }
-                    }
-
-                    .project-name {
-                        text-transform: uppercase;
-                        color: $comp-default-font-color;
-                        font-size: $font-size-md - 2px;
-                        text-align: left;
-                        margin: 5px 0;
-                        min-height: 0px;
-                    }
-
-                    .project-view {
-                        display: flex;
-                        flex-direction: row;
-                        gap: 5px;
-                        flex-wrap: wrap;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-xs;
-                        // border: 1px solid #e5e5e5;
-
-                        .view {
-                            height: 22px;
-                            padding: $spacing-xs - 2px;
-                            background-color: $light-secondery-bg-color;
-                            border-radius: 6px;
-                            font-size: $font-size-xs;
-                            color: $comp-default-font-color;
-
-                            &.complete-view {
-                                display: block;
-                            }
-                        }
-
-                    }
-                }
-            }
-        }
     }
 
     @include respond-to("pro-xs") {
         row-gap: 10px;
+
         .project-details {
             .top-container {
 
                 .top-left-details {
                     grid-template-columns: 3fr 5fr;
 
-                    .project-img-container {
-                        img {
-                            height: 105px;
-                        }
-                    }
-                }
-            }
-        }
-
-        .featured-projects {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-
-
-            .section-heading {
-                text-transform: uppercase;
-            }
-
-            .cards-section {
-
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 10px;
-                justify-items: center;
-
-
-                .project-card {
-                    border-radius: $spacing-sm;
-                    background-color: $light-primary-bg-color;
-                    width: 205px;
-                    padding: $spacing-sm + 2px;
-
-                    .project-image-container {
-
-                        img {
-                            height: 110px;
-                            width: 100%;
-                            border-radius: $spacing-sm $spacing-sm 0 0;
-                        }
-                    }
-
-                    .project-name {
-                        text-transform: uppercase;
-                        color: $comp-default-font-color;
-                        font-size: $font-size-md - 2px;
-                        text-align: left;
-                        margin: 5px 0;
-                    }
-
-                    .project-view {
-                        display: flex;
-                        flex-direction: row;
-                        gap: 5px;
-                        flex-wrap: wrap;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-xs;
-                        // border: 1px solid #e5e5e5;
-
-                        .view {
-                            height: 22px;
-                            padding: $spacing-xs - 2px $spacing-xs;
-                            background-color: $light-secondery-bg-color;
-                            border-radius: 6px;
-                            font-size: $font-size-xs;
-                            color: $comp-default-font-color;
-
-                            &.complete-view {
-                                display: none;
-                            }
-                        }
-
-                    }
                 }
             }
         }
@@ -641,11 +291,23 @@
             .top-container {
                 .top-left-details {
                     grid-template-columns: 1fr;
-                   row-gap: 10px;
+                    text-align: center;
 
                     .project-img-container {
                         img {
-                            min-height: 265px;
+                            min-height: 225px;
+                            max-width: 100%;
+                        }
+                    }
+
+                    .project-description {
+                        .heading {
+                            border: none;
+                            border-radius: $spacing-xs;
+                        }
+
+                        .project-views {
+                            justify-content: center;
                         }
                     }
                 }
@@ -659,70 +321,10 @@
                 .project-concepts {
                     display: none;
                 }
-            }
-        }
 
-        .featured-projects {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-
-
-            .section-heading {
-                text-transform: uppercase;
-            }
-
-            .cards-section {
-
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 5px;
-                row-gap: 15px;
-                justify-items: center;
-
-
-                .project-card {
-                    border-radius: $spacing-sm;
-                    background-color: $light-primary-bg-color;
-                    width: 155px;
-                    padding: $spacing-sm;
-
-                    .project-image-container {
-
-                        img {
-                            height: 80px;
-                            width: 100%;
-                            border-radius: $spacing-sm $spacing-sm 0 0;
-                        }
-                    }
-
-                    .project-name {
-                        min-height: 40px;
-                    }
-
-                    .project-view {
-                        display: flex;
-                        flex-direction: row;
-                        gap: 5px;
-
-                        flex-wrap: wrap;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-xs;
-                        // border: 1px solid #e5e5e5;
-
-                        .view {
-                            height: 22px;
-                            padding: $spacing-xs - 2px $spacing-xs;
-                            background-color: $light-secondery-bg-color;
-                            border-radius: 6px;
-                            font-size: $font-size-xs;
-                            color: $comp-default-font-color;
-
-                            &.complete-view {
-                                display: none;
-                            }
-                        }
-
+                .details-container {
+                    .heading {
+                        text-align: center;
                     }
                 }
             }
@@ -730,89 +332,20 @@
     }
 
     @include respond-to("pre-xs") {
-
         .project-details {
             .top-container {
 
                 .top-left-details {
                     grid-template-columns: 1fr;
-                    row-gap: 10px;
 
                     .project-img-container {
- 
+
                         img {
-                            min-height: 205px;
+                            min-height: 185px;
                         }
                     }
                 }
             }
         }
-
-        .featured-projects {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-
-
-            .section-heading {
-                text-transform: uppercase;
-            }
-
-            .cards-section {
-
-                display: grid;
-                grid-template-columns: 1fr;
-                gap: 10px;
-                justify-items: center;
-
-
-                .project-card {
-                    border-radius: $spacing-sm;
-                    background-color: $light-primary-bg-color;
-                    width: 315px;
-                    padding: $spacing-sm + 2px;
-
-                    .project-image-container {
-
-                        img {
-                            height: 180px;
-                            width: 100%;
-                            border-radius: $spacing-sm $spacing-sm 0 0;
-                        }
-                    }
-
-                    .project-name {
-                        text-align: left;
-                        margin: 5px 0;
-                        min-height: 20px;
-                    }
-
-                    .project-view {
-                        display: flex;
-                        flex-direction: row;
-                        gap: 5px;
-                        flex-wrap: wrap;
-                        background-color: $light-primary-bg-color;
-                        border-radius: $spacing-xs;
-                        // border: 1px solid #e5e5e5;
-
-                        .view {
-                            height: 22px;
-                            padding: $spacing-xs - 2px $spacing-xs;
-                            background-color: $light-secondery-bg-color;
-                            border-radius: 6px;
-                            font-size: $font-size-xs;
-                            color: $comp-default-font-color;
-
-                            &.complete-view {
-                                display: block;
-                            }
-                        }
-
-                    }
-                }
-            }
-        }
-
     }
 }

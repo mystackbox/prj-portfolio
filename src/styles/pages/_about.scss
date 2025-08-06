@@ -30,25 +30,50 @@
 
             .set-container {
                 padding: 4px $spacing-sm;
-    
+            }
+
+            .btn-container {
+                .explore {
+                    display: none;
+                    margin: $spacing-md 0;
+                }
             }
         }
     }
 
     @include respond-to("xs") {
+
         .about-content {
             grid-template-columns: 1fr;
             row-gap: 15px;
-            padding: $spacing-xs 0;
-        }
+            padding: 0;
+            text-align: center;
 
-        .button-content {
-            .explore-projects-button {
-                font-size: $font-size-sm;
-                width: 100%;
-                padding: 7px 10px;
+            border: 1px solid #e5e5e5;
+            padding: $spacing-sm + 2px;
+            border-radius: $spacing-xs;
+
+            .about-container {
+                text-align: center;
+
+                i {
+                    display: none;
+                }
+
+                .btn-container {
+                    text-align: center;
+
+                    .explore {
+                        display: block;
+                        text-transform: uppercase;
+                        padding: $spacing-xs;
+                        background-color: red;
+                        margin: $spacing-sm $spacing-lg 0 ;
+                        border-radius: $spacing-xs;
+                        color: $light-neutral-font-color;
+                    }
+                }
             }
         }
     }
-
 }

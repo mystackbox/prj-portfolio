@@ -22,7 +22,7 @@
     text-transform: uppercase;
     padding: 0 20em;
     font-size: $font-size-lg;
-    margin: $spacing-md;
+    margin: $spacing-sm;
 
     &::before,
     &::after {
@@ -108,6 +108,7 @@
      .page-content-intro-hr {
             padding: 0 3em;
             font-size: $font-size-md + 2px;
+             margin: $spacing-xs - 4px;
         }
   }
 

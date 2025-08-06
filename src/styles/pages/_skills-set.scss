@@ -2,12 +2,11 @@
 
 #skils-set-page-main {
 
-     display: grid;
+    display: grid;
     grid-template-columns: 1fr;
     row-gap: 15px;
-    font-size: $font-size-sm;
 
-     //hr line styles
+    //hr line styles
     @include page-content-intro-hr;
 
     .sets-container {
@@ -42,8 +41,14 @@
                     border-radius: $spacing-xs;
 
                     i {
-                        padding-right: 3px ;
+                        padding-right: 3px;
                     }
+                }
+            }
+
+            .btn-container {
+                .explore {
+                    display: none;
                 }
             }
         }
@@ -61,28 +66,43 @@
     }
 
     @include respond-to("xs") {
-
         .sets-container {
-            padding: $spacing-xs 0;
+
+            border: 1px solid #e5e5e5;
+            padding: $spacing-sm + 2px;
+            border-radius: $spacing-xs;
 
             .set-container {
-                                    text-align: center;
+                text-align: center;
 
                 .set {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
                     gap: 5px;
                     padding-left: 0;
-                    font-size: $font-size-sm;
 
                     i {
                         display: none;
                     }
 
                 }
+
+                .btn-container {
+                text-align: center;
+
+                .explore {
+                    display: block;
+                    text-transform: uppercase;
+                    padding: $spacing-xs;
+                    background-color: red;
+                    margin: $spacing-md $spacing-lg 0;
+                    border-radius: $spacing-xs;
+                    color: $light-neutral-font-color;
+                }
             }
+            }
+
+            
         }
-
     }
-
 }
