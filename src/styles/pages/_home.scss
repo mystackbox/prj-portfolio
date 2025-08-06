@@ -17,7 +17,7 @@
         .card {
             display: flex;
             flex-direction: column;
-            row-gap: 8px;
+            row-gap: 5px;
             cursor: pointer;
 
             width: 210px;
@@ -86,7 +86,7 @@
         .recent-project-container {
             display: grid;
             grid-template-columns: 1fr;
-            row-gap: 10px;
+            row-gap: 8px;
             text-align: left;
 
             .details-heading {
@@ -106,34 +106,9 @@
 
                 .recent-project-img {
                     cursor: pointer;
-
                     .project-img {
-                        height: 135px;
+                        height: 140px;
                         border-radius: $spacing-xs;
-                    }
-
-                    .project-img-buttons {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: flex-start;
-                        column-gap: 10px;
-
-                        .img-button {
-                            font-size: $font-size-sm;
-                            padding: 3px 12px;
-                            border-radius: $spacing-xs;
-
-
-                            &.github {
-                                background-color: $light-secondery-font-color;
-                                color: #fff;
-                            }
-
-                            &.view {
-                                background-color: orange;
-                                color: #fff;
-                            }
-                        }
                     }
                 }
 
@@ -227,7 +202,7 @@
 
                     .news-headline {
                         text-transform: uppercase;
-                        font-size: $font-size-sm - 2px;
+                        font-size: $font-size-sm - 4px;
                         font-weight: bold;
                         background-color: $light-secondery-bg-color;
                         border-radius: $spacing-xs - 1px;
@@ -257,6 +232,7 @@
                     font-size: $font-size-sm ;
 
                     &.title {
+                        display: none;
                         font-weight: bold;
                         text-transform: uppercase;
                     }
@@ -540,6 +516,7 @@
 
                 .card-description {
                     min-height: 20%;
+                    display: none;
                 }
 
                 &.card-git {
@@ -555,31 +532,52 @@
         .feeds-container {
 
             .recent-project-container {
+                .details-heading {
+                    .heading {
+                        text-align: center;
+                    }
+                }
+
                 .recent-project-details {
-                    display: grid;
                     grid-template-columns: 1fr;
                     row-gap: 5px;
 
                     .recent-project-img {
                         display: block;
-
                         img {
-                            min-height: 265px;
-                            width: 100%;
+                            min-height: 225px;
+                            max-width: 100%;
                         }
                     }
 
                     .project-details {
-                        margin-top: 5px;
+               
+                        .heading {
+                            border: none;
+                            border-radius: $spacing-xs;
+                            text-align: center;
+                        }
 
                         .project-description {
                             font-size: $font-size-md;
+                            text-align: center;
+
+                            .online-options {
+                                justify-content: center;
+                            }
                         }
                     }
                 }
             }
 
             .news-feed-container {
+
+                &.feed {
+                    .feed-title {
+                        text-align: center;
+                    }
+                }
+
                 .news-container {
                     column-gap: 10px;
 
@@ -590,6 +588,7 @@
 
                         .news-headline {
                             font-size: $font-size-xs - 2px;
+                            text-align: center;
                         }
                     }
                 }
@@ -619,14 +618,12 @@
                         display: block;
 
                         img {
-                            min-height: 210px;
+                            min-height: 188px;
                             width: 100%;
                         }
                     }
 
                     .project-details {
-                        margin-top: 5px;
-
                         .project-description {
                             font-size: $font-size-md;
                         }

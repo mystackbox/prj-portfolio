@@ -12,11 +12,10 @@
   // border-top: 8px solid red;
 
   display: grid;
-  row-gap: 25px;
+  row-gap: 20px;
   grid-template-columns: 1fr;
   grid-template-areas: "header"
     "navbar"
-    // "carousel"
     "page-intro"
     "main-content"
     "footer";
@@ -28,20 +27,12 @@
   .grid-area-page-intro,
   .grid-area-main-content,
   .grid-area-footer {
-    // padding: $spacing-md;
     height: auto;
   }
 
   .grid-area-header {
     grid-area: header;
   }
-
-  // .grid-area-carousel {
-  //   grid-area: carousel;
-  //   background-color: $light-primary-bg-color;
-
-  // }
-
   .grid-area-navbar {
     grid-area: navbar;
     background-color: $light-primary-bg-color;
@@ -64,21 +55,17 @@
 
 }
 
+
 //Media queries for responsive design
 @include respond-to("xs") {
 
-  //add css here
   .site-grid-container {
-     row-gap: 15px;
+    row-gap: 5px;
+    justify-content: center;
     grid-template-areas: "navbar"
       "header"
-      // "carousel"
       "page-intro"
       "main-content"
       "footer";
   }
-}
-
-@include respond-to("sm") {
-  //add css here
 }
