@@ -49,7 +49,9 @@
 
             .card-button {
                 .explore {
-                    background-color: #ff8fab;
+                    
+                    // background-color: #ff8fab;
+                    background-color: red;
                     min-width: 100px;
                     padding: 5px 20px;
                     text-transform: uppercase;
@@ -67,7 +69,7 @@
 
             &:hover {
                 .explore {
-                    background-color: red;
+                    background-color: $comp-default-font-color;
                 }
             }
         }

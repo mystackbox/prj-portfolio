@@ -10,9 +10,10 @@
 
     .project-details {
         display: grid;
-        row-gap: 15px;
-        padding-bottom: $spacing-md;
-        border-bottom: 1px solid lightgrey;
+        row-gap: 5px;
+        padding: $spacing-sm;
+        padding-bottom: $spacing-lg;
+        border-bottom: 1px solid #e5e5e5;
 
         .details-container {
             text-align: left;
@@ -100,6 +101,17 @@
                     }
                 }
             }
+
+            .top-right-details {
+
+                .details {
+                    border-left: 5px solid red;
+                    padding: 0 $spacing-sm;
+                }
+
+            }
+
+
         }
 
         .bottom-container {
@@ -114,33 +126,30 @@
                     grid-template-columns: 1fr 1fr;
                 }
             }
+
+            i {
+                padding-right: 2px;
+                color: brown;
+            }
         }
     }
 
     .featured-projects {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 10px;
-
-        .section-statement {
-            text-align: left;
-            padding-left: $spacing-sm + 4px;
-        }
+        gap: 25px;
+        padding: $spacing-sm;
 
         .project-container {
-
             display: grid;
             grid-template-columns: 2fr 5fr;
             column-gap: 5px;
-            border-radius: $spacing-xs;
-            padding: $spacing-sm;
-            border: 1px solid lightgrey;
 
             .project-image-container {
                 cursor: pointer;
 
                 img {
-                    height: 80px;
+                    height: 76px;
                     border-radius: $spacing-xs;
                 }
             }
@@ -148,7 +157,7 @@
             .project-details-container {
                 display: flex;
                 flex-direction: column;
-                row-gap: 0px;
+                row-gap: 2px;
                 text-align: left;
 
                 .project-name {
@@ -156,12 +165,15 @@
                     background-color: $light-primary-bg-color;
                     border-radius: 0 $spacing-xs $spacing-xs 0;
                     border-left: 5px solid red;
-                    padding: $spacing-xs - 2px $spacing-sm;
+                    padding: 2px $spacing-sm;
                     cursor: pointer;
+                    color: brown;
+                    font-size: $font-size-sm - 2px;
+                    font-weight: bold;
                 }
 
                 .project-summary {
-                    padding: $spacing-xs - 1px;
+                    padding: $spacing-xs - 2px;
                 }
 
                 .project-view-btns {
@@ -175,7 +187,7 @@
                         background-color: $light-secondery-bg-color;
                         border-radius: $spacing-xs - 1px;
                         font-size: $font-size-xs - 2px;
-                        min-width: 60px;
+                        min-width: 45px;
                         color: $light-neutral-font-color;
                         cursor: pointer;
                     }
@@ -189,30 +201,99 @@
                         color: red;
                     }
 
-                    .more {
+                    .details {
                         color: $light-neutral-font-color;
                         background-color: orangered;
                     }
                 }
-
             }
         }
     }
 
-    @include respond-to("md") {}
+    @include respond-to("md") {
+        .featured-projects {
+            padding: $spacing-sm;
+
+            .project-container {
+                display: grid;
+                grid-template-columns: 2fr 5fr;
+                column-gap: 5px;
+
+                .project-image-container {
+                    cursor: pointer;
+
+                    img {
+                        height: 78px;
+                        border-radius: $spacing-xs;
+                    }
+                }
+
+                .project-details-container {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 2px;
+                    text-align: left;
+
+                    .project-name {
+                        text-transform: uppercase;
+                        background-color: $light-primary-bg-color;
+                        border-radius: 0 $spacing-xs $spacing-xs 0;
+                        border-left: 5px solid red;
+                        padding: 2px $spacing-sm;
+                        cursor: pointer;
+                    }
+
+                    .project-summary {
+                        padding: $spacing-xs - 2px;
+                    }
+
+                    .project-view-btns {
+                        display: flex;
+                        flex-direction: row;
+                        column-gap: 5px;
+                        flex-wrap: wrap;
+
+                        .view-btn {
+                            padding: $spacing-xs - 2px $spacing-sm;
+                            background-color: $light-secondery-bg-color;
+                            border-radius: $spacing-xs - 1px;
+                            font-size: $font-size-xs - 2px;
+                            min-width: 45px;
+                            color: $light-neutral-font-color;
+                            cursor: pointer;
+                        }
+
+                        .git-hub-repo {
+                            // color: #000;
+                            background-color: $light-dark-bg-color;
+                        }
+
+                        .live-site {
+                            color: red;
+                        }
+
+                        .details {
+                            display: none;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
 
     @include respond-to("pro-sm") {
 
-        section {
+        .project-details {
+            row-gap: 10px;
+            padding-bottom: $spacing-sm;
             border: 1px solid #e5e5e5;
             padding: $spacing-sm + 2px;
             border-radius: $spacing-xs;
-        }
 
-        .project-details {
             .top-container {
                 grid-template-columns: 1fr;
-                row-gap: 10px;
+                row-gap: 5px;
 
                 .top-left-details {
                     grid-template-columns: 1fr 4fr;
@@ -220,6 +301,36 @@
                     .project-img-container {
                         img {
                             height: 120px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .featured-projects {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 5px;
+            row-gap: 30px;
+            padding: $spacing-xs;
+
+            .project-container {
+                .project-image-container {
+                    img {
+                        height: 78px;
+                    }
+                }
+
+                .project-details-container { 
+                    .project-view-btns {
+                      
+                        .git-hub-repo {
+                            background-color: $light-dark-bg-color;
+                        }
+
+                        .details {
+                            display: block;
+                            color: $light-neutral-font-color;
+                            background-color: orangered;
                         }
                     }
                 }
@@ -234,10 +345,10 @@
 
                 .top-left-details {
                     grid-template-columns: 2fr 6fr;
+                    row-gap: 5px;
                 }
             }
         }
-
     }
 
     @include respond-to("pre-sm") {
@@ -248,23 +359,54 @@
 
                 .top-left-details {
                     grid-template-columns: 2fr 5fr;
-
-                    .project-img-container {
-                        margin-bottom: 6px;
-                    }
                 }
             }
 
             .bottom-container {
                 display: grid;
                 grid-template-columns: 1fr;
-                row-gap: 10px;
+                row-gap: 6px;
 
                 .project-concepts,
                 .project-features {
                     .list-container {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
+                    }
+                }
+            }
+        }
+
+        .featured-projects {
+            .project-container {
+                column-gap: 5px;
+
+                .project-image-container {
+                    img {
+                        height: 73px;
+                    }
+                }
+
+                .project-details-container {
+                    row-gap: 2px;
+
+                    .project-summary {
+                        padding: $spacing-xs - 4px;
+                    }
+
+                    .project-view-btns {
+                     
+                        .git-hub-repo {
+                            background-color: $light-dark-bg-color;
+                        }
+
+                        .live-site {
+                            color: red;
+                        }
+
+                        .details {
+                            display: none;
+                        }
                     }
                 }
             }
@@ -276,10 +418,51 @@
 
         .project-details {
             .top-container {
-
                 .top-left-details {
                     grid-template-columns: 3fr 5fr;
+                }
+            }
+        }
 
+        .featured-projects {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 25px;
+        
+            .project-container {
+                display: grid;
+                grid-template-columns: 1fr;
+                column-gap: 5px;
+
+                .project-image-container {
+                    img {
+                        height: 80px;
+                    }
+                }
+
+                .project-details-container {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 2px;
+                    text-align: center;
+
+                    .project-name {
+                        border-radius: $spacing-xs;
+                        border: none;
+                    }
+
+                    .project-view-btns {
+                        column-gap: 6px;
+                        justify-content: center;
+
+                        .view-btn {
+                            min-width: 60px;
+                        }
+                        
+                        .details {
+                            display: none;
+                        }
+                    }
                 }
             }
         }
@@ -325,6 +508,55 @@
                 .details-container {
                     .heading {
                         text-align: center;
+                    }
+                }
+            }
+        }
+
+        .featured-projects {
+            grid-template-columns: 1fr;
+            row-gap: 30px;
+            padding: $spacing-md;
+            border: 1px solid #e5e5e5;
+            border-radius: $spacing-xs;
+
+            .project-container {
+                grid-template-columns: 2fr 5fr;
+                column-gap: 15px;
+                border-bottom: 1px solid #e5e5e5;
+
+                .project-image-container {
+                    cursor: pointer;
+                    img {
+                        height: 78px;
+                    }
+                }
+
+                .project-details-container {
+                    text-align: left;
+                    
+                    .project-name {
+                        border-radius: 0 $spacing-xs $spacing-xs 0;
+                        border-left: 5px solid red;
+                    }
+
+                    .project-summary {
+                        padding: $spacing-xs - 2px;
+                    }
+
+                    .project-view-btns {
+                        justify-content: flex-start;
+                        column-gap: 5px;
+
+                        .view-btn {
+                            min-width: 54px;
+                        }
+
+                        .details {
+                            display: block;
+                            color: $light-neutral-font-color;
+                            background-color: orangered;
+                        }
                     }
                 }
             }

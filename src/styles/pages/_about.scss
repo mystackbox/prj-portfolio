@@ -30,6 +30,10 @@
 
             .set-container {
                 padding: 4px $spacing-sm;
+                 i {
+                        padding-right: 3px;
+                        color: brown;
+                    }
             }
 
             .btn-container {
