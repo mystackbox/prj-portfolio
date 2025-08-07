@@ -1,6 +1,144 @@
 <div class="contact-page-main" id="contact-page-main">
-    <div class="page-content-intro-hr"> drop a comment </div>
-    <div class="contact-form-container">
-        
-    </div>
+  <div class="page-content-intro-hr">drop a comment</div>
+
+  <div class="contact-form-container">
+    <!-- <h4>Contac Form</h4> -->
+    <form [formGroup]="conatcForm" (ngSubmit)="onSubmit()">
+      <div class="contact-info">
+        <fieldset formGroupName="personalDetails">
+          <legend>Your Details</legend>
+
+          <div class="form-control-group form-control">
+            <input
+              type="text"
+              id="firstName"
+              formControlName="firstName"
+              class="input-form-control"
+              placeholder="* First name"
+              required
+            />
+
+            <div
+              *ngIf="
+                conatcForm.get('personalDetails.firstName')?.invalid &&
+                conatcForm.get('personalDetails.firstName')?.touched
+              "
+              class="form-validation-error-message"
+            >
+              *First name required
+            </div>
+          </div>
+
+          <div class="form-control-group">
+            <input
+              type="text"
+              id="lastName"
+              formControlName="lastName"
+              class="input-form-control"
+              placeholder="* Last name"
+              required
+            />
+
+            <div
+              *ngIf="
+                conatcForm.get('personalDetails.lastName')?.invalid &&
+                conatcForm.get('personalDetails.lastName')?.touched
+              "
+              class="form-validation-error-message"
+            >
+              *Last name required
+            </div>
+          </div>
+
+          <div class="form-control-group">
+            <input
+              type="text"
+              id="emailAddress"
+              formControlName="emailAddress"
+              class="input-form-control"
+              placeholder="* Email address"
+              required
+            />
+
+            <div
+              *ngIf="
+                conatcForm.get('personalDetails.emailAddress')?.invalid &&
+                conatcForm.get('personalDetails.emailAddress')?.touched
+              "
+              class="form-validation-error-message"
+            >
+              *Email address required
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset formGroupName="messageDetails">
+          <legend>Your Message</legend>
+
+          <div class="form-control-group">
+            <input
+              type="text"
+              id="subject"
+              formControlName="subject"
+              class="input-form-control"
+              placeholder="* Subject"
+              required
+            />
+
+            <div
+              *ngIf="
+                conatcForm.get('messageDetails.subject')?.invalid &&
+                conatcForm.get('messageDetails.subject')?.touched
+              "
+              class="form-validation-error-message"
+            >
+              *Password required
+            </div>
+          </div>
+
+          <div class="form-control-group">
+            <textarea
+              id="message"
+              formControlName="message"
+              class="input-form-control message"
+              placeholder="* Message"
+              required
+              rows="4"
+              
+            >
+        </textarea>
+
+            <div
+              *ngIf="
+                conatcForm.get('messageDetails.message')?.invalid &&
+                conatcForm.get('messageDetails.message')?.touched
+              "
+              class="form-validation-error-message"
+            >
+              *Message required
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="contact-buttons">
+
+          <input
+            type="submit"
+            id="submit-button"
+            name="submitButton"
+            class="submit-button"
+            value="submit"
+          />
+
+          <input
+            type="reset"
+            id="reset-button"
+            name="resetButton"
+            class="reset-button"
+            value="clear"
+          />
+      </div>
+    </form>
+  </div>
 </div>

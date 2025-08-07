@@ -137,13 +137,14 @@
     .featured-projects {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 25px;
-        padding: $spacing-sm;
+        gap: 15px;
+        // padding: $spacing-xs;
 
         .project-container {
             display: grid;
             grid-template-columns: 2fr 5fr;
             column-gap: 5px;
+            padding: $spacing-sm $spacing-xs;
 
             .project-image-container {
                 cursor: pointer;
@@ -179,7 +180,7 @@
                 .project-view-btns {
                     display: flex;
                     flex-direction: row;
-                    column-gap: 5px;
+                    column-gap: 3px;
                     flex-wrap: wrap;
 
                     .view-btn {
@@ -206,6 +207,11 @@
                         background-color: orangered;
                     }
                 }
+            }
+
+            &:hover {
+                box-shadow: $light-box-shadow;
+                border-radius: $spacing-xs;
             }
         }
     }
@@ -320,9 +326,9 @@
                     }
                 }
 
-                .project-details-container { 
+                .project-details-container {
                     .project-view-btns {
-                      
+
                         .git-hub-repo {
                             background-color: $light-dark-bg-color;
                         }
@@ -395,7 +401,7 @@
                     }
 
                     .project-view-btns {
-                     
+
                         .git-hub-repo {
                             background-color: $light-dark-bg-color;
                         }
@@ -428,7 +434,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             column-gap: 25px;
-        
+
             .project-container {
                 display: grid;
                 grid-template-columns: 1fr;
@@ -458,7 +464,7 @@
                         .view-btn {
                             min-width: 60px;
                         }
-                        
+
                         .details {
                             display: none;
                         }
@@ -527,6 +533,7 @@
 
                 .project-image-container {
                     cursor: pointer;
+
                     img {
                         height: 78px;
                     }
@@ -534,7 +541,7 @@
 
                 .project-details-container {
                     text-align: left;
-                    
+
                     .project-name {
                         border-radius: 0 $spacing-xs $spacing-xs 0;
                         border-left: 5px solid red;
@@ -559,6 +566,12 @@
                         }
                     }
                 }
+            }
+
+            .prj-4,
+            .prj-5,
+            .prj-6 {
+                display: none;
             }
         }
     }
