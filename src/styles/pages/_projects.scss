@@ -137,13 +137,14 @@
     .featured-projects {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 25px;
-        padding: $spacing-sm;
+        gap: 15px;
+        // padding: $spacing-xs;
 
         .project-container {
             display: grid;
             grid-template-columns: 2fr 5fr;
             column-gap: 5px;
+            padding: $spacing-sm $spacing-xs;
 
             .project-image-container {
                 cursor: pointer;
@@ -179,7 +180,7 @@
                 .project-view-btns {
                     display: flex;
                     flex-direction: row;
-                    column-gap: 5px;
+                    column-gap: 3px;
                     flex-wrap: wrap;
 
                     .view-btn {
@@ -206,6 +207,11 @@
                         background-color: orangered;
                     }
                 }
+            }
+
+            &:hover {
+                box-shadow: $light-box-shadow;
+                border-radius: $spacing-xs;
             }
         }
     }
@@ -562,7 +568,7 @@
                 }
             }
 
-                        .prj-4,
+            .prj-4,
             .prj-5,
             .prj-6 {
                 display: none;

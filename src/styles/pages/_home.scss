@@ -19,11 +19,12 @@
             flex-direction: column;
             row-gap: 5px;
             cursor: pointer;
+            box-shadow: $light-box-shadow;
 
             width: 210px;
             padding: $spacing-md;
             border-radius: $spacing-sm;
-            background-color: $light-primary-bg-color;
+            
 
             .card-icon {
                 margin: 8px 0;
@@ -68,6 +69,7 @@
             }
 
             &:hover {
+                background-color: $light-primary-bg-color;
                 .explore {
                     background-color: $comp-default-font-color;
                 }

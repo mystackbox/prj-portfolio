@@ -3,9 +3,107 @@
 #contact-page-main {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 15px;
+    row-gap: 10px;
     font-size: $font-size-sm;
 
     //hr line styles
     @include page-content-intro-hr;
+
+    .contact-form-container {
+        // border-top: 1px solid #e5e5e5;
+        //   padding: 0 $spacing-sm;
+
+        form {
+            color: gray;
+            padding: 0 $spacing-sm;
+            // border: 1px solid lightgrey;
+            display: grid;
+            grid-template-columns: 1fr;
+
+            .contact-info {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 15px;
+            }
+
+            fieldset {
+                border: 1px solid lightgrey;
+                margin-bottom: 10px;
+                padding: 0 $spacing-md 12px;
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                // border-radius: $spacing-xs - 2px;
+
+                legend {
+                    padding: 8px;
+                }
+
+                .form-control-group {
+                    margin: 7px 0px 7px 0px;
+
+                    textarea, [type="text"],
+                    [type="password"] {
+                        padding: 6px 8px 8px;
+                        min-width: 100%;
+                        border: 1px solid lightgrey;
+                    }
+
+                   textarea {
+                        resize: none;
+                    }
+
+                    label {
+                        font-size: smaller;
+                    }
+
+                    ::placeholder {
+                        font-size: 11px;
+                        color: lightgrey;
+                    }
+
+                    .form-validation-error-message {
+                        color: red;
+                        font-size: small;
+                        font-weight: normal;
+                        margin-top: 3px;
+                    }
+
+                }
+
+                .input-form-control {
+                    // border-radius: $spacing-xs - 2px;
+                }
+
+            }
+
+            .contact-buttons {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                column-gap: 15px;
+            }
+
+            [type="submit"] {
+                padding: 5px 20px;
+                background-color: red;
+                border: none;
+                color: #fff;
+                cursor: pointer;
+                text-transform: uppercase;
+                border-radius: $spacing-xs;
+            }
+
+            [type="reset"] {
+                padding: 5px 20px;
+                background-color: $light-tertiary-bg-color;
+                border: none;
+                color: #fff;
+                cursor: pointer;
+                text-transform: uppercase;
+                border-radius: $spacing-xs;
+            }
+        }
+    }
+
 }
