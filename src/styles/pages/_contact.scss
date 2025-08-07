@@ -16,7 +16,6 @@
         form {
             color: gray;
             padding: 0 $spacing-sm;
-            // border: 1px solid lightgrey;
             display: grid;
             grid-template-columns: 1fr;
 
@@ -42,14 +41,15 @@
                 .form-control-group {
                     margin: 7px 0px 7px 0px;
 
-                    textarea, [type="text"],
+                    textarea,
+                    [type="text"],
                     [type="password"] {
                         padding: 6px 8px 8px;
                         min-width: 100%;
                         border: 1px solid lightgrey;
                     }
 
-                   textarea {
+                    textarea {
                         resize: none;
                     }
 
@@ -74,7 +74,6 @@
                 .input-form-control {
                     // border-radius: $spacing-xs - 2px;
                 }
-
             }
 
             .contact-buttons {
@@ -82,28 +81,47 @@
                 flex-direction: row;
                 justify-content: flex-end;
                 column-gap: 15px;
+
+                .button {
+                    padding: 5px 20px;
+                    border: none;
+                    color: #fff;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    border-radius: $spacing-xs;
+                }
             }
 
             [type="submit"] {
-                padding: 5px 20px;
                 background-color: red;
-                border: none;
-                color: #fff;
-                cursor: pointer;
-                text-transform: uppercase;
-                border-radius: $spacing-xs;
             }
 
             [type="reset"] {
-                padding: 5px 20px;
                 background-color: $light-tertiary-bg-color;
-                border: none;
-                color: #fff;
-                cursor: pointer;
-                text-transform: uppercase;
-                border-radius: $spacing-xs;
             }
         }
     }
+
+    @include respond-to("sm") {
+        .contact-form-container {
+            form {
+                .contact-info {
+                    grid-template-columns: 1fr;
+                }
+
+                .contact-buttons {
+                    justify-content: center;
+
+                     .button {
+                        font-size: $font-size-xs + 1px;
+                     }
+
+                }
+
+            }
+        }
+
+    }
+
 
 }
