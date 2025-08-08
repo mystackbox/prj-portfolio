@@ -1,0 +1,227 @@
+@use 'abstracts' as *;
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: $light-default-font-color;
+}
+
+.dark-theme {
+    --bg-color: #0d1b2a;
+    --text-color: #527588;
+
+    .site-grid-container {
+
+        background-color: var(--bg-color);
+        color: var(--text-color);
+
+        #page-instroduction {
+            background-color: #12202e;
+
+            .page-description {
+                color: $light-tertiary-font-color;
+            }
+
+            .page-intro-buttons {
+                button {
+                    &.projects {
+
+                        background-color: brown;
+                    }
+
+                    &:hover {
+                        background-color: $light-dark-bg-color;
+                    }
+
+                    &.contact {
+
+                        background-color: #12202e;
+                        border: 1px solid #e5e5e5;
+
+                        &:hover {
+                            background-color: red;
+                            border-color: red;
+                        }
+                    }
+                }
+            }
+
+            @include respond-to("xs") {
+                .page-intro-buttons {
+                    button {
+                        &.projects {
+                            background-color: $light-dark-bg-color;
+                        }
+
+                        &:hover {
+                            background-color: red;
+                            ;
+                        }
+
+                        &.contact {
+
+                            background-color: #12202e;
+                            border: 1px solid #e5e5e5;
+
+                            &:hover {
+                                background-color: brown;
+                                border-color: brown;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #home-page-main {
+
+            .cards-container {
+
+                .card {
+                    background-color: #12202e;
+
+                    .card-title {
+                        color: #adb5bd;
+                    }
+
+                    .card-button {
+                        .explore {
+
+                            background-color: red;
+                            // background-color: red;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: #2c3e50;
+
+                        .card-icon {
+                            .bi {
+                                background-color: #adb5bd;
+                            }
+                        }
+
+                        .explore {
+                            background-color: brown;
+                        }
+                    }
+                }
+            }
+
+            .feeds-container {
+
+                .recent-project-container {
+                    .details-heading {
+                        .heading {
+                            background-color: #12202e;
+                        }
+                    }
+
+                    .recent-project-details {
+                        .project-details {
+                            .heading {
+                                background-color: #12202e;
+                            }
+                        }
+                    }
+                }
+
+                .news-feed-container {
+
+                    .feed-title {
+                        background-color: #12202e;
+                    }
+
+                    .news-container {
+                        .news {
+                            .news-headline {
+                                background-color: $light-dark-bg-color;
+                                color: #fff;
+
+                                &:hover {
+                                    background-color: red;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .weather-container {
+                    background-color: #12202e;
+                    color: bro;
+                }
+            }
+        }
+
+        #about-page-main {
+            .about-content {
+                .about-container {
+                    .set-heading {
+                        background-color: #12202e;
+                    }
+                }
+            }
+        }
+
+        #skils-set-page-main {
+            .sets-container {
+                .set-container {
+                    .heading {
+                        background-color: #12202e;
+                    }
+
+                    .set {
+                        .skill {
+                            background-color: #12202e;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        #projects-page-main {
+            .project-details {
+                .details-container {
+                    text-align: left;
+
+                    .heading {
+                         background-color: #12202e;
+                    }
+                }
+            }
+
+            .featured-projects {
+
+                .project-container {
+
+                    .project-details-container {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 2px;
+                        text-align: left;
+
+                        .project-name {
+                              background-color: #12202e;
+                        }
+                    }
+
+                    &:hover {
+                        box-shadow: $dark-box-shadow;
+                        border-radius: $spacing-xs;
+                    }
+                }
+            }
+        }
+        #footer {
+            .footer-item {
+                .footer-item-title {
+                    background-color: #12202e;
+                }
+            }
+
+            .footer-bottom-section {
+                background-color: #12202e;
+            }
+        }
+    }
+}

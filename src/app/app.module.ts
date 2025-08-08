@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { GridLayoutModule } from './layout/grid-layout.module';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    CoreModule
   ],
   providers: [
     provideClientHydration(withEventReplay())

@@ -29,7 +29,11 @@ $light-tertiary-bg-color: #778da9;
 
 /* -- NEUTRAL COLORS -- */
 $comp-default-font-color: #9b2226;
+
+$dark-neutral-bg-color: #415a77;
 $light-dark-bg-color: #284b63;
+$dark-primary-bg-color: #284b63;
+$dark-secondery-bg-color: #12202e;
 
 /* -- MISC COLORS -- */
 $error-color: red;
@@ -42,6 +46,8 @@ $spacing-lg: 24px;
 $spacing-xl: 32px;
 
 $light-box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+
+$dark-box-shadow: rgba(255, 255, 255, 0.12) 0px 2px 4px 0px, rgba(255, 255, 255, 0.32) 0px 2px 16px 0px;
 
 /* -- MEDIA QUERY BREAKPOINTS -- */
 $breakpoints: (
