@@ -14,112 +14,118 @@
             color: gray;
             padding: 0 $spacing-sm;
             display: grid;
+            row-gap: 10px;
             grid-template-columns: 1fr;
 
             .contact-info {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 column-gap: 15px;
-            }
 
-            fieldset {
-                border: 1px solid lightgrey;
-                margin-bottom: 10px;
-                padding: 0 $spacing-md 12px;
-                display: flex;
-                flex-direction: column;
-                text-align: left;
-                // border-radius: $spacing-xs - 2px;
+                fieldset {
+                    border: 1px solid lightgrey;
+                    margin-bottom: 10px;
+                    padding: 0 $spacing-md 12px;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: left;
 
-                legend {
-                    padding: 8px;
-                }
-
-                .form-control-group {
-                    margin: 7px 0px 7px 0px;
-
-                    textarea,
-                    [type="text"],
-                    [type="password"] {
-                        padding: 6px 8px 8px;
-                        min-width: 100%;
-                        border: 1px solid lightgrey;
+                    legend {
+                        padding: 8px;
+                        font-size: $font-size-sm + 2px;
                     }
 
-                    textarea {
-                        resize: none;
+                    .form-control-group {
+                        margin: 7px 0px 7px 0px;
+
+                        .input-form-control {
+                            padding: 6px 8px 8px;
+                            min-width: 100%;
+                            border: 1px solid lightgrey;
+
+                            &::placeholder {
+                                font-size: 11px;
+                                color: lightgrey;
+                            }                           
+                        }
+
+                        textarea {
+                            resize: none;
+                            margin-bottom: -6px;
+
+                            &:focus {
+                                border-color: red;
+                            }
+
+                            &::placeholder {
+                                font-family: $font-stack;
+                                font-size: 11px;
+                                color: lightgrey;
+                            }
+                        }
+
+                        .form-validation-error-message {
+                            color: $error-color;
+                            font-size: small;
+                            font-weight: normal;
+                            margin-top: 6px;
+                        }
                     }
-
-                    label {
-                        font-size: smaller;
-                    }
-
-                    ::placeholder {
-                        font-size: 11px;
-                        color: lightgrey;
-                    }
-
-                    .form-validation-error-message {
-                        color: red;
-                        font-size: small;
-                        font-weight: normal;
-                        margin-top: 3px;
-                    }
-
-                }
-
-                .input-form-control {
-                    // border-radius: $spacing-xs - 2px;
                 }
             }
 
             .contact-buttons {
                 display: flex;
                 flex-direction: row;
-                justify-content: flex-end;
+                justify-content: center;
                 column-gap: 15px;
 
                 .button {
-                    padding: 5px 20px;
+                    padding: 6px 20px;
                     border: none;
                     color: #fff;
                     cursor: pointer;
                     text-transform: uppercase;
-                    border-radius: $spacing-xs;
+                    border-radius: $spacing-xs - 1px;
                 }
-            }
 
-            [type="submit"] {
-                background-color: red;
-            }
+                .submit-button {
+                    background-color: red;
+                }
 
-            [type="reset"] {
-                background-color: $light-tertiary-bg-color;
+                .reset-button {
+                    background-color: $light-tertiary-bg-color;
+                }
             }
         }
     }
 
     @include respond-to("sm") {
+
         .contact-form-container {
+            margin-top: -5px;
+
             form {
                 padding: 0;
+                margin-top: 0;
+
                 .contact-info {
                     grid-template-columns: 1fr;
+
+                    fieldset {
+                        padding: 0 $spacing-sm 12px;
+                    }
                 }
 
                 .contact-buttons {
                     justify-content: center;
 
-                     .button {
+                    .button {
                         font-size: $font-size-xs + 1px;
-                     }
+                    }
 
                 }
-
             }
         }
-
     }
-
-
 }

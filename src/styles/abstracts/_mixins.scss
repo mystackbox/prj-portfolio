@@ -28,7 +28,7 @@
     &::after {
       content: '';
       flex: 1;
-      border-bottom: 2px solid #e5e5e5;
+      border-bottom: 1px solid #e5e5e5;
     }
 
     &:not(:empty)::before {
@@ -40,7 +40,7 @@
     }
   }
 
-   @include respond-to("md") {
+  @include respond-to("md") {
     .page-content-intro-hr {
       padding: 0 18em;
 
@@ -104,19 +104,28 @@
     }
   }
 
-  @include respond-to("xs") { 
-     .page-content-intro-hr {
-            padding: 0 3em;
-            font-size: $font-size-md + 2px;
-             margin: $spacing-xs - 4px;
-        }
+  @include respond-to("xs") {
+    .page-content-intro-hr {
+      padding: 0 3em;
+      font-size: $font-size-md + 2px;
+      margin: $spacing-xs - 4px;
+    }
   }
 
- @include respond-to("pre-xs") {
-        .page-content-intro-hr {
-            padding: 0 2em;
-        }
+  @include respond-to("pre-xs") {
+    .page-content-intro-hr {
+      padding: 0 2em;
     }
+  }
 
 
+}
+
+@mixin global-font {
+  font-family: $font-stack;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 100;
+  color: $light-default-font-color;
+  background-color: $light-secondery-bg-color;
 }

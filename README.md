@@ -3,23 +3,22 @@
 ![alt text](public/github-doc-img/responsiveUI.png)
  
 # Table of contents
-- [Introduction](#introduction)
-- [Environment](#environment)
-- [Tech Stack](#tech-stack)
+- [Description](#description)
+- [IDE - Tools - Environment](#ide---tools---environment)
+- [Angular Concepts](#angular-concepts)
 - [How to run the application](#how-to-run-the-application)
 - [Issues](#issues)
 - [References](#references)
 - [Licence](#licence)
 
 
-# Introduction
+# Description
 
-Angular2+ **personal portfolio** developed using Angular framework, a well-known JavaScript framework for building Single-Page Applications(SPA), together with HTML5, CSS, and other UI design technologies.
-
+**Personal portfolio** developed using Angular framework, a well-known JavaScript framework for building Single-Page Applications(SPA), and other web technologies such as HTML5, SCSS, and Bootstrap.
 
 [Back to top](#table-of-contents)
 
-# Environment
+# IDE - Tools - Environment
 
 - Operating System - Windows 11 x64
 - Angular CLI - v19.2.7
@@ -31,22 +30,21 @@ Angular2+ **personal portfolio** developed using Angular framework, a well-known
 
 [Back to top](#table-of-contents)
 
-# Tech stack
-- Responsive Web Design ( HTML5 | SCSS | Grid Layout | Flexbox model | Bootstrap5 | FontAwesome | SweetAlert2 | Toggle theme ).
-- Angular/Typescript framework - v18.2.11  
-  - Module-Based Approach (not stand-alone components)
-  - SEO (Angular Universal | Title Interface  | Meta Interface)
+# Project Concepts
+- Responsive UI Design ( HTML5 | SCSS | Grid & Flexbox Layouts | Bootstrap).
+- Angular/Typescript framework 
+  - Module-Based Approach (not stand-alone components).
 - APIs Integration
-  - Google Maps
-  - Weather forecast (realtime data)
-  - MailJs
-  - Social media share buttons
+  - Real-time Weather (GeoLoction-based)
+  - MailJs API
+  - Social Share Buttons
 - Features:
-  - Weather forecast (realtime data)
-  - Gallery
   - Themes Toggle (Dark vs Light)
-  - Validated submission form (email integrated)
-  - Social Media Share Buttons (Open Graphs | Meta Interface)
+  - Contact Form (email integrated)
+  - Social Share Buttons (Open Graphs | Meta Interface)
+- SEO (Angular Universal | Title Interface  | Meta Interface)
+- Performance Optimization (Lazy loading | SSR | Image Opimization)
+ 
 
 
 [Back to top](#table-of-contents)
@@ -62,10 +60,10 @@ Ensure that you have following items are installed in your computer:
 
 ### 2. Clone `GitHub` repository
 
-Clone the project from Github repository into your local repository:  [ Vehicle Tracking System ](https://github.com/mystackbox/prj-Mabunda Group). For more information about how to clone the GitHub repository, see [Cloning GitHub repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
+Clone the project [ prj-portfolio ](https://github.com/mystackbox/prj-portfolio) from Github repository into your local repository . For more information about how to clone the GitHub repository, see [Cloning GitHub repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
-### 3. Update Google Maps API Key
-Ensure that your in possession of Google Maps API Key. Open index.html in the source directory of the project and replace `YOUR_API_KEY` with your Google Maps API Key.
+### 3. Update the API Keys
+Ensure that your in possession of MailJs API Key. Open index.html in the source directory of the project and replace `YOUR_API_KEY` with your MailJs API Key.
 
 ```javascript
  <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&loading=async&callback=Function.prototype&v=weekly"></script>

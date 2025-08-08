@@ -8,7 +8,8 @@
     padding: $spacing-lg;
     border-radius: $spacing-xs;
     background-color: $light-primary-bg-color;
-       margin-bottom: $spacing-sm;
+    margin-bottom: $spacing-sm;
+
     .page-title {
         text-transform: uppercase;
         font-size: $font-size-xl;
@@ -17,7 +18,7 @@
 
     .page-description {
         text-transform: uppercase;
-        font-size: $font-size-lg;
+        font-size: $font-size-md + 2px;
         color: $comp-default-font-color;
     }
 
@@ -75,12 +76,13 @@
 
 @include respond-to("xs") {
     #page-instroduction {
-          padding: $spacing-md;
+        padding: $spacing-md;
+
         .page-title {
             font-size: $font-size-lg + 2px;
         }
 
-         .page-description {
+        .page-description {
             font-size: $font-size-md + 2px;
         }
 

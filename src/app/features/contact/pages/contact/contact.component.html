@@ -2,13 +2,14 @@
   <div class="page-content-intro-hr">contact form</div>
 
   <div class="contact-form-container">
-    <!-- <h4>Contac Form</h4> -->
-    <form [formGroup]="conatcForm" (ngSubmit)="onSubmit()">
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      
       <div class="contact-info">
         <fieldset formGroupName="personalDetails">
           <legend>Your Details</legend>
 
-          <div class="form-control-group form-control">
+          <div class="form-control-group">
             <input
               type="text"
               id="firstName"
@@ -20,8 +21,8 @@
 
             <div
               *ngIf="
-                conatcForm.get('personalDetails.firstName')?.invalid &&
-                conatcForm.get('personalDetails.firstName')?.touched
+                _firstName?.invalid &&
+                _firstName?.touched
               "
               class="form-validation-error-message"
             >
@@ -41,8 +42,8 @@
 
             <div
               *ngIf="
-                conatcForm.get('personalDetails.lastName')?.invalid &&
-                conatcForm.get('personalDetails.lastName')?.touched
+                _lastName?.invalid &&
+                _lastName?.touched
               "
               class="form-validation-error-message"
             >
@@ -52,7 +53,7 @@
 
           <div class="form-control-group">
             <input
-              type="text"
+              type="email"
               id="emailAddress"
               formControlName="emailAddress"
               class="input-form-control"
@@ -62,8 +63,8 @@
 
             <div
               *ngIf="
-                conatcForm.get('personalDetails.emailAddress')?.invalid &&
-                conatcForm.get('personalDetails.emailAddress')?.touched
+                 _emailAddress?.invalid &&
+                 _emailAddress?.touched
               "
               class="form-validation-error-message"
             >
@@ -87,12 +88,12 @@
 
             <div
               *ngIf="
-                conatcForm.get('messageDetails.subject')?.invalid &&
-                conatcForm.get('messageDetails.subject')?.touched
+                _subject?.invalid &&
+                _subject?.touched
               "
               class="form-validation-error-message"
             >
-              *Password required
+              *Subject required
             </div>
           </div>
 
@@ -100,20 +101,19 @@
             <textarea
               id="message"
               formControlName="message"
-              class="input-form-control message"
+              class="input-form-control"
               placeholder="* Message"
               required
               rows="4"
-              
             >
-        </textarea>
+            </textarea>
 
             <div
               *ngIf="
-                conatcForm.get('messageDetails.message')?.invalid &&
-                conatcForm.get('messageDetails.message')?.touched
+                _message?.invalid &&
+                _message?.touched
               "
-              class="form-validation-error-message"
+              class="form-validation-error-message text-area-error-message"
             >
               *Message required
             </div>
@@ -122,22 +122,8 @@
       </div>
 
       <div class="contact-buttons">
-
-          <input
-            type="submit"
-            id="submit-button"
-            name="submitButton"
-            class="submit-button button"
-            value="submit"
-          />
-
-          <input
-            type="reset"
-            id="reset-button"
-            name="resetButton"
-            class="reset-button button"
-            value="clear"
-          />
+        <div id="submit-button" class="submit-button button">submit</div>
+        <div id="reset-button" class="reset-button button" (click)="onReset()">clear</div>
       </div>
     </form>
   </div>

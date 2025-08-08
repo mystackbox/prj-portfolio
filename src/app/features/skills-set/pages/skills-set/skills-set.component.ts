@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-skills-set',
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './skills-set.component.scss'
 })
 export class SkillsSetComponent {
+
+   constructor(private router: Router){ }
+
+   redirectToProjects() {
+    this.router.navigate(['/projects']);
+  }
 
 }

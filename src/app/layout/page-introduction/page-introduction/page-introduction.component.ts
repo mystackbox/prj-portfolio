@@ -44,5 +44,14 @@ pageDesc: any;
       });
   }
 
+
+   redirectToContactUs() {
+    this.router.navigate(['/contact']);
+  }
+
+   redirectToProjects() {
+    this.router.navigate(['/projects']);
+  }
+
 }
 

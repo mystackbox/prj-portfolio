@@ -433,7 +433,7 @@
         .featured-projects {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            column-gap: 25px;
+            column-gap: 10px;
 
             .project-container {
                 display: grid;
@@ -522,7 +522,7 @@
         .featured-projects {
             grid-template-columns: 1fr;
             row-gap: 30px;
-            padding: $spacing-md;
+            padding: $spacing-sm;
             border: 1px solid #e5e5e5;
             border-radius: $spacing-xs;
 

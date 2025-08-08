@@ -15,8 +15,8 @@
         font-size: $font-size-sm + 2px;
 
         .card {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr;
             row-gap: 5px;
             cursor: pointer;
             box-shadow: $light-box-shadow;
@@ -24,7 +24,7 @@
             width: 210px;
             padding: $spacing-md;
             border-radius: $spacing-sm;
-            
+
 
             .card-icon {
                 margin: 8px 0;
@@ -50,7 +50,7 @@
 
             .card-button {
                 .explore {
-                    
+
                     // background-color: #ff8fab;
                     background-color: red;
                     min-width: 100px;
@@ -70,6 +70,7 @@
 
             &:hover {
                 background-color: $light-primary-bg-color;
+
                 .explore {
                     background-color: $comp-default-font-color;
                 }
@@ -110,6 +111,7 @@
 
                 .recent-project-img {
                     cursor: pointer;
+
                     .project-img {
                         height: 140px;
                         border-radius: $spacing-xs;
@@ -239,6 +241,10 @@
                         display: none;
                         font-weight: bold;
                         text-transform: uppercase;
+                    }
+
+                    &.more-news{
+                        color: $error-color;
                     }
                 }
 
@@ -443,6 +449,10 @@
                     }
                 }
 
+                .card-title {
+                    font-size: $font-size-sm;
+                }
+
                 .card-description {
                     min-height: 30%;
                 }
@@ -548,6 +558,7 @@
 
                     .recent-project-img {
                         display: block;
+
                         img {
                             min-height: 225px;
                             max-width: 100%;
@@ -555,7 +566,7 @@
                     }
 
                     .project-details {
-               
+
                         .heading {
                             border: none;
                             border-radius: $spacing-xs;

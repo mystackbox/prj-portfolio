@@ -33,7 +33,7 @@
 
         .item-technology {
             ul {
-                margin-left: $spacing-xs;
+                margin-left: $spacing-xs - 1px;
 
                 li {
                     list-style: square;
@@ -54,7 +54,7 @@
 
         .item-resources {
             ul {
-                margin-left: $spacing-xs;
+                margin-left: $spacing-xs - 1px;
 
                 li {
                     list-style: square;

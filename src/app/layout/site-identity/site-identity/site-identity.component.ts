@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-site-identity',
@@ -7,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './site-identity.component.scss'
 })
 export class SiteIdentityComponent {
+  
+   constructor(private router: Router) {}
+
+   redirectToHome() {
+    this.router.navigate(['/home']);
+  }
+
 
 }

@@ -1,12 +1,10 @@
 @use 'abstracts' as *;
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rajdhani:wght@300;400;500;600;700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 // base/_typography.scss
 body {
-    font-family: $font-stack;
-    font-size: 13px;
-    line-height: 1.5;
-    color: $light-default-font-color;
-    background-color: $light-secondery-bg-color;
+    @include global-font;
 }
 
 h1,
