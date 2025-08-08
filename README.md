@@ -5,7 +5,7 @@
 # Table of contents
 - [Description](#description)
 - [IDE - Tools - Environment](#ide---tools---environment)
-- [Angular Concepts](#angular-concepts)
+- [Angular Concepts](#project-concepts)
 - [How to run the application](#how-to-run-the-application)
 - [Issues](#issues)
 - [References](#references)
