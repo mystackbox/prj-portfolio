@@ -20,8 +20,6 @@
     "main-content"
     "footer";
 
-
-
   .grid-area-carousel,
   .grid-area-navbar,
   .grid-area-page-intro,
@@ -33,6 +31,7 @@
   .grid-area-header {
     grid-area: header;
   }
+
   .grid-area-navbar {
     grid-area: navbar;
     background-color: $light-primary-bg-color;
@@ -54,7 +53,6 @@
   }
 
 }
-
 
 //Media queries for responsive design
 @include respond-to("xs") {
