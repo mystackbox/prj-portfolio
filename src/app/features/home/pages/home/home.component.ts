@@ -1,24 +1,35 @@
 import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { ProjectsService } from '../../../../core/services/projects/projects.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
   standalone: false,
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
+  constructor(private router: Router, private _products: ProjectsService) {}
 
-    constructor(private router: Router){
+  ngOnInit() {
+    this.getProjects();
+  }
 
-    }
+  getProjects() {
+     this._products.getProjects().subscribe({
+      next: (res) => 
+        console.log(res)
+      ,
+      error: (err) => console.error('Error loading JSON:', err)
+    });
+  }
 
-   redirectToContactUs() {
+  redirectToContactUs() {
     this.router.navigate(['/contact']);
   }
 
-   redirectToProjects() {
+  redirectToProjects() {
     this.router.navigate(['/projects']);
   }
 
@@ -26,7 +37,8 @@ export class HomeComponent {
     window.open('https://github.com/mystackbox/prj-portfolio', '_blank');
   }
 
-   redirectToDemo() {
+  redirectToDemo() {
     window.open('https://mystackbox.github.io/prj-portfolio/home', '_blank');
   }
+  
 }

@@ -11,11 +11,11 @@
 
     .contact-form-container {
         form {
-            color: gray;
             padding: 0 $spacing-sm;
             display: grid;
             row-gap: 10px;
             grid-template-columns: 1fr;
+            margin-bottom: 15px;
 
             .contact-info {
                 display: grid;
