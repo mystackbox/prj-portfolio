@@ -10,12 +10,19 @@
     --text-color: #527588;
 
     .site-grid-container {
-
         background-color: var(--bg-color);
         color: var(--text-color);
 
+        #site-identity {
+            @include respond-to("xs") {
+                border-bottom: 1px solid $light-default-font-color;
+            }
+        }
+
         #page-instroduction {
             background-color: #12202e;
+            // border-bottom: 1px solid $light-default-font-color;
+            border-radius: 0;
 
             .page-description {
                 color: $light-tertiary-font-color;
@@ -78,6 +85,7 @@
 
                 .card {
                     background-color: #12202e;
+                    box-shadow: $dark-box-shadow;
 
                     .card-title {
                         color: #adb5bd;
@@ -108,8 +116,8 @@
             }
 
             .feeds-container {
-
                 .recent-project-container {
+
                     .details-heading {
                         .heading {
                             background-color: #12202e;
@@ -150,20 +158,59 @@
                     color: bro;
                 }
             }
+
+            @include respond-to("pro-xs") {
+                .feeds-container {
+                    .recent-project-container {
+                        box-shadow: $dark-box-shadow;
+                        border: none;
+                    }
+
+                    .news-feed-container {
+                        box-shadow: $dark-box-shadow;
+                        border: none;
+                    }
+                }
+            }
         }
 
         #about-page-main {
             .about-content {
+                border: none;
+
                 .about-container {
                     .set-heading {
                         background-color: #12202e;
                     }
                 }
             }
+
+            @include respond-to("xl") {
+
+                .about-content {
+                    padding: 0;
+
+                    .about-container {
+                        box-shadow: $dark-box-shadow;
+                        padding: $spacing-sm;
+                        border-radius: $spacing-sm;
+
+                    }
+                }
+            }
+
+            @include respond-to("pre-sm") {
+                .about-content {
+                    margin-bottom: 15px;
+                    padding: $spacing-sm;
+                }
+            }
         }
 
         #skils-set-page-main {
             .sets-container {
+                padding: 0;
+
                 .set-container {
                     .heading {
                         background-color: #12202e;
@@ -174,18 +221,37 @@
                             background-color: #12202e;
                         }
                     }
+                }
+            }
 
+            @include respond-to("xl") {
+                .sets-container {
+                    .set-container {
+                        box-shadow: $dark-box-shadow;
+                        padding: $spacing-sm;
+                        border-radius: $spacing-sm;
+                    }
+                }
+            }
+
+            @include respond-to("pre-sm") {
+                .sets-container {
+                    border: none;
+                    margin-bottom: 15px;
+                    padding: $spacing-sm;
                 }
             }
         }
 
         #projects-page-main {
             .project-details {
+                border-bottom: 1px solid $light-default-font-color;
+
                 .details-container {
                     text-align: left;
 
                     .heading {
-                         background-color: #12202e;
+                        background-color: #12202e;
                     }
                 }
             }
@@ -201,7 +267,7 @@
                         text-align: left;
 
                         .project-name {
-                              background-color: #12202e;
+                            background-color: #12202e;
                         }
                     }
 
@@ -211,8 +277,71 @@
                     }
                 }
             }
+
+            @include respond-to("pro-sm") {
+                .project-details {
+                    box-shadow: $dark-box-shadow;
+                    border: none;
+                }
+            }
+
+            @include respond-to("pro-xs") {
+                .featured-projects {
+                    .project-container {
+      
+                        .project-details-container {
+                              text-align: center;
+                            .project-view-btns {
+                                justify-content: center;
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include respond-to("xs") {
+                .project-details {
+                    .top-container {
+                        .top-left-details {
+                            text-align: center;
+                        }
+                    }
+                }
+
+                .featured-projects {
+                    box-shadow: $dark-box-shadow;
+                    border: none;
+                    margin-bottom: 15px;
+
+                    .project-container {
+                        border-bottom: 1px solid $light-default-font-color;
+                         .project-details-container {
+                              text-align: left;
+                            .project-view-btns {
+                                justify-content: start;
+                            }
+                        }
+
+                    }
+                }
+            }
         }
+
+        #contact-page-main {
+            .contact-form-container {
+                form {
+                    .contact-info {
+                        fieldset {
+                            border: 1px solid $light-default-font-color;
+                        }
+                    }
+                }
+            }
+        }
+
         #footer {
+            border-top: 1px solid $light-default-font-color;
+
             .footer-item {
                 .footer-item-title {
                     background-color: #12202e;

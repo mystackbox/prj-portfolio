@@ -1,0 +1,183 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "my portfolio",
+      "heading": "Personal portfolio",
+      "imageName": "prj-portfolio",
+      "introduction": "A business website developed using latest web technologies such as HTML5, SCSS, Bootstrap 5.",
+      "description": "",
+      "concepts": [
+        "Concept 1",
+        "Concept 2",
+        "Concept 3",
+        "Concept 4",
+        "Concept 5",
+        "Concept 6"
+      ],
+      "features": [
+        "Feature 1",
+        "Feature 2",
+        "Feature 3",
+        "Feature 4",
+        "Feature 5",
+        "Feature 6"
+      ],
+      "hyperlinks": [
+        "https://github.com/mystackbox/prj-portfolio",
+        "https://mystackbox.github.io/prj-portfolio/projects",
+        "https://mystackbox.github.io/prj-portfolio/home"
+      ]
+    },
+
+    {
+      "id": 2,
+      "name": "KM attorneys",
+      "heading": "Business Website",
+      "imageName": "prj-mk",
+      "introduction": "A business website developed using latest web technologies such as HTML5, SCSS, Bootstrap 5.",
+      "description": "",
+      "concepts": [
+        "Concept 1",
+        "Concept 2",
+        "Concept 3",
+        "Concept 4",
+        "Concept 5",
+        "Concept 6"
+      ],
+      "features": [
+        "Feature 1",
+        "Feature 2",
+        "Feature 3",
+        "Feature 4",
+        "Feature 5",
+        "Feature 6"
+      ],
+      "hyperlinks": [
+        "https://github.com/mystackbox/prj-portfolio",
+        "https://mystackbox.github.io/prj-portfolio/projects",
+        "https://mystackbox.github.io/prj-portfolio/home"
+      ]
+    },
+
+    {
+      "id": 3,
+      "name": "mabunda group",
+      "heading": "Business Website",
+      "imageName": "prj-mbg",
+      "introduction": "A business website developed using latest web technologies such as HTML5, SCSS, Bootstrap 5.",
+      "description": "",
+      "concepts": [
+        "Concept 1",
+        "Concept 2",
+        "Concept 3",
+        "Concept 4",
+        "Concept 5",
+        "Concept 6"
+      ],
+      "features": [
+        "Feature 1",
+        "Feature 2",
+        "Feature 3",
+        "Feature 4",
+        "Feature 5",
+        "Feature 6"
+      ],
+      "hyperlinks": [
+        "https://github.com/mystackbox/prj-portfolio",
+        "https://mystackbox.github.io/prj-portfolio/projects",
+        "https://mystackbox.github.io/prj-portfolio/home"
+      ]
+    },
+
+    {
+      "id": 4,
+      "name": "weather App",
+      "heading": "Real-time Weather",
+      "imageName": "prj-weather",
+      "introduction": "A business website developed using latest web technologies such as HTML5, SCSS, Bootstrap 5.",
+      "description": "",
+      "concepts": [
+        "Concept 1",
+        "Concept 2",
+        "Concept 3",
+        "Concept 4",
+        "Concept 5",
+        "Concept 6"
+      ],
+      "features": [
+        "Feature 1",
+        "Feature 2",
+        "Feature 3",
+        "Feature 4",
+        "Feature 5",
+        "Feature 6"
+      ],
+      "hyperlinks": [
+        "https://github.com/mystackbox/prj-portfolio",
+        "https://mystackbox.github.io/prj-portfolio/projects",
+        "https://mystackbox.github.io/prj-portfolio/home"
+      ]
+    },
+
+    {
+      "id": 5,
+      "name": "v-loc system",
+      "heading": "Vehicle Locator App",
+      "imageName": "prj-vloc",
+      "introduction": "A business website developed using latest web technologies such as HTML5, SCSS, Bootstrap 5.",
+      "description": "",
+      "concepts": [
+        "Concept 1",
+        "Concept 2",
+        "Concept 3",
+        "Concept 4",
+        "Concept 5",
+        "Concept 6"
+      ],
+      "features": [
+        "Feature 1",
+        "Feature 2",
+        "Feature 3",
+        "Feature 4",
+        "Feature 5",
+        "Feature 6"
+      ],
+      "hyperlinks": [
+        "https://github.com/mystackbox/prj-portfolio",
+        "https://mystackbox.github.io/prj-portfolio/projects",
+        "https://mystackbox.github.io/prj-portfolio/home"
+      ]
+    },
+    
+    {
+      "id": 6,
+      "name": "my portfolio",
+      "heading": "Personal portfolio",
+      "imageName": "prj-portfolio",
+      "introduction": "A business website developed using latest web technologies such as HTML5, SCSS, Bootstrap 5.",
+      "description": "",
+      "concepts": [
+        "Concept 1",
+        "Concept 2",
+        "Concept 3",
+        "Concept 4",
+        "Concept 5",
+        "Concept 6"
+      ],
+      "features": [
+        "Feature 1",
+        "Feature 2",
+        "Feature 3",
+        "Feature 4",
+        "Feature 5",
+        "Feature 6"
+      ],
+      "hyperlinks": [
+        "https://github.com/mystackbox/prj-portfolio",
+        "https://mystackbox.github.io/prj-portfolio/projects",
+        "https://mystackbox.github.io/prj-portfolio/home"
+      ]
+    }
+  ]
+}
