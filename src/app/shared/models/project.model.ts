@@ -1,24 +1,12 @@
 export interface Project {
-  id: number;
+  id?: number; // optional when creating
   name: string;
   heading: string;
-  imagePath: string;
+  imageName: string;
   introduction: string;
   description: string;
-  concepts: {
-    'Concept 1': string;
-    'Concept 2': string;
-    'Concept 3': string;
-    'Concept 4': string;
-    'Concept 5': string;
-    'Concept 6': string;
-  };
-  features: {
-    'Feature 1': string;
-    'Feature 2': string;
-    'Feature 3': string;
-    'Feature 4': string;
-    'Feature 5': string;
-    'Feature 6': string;
-  };
+  concepts: [string, string, string, string, string, string];
+  features: [string, string, string, string, string, string];
+
+  hyperlinks: [string, string, string];
 }

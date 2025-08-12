@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProjectsService } from '../../../../core/services/projects/projects.service';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
