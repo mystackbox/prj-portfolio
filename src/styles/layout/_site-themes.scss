@@ -1,8 +1,10 @@
 @use 'abstracts' as *;
 
-:root {
-    --bg-color: #ffffff;
-    --text-color: $light-default-font-color;
+.light-theme {
+    :root {
+        --bg-color: #ffffff;
+        --text-color: $light-default-font-color;
+    }
 }
 
 .dark-theme {
@@ -288,9 +290,10 @@
             @include respond-to("pro-xs") {
                 .featured-projects {
                     .project-container {
-      
+
                         .project-details-container {
-                              text-align: center;
+                            text-align: center;
+
                             .project-view-btns {
                                 justify-content: center;
                             }
@@ -315,8 +318,10 @@
 
                     .project-container {
                         border-bottom: 1px solid $light-default-font-color;
-                         .project-details-container {
-                              text-align: left;
+
+                        .project-details-container {
+                            text-align: left;
+
                             .project-view-btns {
                                 justify-content: start;
                             }
