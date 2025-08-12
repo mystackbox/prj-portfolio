@@ -1,1 +1,0 @@
-import{A as e,va as o,x as r}from"./chunk-QJNOSAKG.js";var i={production:!0,projectsUrl:"/public/data/projects.json"};var n=class t{constructor(p){this._http=p}baseUrl=i.projectsUrl;getProjects(){return this._http.get(this.baseUrl)}static \u0275fac=function(c){return new(c||t)(e(o))};static \u0275prov=r({token:t,factory:t.\u0275fac,providedIn:"root"})};export{n as a};
