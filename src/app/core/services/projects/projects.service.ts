@@ -7,13 +7,11 @@ import { environment } from '../../../../environments/environment';
 })
 export class ProjectsService {
 
-  private  baseUrl = environment.projectsUrl;
+  private  baseUrl = environment.projectsApi;
 
   constructor(private _http: HttpClient) { }
 
   getProjects() {
     return this._http.get(this.baseUrl);
   }
-
-
 }

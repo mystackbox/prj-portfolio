@@ -1,4 +1,5 @@
 export const environment = {
-    production: true,
-     projectsUrl: '/public/data/projects.json',
+  //use on production mode
+  production: true,
+  projectsApi: 'data/projects.json',
 };

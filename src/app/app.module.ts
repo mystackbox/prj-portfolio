@@ -6,7 +6,7 @@ import { GridLayoutModule } from './layout/grid-layout.module';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from './core/core.module';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,13 @@ import { provideHttpClient } from '@angular/common/http';
   ],
   providers: [
     provideClientHydration(withEventReplay()),
-    provideHttpClient()
+
+    /* 
+      withFetch() - replaces XMLHttpRequest with fetch API for (SSR).
+      Enables HttpClient to use get/post/delete/and put
+    */
+    provideHttpClient(withFetch())
+
   ],
   bootstrap: [AppComponent]
 })
