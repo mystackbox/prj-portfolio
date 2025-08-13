@@ -15,12 +15,6 @@
         background-color: var(--bg-color);
         color: var(--text-color);
 
-        #site-identity {
-            @include respond-to("xs") {
-                border-bottom: 1px solid $light-default-font-color;
-            }
-        }
-
         #page-instroduction {
             background-color: #12202e;
             // border-bottom: 1px solid $light-default-font-color;
@@ -204,10 +198,9 @@
             }
 
             @include respond-to("pre-sm") {
-                .about-content {
-
-                    padding: $spacing-sm;
-                }
+                // .about-content {
+                //     padding: $spacing-sm;
+                // }
             }
         }
 
@@ -241,7 +234,6 @@
                 .sets-container {
                     border: none;
                     margin-bottom: 15px;
-                    padding: $spacing-sm;
                 }
             }
         }
