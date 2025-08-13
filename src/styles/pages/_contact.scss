@@ -3,13 +3,18 @@
 #contact-page-main {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 10px;
+    row-gap: 20px;
     font-size: $font-size-sm;
 
     //hr line styles
     @include page-content-intro-hr;
 
     .contact-form-container {
+        box-shadow: $light-box-shadow;
+        border-radius: $spacing-xs;
+        border: none;
+        padding: $spacing-sm  $spacing-sm ;
+
         form {
             padding: 0 $spacing-sm;
             display: grid;
@@ -46,7 +51,7 @@
                             &::placeholder {
                                 font-size: 11px;
                                 color: lightgrey;
-                            }                           
+                            }
                         }
 
                         textarea {

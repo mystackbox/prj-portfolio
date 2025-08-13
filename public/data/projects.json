@@ -4,7 +4,65 @@
     "name": "my portfolio",
     "heading": "Personal portfolio",
     "imageName": "prj-portfolio",
-    "introduction": "A business website developed using latest web technologies such as HTML5, SCSS, Bootstrap 5.",
+    "introduction": " Personal portfolio developed with Angular to showcase Front-End Development skills.",
+    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS, . A business website developed using web technologies HTML5, SCSS, Angular",
+    "concepts": [
+      "Responsive UI",
+      "Angular 16+",
+      "RESTful APIs",
+      "Unit Tests",
+      "SEO (OG)",
+      "GitHub and Git"
+    ],
+    "features": [
+      "Weather API",
+      "News API",
+      "WhatsApp Button",
+      "Share Buttons",
+      "Contact Form",
+      "Toggle Themes"
+    ],
+    "hyperlinks": [
+      "https://github.com/mystackbox/prj-portfolio",
+      "https://mystackbox.github.io/prj-portfolio/home"
+    ]
+  },
+
+  {
+    "id": 2,
+    "name": "KM attorneys",
+    "heading": "Business Website",
+    "imageName": "prj-mk",
+    "introduction": "Fully responsive law-firm website developed using  HTML5, SCSS, Bootstrap 5, and Angular.",
+    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS, . A business website developed using web technologies HTML5, SCSS, Angular",
+    "concepts": [
+      "Responsive UI",
+      "Angular 16+",
+      "Social Buttons",
+      "Unit Tests",
+      "SEO (OG)",
+      "GitHub and Git"
+    ],
+    "features": [
+      "Fully Responsive",
+       "Carousel",
+      "Share Buttons",
+      "Google Maps",
+      "Contact Form",
+      " -- -- -- "
+    ],
+    "hyperlinks": [
+      "https://github.com/mystackbox/prj-monakali-attorneys.inc",
+      "https://mystackbox.github.io/prj-portfolio/home"
+    ]
+  },
+
+  {
+    "id": 3,
+    "name": "mabunda group",
+    "heading": "Business Website",
+    "imageName": "prj-mbg",
+    "introduction": "EHS Business website developed using  HTML5, SCSS, Angular, and Integrated APIs.",
     "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS, . A business website developed using web technologies HTML5, SCSS, Angular",
     "concepts": [
       "Responsive UI",
@@ -23,64 +81,6 @@
       "Toggle Themes"
     ],
     "hyperlinks": [
-      "https://github.com/mystackbox/prj-portfolio",
-      "https://mystackbox.github.io/prj-portfolio/home"
-    ]
-  },
-
-  {
-    "id": 2,
-    "name": "KM attorneys",
-    "heading": "Business Website",
-    "imageName": "prj-mk",
-    "introduction": "A business website developed using latest web technologies such as HTML5, SCSS, Bootstrap 5.",
-    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS, . A business website developed using web technologies HTML5, SCSS, Angular",
-    "concepts": [
-      "Concept 1",
-      "Concept 2",
-      "Concept 3",
-      "Concept 4",
-      "Concept 5",
-      "Concept 6"
-    ],
-    "features": [
-      "Feature 1",
-      "Feature 2",
-      "Feature 3",
-      "Feature 4",
-      "Feature 5",
-      "Feature 6"
-    ],
-    "hyperlinks": [
-      "https://github.com/mystackbox/prj-monakali-attorneys.inc",
-      "https://mystackbox.github.io/prj-portfolio/home"
-    ]
-  },
-
-  {
-    "id": 3,
-    "name": "mabunda group",
-    "heading": "Business Website",
-    "imageName": "prj-mbg",
-    "introduction": "Mabunda  website developed using latest web technologies such as HTML5, SCSS, Bootstrap 5.",
-    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS, . A business website developed using web technologies HTML5, SCSS, Angular",
-    "concepts": [
-      "Concept 1",
-      "Concept 2",
-      "Concept 3",
-      "Concept 4",
-      "Concept 5",
-      "Concept 6"
-    ],
-    "features": [
-      "Feature A",
-      "Feature 2",
-      "Feature 3",
-      "Feature 4",
-      "Feature 5",
-      "Feature 6"
-    ],
-    "hyperlinks": [
       "https://github.com/mystackbox/prj-mabunda-group",
       "https://mystackbox.github.io/prj-portfolio/home"
     ]
@@ -91,23 +91,23 @@
     "name": "weather App",
     "heading": "Real-time Weather",
     "imageName": "prj-weather",
-    "introduction": "A business website developed using latest web technologies such as HTML5, SCSS, Bootstrap 5.",
+    "introduction": "Angular weather-forecast App developed using HTML5, SCSS, and Integrated weather API",
     "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS, . A business website developed using web technologies HTML5, SCSS, Angular",
     "concepts": [
-      "Concept 1",
-      "Concept 2",
-      "Concept 3",
-      "Concept 4",
-      "Concept 5",
-      "Concept 6"
+      "Geo-location",
+      "Responsive UI",
+      "Angular 16+",
+      "RESTful APIs",
+      "Unit Tests",
+      "GitHub and Git"
     ],
     "features": [
-      "Feature 1",
-      "Feature 2",
-      "Feature 3",
-      "Feature 4",
-      "Feature 5",
-      "Feature 6"
+      "Location request",
+      "Rea-time Weather",
+      "Location tracking",
+      "12hrs Forecast",
+      "Fully Responsive",
+      "Loading Spinner"
     ],
     "hyperlinks": [
       "https://github.com/mystackbox/prj-geolocation-weather-forecast",
@@ -120,23 +120,23 @@
     "name": "v-loc system",
     "heading": "Vehicle Locator App",
     "imageName": "prj-vloc",
-    "introduction": "A business website developed using latest web technologies such as HTML5, SCSS, Bootstrap 5.",
+    "introduction": "Locator App developed using  HTML5, SCSS, Angular, and integrated GoogleMaps.",
     "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS, . A business website developed using web technologies HTML5, SCSS, Angular",
     "concepts": [
-      "Concept 1",
-      "Concept 2",
-      "Concept 3",
-      "Concept 4",
-      "Concept 5",
-      "Concept 6"
+      "Fetch API",
+      "Json-Server",
+      "Angular 18+",
+      "Responsive UI",
+      "Unit Tests",
+      "GitHub and Git"
     ],
     "features": [
-      "Feature 1",
-      "Feature 2",
-      "Feature 3",
-      "Feature 4",
-      "Feature 5",
-      "Feature 6"
+      "Google Maps",
+      "Search Form",
+      "Loading Spinner",
+      "Fully Responsive",
+      " -- -- -- ",
+      " -- -- -- "
     ],
     "hyperlinks": [
       "https://github.com/mystackbox/prj-vehicle-tracking-system",
@@ -149,23 +149,23 @@
     "name": "my portfolio",
     "heading": "Personal portfolio",
     "imageName": "prj-portfolio",
-    "introduction": "A business website developed using latest web technologies such as HTML5, SCSS, Bootstrap 5.",
+    "introduction": "Personal portfolio developed with Angular to showcase Front-End Development skills.",
     "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS, . A business website developed using web technologies HTML5, SCSS, Angular",
     "concepts": [
-      "Concept 1",
-      "Concept 2",
-      "Concept 3",
-      "Concept 4",
-      "Concept 5",
-      "Concept 6"
+      "Responsive UI",
+      "Angular 16+",
+      "RESTful APIs",
+      "Unit Tests",
+      "SEO (OG)",
+      "GitHub and Git"
     ],
     "features": [
-      "Feature 1",
-      "Feature 2",
-      "Feature 3",
-      "Feature 4",
-      "Feature 5",
-      "Feature 6"
+      "Weather API",
+      "News API",
+      "WhatsApp Button",
+      "Share Buttons",
+      "Contact Form",
+      "Toggle Themes"
     ],
     "hyperlinks": [
       "https://github.com/mystackbox/prj-portfolio",

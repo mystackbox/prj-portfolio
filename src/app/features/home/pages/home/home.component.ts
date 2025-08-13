@@ -12,16 +12,6 @@ export class HomeComponent {
   constructor(private router: Router, private _products: ProjectsService) {}
 
   ngOnInit() {
-    this.getProjects();
-  }
-
-  getProjects() {
-     this._products.getProjects().subscribe({
-      next: (res) => 
-        console.log(res)
-      ,
-      error: (err) => console.error('Error loading JSON:', err)
-    });
   }
 
   redirectToContactUs() {

@@ -25,7 +25,6 @@
             padding: $spacing-md;
             border-radius: $spacing-sm;
 
-
             .card-icon {
                 margin: 8px 0;
 
@@ -85,7 +84,7 @@
     .feeds-container {
         display: grid;
         grid-template-columns: 7fr 4fr;
-        padding: 0 $spacing-md;
+        // padding: 0 $spacing-md;
         column-gap: 15px;
 
         .recent-project-container {
@@ -93,6 +92,9 @@
             grid-template-columns: 1fr;
             row-gap: 8px;
             text-align: left;
+            padding: $spacing-sm;
+            box-shadow: $light-box-shadow;
+            border-radius: $spacing-xs;
 
             .details-heading {
                 .heading {
@@ -182,6 +184,10 @@
             flex-direction: column;
             text-align: left;
             row-gap: 8px;
+
+            padding: $spacing-sm;
+            box-shadow: $light-box-shadow;
+            border-radius: $spacing-xs;
 
             .feed-title {
                 text-transform: uppercase;

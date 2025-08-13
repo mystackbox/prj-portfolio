@@ -12,12 +12,11 @@ export class ProjectsService {
 
   constructor(private _http: HttpClient) {}
 
+     /**
+     * Fetches data from the projects local JSON API.
+     * @returns An observable of type projects[] | API Server error.
+     */
   getProjects(): Observable<Project[]> {
-    /**
-     * Fetches data from the projects local JSON API.
-     * @param id The unique identifier for the item.
-     * @returns An observable array of projects list | API Server error.
-     */
     return this._http.get<Project[]>(this.apiUrl).pipe(
       catchError((err) => {
         console.error('API error', err);
@@ -26,17 +25,15 @@ export class ProjectsService {
     );
   }
 
-   getFeaturedProject(): Observable<Project> {
-    /**
-     * Fetches data from the projects local JSON API.
-     * @returns An observable of the featured project | API Server error.
-     */
+  /**
+   * Fetches data from the projects local JSON API.
+   * @returns An observable of type project object | API Server error.
+   */
+  getFeaturedProject(): Observable<Project> {
     return this._http.get<Project[]>(this.apiUrl).pipe(
-      map(
-        (projects) => {
-          return projects[projects.length - 1];
-        }
-      ),
+      map((projects) => {
+        return projects[projects.length - 1];
+      }),
       catchError((err) => {
         console.error('API error', err);
         return throwError(() => err);
@@ -44,12 +41,12 @@ export class ProjectsService {
     );
   }
 
+  /**
+   * Fetches single record of project with id.
+   * @param id The unique identifier for the project.
+   * @returns An observable type project object  | API Server error.
+   */
   getSelectedProject(_id?: number): Observable<Project> {
-    /**
-     * Fetches single record of project with id.
-     * @param id The unique identifier for the project.
-     * @returns An observable object of project | API Server error.
-     */
     return this._http.get<Project[]>(this.apiUrl).pipe(
       map(
         (projects) => projects.find((project) => project.id === _id) as Project

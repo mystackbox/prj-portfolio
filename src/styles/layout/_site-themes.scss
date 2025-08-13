@@ -181,8 +181,16 @@
                 border: none;
 
                 .about-container {
+                    box-shadow: $dark-box-shadow;
+                    padding: $spacing-sm;
+                    border-radius: $spacing-sm;
+
                     .set-heading {
                         background-color: #12202e;
+                    }
+
+                    &:hover {
+                        box-shadow: $dark-hover-box-shadow;
                     }
                 }
             }
@@ -191,19 +199,13 @@
 
                 .about-content {
                     padding: 0;
-
-                    .about-container {
-                        box-shadow: $dark-box-shadow;
-                        padding: $spacing-sm;
-                        border-radius: $spacing-sm;
-
-                    }
+                    margin-bottom: 15px;
                 }
             }
 
             @include respond-to("pre-sm") {
                 .about-content {
-                    margin-bottom: 15px;
+
                     padding: $spacing-sm;
                 }
             }
@@ -212,8 +214,13 @@
         #skils-set-page-main {
             .sets-container {
                 padding: 0;
+                margin-bottom: 15px;
 
                 .set-container {
+                    box-shadow: $dark-box-shadow;
+                    padding: $spacing-sm;
+                    border-radius: $spacing-sm;
+
                     .heading {
                         background-color: #12202e;
                     }
@@ -223,15 +230,9 @@
                             background-color: #12202e;
                         }
                     }
-                }
-            }
 
-            @include respond-to("xl") {
-                .sets-container {
-                    .set-container {
-                        box-shadow: $dark-box-shadow;
-                        padding: $spacing-sm;
-                        border-radius: $spacing-sm;
+                    &:hover {
+                         box-shadow: $dark-hover-box-shadow;
                     }
                 }
             }
@@ -247,7 +248,8 @@
 
         #projects-page-main {
             .project-details {
-                border-bottom: 1px solid $light-default-font-color;
+                box-shadow: $dark-box-shadow;
+                border-radius: $spacing-sm;
 
                 .details-container {
                     text-align: left;
@@ -259,8 +261,11 @@
             }
 
             .featured-projects {
-
                 .project-container {
+
+                    box-shadow: $dark-box-shadow;
+                    border-radius: $spacing-xs;
+                    border: none;
 
                     .project-details-container {
                         display: flex;
@@ -274,8 +279,7 @@
                     }
 
                     &:hover {
-                        box-shadow: $dark-box-shadow;
-                        border-radius: $spacing-xs;
+                        box-shadow: $dark-hover-box-shadow;
                     }
                 }
             }
@@ -290,6 +294,9 @@
             @include respond-to("pro-xs") {
                 .featured-projects {
                     .project-container {
+                        box-shadow: $dark-box-shadow;
+                        border-radius: $spacing-xs;
+                        border: none;
 
                         .project-details-container {
                             text-align: center;
@@ -312,13 +319,11 @@
                 }
 
                 .featured-projects {
-                    box-shadow: $dark-box-shadow;
                     border: none;
                     margin-bottom: 15px;
+                    row-gap: 10px;
 
                     .project-container {
-                        border-bottom: 1px solid $light-default-font-color;
-
                         .project-details-container {
                             text-align: left;
 
@@ -334,6 +339,10 @@
 
         #contact-page-main {
             .contact-form-container {
+                box-shadow: $dark-hover-box-shadow;
+                padding: $spacing-sm;
+                border-radius: $spacing-xs;
+
                 form {
                     .contact-info {
                         fieldset {

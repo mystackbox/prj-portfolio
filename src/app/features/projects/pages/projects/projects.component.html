@@ -1,8 +1,7 @@
 <div class="projects-page-main" id="projects-page-main">
-  <div class="page-content-intro-hr">featured</div>
+  <div class="page-content-intro-hr">Explore</div>
 
   <section class="project-details">
-
     <div class="top-container">
       <div *ngIf="project" class="details-container top-left-details">
         <div class="project-img-container">
@@ -11,21 +10,28 @@
             [src]="'./img/projects/' + project.imageName + '.png'"
             [alt]="project.imageName"
             title="View Site"
+            loading="lazy"
           />
         </div>
         <div class="project-description">
-          <div class="heading project">{{project.name}}</div>
+          <div class="heading project">{{ project.name }}</div>
           <div class="details">
             <p>
-              {{project.introduction}}
+              {{ project.introduction }}
             </p>
           </div>
           <div class="project-views">
-            <span class="view git-view" (click)="openHyperLink(project.hyperlinks[0])">
+            <span
+              class="view git-view"
+              (click)="openHyperLink(project.hyperlinks[0])"
+            >
               <i class="bi bi-github"></i>
               GitHub
             </span>
-            <span class="view online-view" (click)="openHyperLink(project.hyperlinks[1])">
+            <span
+              class="view online-view"
+              (click)="openHyperLink(project.hyperlinks[1])"
+            >
               <i class="bi bi-box-arrow-up-right"></i>
               Online
             </span>
@@ -37,30 +43,28 @@
         <div class="project-description">
           <div class="heading">description</div>
           <div class="details">
-            {{project?.description}}
+            {{ project?.description }}
           </div>
         </div>
       </div>
     </div>
 
-    <div *ngIf="project"  class="bottom-container">
+    <div *ngIf="project" class="bottom-container">
       <div class="details-container project-concepts">
         <div class="heading">concepts</div>
         <div class="list-container">
           <div class="details">
             <ul>
-              <li>
-                <i class="bi bi-lightbulb"></i>  {{project.concepts[0]}}
-              </li>
-              <li><i class="bi bi-lightbulb"></i> {{project.concepts[1]}}</li>
-              <li><i class="bi bi-lightbulb"></i> {{project.concepts[2]}}</li>
+              <li><i class="bi bi-lightbulb"></i> {{ project.concepts[0] }}</li>
+              <li><i class="bi bi-lightbulb"></i> {{ project.concepts[1] }}</li>
+              <li><i class="bi bi-lightbulb"></i> {{ project.concepts[2] }}</li>
             </ul>
           </div>
           <div class="details">
             <ul>
-              <li><i class="bi bi-lightbulb"></i> {{project.concepts[3]}}</li>
-              <li><i class="bi bi-lightbulb"></i> {{project.concepts[4]}}</li>
-              <li><i class="bi bi-lightbulb"></i> {{project.concepts[5]}}</li>
+              <li><i class="bi bi-lightbulb"></i> {{ project.concepts[3] }}</li>
+              <li><i class="bi bi-lightbulb"></i> {{ project.concepts[4] }}</li>
+              <li><i class="bi bi-lightbulb"></i> {{ project.concepts[5] }}</li>
             </ul>
           </div>
         </div>
@@ -71,17 +75,17 @@
         <div class="list-container">
           <div class="details">
             <ul>
-              <li><i class="bi bi-stop-fill"></i>  {{project.features[0]}} </li>
-              <li><i class="bi bi-stop-fill"></i> {{project.features[1]}}</li>
-              <li><i class="bi bi-stop-fill"></i> {{project.features[2]}}</li>
+              <li><i class="bi bi-check2-square"></i> {{ project.features[0] }}</li>
+              <li><i class="bi bi-check2-square"></i> {{ project.features[1] }}</li>
+              <li><i class="bi bi-check2-square"></i> {{ project.features[2] }}</li>
             </ul>
           </div>
           <div class="details">
             <ul>
-              <li><i class="bi bi-stop-fill"></i> {{project.features[3]}}</li>
-              <li><i class="bi bi-stop-fill"></i> {{project.features[4]}}</li>
+              <li><i class="bi bi-check2-square"></i> {{ project.features[3] }}</li>
+              <li><i class="bi bi-check2-square"></i> {{ project.features[4] }}</li>
 
-              <li><i class="bi bi-stop-fill"></i> {{project.features[5]}}</li>
+              <li><i class="bi bi-check2-square"></i> {{ project.features[5] }}</li>
             </ul>
           </div>
         </div>
@@ -89,178 +93,42 @@
     </div>
   </section>
 
-  <div class="page-content-intro-hr">other projects</div>
-
-    <section *ngIf="projectsList"  class="featured-projects">
-
-      <div *ngFor="let project of projectsList"  class="project-container prj-1">
-
-        <div class="project-image-container">
-          <img
-            class="project-img"
-            [src]="'./img/projects/' + project.imageName + '.png'"
-            alt="featured project"
-            (click)="getProject(project.id)"
-          />
-        </div>
-
-        <div class="project-details-container">
-          <div class="project-name">{{project.name}}</div>
-
-          <div class="project-summary">{{project.heading}}</div>
-
-          <div class="project-view-btns">
-            <div class="view-btn git-hub-repo" (click)="openHyperLink(project.hyperlinks[0])">
-              <i class="bi bi-github"></i> GitHub
-            </div>
-            <div class="view-btn details" (click)="getProject(project.id)">
-              <i class="bi bi-bookmark"></i> Details
-            </div>
-            <div class="view-btn live-site" (click)="openHyperLink(project.hyperlinks[1])">
-              <i class="bi bi-box-arrow-up-right"></i> Online
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- <div class="project-container prj-2">
+  <section *ngIf="projectsList" class="featured-projects">
+    <div *ngFor="let project of projectsList; let i = index" [class]="'project-container prj-' + i">
       <div class="project-image-container">
         <img
           class="project-img"
-          src="./img/projects/prj-vloc.png"
+          [src]="'./img/projects/' + project.imageName + '.png'"
           alt="featured project"
+          (click)="getProject(project.id)"
+           loading="lazy"
         />
       </div>
 
       <div class="project-details-container">
-        <div class="project-name">v-loc system</div>
+        <div class="project-name">{{ project.name }}</div>
 
-        <div class="project-summary">Vehicle Locator App</div>
+        <div class="project-summary">{{ project.heading }}</div>
 
         <div class="project-view-btns">
-          <div class="view-btn git-hub-repo">
+          <div
+            class="view-btn git-hub-repo"
+            (click)="openHyperLink(project.hyperlinks[0])"
+          >
             <i class="bi bi-github"></i> GitHub
           </div>
-          <div class="view-btn details">
+          <div class="view-btn details" (click)="getProject(project.id)">
             <i class="bi bi-bookmark"></i> Details
           </div>
-          <div class="view-btn live-site">
+          <div
+            class="view-btn live-site"
+            (click)="openHyperLink(project.hyperlinks[1])"
+          >
             <i class="bi bi-box-arrow-up-right"></i> Online
           </div>
         </div>
       </div>
     </div>
-
-    <div class="project-container prj-3">
-      <div class="project-image-container">
-        <img
-          class="project-img"
-          src="./img/projects/prj-weather.png"
-          alt="featured project"
-        />
-      </div>
-
-      <div class="project-details-container">
-        <div class="project-name">weather App</div>
-
-        <div class="project-summary">Real-time Weather</div>
-
-        <div class="project-view-btns">
-          <div class="view-btn git-hub-repo">
-            <i class="bi bi-github"></i> GitHub
-          </div>
-          <div class="view-btn details">
-            <i class="bi bi-bookmark"></i> Details
-          </div>
-          <div class="view-btn live-site">
-            <i class="bi bi-box-arrow-up-right"></i> Online
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-container prj-4">
-      <div class="project-image-container">
-        <img
-          class="project-img"
-          src="./img/projects/prj-mbg.png"
-          alt="featured project"
-        />
-      </div>
-
-      <div class="project-details-container">
-        <div class="project-name">mabunda group</div>
-
-        <div class="project-summary">Business Website</div>
-
-        <div class="project-view-btns">
-          <div class="view-btn git-hub-repo">
-            <i class="bi bi-github"></i> GitHub
-          </div>
-          <div class="view-btn details">
-            <i class="bi bi-bookmark"></i> Details
-          </div>
-          <div class="view-btn live-site">
-            <i class="bi bi-box-arrow-up-right"></i> Online
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-container prj-5">
-      <div class="project-image-container">
-        <img
-          class="project-img"
-          src="./img/projects/prj-mk.png"
-          alt="featured project"
-        />
-      </div>
-
-      <div class="project-details-container">
-        <div class="project-name">KM attorneys</div>
-
-        <div class="project-summary">Business Website</div>
-
-        <div class="project-view-btns">
-          <div class="view-btn git-hub-repo">
-            <i class="bi bi-github"></i> GitHub
-          </div>
-          <div class="view-btn details">
-            <i class="bi bi-bookmark"></i> Details
-          </div>
-          <div class="view-btn live-site">
-            <i class="bi bi-box-arrow-up-right"></i> Online
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-container prj-6">
-      <div class="project-image-container">
-        <img
-          class="project-img"
-          src="./img/projects/prj-portfolio.png"
-          alt="featured project"
-        />
-      </div>
-
-      <div class="project-details-container">
-        <div class="project-name">my portfolio</div>
-
-        <div class="project-summary">Personal portfolio</div>
-
-        <div class="project-view-btns">
-          <div class="view-btn git-hub-repo">
-            <i class="bi bi-github"></i> GitHub
-          </div>
-          <div class="view-btn details">
-            <i class="bi bi-bookmark"></i> Details
-          </div>
-          <div class="view-btn live-site">
-            <i class="bi bi-box-arrow-up-right"></i> Online
-          </div>
-        </div>
-      </div>
-    </div> -->
-    </section>
-  </div>
+    
+  </section>
+</div>

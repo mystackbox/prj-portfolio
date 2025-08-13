@@ -6,7 +6,7 @@
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: $spacing-sm;
+  padding: $spacing-md;
   text-align: center;
   background-color: $light-neutral-bg-color;
   display: grid;
@@ -32,7 +32,6 @@
 
   .grid-area-navbar {
     grid-area: navbar;
-    background-color: $light-primary-bg-color;
     padding: 0;
   }
 
