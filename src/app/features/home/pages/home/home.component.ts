@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProjectsService } from '../../../../core/services/projects/projects.service';
+import { Project } from '../../../../shared/models/project.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +11,30 @@ import { ProjectsService } from '../../../../core/services/projects/projects.ser
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
+  private _projectSub?: Subscription;
+  project?: Project;
+  error?: string;
+
   constructor(private router: Router, private _products: ProjectsService) {}
 
+  //load list of projects
   ngOnInit() {
+    this.getFeaturedProject();
+  }
+
+  /**
+   * Fetches data from the projects local JSON API.
+   * @returns An observable of type project object | API Server error.
+   */
+  getFeaturedProject() {
+    this._projectSub = this._products.getFeaturedProject().subscribe({
+      next: (project: Project) => {
+        this.project = project;
+      },
+      error: (err: any) => {
+        this.error = 'Failed to load project';
+      },
+    });
   }
 
   redirectToContactUs() {
@@ -22,12 +45,7 @@ export class HomeComponent {
     this.router.navigate(['/projects']);
   }
 
-  redirectToGitHubRepo() {
-    window.open('https://github.com/mystackbox/prj-portfolio', '_blank');
+   openHyperLink(hyterLink: string) {
+    window.open(hyterLink, '_blank');
   }
-
-  redirectToDemo() {
-    window.open('https://mystackbox.github.io/prj-portfolio/home', '_blank');
-  }
-  
 }

@@ -4,7 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [{ path: '', component: HomeComponent,
      data: {
-            title: 'home',
+            title: 'Home',
             metaTags: [
               { name: 'short-desc', content: 'front-end developer portfolio' },
               { name: 'page-desc', content: 'welcome to my Angular portfolio' },
