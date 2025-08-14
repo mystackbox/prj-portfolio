@@ -2,9 +2,13 @@
   <div class="page-content-intro-hr">contact form</div>
 
   <div class="contact-form-container">
-
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-      
+
+      <div *ngIf="emptyForm" class="invalid-form-message">
+        <i class="bi bi-exclamation-square-fill"></i>
+        Please ensure the form is completed.
+      </div>
+
       <div class="contact-info">
         <fieldset formGroupName="personalDetails">
           <legend>Your Details</legend>
@@ -20,13 +24,10 @@
             />
 
             <div
-              *ngIf="
-                _firstName?.invalid &&
-                _firstName?.touched
-              "
+              *ngIf="_firstName?.invalid && _firstName?.touched"
               class="form-validation-error-message"
             >
-              *First name required
+             <div *ngIf="_firstName?.errors?.['required']">* First name required </div>
             </div>
           </div>
 
@@ -41,13 +42,10 @@
             />
 
             <div
-              *ngIf="
-                _lastName?.invalid &&
-                _lastName?.touched
-              "
+              *ngIf="_lastName?.invalid && _lastName?.touched"
               class="form-validation-error-message"
             >
-              *Last name required
+            <div *ngIf="_lastName?.errors?.['required']">* Last name required </div>
             </div>
           </div>
 
@@ -59,16 +57,15 @@
               class="input-form-control"
               placeholder="* Email address"
               required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             />
 
             <div
-              *ngIf="
-                 _emailAddress?.invalid &&
-                 _emailAddress?.touched
-              "
+              *ngIf="_emailAddress?.invalid && _emailAddress?.touched"
               class="form-validation-error-message"
             >
-              *Email address required
+              <div *ngIf="_emailAddress?.errors?.['required']">*Email address required </div>
+              <div *ngIf="_emailAddress?.errors?.['pattern']"> *Enter valid mail address </div>
             </div>
           </div>
         </fieldset>
@@ -87,13 +84,10 @@
             />
 
             <div
-              *ngIf="
-                _subject?.invalid &&
-                _subject?.touched
-              "
+              *ngIf="_subject?.invalid && _subject?.touched"
               class="form-validation-error-message"
             >
-              *Subject required
+               <div *ngIf="_subject?.errors?.['required']"> *Subject required</div>
             </div>
           </div>
 
@@ -109,21 +103,20 @@
             </textarea>
 
             <div
-              *ngIf="
-                _message?.invalid &&
-                _message?.touched
-              "
+              *ngIf="_message?.invalid && _message?.touched"
               class="form-validation-error-message text-area-error-message"
             >
-              *Message required
+              <div *ngIf="_message?.errors?.['required']"> *Message required</div>
             </div>
           </div>
         </fieldset>
       </div>
 
       <div class="contact-buttons">
-        <div id="submit-button" class="submit-button button">submit</div>
-        <div id="reset-button" class="reset-button button" (click)="onReset()">clear</div>
+        <button id="submit-button" type="submit" class="submit-button button">submit</button>
+        <div id="reset-button" class="reset-button button" (click)="onReset()">
+          clear
+        </div>
       </div>
     </form>
   </div>
