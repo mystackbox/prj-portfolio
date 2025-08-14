@@ -434,7 +434,7 @@
                 }
 
                 .project-details-container {
-                    row-gap: 2px;
+                    row-gap: 5px;
 
                     .project-name {
                         font-size: $font-size-xs;
@@ -450,7 +450,7 @@
                         column-gap: 4px;
 
                         .view-btn {
-                            padding: $spacing-xs - 4px 6px;
+                              padding: $spacing-xs - 2px $spacing-sm - 2px;
                             min-width: 25px;
                         }
 
@@ -606,6 +606,7 @@
 
                         .view-btn {
                             min-width: 45px;
+                              padding: $spacing-xs $spacing-sm - 2px;
                         }
 
                         .details {
@@ -647,7 +648,7 @@
                         column-gap: 4px;
 
                         .view-btn {
-                            padding: $spacing-xs - 2px $spacing-sm - 2px;
+                            padding: $spacing-xs $spacing-sm - 2px;
                             min-width: 30px;
                         }
                     }
