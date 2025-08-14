@@ -5,7 +5,7 @@
     "heading": "Personal portfolio",
     "imageName": "prj-portfolio",
     "introduction": " Personal portfolio developed using Angular to showcase Front-End Development skills.",
-    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS, . A business website developed using web technologies HTML5, SCSS, Angular",
+    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS.",
     "concepts": [
       "Responsive UI",
       "Angular 16+",
@@ -33,8 +33,8 @@
     "name": "KM attorneys",
     "heading": "Business Website",
     "imageName": "prj-mk",
-    "introduction": "Law-firm website developed using  HTML5, SCSS, Bootstrap 5, and Angular.",
-    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS, . A business website developed using web technologies HTML5, SCSS, Angular",
+    "introduction": "Law-firm website developed using Angular framework.",
+    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS.",
     "concepts": [
       "Responsive UI",
       "Angular 16+",
@@ -62,8 +62,8 @@
     "name": "mabunda group",
     "heading": "Business Website",
     "imageName": "prj-mbg",
-    "introduction": "EHS Business website developed using  HTML5, SCSS, Angular, and Integrated APIs.",
-    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS, . A business website developed using web technologies HTML5, SCSS, Angular",
+    "introduction": "EHS Business website developed using Angular framework.",
+    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS.",
     "concepts": [
       "Responsive UI",
       "Angular 16+",
@@ -91,8 +91,8 @@
     "name": "weather App",
     "heading": "Real-time Weather",
     "imageName": "prj-weather",
-    "introduction": "Angular weather-forecast App developed using HTML5, SCSS, and  weather API",
-    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS, . A business website developed using web technologies HTML5, SCSS, Angular",
+    "introduction": "Weather API integrated App developed using Angular",
+    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS.",
     "concepts": [
       "Geo-location",
       "Responsive UI",
@@ -120,8 +120,8 @@
     "name": "v-loc system",
     "heading": "Vehicle Locator App",
     "imageName": "prj-vloc",
-    "introduction": "Locator App developed using  HTML5, SCSS, Angular, and integrated GoogleMaps.",
-    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS, . A business website developed using web technologies HTML5, SCSS, Angular",
+    "introduction": "Locator App developed using Angular, and GoogleMaps.",
+    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS. ",
     "concepts": [
       "Fetch API",
       "Json-Server",
@@ -149,8 +149,8 @@
     "name": "my portfolio",
     "heading": "Personal portfolio",
     "imageName": "prj-portfolio",
-    "introduction": "Personal portfolio developed using Angular to showcase Front-End Development skills.",
-    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS, . A business website developed using web technologies HTML5, SCSS, Angular",
+    "introduction": "Personal portfolio developed using Angular framework.",
+    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS.",
     "concepts": [
       "Responsive UI",
       "Angular 16+",
