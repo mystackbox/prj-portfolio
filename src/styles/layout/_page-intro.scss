@@ -37,7 +37,7 @@
             color: $light-neutral-font-color;
             cursor: pointer;
             border: none;
-            border-radius: $spacing-xs;
+            border-radius: $spacing-xs - 2px;
 
             &.projects {
                 background-color: orange;
@@ -88,12 +88,6 @@
 
         .page-intro-buttons {
             margin: 5px 0;
-
-            .button {
-                min-width: 100px;
-                padding: 6px 12px;
-                font-size: $font-size-xs;
-            }
         }
     }
 
