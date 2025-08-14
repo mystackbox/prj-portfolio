@@ -39,11 +39,11 @@ pageDesc: any;
          this.pageDesc = data['metaTags'][1].content;
 
         if (this.pageTitle) {
-          this.titleService.setTitle(this.pageTitle);
+          let _title = `Portfolio - ${this.pageTitle}`;
+          this.titleService.setTitle(_title);
         }
       });
   }
-
 
    redirectToContactUs() {
     this.router.navigate(['/contact']);

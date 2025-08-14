@@ -49,7 +49,8 @@
   <div class="page-content-intro-hr">featured</div>
 
   <div class="homepage-content-section feeds-container">
-    <div class="recent-project-container feed">
+
+    <div *ngIf="project" class="recent-project-container feed">
 
       <div class="details-heading">
         <div class="heading">project</div>
@@ -59,24 +60,23 @@
         <div class="recent-project-img" (click)=" redirectToProjects() ">
           <img
             class="project-img"
-            src="./img/projects/prj-mbg.png"
-            alt="recent project"
+             [src]="'./img/projects/' + project.imageName + '.png'"
+            [alt]="project.imageName"
             title="More details"
           />
         </div>
 
         <div class="project-details">
-          <div class="heading details">Mabunda Group</div>
+          <div class="heading details">{{ project.name }}</div>
 
           <div class="project-description details">
             <div class="description">
-              A business website developed using web technologies such as HTML5,
-              SCSS, Bootstrap 5, Font Awesome, Angular, RxJs and APIs.
+                 {{ project.introduction }}
             </div>
 
             <div class="online-options" >
 
-              <div class="online git-hub-repo" (click)="redirectToGitHubRepo()">
+              <div class="online git-hub-repo" (click)="openHyperLink(project.hyperlinks[0])">
                 <i class="bi bi-github"></i> GitHub
               </div>
 
@@ -84,7 +84,7 @@
                 <i class="bi bi-bookmark"></i> Details
               </div>
 
-              <div class="online live-site" (click)=" redirectToDemo()">
+              <div class="online live-site" (click)="openHyperLink(project.hyperlinks[1])">
                 <i class="bi bi-box-arrow-up-right"></i> Online
               </div>
 
