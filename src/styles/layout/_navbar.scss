@@ -84,13 +84,13 @@ $breakpoint: 768px;
         position: static;
         flex-direction: row;
         width: auto;
-        border-radius: $spacing-xs;
+        // border-radius: $spacing-xs;
 
         li {
           border: none;
 
           a {
-            padding: 0.3rem 1rem;
+            padding: 0.6rem 1rem;
 
             &.active {
               color: $light-neutral-font-color;
@@ -107,13 +107,13 @@ $breakpoint: 768px;
     }
 
     @media (min-width: $breakpoint) {
-      border-radius: $spacing-xs;
-      padding: 0;
+      // border-radius: $spacing-xs;
+      padding: 0rem;
     }
   }
 
   @media (min-width: $breakpoint) {
-    border-radius: $spacing-xs;
+    // border-radius: $spacing-xs;
   }
 
 }

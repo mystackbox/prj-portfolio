@@ -4,7 +4,7 @@
     "name": "my portfolio",
     "heading": "Personal portfolio",
     "imageName": "prj-portfolio",
-    "introduction": " Personal portfolio developed with Angular to showcase Front-End Development skills.",
+    "introduction": " Personal portfolio developed using Angular to showcase Front-End Development skills.",
     "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS, . A business website developed using web technologies HTML5, SCSS, Angular",
     "concepts": [
       "Responsive UI",
@@ -33,7 +33,7 @@
     "name": "KM attorneys",
     "heading": "Business Website",
     "imageName": "prj-mk",
-    "introduction": "Fully responsive law-firm website developed using  HTML5, SCSS, Bootstrap 5, and Angular.",
+    "introduction": "Law-firm website developed using  HTML5, SCSS, Bootstrap 5, and Angular.",
     "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS, . A business website developed using web technologies HTML5, SCSS, Angular",
     "concepts": [
       "Responsive UI",
@@ -91,7 +91,7 @@
     "name": "weather App",
     "heading": "Real-time Weather",
     "imageName": "prj-weather",
-    "introduction": "Angular weather-forecast App developed using HTML5, SCSS, and Integrated weather API",
+    "introduction": "Angular weather-forecast App developed using HTML5, SCSS, and  weather API",
     "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS, . A business website developed using web technologies HTML5, SCSS, Angular",
     "concepts": [
       "Geo-location",
@@ -149,7 +149,7 @@
     "name": "my portfolio",
     "heading": "Personal portfolio",
     "imageName": "prj-portfolio",
-    "introduction": "Personal portfolio developed with Angular to showcase Front-End Development skills.",
+    "introduction": "Personal portfolio developed using Angular to showcase Front-End Development skills.",
     "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS, . A business website developed using web technologies HTML5, SCSS, Angular",
     "concepts": [
       "Responsive UI",
