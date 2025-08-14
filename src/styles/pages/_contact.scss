@@ -13,7 +13,7 @@
         box-shadow: $light-box-shadow;
         border-radius: $spacing-xs;
         border: none;
-        padding: $spacing-sm  $spacing-sm ;
+        padding: $spacing-sm $spacing-sm ;
 
         form {
             padding: 0 $spacing-sm;
@@ -24,8 +24,8 @@
 
             .invalid-form-message {
                 color: $error-color;
-                 font-size: $font-size-md + 2px;
-                 margin-top: 10px;
+                font-size: $font-size-md + 2px;
+                margin-top: 10px;
             }
 
             .contact-info {
@@ -34,7 +34,7 @@
                 column-gap: 15px;
 
                 fieldset {
-                    border: 1px solid lightgrey;
+                    border: 1px solid #e5e5e5;
                     margin-bottom: 10px;
                     padding: 0 $spacing-md 12px;
                     display: flex;
@@ -52,10 +52,10 @@
                         .input-form-control {
                             padding: 6px 8px 8px;
                             min-width: 100%;
-                            border: 1px solid lightgrey;
+                            border: 1px solid #e5e5e5;
 
                             &::placeholder {
-                                font-size: 11px;
+                                font-size:12px;
                                 color: lightgrey;
                             }
 
