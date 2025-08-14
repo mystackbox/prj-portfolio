@@ -4,7 +4,6 @@
     display: grid;
     grid-template-rows: 1fr;
     row-gap: 15px;
-    font-size: $font-size-sm;
 
     //cards section
     .cards-container {
@@ -12,7 +11,6 @@
         grid-template-columns: 1fr 1fr 1fr;
         column-gap: 25px;
         justify-items: center;
-        font-size: $font-size-sm + 2px;
 
         .card {
             display: grid;
