@@ -9,15 +9,15 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactComponent {
   contactForm!: FormGroup;
+  emptyForm?: boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {
-    
     //initialize the form
     this.contactForm = new FormGroup({
-
       personalDetails: new FormGroup({
+        // personal details formGroup
         firstName: new FormControl('', [Validators.required]),
         lastName: new FormControl('', [Validators.required]),
         emailAddress: new FormControl('', [
@@ -25,51 +25,63 @@ export class ContactComponent {
           Validators.email,
         ]),
       }),
-      
+
       messageDetails: new FormGroup({
+        // message details formGroup
         subject: new FormControl('', [Validators.required]),
         message: new FormControl('', [Validators.required]),
       }),
     });
   }
 
-  //getter for form-control[fullName]
+  //getter for fullName
   get _firstName() {
-    return (this.contactForm.get('personalDetails') as FormGroup)?.get('firstName');
+    return (this.contactForm.get('personalDetails') as FormGroup)?.get(
+      'firstName'
+    );
   }
 
-  //getter for form-control[lastName]
+  //getter for lastName
   get _lastName() {
-    return (this.contactForm.get('personalDetails') as FormGroup)?.get('lastName');
+    return (this.contactForm.get('personalDetails') as FormGroup)?.get(
+      'lastName'
+    );
   }
 
-  //getter for form-control[emailAddress]
+  //getter for emailAddress
   get _emailAddress() {
-    return (this.contactForm.get('personalDetails') as FormGroup)?.get('emailAddress');
+    return (this.contactForm.get('personalDetails') as FormGroup)?.get(
+      'emailAddress'
+    );
   }
 
-  //getter for form-control[subject]
+  //getter for subject
   get _subject() {
-    return (this.contactForm.get('messageDetails') as FormGroup)?.get('subject');
+    return (this.contactForm.get('messageDetails') as FormGroup)?.get(
+      'subject'
+    );
   }
 
-  //getter for form-control [message]
+  //getter for message
   get _message() {
-    return (this.contactForm.get('messageDetails') as FormGroup)?.get('message');
+    return (this.contactForm.get('messageDetails') as FormGroup)?.get(
+      'message'
+    );
   }
 
   //submit user form
   onSubmit() {
-    console.log('Got triggured...');
-
-    if (this.contactForm.invalid) {
-      console.log('Form validation failed...');
+    if (this.contactForm.invalid || this.contactForm.pristine) {
+      this.emptyForm = true;
       return;
+    } else {
+      this.emptyForm = false;
     }
   }
 
   onReset() {
     this.contactForm.reset();
+    this.emptyForm = false;
   }
 
   ongOnDestroy(): void {}

@@ -22,6 +22,12 @@
             grid-template-columns: 1fr;
             margin-bottom: 15px;
 
+            .invalid-form-message {
+                color: $error-color;
+                 font-size: $font-size-md + 2px;
+                 margin-top: 10px;
+            }
+
             .contact-info {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
@@ -51,6 +57,11 @@
                             &::placeholder {
                                 font-size: 11px;
                                 color: lightgrey;
+                            }
+
+                            &:focus {
+                                border-color: red;
+                                outline: none;
                             }
                         }
 
