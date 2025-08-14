@@ -23,10 +23,7 @@ export class ProjectsComponent {
 
   //load list of projects
   ngOnInit() {
-    console.log('-- Featured  Item --');
     this.getFeaturedProject();
-
-    console.log('-- All Items --');
     this.getProjects();
   }
 
@@ -38,7 +35,6 @@ export class ProjectsComponent {
     this._projectsSub = this._products.getProjects().subscribe({
       next: (projects: Project[]) => {
         this.projectsList = projects;
-        console.log(this.projectsList);
       },
       error: (err: any) => {
         this.error = 'Failed to load projects';
@@ -55,7 +51,6 @@ export class ProjectsComponent {
     this._projectSub = this._products.getSelectedProject(_id).subscribe({
       next: (project: Project) => {
         this.project = project;
-        console.log(this.project);
       },
       error: (err: any) => {
         this.error = 'Failed to load project';
@@ -71,7 +66,7 @@ export class ProjectsComponent {
     this._projectSub = this._products.getFeaturedProject().subscribe({
       next: (project: Project) => {
         this.project = project;
-        console.log(this.project);
+  
       },
       error: (err: any) => {
         this.error = 'Failed to load project';
