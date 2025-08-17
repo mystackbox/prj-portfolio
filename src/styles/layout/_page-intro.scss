@@ -7,8 +7,7 @@
     row-gap: $spacing-sm;
     padding: $spacing-lg;
     border-radius: $spacing-xs;
-    background-color: $light-primary-bg-color;
-    margin-bottom: $spacing-sm;
+    background-image: linear-gradient(to right, #abbaab 0%, #ffffff 51%, #abbaab 100%);
 
     .page-title {
         text-transform: uppercase;
@@ -64,6 +63,10 @@
             font-size: $font-size-md + 3px;
         }
 
+         .page-description {
+            font-size: $font-size-md ;
+        }
+
         .page-intro-buttons {
             .button {
                 min-width: 112px;
@@ -83,7 +86,7 @@
         }
 
         .page-description {
-            font-size: $font-size-md + 2px;
+            font-size: $font-size-sm;
         }
 
         .page-intro-buttons {

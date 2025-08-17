@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
+import Swal from 'sweetalert2';
+import { CanDeactivateIF } from '../../../../core/route-guards/unsaved-changes/unsaved-change.guard';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +10,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
-export class ContactComponent {
+export class ContactComponent implements CanDeactivateIF {
   contactForm!: FormGroup;
   emptyForm?: boolean = false;
+  private _isSubmitted = false;
 
   constructor() {}
 
@@ -69,8 +73,28 @@ export class ContactComponent {
     );
   }
 
+  onUnsavedChanges(): Observable<boolean> | Promise<boolean> | boolean {
+    //if the form is not dirty and not submitted, allow proceeding
+    if (this.contactForm.pristine) {
+      return true;
+    }
+    //if the form is dirty, show confirmation dialog
+    return Swal.fire({
+      title: 'Are you sure?',
+      text: 'You want to discard the changes.',
+      showCancelButton: true,
+      confirmButtonColor: '#FF0000',
+      cancelButtonColor: '#20B2AA',
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No',
+    }).then((result) => result.isConfirmed);
+
+  }
+
   //submit user form
   onSubmit() {
+    this._isSubmitted = true;
+
     if (this.contactForm.invalid || this.contactForm.pristine) {
       this.emptyForm = true;
       return;
@@ -79,10 +103,12 @@ export class ContactComponent {
     }
   }
 
+  //Reset the form
   onReset() {
     this.contactForm.reset();
+    this.contactForm.markAsPristine;
     this.emptyForm = false;
   }
 
-  ongOnDestroy(): void {}
+  ngOnDestroy(): void {}
 }
