@@ -58,35 +58,6 @@
   },
 
   {
-    "id": 3,
-    "name": "mabunda group",
-    "heading": "Business Website",
-    "imageName": "prj-mbg",
-    "introduction": "EHS Business website developed using Angular framework.",
-    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS.",
-    "concepts": [
-      "Responsive UI",
-      "Angular 16+",
-      "RESTful APIs",
-      "Unit Tests",
-      "SEO (OG)",
-      "GitHub and Git"
-    ],
-    "features": [
-      "Rea-time Weather",
-      "Photo Gallery",
-      "Google Maps",
-      "Share Buttons",
-      "Contact Form",
-      "Toggle Themes"
-    ],
-    "hyperlinks": [
-      "https://github.com/mystackbox/prj-mabunda-group",
-      "https://mystackbox.github.io/prj-portfolio/home"
-    ]
-  },
-
-  {
     "id": 4,
     "name": "weather App",
     "heading": "Real-time Weather",
@@ -170,6 +141,34 @@
     "hyperlinks": [
       "https://github.com/mystackbox/prj-portfolio",
       "https://mystackbox.github.io/prj-portfolio/home"
+    ]
+  },
+    {
+    "id": 3,
+    "name": "mabunda group",
+    "heading": "Business Website",
+    "imageName": "prj-mbg",
+    "introduction": "EHS Business website developed using Angular framework.",
+    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS.",
+    "concepts": [
+      "Responsive UI",
+      "Angular 16+",
+      "RESTful APIs",
+      "Unit Tests",
+      "SEO (OG)",
+      "GitHub and Git"
+    ],
+    "features": [
+      "Rea-time Weather",
+      "Photo Gallery",
+      "Google Maps",
+      "Share Buttons",
+      "Contact Form",
+      "Toggle Themes"
+    ],
+    "hyperlinks": [
+      "https://github.com/mystackbox/prj-mabunda-group",
+      "https://mabundagroup.com/home"
     ]
   }
 ]
