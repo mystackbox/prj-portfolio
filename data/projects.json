@@ -4,7 +4,7 @@
     "name": "my portfolio",
     "heading": "Personal portfolio",
     "imageName": "prj-portfolio",
-    "introduction": " Personal portfolio developed using Angular to showcase Front-End Development skills.",
+    "introduction": "Personal portfolio developed using Angular framework.",
     "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS.",
     "concepts": [
       "Responsive UI",
