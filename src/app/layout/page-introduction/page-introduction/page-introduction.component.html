@@ -1,14 +1,36 @@
 <div id="page-instroduction" class="page-instroduction">
-  <div class="page-title">{{ pageTitle }}</div>
+  <div class="call-to-acltion-container">
 
-  <div class="page-description">{{ pageDesc }}</div>
+    <div class="intro-text">
+      <div class="page-title">{{ pageTitle }}</div>
+      <div class="page-description">{{ pageDesc }}</div>
+      <div class="page-intro-buttons">
+        <button
+          name="projects"
+          class="button projects"
+          type="button"
+          (click)="redirectToProjects()"
+        >
+          projects
+        </button>
+        <button
+          name="contact"
+          class="button contact"
+          type="button"
+          (click)="redirectToContactUs()"
+        >
+          contact
+        </button>
+      </div>
+    </div>
 
-  <div class="page-intro-buttons">
-    <button name="projects" class="button projects" type="button" (click)="redirectToProjects()">
-      projects
-    </button>
-    <button name="contact" class="button contact" type="button" (click)="redirectToContactUs()">
-      contact
-    </button>
+    <div class="intro-image">
+      <img
+        class="project-img"
+        src="./img/call-to-action/ui.png"
+        alt="recent project"
+      />
+    </div>
   </div>
+  
 </div>

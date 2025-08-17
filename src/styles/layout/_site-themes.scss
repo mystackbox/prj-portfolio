@@ -16,10 +16,13 @@
         color: var(--text-color);
 
         #page-instroduction {
-            background-color: #12202e;
+
+            //  background-image: linear-gradient(to right, #abbaab 0%, #ffffff 51%, #abbaab 100%);
+            // background-image: linear-gradient(to right, #000428 0%, #004e92  51%, #000428  100%);
+             background-image: linear-gradient(to right, #200122 0%, #6f0000 51%, #200122 100%);
 
             .page-description {
-                color: $light-tertiary-font-color;
+                color: $light-neutral-font-color;
             }
 
             .page-intro-buttons {
@@ -35,7 +38,7 @@
 
                     &.contact {
 
-                        background-color: #12202e;
+                        background-color: transparent;
                         border: 1px solid #e5e5e5;
 
                         &:hover {
