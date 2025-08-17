@@ -6,7 +6,7 @@
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: $spacing-xs + 2px;
+  padding: $spacing-md + 2px;
   text-align: center;
   background-color: $light-neutral-bg-color;
   display: grid;
@@ -53,8 +53,8 @@
 
 //Media queries for responsive design
 @include respond-to("xs") {
-
   .site-grid-container {
+    padding: 0 $spacing-sm;
     row-gap: 5px;
     justify-content: center;
     grid-template-areas: "navbar"

@@ -96,11 +96,7 @@
 
             .details-heading {
                 .heading {
-                    text-transform: uppercase;
-                    background-color: $light-primary-bg-color;
-                    border-radius: $spacing-xs;
-                    padding: $spacing-xs $spacing-sm;
-                    font-weight: bold;
+                    @include heading-light;
                 }
             }
 
@@ -113,7 +109,7 @@
                     cursor: pointer;
 
                     .project-img {
-                        height: 140px;
+                        height: 120px;
                         border-radius: $spacing-xs;
                     }
                 }
@@ -149,27 +145,7 @@
                             flex-wrap: wrap;
 
                             .online {
-                                padding: $spacing-xs $spacing-md;
-                                background-color: $light-secondery-bg-color;
-                                border-radius: $spacing-xs - 1px;
-                                font-size: $font-size-xs;
-                                min-width: 70px;
-                                color: $light-neutral-font-color;
-                                cursor: pointer;
-                            }
-
-                            .git-hub-repo {
-                                // color: #000;
-                                background-color: $light-dark-bg-color;
-                            }
-
-                            .live-site {
-                                color: red;
-                            }
-
-                            .more {
-                                color: $light-neutral-font-color;
-                                background-color: orangered;
+                                @include button;
                             }
                         }
                     }
@@ -187,12 +163,8 @@
             box-shadow: $light-box-shadow;
             border-radius: $spacing-xs;
 
-            .feed-title {
-                text-transform: uppercase;
-                background-color: $light-primary-bg-color;
-                border-radius: $spacing-xs;
-                padding: $spacing-xs $spacing-sm;
-                font-weight: bold;
+            .heading {
+                @include heading-light;
             }
 
             .news-container {
@@ -247,7 +219,7 @@
                         text-transform: uppercase;
                     }
 
-                    &.more-news{
+                    &.more-news {
                         color: $error-color;
                     }
                 }
@@ -591,7 +563,7 @@
             .news-feed-container {
 
                 &.feed {
-                    .feed-title {
+                    .heading {
                         text-align: center;
                     }
                 }

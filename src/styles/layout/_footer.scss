@@ -116,11 +116,7 @@
 
             .footer-item-title {
                 margin-bottom: $spacing-xs + 4px;
-                text-transform: uppercase;
-                background-color: $light-primary-bg-color;
-                border-radius: $spacing-xs;
-                padding: $spacing-xs $spacing-sm;
-                font-weight: bold;
+                @include heading-light;
             }
         }
     }
@@ -166,6 +162,9 @@
 
         .footer-top-section {
             grid-template-columns: 1fr;
+            row-gap: 0px;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
 
             .item-resources,
             .item-introduction,
@@ -175,18 +174,20 @@
 
             .footer-item {
                 text-align: center;
+                padding-bottom: 0px;
+                margin-bottom: 0px;
 
                 .contact-items {
-                .contact-item {
-                   .item {
-                        row-gap: 8px; 
+                    .contact-item {
+                        .item {
+                            row-gap: 8px;
+                        }
                     }
                 }
-                }
 
-                .contact-pages { 
-                justify-content: center;
-             }
+                .contact-pages {
+                    justify-content: center;
+                }
             }
         }
     }
