@@ -4,7 +4,7 @@
   <div class="contact-form-container">
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
-      <div *ngIf="emptyForm" class="invalid-form-message">
+      <div *ngIf="formError" class="invalid-form-message">
         <i class="bi bi-exclamation-square-fill"></i>
         Please complete all required fields.
       </div>

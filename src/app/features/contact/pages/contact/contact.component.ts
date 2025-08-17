@@ -12,7 +12,7 @@ import { CanDeactivateIF } from '../../../../core/route-guards/unsaved-changes/u
 })
 export class ContactComponent implements CanDeactivateIF {
   contactForm!: FormGroup;
-  emptyForm?: boolean = false;
+  formError?: boolean = false;
   private _isSubmitted = false;
 
   constructor() {}
@@ -93,21 +93,17 @@ export class ContactComponent implements CanDeactivateIF {
 
   //submit user form
   onSubmit() {
-    this._isSubmitted = true;
-
-    if (this.contactForm.invalid || this.contactForm.pristine) {
-      this.emptyForm = true;
+      if (this.contactForm.invalid || this.contactForm.pristine) {
+        this.formError = true;
       return;
-    } else {
-      this.emptyForm = false;
-    }
+    } 
   }
 
   //Reset the form
   onReset() {
     this.contactForm.reset();
     this.contactForm.markAsPristine;
-    this.emptyForm = false;
+    this.formError = false;
   }
 
   ngOnDestroy(): void {}
