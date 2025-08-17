@@ -126,6 +126,7 @@
 @mixin heading-light {
   text-transform: uppercase;
   background-color: $light-primary-bg-color;
+  
   border-radius: $spacing-xs;
   padding: $spacing-xs $spacing-sm;
   font-weight: bold;

@@ -7,7 +7,7 @@ const routes: Routes = [{ path: '', component: SkillsSetComponent,
             title: 'Skills',
             metaTags: [
               { name: 'short-desc', content: 'angular front-end developer' },
-              { name: 'page-desc', content: 'angular front-end development skills set' },
+              { name: 'page-desc', content: 'front-end development skills set' },
             ]
         }
  }];

@@ -1,5 +1,5 @@
 <div class="projects-page-main" id="projects-page-main">
-  <div class="page-content-intro-hr">Explore</div>
+  <div class="page-content-intro-hr">featured</div>
 
   <section class="project-details">
     <div class="top-container">
@@ -49,7 +49,7 @@
       </div>
     </div>
 
-    <div *ngIf="project" class="bottom-container">
+    <!-- <div *ngIf="project" class="bottom-container">
       <div class="details-container project-concepts">
         <div class="heading">concepts</div>
         <div class="list-container">
@@ -90,8 +90,10 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </section>
+
+   <!-- <div class="page-content-intro-hr">selection</div> -->
 
   <section *ngIf="projectsList" class="featured-projects">
     <div *ngFor="let project of projectsList; let i = index" [class]="'project-container prj-' + i">

@@ -2,96 +2,202 @@
 
 #page-instroduction {
 
-    display: flex;
-    flex-direction: column;
-    row-gap: $spacing-sm;
-    padding: $spacing-lg;
-    border-radius: $spacing-xs;
-    background-image: linear-gradient(to right, #abbaab 0%, #ffffff 51%, #abbaab 100%);
+    display: grid;
+    grid-template-columns: 1fr;
+    border-radius: $spacing-sm;
 
-    .page-title {
-        text-transform: uppercase;
-        font-size: $font-size-xl;
-        font-weight: bolder;
-    }
+    // background-image: linear-gradient(to right, #abbaab 0%, #ffffff 51%, #abbaab 100%);
+    // background-image: linear-gradient(to right, #ECE9E6 0%, #FFFFFF 51%, #ECE9E6 100%);
 
-    .page-description {
-        text-transform: uppercase;
-        font-size: $font-size-md + 2px;
-        color: $comp-default-font-color;
-    }
+    // background-image: linear-gradient(to right, #8E0E00 0%, #1F1C18  51%, #8E0E00  100%);
+    // background-image: linear-gradient(to right, #870000 0%, #190A05 51%, #870000 100%);
+    background-image: linear-gradient(to right, #200122 0%, #6f0000 51%, #200122 100%);
 
-    .page-intro-buttons {
+    .call-to-acltion-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: $spacing-sm;
+        padding: $spacing-lg + 40px;
+        border-radius: $spacing-sm;
 
-        display: flex;
-        flex-direction: row;
-        column-gap: 10px;
-        justify-content: center;
-        margin: 10px 0;
+        .intro-text {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            text-align: left;
 
-        button {
-            min-width: 120px;
-            padding: 7px 18px;
-            text-transform: uppercase;
-            color: $light-neutral-font-color;
-            cursor: pointer;
-            border: none;
-            border-radius: $spacing-xs - 2px;
-
-            &.projects {
-                background-color: orange;
-
-                &:hover {
-                    background-color: brown;
-                }
+            .page-title {
+                text-transform: uppercase;
+                font-size: $font-size-xl;
+                font-weight: bolder;
+                color: $light-neutral-font-color;
             }
 
-            &.contact {
-                background-color: $light-secondery-font-color;
+            .page-description {
+                text-transform: uppercase;
+                font-size: $font-size-md + 2px;
+                // color: $comp-default-font-color;
+                color: $light-neutral-font-color;
+            }
 
-                &:hover {
-                    background-color: $light-dark-bg-color;
+            .page-intro-buttons {
+
+                display: flex;
+                flex-direction: row;
+                column-gap: 10px;
+                justify-content: left;
+                margin: 10px 0;
+
+                button {
+                    min-width: 120px;
+                    padding: 7px 18px;
+                    text-transform: uppercase;
+                    color: $light-neutral-font-color;
+                    cursor: pointer;
+                    border: none;
+                    border-radius: $spacing-xs - 2px;
+
+                    &.projects {
+                        background-color: $error-color;
+
+                        &:hover {
+                            background-color: orange;
+                        }
+                    }
+
+                    &.contact {
+
+                        background-color: transparent;
+                        border: 1px solid $light-neutral-font-color;
+
+                        &:hover {
+                            background-color: $comp-default-font-color;
+                            border-color: $comp-default-font-color;
+                        }
+                    }
                 }
             }
+        }
+
+        .intro-image {
+            img {
+                height: 150px;
+                cursor: pointer;
+            }
+
         }
     }
 }
 
 @include respond-to("sm") {
+    
     #page-instroduction {
-        .page-heading {
-            font-size: $font-size-md + 3px;
-        }
+        .call-to-acltion-container {
+        padding: $spacing-lg + 20px;
 
-         .page-description {
-            font-size: $font-size-md ;
-        }
+        .intro-text {
+            row-gap: 3px;
+            .page-title {
+                font-size: $font-size-xl - 2px;
+     
+            }
 
-        .page-intro-buttons {
-            .button {
-                min-width: 112px;
-                padding: 8px 6px;
-                font-size: $font-size-sm;
+            .page-description {
+                font-size: $font-size-md;
+            }
+
+            .page-intro-buttons {
+
+                button {
+                    min-width: 120px;
+                    padding: 7px 18px;
+                     font-size: $font-size-sm;
+
+                }
             }
         }
+
+        .intro-image {
+            img {
+                height: 130px;
+                cursor: pointer;
+            }
+
+        }
+    }
     }
 }
 
-@include respond-to("xs") {
-    #page-instroduction {
-        padding: $spacing-md;
+@include respond-to("pre-sm") {
+   #page-instroduction {
+        .call-to-acltion-container {
+        padding: $spacing-lg;
 
-        .page-title {
-            font-size: $font-size-lg + 2px;
+        .intro-text {
+            row-gap: 0px;
+            .page-title {
+                font-size: $font-size-lg;
+            }
+
+            .page-description {
+                font-size: $font-size-sm;
+            }
+
+            .page-intro-buttons {
+
+                button {
+                    min-width: 110px;
+                    padding: 7px 14px;
+                     font-size: $font-size-xs;
+
+                }
+            }
         }
 
-        .page-description {
-            font-size: $font-size-sm;
+        .intro-image {
+            img {
+                height: 115px;
+                cursor: pointer;
+            }
+
+        }
+    }
+    }
+
+}
+
+@include respond-to("pro-xs") {
+   #page-instroduction {
+        .call-to-acltion-container {
+              grid-template-columns: 1fr;
+        padding: $spacing-xl;
+
+        .intro-text {
+            row-gap: 5px;
+            .page-title {
+                font-size: $font-size-lg + 4px;
+            }
+
+            .page-description {
+                font-size: $font-size-sm;
+            }
+
+            .page-intro-buttons {
+
+                button {
+                    min-width: 100px;
+                    padding: 7px 14px;
+                     font-size: $font-size-xs;
+
+                }
+            }
         }
 
-        .page-intro-buttons {
-            margin: 5px 0;
+        .intro-image {
+           display: none;
+
         }
+    }
     }
 
 }
