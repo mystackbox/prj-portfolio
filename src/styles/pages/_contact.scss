@@ -74,7 +74,7 @@
                             }
 
                             &::placeholder {
-                                font-family: $font-stack;
+                                @include global-font-Ubuntu-light;
                                 font-size: 11px;
                                 color: lightgrey;
                             }

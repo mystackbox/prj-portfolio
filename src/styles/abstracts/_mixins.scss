@@ -123,6 +123,42 @@
 
 }
 
+@mixin heading-light {
+  text-transform: uppercase;
+  background-color: $light-primary-bg-color;
+  border-radius: $spacing-xs;
+  padding: $spacing-xs $spacing-sm;
+  font-weight: bold;
+
+}
+
+@mixin heading-dark {
+  background-color: #12202e;
+}
+
+@mixin button {
+  padding: $spacing-xs - 1px $spacing-md;
+  background-color: $light-primary-bg-color;
+  border-radius: $spacing-xs - 1px;
+  font-size: $font-size-xs;
+  min-width: 70px;
+  color: $light-neutral-font-color;
+  cursor: pointer;
+
+  &.git-btn {
+    background-color: $light-dark-bg-color;
+  }
+
+  &.detail-btn {
+    color: $light-neutral-font-color;
+    background-color: orangered;
+  }
+
+  &.view-btn {
+    color: red;
+  }
+
+}
 
 /*
   -------------------------  FONTS  FIRST PREF --------------------------

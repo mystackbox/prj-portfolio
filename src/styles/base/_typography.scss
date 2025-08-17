@@ -1,17 +1,7 @@
 @use 'abstracts' as *;
 
-// base/_typography.scss
 body {
     @include global-font-Ubuntu-light ;
-    
     color: $light-primary-font-color;
     background-color: $light-secondery-bg-color;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-    text-transform: uppercase;
 }

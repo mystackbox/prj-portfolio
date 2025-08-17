@@ -28,12 +28,7 @@
 
             .set-heading {
                 margin-bottom: $spacing-xs + 4px;
-                text-transform: uppercase;
-                background-color: $light-primary-bg-color;
-                border-radius: $spacing-xs;
-                padding: $spacing-xs $spacing-sm;
-                font-weight: bold;
-
+                @include heading-light;
             }
 
             .set-container {

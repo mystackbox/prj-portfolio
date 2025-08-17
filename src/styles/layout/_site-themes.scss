@@ -111,17 +111,16 @@
 
             .feeds-container {
                 .recent-project-container {
-
                     .details-heading {
                         .heading {
-                            background-color: #12202e;
+                            @include heading-dark;
                         }
                     }
 
                     .recent-project-details {
                         .project-details {
                             .heading {
-                                background-color: #12202e;
+                                 @include heading-dark;
                             }
                         }
                     }
@@ -129,8 +128,8 @@
 
                 .news-feed-container {
 
-                    .feed-title {
-                        background-color: #12202e;
+                    .heading {
+                         @include heading-dark;
                     }
 
                     .news-container {
@@ -148,7 +147,7 @@
                 }
 
                 .weather-container {
-                    background-color: #12202e;
+                    @include heading-dark;
                     color: bro;
                 }
             }
@@ -178,7 +177,7 @@
                     border-radius: $spacing-sm;
 
                     .set-heading {
-                        background-color: #12202e;
+                       @include heading-dark;
                     }
 
                     &:hover {
@@ -194,12 +193,6 @@
                     margin-bottom: 15px;
                 }
             }
-
-            @include respond-to("pre-sm") {
-                // .about-content {
-                //     padding: $spacing-sm;
-                // }
-            }
         }
 
         #skils-set-page-main {
@@ -213,12 +206,12 @@
                     border-radius: $spacing-sm;
 
                     .heading {
-                        background-color: #12202e;
+                        @include heading-dark;
                     }
 
                     .set {
                         .skill {
-                            background-color: #12202e;
+                            @include heading-dark;
                         }
                     }
 
@@ -245,7 +238,7 @@
                     text-align: left;
 
                     .heading {
-                        background-color: #12202e;
+                         @include heading-dark;
                     }
                 }
             }
@@ -264,7 +257,7 @@
                         text-align: left;
 
                         .project-name {
-                            background-color: #12202e;
+                            @include heading-dark;
                         }
                     }
 
@@ -348,12 +341,12 @@
 
             .footer-item {
                 .footer-item-title {
-                    background-color: #12202e;
+                     @include heading-dark;
                 }
             }
 
             .footer-bottom-section {
-                background-color: #12202e;
+                 @include heading-dark;
             }
         }
     }
