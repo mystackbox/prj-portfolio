@@ -15,6 +15,9 @@ export class HomeComponent {
   project?: Project;
   error?: string;
 
+  gitHubRepo: string = 'https://github.com/mystackbox';
+  linkedIn: string = 'https://www.linkedin.com/in/yingisani-chiqinda-545a062bb/';
+
   constructor(private router: Router, private _products: ProjectsService) {}
 
   //load list of projects

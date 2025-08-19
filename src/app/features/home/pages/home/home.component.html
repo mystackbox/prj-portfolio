@@ -1,7 +1,6 @@
 <div id="home-page-main" class="home-page-main">
-
-  <div class="homepage-content-section cards-container " >
-    <div class="card card-ui" (click)=" redirectToProjects() " >
+  <div class="homepage-content-section cards-container">
+    <div class="card card-ui" (click)="redirectToProjects()">
       <div class="card-icon">
         <i class="bi bi-code-slash"></i>
       </div>
@@ -12,7 +11,7 @@
       </div>
     </div>
 
-    <div class="card card-api" (click)=" redirectToProjects() " >
+    <div class="card card-api" (click)="redirectToProjects()">
       <div class="card-icon">
         <i class="bi bi-plug"></i>
       </div>
@@ -23,7 +22,7 @@
       </div>
     </div>
 
-    <div class="card card-test" (click)=" redirectToProjects() " >
+    <div class="card card-test" (click)="redirectToProjects()">
       <div class="card-icon">
         <i class="bi bi-flask-florence"></i>
       </div>
@@ -34,7 +33,7 @@
       </div>
     </div>
 
-    <div class="card card-git" (click)=" redirectToProjects() " >
+    <div class="card card-git" (click)="redirectToProjects()">
       <div class="card-icon">
         <i class="bi bi-github"></i>
       </div>
@@ -46,96 +45,36 @@
     </div>
   </div>
 
-  <div class="page-content-intro-hr">featured</div>
+  <div class="page-content-intro-hr">INTRODUCTION</div>
 
-  <div class="homepage-content-section feeds-container">
+  <div class="homepage-content-section intro-container">
+    <div class="developer-name">Hi, I’m Yingi.</div>
+    <div class="developer-title"> Angular Front-End Developer</div>
 
-    <div *ngIf="project" class="recent-project-container feed">
+      <p>
+      I craft responsive, scalable, and user-friendly Single-Page applications (<span class="highlight">SPA</span>) that are clean, and robust using
+      <span class="highlight">Angular Framework</span>. I enjoy solving complex problems and transforming ideas into
+      intuitive digital products. </p>
+      <p>
+      My expertise includes  SCSS, JavaScrip, TypeScript, RxJS, NgRx, and REST API
+      integration, along with Unit Test and Git & GitHub.  
+      
+       Please check out my projects and reach out if you'd like to chat!
+      </p>
 
-      <div class="details-heading">
-        <div class="heading">project</div>
-      </div>
-
-      <div class="recent-project-details">
-        <div class="recent-project-img" (click)=" redirectToProjects() ">
-          <img
-            class="project-img"
-             [src]="'./img/projects/' + project.imageName + '.png'"
-            [alt]="project.imageName"
-            title="More details"
-          />
+    <div class="intro-btn-container">
+        <button type="button" class="intro-btn projects-btn" (click)="redirectToProjects()">
+          <i class="bi bi-app-indicator"></i>
+            Projects 
+          </button>
+            <button type="button" class="intro-btn gitHub-btn " (click)="openHyperLink(gitHubRepo)">
+              <i class="bi bi-github"></i>
+            GitHub
+          </button>
+          <button type="button" class="intro-btn linkedin-btn" (click)="openHyperLink(linkedIn)">
+            <i class="bi bi-linkedin"></i>
+            linkedIn
+          </button>
         </div>
-
-        <div class="project-details">
-          <div class="heading details">{{ project.name }}</div>
-
-          <div class="project-description details">
-            <div class="description">
-                 {{ project.introduction }}
-            </div>
-
-            <div class="online-options" >
-
-              <div class="online git-btn" (click)="openHyperLink(project.hyperlinks[0])">
-                <i class="bi bi-github"></i> GitHub
-              </div>
-
-              <div class="online detail-btn" (click)="redirectToProjects()" >
-                <i class="bi bi-bookmark"></i> Details
-              </div>
-
-              <div class="online view-btn" (click)="openHyperLink(project.hyperlinks[1])">
-                <i class="bi bi-box-arrow-up-right"></i> Online
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="news-feed-container feed">
-
-      <div class="heading">news headlines</div>
-
-      <div class="weather-container">
-        <!-- <span class="weather-item title">Weather: </span> -->
-        <span class="weather-item"
-          ><i class="bi bi-calendar-minus"></i> 26-07-2025
-        </span>
-        <span class="weather-item">
-          <i class="bi bi-thermometer-half"></i> 22 °C</span
-        >
-        <span class="weather-item">
-          <i class="bi bi-cloud-sun"></i> Clear Sky
-        </span>
-        <span class="weather-item"><i class="bi bi-droplet-half"></i> 22% </span>
-
-        <span class="weather-item more-news">
-            More.. 
-        </span>
-      </div>
-
-      <div class="news-container">
-        <div class="news">
-          <img class="news-img" src="./img/misc/shooting.jpg" alt="recent project" />
-          <div class="news-headline">shootings - KZN</div>
-        </div>
-
-        <div class="news">
-          <img
-            class="news-img"
-            src="./img/misc/mchunu2.jpg"
-            alt="recent project"
-          />
-          <div class="news-headline">mchunu scandal</div>
-        </div>
-
-        <div class="news">
-          <img class="news-img" src="./img/misc/108.jpg" alt="recent project" />
-          <div class="news-headline">more arrests</div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>

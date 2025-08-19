@@ -19,7 +19,7 @@
 
             //  background-image: linear-gradient(to right, #abbaab 0%, #ffffff 51%, #abbaab 100%);
             // background-image: linear-gradient(to right, #000428 0%, #004e92  51%, #000428  100%);
-             background-image: linear-gradient(to right, #200122 0%, #6f0000 51%, #200122 100%);
+            background-image: linear-gradient(to right, #200122 0%, #6f0000 51%, #200122 100%);
 
             .page-description {
                 color: $light-neutral-font-color;
@@ -33,7 +33,7 @@
                     }
 
                     &:hover {
-                        background-color: $light-dark-bg-color;
+                        background-color: $dark-primary-bg-color;
                     }
 
                     &.contact {
@@ -49,37 +49,10 @@
                 }
             }
 
-            @include respond-to("xs") {
-                .page-intro-buttons {
-                    button {
-                        &.projects {
-                            background-color: $light-dark-bg-color;
-                        }
-
-                        &:hover {
-                            background-color: red;
-                            ;
-                        }
-
-                        &.contact {
-
-                            background-color: #12202e;
-                            border: 1px solid #e5e5e5;
-
-                            &:hover {
-                                background-color: brown;
-                                border-color: brown;
-                            }
-                        }
-                    }
-                }
-            }
         }
 
         #home-page-main {
-
             .cards-container {
-
                 .card {
                     background-color: #12202e;
                     box-shadow: $dark-box-shadow;
@@ -90,9 +63,7 @@
 
                     .card-button {
                         .explore {
-
                             background-color: red;
-                            // background-color: red;
                         }
                     }
 
@@ -112,59 +83,74 @@
                 }
             }
 
-            .feeds-container {
-                .recent-project-container {
-                    .details-heading {
-                        .heading {
-                            @include heading-dark;
-                        }
-                    }
+            .intro-container {
+                padding: 0 10% 15px;
+                border-radius: $spacing-sm;
+                text-align: center;
+                margin-top: -10px;
 
-                    .recent-project-details {
-                        .project-details {
-                            .heading {
-                                 @include heading-dark;
-                            }
-                        }
+                background-color: #12202e;
+
+                .developer-name {
+                    font-size: $font-size-lg + 8px;
+                    font-weight: bold;
+                }
+
+                .developer-title {
+                    text-transform: uppercase;
+                    font-size: $font-size-md + 2px;
+                    font-family: 50;
+                }
+
+                p {
+                    margin: 15px 0;
+                    font-size: $font-size-md;
+                    line-height: 1.6;
+
+                    .highlight {
+                        font-weight: bold;
+                        color: $comp-default-font-color;
                     }
                 }
 
-                .news-feed-container {
+                .intro-btn-container {
 
-                    .heading {
-                         @include heading-dark;
-                    }
+                    .intro-btn {
 
-                    .news-container {
-                        .news {
-                            .news-headline {
-                                background-color: $light-dark-bg-color;
-                                color: #fff;
+                        &.gitHub-btn {
+                            background-color: $dark-primary-bg-color;
+                        }
 
-                                &:hover {
-                                    background-color: red;
-                                }
-                            }
+                        &.linkedin-btn {
+                            background-color: $light-primary-bg-color;
+                            color: $light-default-font-color;
                         }
                     }
-                }
-
-                .weather-container {
-                    @include heading-dark;
-                    color: bro;
                 }
             }
 
             @include respond-to("pro-xs") {
-                .feeds-container {
-                    .recent-project-container {
-                        box-shadow: $dark-box-shadow;
-                        border: none;
-                    }
+                .intro-container {
+                    padding: 0 5%;
+                }
+            }
 
-                    .news-feed-container {
-                        box-shadow: $dark-box-shadow;
-                        border: none;
+            @include respond-to("xs") {
+                .cards-container,
+                .page-content-intro-hr {
+                    display: none;
+                }
+
+                .intro-container {
+                    margin-top: 0;
+                    padding: $spacing-sm $spacing-sm $spacing-lg;
+
+                    .intro-btn-container {
+                        column-gap: 10px;
+                        .intro-btn {
+                            padding: 6px 15px;
+                            max-width: 200px;
+                        }
                     }
                 }
             }
@@ -180,7 +166,7 @@
                     border-radius: $spacing-sm;
 
                     .set-heading {
-                       @include heading-dark;
+                        @include heading-dark;
                     }
 
                     &:hover {
@@ -219,7 +205,7 @@
                     }
 
                     &:hover {
-                         box-shadow: $dark-hover-box-shadow;
+                        box-shadow: $dark-hover-box-shadow;
                     }
                 }
             }
@@ -241,7 +227,7 @@
                     text-align: left;
 
                     .heading {
-                         @include heading-dark;
+                        @include heading-dark;
                     }
                 }
             }
@@ -344,12 +330,12 @@
 
             .footer-item {
                 .footer-item-title {
-                     @include heading-dark;
+                    @include heading-dark;
                 }
             }
 
             .footer-bottom-section {
-                 @include heading-dark;
+                @include heading-dark;
             }
         }
     }

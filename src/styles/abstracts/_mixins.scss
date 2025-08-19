@@ -22,7 +22,7 @@
     align-items: center;
     text-align: center;
     text-transform: uppercase;
-    padding: 0 20em;
+    padding: 0 14em;
     font-size: $font-size-lg;
     margin: $spacing-sm;
 
@@ -126,11 +126,9 @@
 @mixin heading-light {
   text-transform: uppercase;
   background-color: $light-primary-bg-color;
-  
   border-radius: $spacing-xs;
   padding: $spacing-xs $spacing-sm;
   font-weight: bold;
-
 }
 
 @mixin heading-dark {
@@ -147,7 +145,7 @@
   cursor: pointer;
 
   &.git-btn {
-    background-color: $light-dark-bg-color;
+    background-color: $dark-primary-bg-color;
   }
 
   &.detail-btn {

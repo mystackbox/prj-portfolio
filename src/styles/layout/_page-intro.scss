@@ -4,26 +4,40 @@
 
     display: grid;
     grid-template-columns: 1fr;
+    row-gap: 0px;
     border-radius: $spacing-sm;
-
+    background-image: linear-gradient(to right, #000428 0%, #004e92 51%, #000428 100%);
     // background-image: linear-gradient(to right, #abbaab 0%, #ffffff 51%, #abbaab 100%);
     // background-image: linear-gradient(to right, #ECE9E6 0%, #FFFFFF 51%, #ECE9E6 100%);
-
     // background-image: linear-gradient(to right, #8E0E00 0%, #1F1C18  51%, #8E0E00  100%);
     // background-image: linear-gradient(to right, #870000 0%, #190A05 51%, #870000 100%);
-    background-image: linear-gradient(to right, #200122 0%, #6f0000 51%, #200122 100%);
+    // background-image: linear-gradient(to right, #200122 0%, #6f0000 51%, #200122 100%);
+
+    .current-weather-container {
+        text-align: right;
+        display: flex;
+        flex-direction: row;
+        column-gap: 5px;
+        justify-content: flex-end;
+        padding: $spacing-lg $spacing-xl 0 0;
+        color: $light-secondery-font-color;
+        font-size: $font-size-lg - 2px;
+        cursor: pointer;
+        // border: 1px solid $light-neutral-font-color;
+    }
 
     .call-to-acltion-container {
+        // border: 1px solid $light-neutral-font-color;
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: $spacing-sm;
-        padding: $spacing-lg + 40px;
-        border-radius: $spacing-sm;
+        padding: 0 $spacing-lg + 40px $spacing-lg + 40px $spacing-lg + 40px;
+        // border-radius: $spacing-sm;
 
         .intro-text {
             display: flex;
             flex-direction: column;
-            row-gap: 10px;
+            row-gap: 11px;
             text-align: left;
 
             .page-title {
@@ -36,12 +50,10 @@
             .page-description {
                 text-transform: uppercase;
                 font-size: $font-size-md + 2px;
-                // color: $comp-default-font-color;
                 color: $light-neutral-font-color;
             }
 
             .page-intro-buttons {
-
                 display: flex;
                 flex-direction: row;
                 column-gap: 10px;
@@ -90,114 +102,116 @@
 }
 
 @include respond-to("sm") {
-    
+
     #page-instroduction {
+           .current-weather-container {
+            // border: 1px solid $light-neutral-font-color;
+             padding: $spacing-md $spacing-md $spacing-xs 0;
+        }
+
         .call-to-acltion-container {
-        padding: $spacing-lg + 20px;
+            padding: 0 $spacing-lg + 20px $spacing-lg + 20px;
 
-        .intro-text {
-            row-gap: 3px;
-            .page-title {
-                font-size: $font-size-xl - 2px;
-     
-            }
+            .intro-text {
+                row-gap: 3px;
 
-            .page-description {
-                font-size: $font-size-md;
-            }
-
-            .page-intro-buttons {
-
-                button {
-                    min-width: 120px;
-                    padding: 7px 18px;
-                     font-size: $font-size-sm;
+                .page-title {
+                    font-size: $font-size-xl - 2px;
 
                 }
+
+                .page-description {
+                    font-size: $font-size-md;
+                }
+
+                .page-intro-buttons {
+
+                    button {
+                        min-width: 120px;
+                        padding: 7px 18px;
+                        font-size: $font-size-sm;
+
+                    }
+                }
+            }
+
+            .intro-image {
+                img {
+                    height: 130px;
+                    cursor: pointer;
+                }
+
             }
         }
-
-        .intro-image {
-            img {
-                height: 130px;
-                cursor: pointer;
-            }
-
-        }
-    }
     }
 }
 
 @include respond-to("pre-sm") {
-   #page-instroduction {
+    #page-instroduction {
+
         .call-to-acltion-container {
-        padding: $spacing-lg;
+            padding: 0 $spacing-lg + 10px $spacing-lg + 10px;
 
-        .intro-text {
-            row-gap: 0px;
-            .page-title {
-                font-size: $font-size-lg;
+            .intro-text {
+                row-gap: 0px;
+
+                .page-description {
+                    font-size: $font-size-sm;
+                }
+
+                .page-intro-buttons {
+
+                    button {
+                        min-width: 110px;
+                        padding: 7px 14px;
+                        font-size: $font-size-xs;
+                    }
+                }
             }
 
-            .page-description {
-                font-size: $font-size-sm;
-            }
-
-            .page-intro-buttons {
-
-                button {
-                    min-width: 110px;
-                    padding: 7px 14px;
-                     font-size: $font-size-xs;
-
+            .intro-image {
+                img {
+                    height: 115px;
+                    cursor: pointer;
                 }
             }
         }
-
-        .intro-image {
-            img {
-                height: 115px;
-                cursor: pointer;
-            }
-
-        }
     }
-    }
-
 }
 
 @include respond-to("pro-xs") {
-   #page-instroduction {
+    #page-instroduction {
         .call-to-acltion-container {
-              grid-template-columns: 1fr;
-        padding: $spacing-xl;
+            grid-template-columns: 1fr;
 
-        .intro-text {
-            row-gap: 5px;
-            .page-title {
-                font-size: $font-size-lg + 4px;
-            }
+            .intro-text {
+                row-gap: 5px;
+                text-align: center;
 
-            .page-description {
-                font-size: $font-size-sm;
-            }
+                .page-title {
+                    font-size: $font-size-lg + 4px;
+                }
 
-            .page-intro-buttons {
+                .page-description {
+                    font-size: $font-size-sm;
+                }
 
-                button {
-                    min-width: 100px;
-                    padding: 7px 14px;
-                     font-size: $font-size-xs;
+                .page-intro-buttons {
+                    justify-content: center;
 
+                    button {
+                        min-width: 80px;
+                        padding: 6px 14px;
+                        font-size: $font-size-xs;
+                    }
                 }
             }
-        }
 
-        .intro-image {
-           display: none;
+            .intro-image {
+                display: none;
 
+            }
         }
-    }
     }
 
 }
