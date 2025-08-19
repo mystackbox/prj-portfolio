@@ -16,7 +16,6 @@
         color: var(--text-color);
 
         #page-instroduction {
-
             //  background-image: linear-gradient(to right, #abbaab 0%, #ffffff 51%, #abbaab 100%);
             // background-image: linear-gradient(to right, #000428 0%, #004e92  51%, #000428  100%);
             background-image: linear-gradient(to right, #200122 0%, #6f0000 51%, #200122 100%);
@@ -84,12 +83,11 @@
             }
 
             .intro-container {
-                padding: 0 10% 15px;
+                padding: 2% 10%;
                 border-radius: $spacing-sm;
                 text-align: center;
                 margin-top: -10px;
-
-                background-color: #12202e;
+                background-color: $dark-secondery-bg-color;
 
                 .developer-name {
                     font-size: $font-size-lg + 8px;
@@ -131,11 +129,12 @@
 
             @include respond-to("pro-xs") {
                 .intro-container {
-                    padding: 0 5%;
+                     padding: $spacing-sm $spacing-sm $spacing-lg $spacing-sm ;
                 }
             }
 
             @include respond-to("xs") {
+
                 .cards-container,
                 .page-content-intro-hr {
                     display: none;
@@ -143,10 +142,11 @@
 
                 .intro-container {
                     margin-top: 0;
-                    padding: $spacing-sm $spacing-sm $spacing-lg;
+                    padding: $spacing-sm $spacing-sm $spacing-lg $spacing-sm ;
 
                     .intro-btn-container {
                         column-gap: 10px;
+
                         .intro-btn {
                             padding: 6px 15px;
                             max-width: 200px;
