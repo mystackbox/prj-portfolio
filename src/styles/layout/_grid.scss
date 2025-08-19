@@ -55,7 +55,7 @@
 @include respond-to("xs") {
   .site-grid-container {
     padding: 0 $spacing-sm;
-    row-gap: 5px;
+    row-gap: 15px;
     justify-content: center;
     grid-template-areas: "navbar"
       "header"

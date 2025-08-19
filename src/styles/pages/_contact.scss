@@ -5,6 +5,7 @@
     grid-template-columns: 1fr;
     row-gap: 20px;
     font-size: $font-size-sm;
+     margin-bottom: 15px;
 
     //hr line styles
     @include page-content-intro-hr;
