@@ -1,10 +1,15 @@
 <div class="contact-page-main" id="contact-page-main">
-  <div class="page-content-intro-hr">contact form</div>
+  <div class="page-content-intro-hr">get in touch</div>
 
   <div class="contact-form-container">
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
-      <div *ngIf="formError" class="invalid-form-message">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      
+      <div *ngIf="isSending == true" id="spinner-container">
+        <app-spinner></app-spinner>
+      </div>
+
+      <div *ngIf="isFormError" class="invalid-form-message">
         <i class="bi bi-exclamation-square-fill"></i>
         Please complete all required fields.
       </div>
@@ -17,7 +22,7 @@
             <input
               type="text"
               id="firstName"
-              formControlName="firstName"
+              formControlName="name"
               class="input-form-control"
               placeholder="* First name"
               required
@@ -27,7 +32,9 @@
               *ngIf="_firstName?.invalid && _firstName?.touched"
               class="form-validation-error-message"
             >
-             <div *ngIf="_firstName?.errors?.['required']">* First name required </div>
+              <div *ngIf="_firstName?.errors?.['required']">
+                * First name required
+              </div>
             </div>
           </div>
 
@@ -35,7 +42,7 @@
             <input
               type="text"
               id="lastName"
-              formControlName="lastName"
+              formControlName="surname"
               class="input-form-control"
               placeholder="* Last name"
               required
@@ -45,7 +52,9 @@
               *ngIf="_lastName?.invalid && _lastName?.touched"
               class="form-validation-error-message"
             >
-            <div *ngIf="_lastName?.errors?.['required']">* Last name required </div>
+              <div *ngIf="_lastName?.errors?.['required']">
+                * Last name required
+              </div>
             </div>
           </div>
 
@@ -53,19 +62,25 @@
             <input
               type="email"
               id="emailAddress"
-              formControlName="emailAddress"
+              formControlName="email"
               class="input-form-control"
               placeholder="* Email address"
               required
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             />
 
             <div
-              *ngIf="_emailAddress?.invalid && _emailAddress?.touched"
+              *ngIf="
+                _emailAddress?.invalid &&
+                (_emailAddress?.touched || _emailAddress?.dirty)
+              "
               class="form-validation-error-message"
             >
-              <div *ngIf="_emailAddress?.errors?.['required']">*Email address required </div>
-              <div *ngIf="_emailAddress?.errors?.['pattern']"> *Enter valid mail address </div>
+              <div *ngIf="_emailAddress?.errors?.['required']">
+                *Email address required
+              </div>
+              <div *ngIf="_emailAddress?.errors?.['pattern']">
+                *Enter valid mail address
+              </div>
             </div>
           </div>
         </fieldset>
@@ -87,7 +102,9 @@
               *ngIf="_subject?.invalid && _subject?.touched"
               class="form-validation-error-message"
             >
-               <div *ngIf="_subject?.errors?.['required']"> *Subject required</div>
+              <div *ngIf="_subject?.errors?.['required']">
+                *Subject required
+              </div>
             </div>
           </div>
 
@@ -106,14 +123,18 @@
               *ngIf="_message?.invalid && _message?.touched"
               class="form-validation-error-message text-area-error-message"
             >
-              <div *ngIf="_message?.errors?.['required']"> *Message required</div>
+              <div *ngIf="_message?.errors?.['required']">
+                *Message required
+              </div>
             </div>
           </div>
         </fieldset>
       </div>
 
       <div class="contact-buttons">
-        <button id="submit-button" type="submit" class="submit-button button">submit</button>
+        <button id="submit-button" type="submit" class="submit-button button">
+          submit
+        </button>
         <div id="reset-button" class="reset-button button" (click)="onReset()">
           clear
         </div>

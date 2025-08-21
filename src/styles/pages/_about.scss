@@ -56,6 +56,7 @@
     }
 
     @include respond-to("xs") {
+             margin-bottom: -10px;
 
         .about-content {
             grid-template-columns: 1fr;
@@ -66,19 +67,24 @@
             .about-container {
                 text-align: center;
 
+                &.background {
+                    display: none;
+                }
+
                 i {
                     display: none;
                 }
 
                 .btn-container {
                     text-align: center;
+                    font-size: $font-size-xs;
 
                     .explore {
                         display: block;
                         text-transform: uppercase;
-                        padding: $spacing-xs;
+                          padding: $spacing-sm - 2px;
                         background-color: red;
-                        margin: $spacing-md 15% 0;
+                        margin: $spacing-md 30% 0;
                         border-radius: $spacing-xs;
                         color: $light-neutral-font-color;
                     }

@@ -1,0 +1,15 @@
+@use 'abstracts' as *;
+
+.spinner {
+  position: absolute; //position relative to parent
+  text-align: center;
+  width: 100%;
+  height: 100%;
+
+  p{
+    text-transform: uppercase;
+    font-size: $font-size-md;
+    color: lightgrey;
+    font-weight: bold;
+  }
+}
