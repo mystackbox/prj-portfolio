@@ -19,7 +19,6 @@
             row-gap: 5px;
             cursor: pointer;
             box-shadow: $light-box-shadow;
-
             width: 210px;
             padding: $spacing-md;
             border-radius: $spacing-sm;
@@ -48,10 +47,9 @@
 
             .card-button {
                 .explore {
-                    // background-color: #ff8fab;
                     background-color: $error-color;
                     width: 100%;
-                    padding: 7px 20px;
+                    padding: 9px 20px;
                     text-transform: uppercase;
                     color: $light-neutral-font-color;
                     cursor: pointer;
@@ -83,22 +81,25 @@
         padding: 0 10% 15px;
         border-radius: $spacing-sm;
         text-align: center;
-        margin-top: -10px;
 
         .developer-name {
             font-size: $font-size-lg + 8px;
             font-weight: bold;
+            margin-bottom: 5px;
+            .name {
+                color: $error-color;
+            }
         }
 
         .developer-title {
             text-transform: uppercase;
             font-size: $font-size-md + 2px;
-            font-family: 50;
+            font-family: 50;   
         }
 
         p {
             margin: 15px 0;
-            font-size: $font-size-md;
+            font-size: $font-size-md + 1px;
             line-height: 1.6;
 
             .highlight {
@@ -116,8 +117,8 @@
             justify-content: center;
 
             .intro-btn {
-                padding: 6px 25px;
-                max-width: 240px;
+                padding: 6px 15px;
+                max-width: 220px;
                 border: none;
                 border-radius: $spacing-xs;
                 color: $light-neutral-font-color;

@@ -19,9 +19,9 @@
         flex-direction: row;
         column-gap: 5px;
         justify-content: flex-end;
-        padding: $spacing-lg $spacing-xl 0 0;
+        padding: $spacing-lg $spacing-xl $spacing-xl 0;
         color: $light-secondery-font-color;
-        font-size: $font-size-lg - 2px;
+        font-size: $font-size-lg - 1px;
         cursor: pointer;
         // border: 1px solid $light-neutral-font-color;
     }
@@ -104,9 +104,9 @@
 @include respond-to("sm") {
 
     #page-instroduction {
-           .current-weather-container {
+        .current-weather-container {
             // border: 1px solid $light-neutral-font-color;
-             padding: $spacing-md $spacing-md $spacing-xs 0;
+            padding: $spacing-md $spacing-md $spacing-xs 0;
         }
 
         .call-to-acltion-container {
@@ -117,7 +117,6 @@
 
                 .page-title {
                     font-size: $font-size-xl - 2px;
-
                 }
 
                 .page-description {
@@ -125,7 +124,6 @@
                 }
 
                 .page-intro-buttons {
-
                     button {
                         min-width: 120px;
                         padding: 7px 18px;
@@ -189,11 +187,11 @@
                 text-align: center;
 
                 .page-title {
-                    font-size: $font-size-lg + 4px;
+                    font-size: $font-size-xl - 2px;
                 }
 
                 .page-description {
-                    font-size: $font-size-sm;
+                    font-size: $font-size-md;
                 }
 
                 .page-intro-buttons {

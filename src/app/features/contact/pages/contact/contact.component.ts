@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 import { CanDeactivateIF } from '../../../../core/route-guards/unsaved-changes/unsaved-change.guard';
+import { EmailService } from '../../services/email.service';
 
 @Component({
   selector: 'app-contact',
@@ -12,21 +13,25 @@ import { CanDeactivateIF } from '../../../../core/route-guards/unsaved-changes/u
 })
 export class ContactComponent implements CanDeactivateIF {
   contactForm!: FormGroup;
-  formError?: boolean = false;
-  private _isSubmitted = false;
+  isFormError?: boolean = false;
+  isSending?: boolean = false;
+  errorMessage = '';
 
-  constructor() {}
+  constructor(private _mailService: EmailService) {}
 
   ngOnInit(): void {
+    const emailPattern =
+      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
     //initialize the form
     this.contactForm = new FormGroup({
       personalDetails: new FormGroup({
         // personal details formGroup
-        firstName: new FormControl('', [Validators.required]),
-        lastName: new FormControl('', [Validators.required]),
-        emailAddress: new FormControl('', [
+        name: new FormControl('', [Validators.required]),
+        surname: new FormControl('', [Validators.required]),
+        email: new FormControl('', [
           Validators.required,
-          Validators.email,
+          Validators.pattern(emailPattern),
         ]),
       }),
 
@@ -40,23 +45,19 @@ export class ContactComponent implements CanDeactivateIF {
 
   //getter for fullName
   get _firstName() {
-    return (this.contactForm.get('personalDetails') as FormGroup)?.get(
-      'firstName'
-    );
+    return (this.contactForm.get('personalDetails') as FormGroup)?.get('name');
   }
 
   //getter for lastName
   get _lastName() {
     return (this.contactForm.get('personalDetails') as FormGroup)?.get(
-      'lastName'
+      'surname'
     );
   }
 
   //getter for emailAddress
   get _emailAddress() {
-    return (this.contactForm.get('personalDetails') as FormGroup)?.get(
-      'emailAddress'
-    );
+    return (this.contactForm.get('personalDetails') as FormGroup)?.get('email');
   }
 
   //getter for subject
@@ -73,6 +74,7 @@ export class ContactComponent implements CanDeactivateIF {
     );
   }
 
+  //Unsaved changes prompt
   onUnsavedChanges(): Observable<boolean> | Promise<boolean> | boolean {
     //if the form is not dirty and not submitted, allow proceeding
     if (this.contactForm.pristine) {
@@ -88,22 +90,59 @@ export class ContactComponent implements CanDeactivateIF {
       confirmButtonText: 'Yes',
       cancelButtonText: 'No',
     }).then((result) => result.isConfirmed);
-
   }
 
   //submit user form
   onSubmit() {
-      if (this.contactForm.invalid || this.contactForm.pristine) {
-        this.formError = true;
+    if (this.contactForm.invalid || this.contactForm.pristine) {
+      this.isFormError = true;
       return;
-    } 
+    }
+
+    //restructure the form data object
+    const formattedFormData = {
+      ...this.contactForm.value.personalDetails,
+      ...this.contactForm.value.messageDetails,
+    };
+
+    //prompt the user for confirmation before sending the email
+    this.isFormError = false; //reset the form error state
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You want to submit the form.',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      confirmButtonColor: '#FF0000',
+      cancelButtonText: 'No',
+      cancelButtonColor: '#20B2AA',
+    }).then( (_userConfirmOption) => {
+
+       //if the user confirms, send the email
+      if (_userConfirmOption.isConfirmed) {
+       
+        this.isSending = true;
+
+         this._mailService.sendEmail(formattedFormData).then(
+          (_serverResponse) => {
+            this.isSending = false;
+            this.contactForm.reset();
+            Swal.fire('Successful!', 'Your message has been sent.');
+          },
+          (_serverError) => {
+            this.isSending = false;
+            Swal.fire('Failed!', 'Sending message failed. Please try again');
+          }
+        );
+
+      }
+    });
   }
 
   //Reset the form
   onReset() {
     this.contactForm.reset();
     this.contactForm.markAsPristine;
-    this.formError = false;
+    this.isFormError = false;
   }
 
   ngOnDestroy(): void {}
