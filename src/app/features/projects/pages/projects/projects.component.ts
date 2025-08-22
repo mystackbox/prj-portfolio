@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProjectsService } from '../../../../core/services/projects/projects.service';
-import { Project } from '../../../../shared/models/project.model';
+import { IProject } from '../../../../shared/models/project.model';
 import { BehaviorSubject, Subscriber, Subscription, switchMap } from 'rxjs';
+import { HyperLinkService } from '../../../../core/services/hyper-link/hyper-link.service';
 
 @Component({
   selector: 'app-projects',
@@ -12,14 +13,14 @@ import { BehaviorSubject, Subscriber, Subscription, switchMap } from 'rxjs';
 })
 export class ProjectsComponent {
   projects$ = new BehaviorSubject<void>(undefined); // trigger refresh
-  projectsList: Project[] = [];
-  project?: Project;
+  projectsList: IProject[] = [];
+  project?: IProject;
   error?: string;
 
   private _projectSub?: Subscription;
   private _projectsSub?: Subscription;
 
-  constructor(private router: Router, private _products: ProjectsService) {}
+  constructor(private router: Router, private _products: ProjectsService, private _hyperLink: HyperLinkService) {}
 
   //load list of projects
   ngOnInit() {
@@ -33,7 +34,7 @@ export class ProjectsComponent {
    */
   getProjects() {
     this._projectsSub = this._products.getProjects().subscribe({
-      next: (projects: Project[]) => {
+      next: (projects: IProject[]) => {
         this.projectsList = projects;
       },
       error: (err: any) => {
@@ -49,7 +50,7 @@ export class ProjectsComponent {
    */
   getProject(_id?: number) {
     this._projectSub = this._products.getSelectedProject(_id).subscribe({
-      next: (project: Project) => {
+      next: (project: IProject) => {
         this.project = project;
       },
       error: (err: any) => {
@@ -64,7 +65,7 @@ export class ProjectsComponent {
    */
   getFeaturedProject() {
     this._projectSub = this._products.getFeaturedProject().subscribe({
-      next: (project: Project) => {
+      next: (project: IProject) => {
         this.project = project;
   
       },
@@ -75,7 +76,7 @@ export class ProjectsComponent {
   }
 
   openHyperLink(hyterLink: string) {
-    window.open(hyterLink, '_blank');
+    this._hyperLink.openNewTab(hyterLink);
   }
 
   redirectToContactUs() {

@@ -26,9 +26,7 @@
             position: relative;
 
             #spinner-container {
-
                 background: rgba(0, 0, 0, 0.6);
-
                 position: absolute;
                 top: 0;
                 bottom: 0;
@@ -42,8 +40,6 @@
                     }
                 }
             }
-
-
             .invalid-form-message {
                 color: $error-color;
                 font-size: $font-size-md + 2px;

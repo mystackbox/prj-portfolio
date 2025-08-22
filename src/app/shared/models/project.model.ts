@@ -1,4 +1,4 @@
-export interface Project {
+export interface IProject {
   id?: number; // optional when creating
   name: string;
   heading: string;
@@ -7,6 +7,5 @@ export interface Project {
   description: string;
   concepts: [string, string, string, string, string, string];
   features: [string, string, string, string, string, string];
-
   hyperlinks: [string, string, string];
 }
