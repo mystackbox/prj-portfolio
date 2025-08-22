@@ -1,0 +1,1 @@
+var e={production:!0,projectsApi:"data/projects.json",emailjs:{serviceID:"your_service_id",templateID:"your_template_id",publicKey:"your_public_key"},weatherApiKey:"ee8d344f067dde639da5fb559ec4208b"};export{e as a};
