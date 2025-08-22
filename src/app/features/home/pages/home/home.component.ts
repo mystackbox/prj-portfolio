@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProjectsService } from '../../../../core/services/projects/projects.service';
-import { Project } from '../../../../shared/models/project.model';
+import { IProject } from '../../../../shared/models/project.model';
 import { Subscription } from 'rxjs';
+import { HyperLinkService } from '../../../../core/services/hyper-link/hyper-link.service';
 
 @Component({
   selector: 'app-home',
@@ -12,13 +13,13 @@ import { Subscription } from 'rxjs';
 })
 export class HomeComponent {
   private _projectSub?: Subscription;
-  project?: Project;
+  project?: IProject;
   error?: string;
 
   gitHubRepo: string = 'https://github.com/mystackbox';
   linkedIn: string = 'https://www.linkedin.com/in/yingisani-chiqinda-545a062bb/';
 
-  constructor(private router: Router, private _products: ProjectsService) {}
+  constructor(private router: Router, private _products: ProjectsService, private _hyperLink: HyperLinkService) {}
 
   //load list of projects
   ngOnInit() {
@@ -31,7 +32,7 @@ export class HomeComponent {
    */
   getFeaturedProject() {
     this._projectSub = this._products.getFeaturedProject().subscribe({
-      next: (project: Project) => {
+      next: (project: IProject) => {
         this.project = project;
       },
       error: (err: any) => {
@@ -48,7 +49,7 @@ export class HomeComponent {
     this.router.navigate(['/projects']);
   }
 
-   openHyperLink(hyterLink: string) {
-    window.open(hyterLink, '_blank');
+    openHyperLink(hyterLink: string) {
+    this._hyperLink.openNewTab(hyterLink);
   }
 }

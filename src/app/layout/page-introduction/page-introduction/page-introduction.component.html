@@ -1,11 +1,28 @@
 <div id="page-instroduction" class="page-instroduction">
-
-  <div class="current-weather-container" title="Current Weather">
-      <div class="weather-icon"><i class="bi bi-cloud-sun-fill"></i></div>
-      <div class="weather-text">22°C</div>
+  <div
+    class="current-weather-container"
+    title="Current Weather"
+    *ngIf="isPositionAvailable"
+  >
+    <div class="weather-icon">
+      <img
+        [src]="'http://openweathermap.org/img/wn/' + weatherIcon"
+        alt="Icon"
+        class="weather-icon-img"
+      />
+    </div>
+    <div class="weather-temp">{{ temperature }}°C</div>
   </div>
-  <div class="call-to-acltion-container">
 
+  <div
+    class="current-weather-container"
+    title="Current Weather"
+    *ngIf="!isPositionAvailable"
+  >
+    <div class="weather-temp">{{ temperature }}°C</div>
+  </div>
+
+  <div class="call-to-acltion-container">
     <div class="intro-text">
       <div class="page-title">{{ pageTitle }}</div>
       <div class="page-description">{{ pageDesc }}</div>
@@ -37,5 +54,8 @@
       />
     </div>
   </div>
-  
+
+  <div *ngIf="isLoading == true" id="spinner-container">
+    <app-spinner [spinnerMessage]="isLoadingMessage"></app-spinner>
+  </div>
 </div>

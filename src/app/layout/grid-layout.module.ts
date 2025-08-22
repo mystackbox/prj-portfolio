@@ -8,6 +8,7 @@ import { CarouselComponent } from './carousel/carousel/carousel.component';
 import { PageIntroductionComponent } from './page-introduction/page-introduction/page-introduction.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CarouselComponent,
     PageIntroductionComponent,
   ],
-  imports: [NgbModule, CommonModule, AppRoutingModule],
+  imports: [NgbModule, CommonModule, AppRoutingModule, SharedModule],
   exports: [GridLayoutComponent],
 })
 export class GridLayoutModule {}

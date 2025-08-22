@@ -31,16 +31,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/news/news.module').then((m) => m.NewsModule),
   },
-  {
-    path: 'weather',
-    loadChildren: () =>
-      import('./features/weather/weather.module').then((m) => m.WeatherModule),
-  },
-  {
-    path: 'gallery',
-    loadChildren: () =>
-      import('./features/gallery/gallery.module').then((m) => m.GalleryModule),
-  },
+
   {
     path: 'not-found',
     loadChildren: () =>

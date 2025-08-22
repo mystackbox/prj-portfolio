@@ -16,6 +16,7 @@ export class ContactComponent implements CanDeactivateIF {
   isFormError?: boolean = false;
   isSending?: boolean = false;
   errorMessage = '';
+  isSendingMessage: string = 'sending...';
 
   constructor(private _mailService: EmailService) {}
 

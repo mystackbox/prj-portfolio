@@ -12,27 +12,44 @@
     // background-image: linear-gradient(to right, #8E0E00 0%, #1F1C18  51%, #8E0E00  100%);
     // background-image: linear-gradient(to right, #870000 0%, #190A05 51%, #870000 100%);
     // background-image: linear-gradient(to right, #200122 0%, #6f0000 51%, #200122 100%);
+    position: relative;
 
     .current-weather-container {
+
         text-align: right;
         display: flex;
+        align-items: flex-start;
         flex-direction: row;
-        column-gap: 5px;
         justify-content: flex-end;
-        padding: $spacing-lg $spacing-xl $spacing-xl 0;
+        padding: $spacing-md + 10px $spacing-xl $spacing-md 0;
         color: $light-secondery-font-color;
-        font-size: $font-size-lg - 1px;
         cursor: pointer;
-        // border: 1px solid $light-neutral-font-color;
+
+        .weather-icon {
+
+            align-content: center;
+
+
+            img {
+                height: 38px;
+            }
+        }
+
+        .weather-temp {
+            align-content: center;
+
+            padding-top: -2px;
+            margin-left: -5px;
+            height: 38px;
+            // border: 1px solid $light-neutral-font-color;
+        }
     }
 
     .call-to-acltion-container {
-        // border: 1px solid $light-neutral-font-color;
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: $spacing-sm;
         padding: 0 $spacing-lg + 40px $spacing-lg + 40px $spacing-lg + 40px;
-        // border-radius: $spacing-sm;
 
         .intro-text {
             display: flex;
@@ -99,14 +116,31 @@
 
         }
     }
+
+    #spinner-container {
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.6);
+
+        .spinner {
+            img {
+                margin-top: 70px;
+                height: 45px;
+            }
+        }
+    }
 }
 
 @include respond-to("sm") {
 
     #page-instroduction {
+
         .current-weather-container {
-            // border: 1px solid $light-neutral-font-color;
-            padding: $spacing-md $spacing-md $spacing-xs 0;
+            padding: $spacing-md + 10px $spacing-xl 0 $spacing-md;
         }
 
         .call-to-acltion-container {
@@ -148,7 +182,7 @@
     #page-instroduction {
 
         .call-to-acltion-container {
-            padding: 0 $spacing-lg + 10px $spacing-lg + 10px;
+            padding: $spacing-md $spacing-lg + 10px $spacing-lg + 10px;
 
             .intro-text {
                 row-gap: 0px;
@@ -179,8 +213,15 @@
 
 @include respond-to("pro-xs") {
     #page-instroduction {
+
+        .current-weather-container {
+            padding: $spacing-sm + 5px $spacing-lg 0 0;
+            //  border: 1px solid $light-neutral-font-color;
+        }
+
         .call-to-acltion-container {
             grid-template-columns: 1fr;
+            padding: $spacing-xs $spacing-lg + 10px $spacing-lg + 15px;
 
             .intro-text {
                 row-gap: 5px;
