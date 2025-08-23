@@ -17,9 +17,8 @@ export class WeatherService {
     private _http: HttpClient
   ) {}
 
-  getCurrentWeather(position: GeolocationPosition): Observable<any> {
+  getCurrentWeather(lat: number, lon: number): Observable<any> {
     return this._http.get<any>(
-      `${this.apiUrl}lat=${position?.coords.latitude}&lon=${position?.coords.longitude}&appid=${this.apiKey}&units=metric`
-    );
+      `${this.apiUrl}lat=${lat}&lon=${lon}&appid=${this.apiKey}&units=metric`);
   }
 }

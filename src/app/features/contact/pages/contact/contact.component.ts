@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
@@ -16,7 +16,8 @@ export class ContactComponent implements CanDeactivateIF {
   isFormError?: boolean = false;
   isSending?: boolean = false;
   errorMessage = '';
-  isSendingMessage: string = 'sending...';
+  
+  @Output() isSendingMessage: string = 'sending' 
 
   constructor(private _mailService: EmailService) {}
 

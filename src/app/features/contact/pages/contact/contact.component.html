@@ -6,7 +6,7 @@
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
       
       <div *ngIf="isSending == true" id="spinner-container">
-         <app-spinner [spinnerMessage] = "isSendingMessage" ></app-spinner >
+         <app-spinner [processMessage]="isSendingMessage"></app-spinner >
       </div>
 
       <div *ngIf="isFormError" class="invalid-form-message">

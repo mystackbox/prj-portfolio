@@ -1,39 +1,68 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import Swal from 'sweetalert2';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GeoLocationService {
+  constructor() {}
 
-  constructor() { }
+  watchId: number | null = null;
 
-  /*
-  GeolocationPosition: Interface representing the position of the device.
-  It includes properties like coords (coordinates) and timestamp.
-  */
-    getCurrentPosition(): Observable<GeolocationPosition> {
-      
-    return new Observable((_geoLocResponse) => {
-      // Check if the Geolocation API is available in the browser
-      if (!navigator.geolocation) {
-        _geoLocResponse.error('Geolocation not supported');
-        Swal.fire('Sorry!', 'Your browser does not support Geolocation.');
-        return;
-      }
+  public position$ = new BehaviorSubject<GeolocationPosition | null>(null);
+  public error$ = new BehaviorSubject<string | null>(null);
 
-      // Use the Geolocation API to get the current position
-      navigator.geolocation.getCurrentPosition(
-        (_currentLocPosition) => {
-          _geoLocResponse.next(_currentLocPosition);
-          _geoLocResponse.complete();
-        },
-        (error) => {
-          _geoLocResponse.error(error);
+  /**
+   * Requests and  monitors device current-geolocation.
+   * @property watchId - tracking Id returned by the watchPosition method, used to clear the watch later.
+   * @returns location-coord object | null location-coord object | Error.
+   */
+  startMonitoring() {
+    if (this.watchId != null) return; // avoid duplicates
+
+    if (!navigator.geolocation) {
+      this.error$.next('Geolocation is not supported by this browser.'); //check if browser supports geolocation
+      return;
+    }
+
+    this.watchId = navigator.geolocation.watchPosition(
+      (position) => {
+        this.position$.next(position);
+        this.error$.next(null);
+      },
+      (error) => {
+        this.position$.next(null);
+        
+        switch(error.code) {
+          case error.PERMISSION_DENIED:
+            this.error$.next('Device geo-location access denied');
+            break;
+          case error.POSITION_UNAVAILABLE:
+            this.error$.next('GeoLocation position currently unavailable');
+            break;
+          case error.TIMEOUT:
+            this.error$.next('Device geoLocation request timed out');
+            break;
+          default:
+            this.error$.next('An unknown error occurred');
         }
-      );
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 0,
+      }
+    );
+  }
 
-    });
+   /**
+   *  Stops monitoring the device current-geolocation.
+   * @returns void
+   * */
+  stopMonitoring() {
+    if (this.watchId != null) {
+      navigator.geolocation.clearWatch(this.watchId);
+      this.watchId = null;
+    }
   }
 }

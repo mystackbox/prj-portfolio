@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map, mergeMap, Subscription } from 'rxjs';
@@ -20,11 +20,14 @@ export class PageIntroductionComponent {
   weatherIcon?: string = '';
   currentWeather: any;
   isLoading?: boolean = false;
-  isLoadingMessage: string = 'loading...';
   isPositionAvailable: boolean = false;
+  geoLocErrMessage: string | null = null;
+
+  @Output() isLoadingMessage: string = 'loading';
 
   private _weatherSub?: Subscription;
-  private _posSub?: Subscription;
+  private _locPosSub?: Subscription;
+  private _locErrSub?: Subscription;
 
   constructor(
     private _router: Router,
@@ -37,35 +40,57 @@ export class PageIntroductionComponent {
   ngOnInit() {
     this.setPageTitleFromRoute();
 
-    this._posSub = this._geoLocServive.getCurrentPosition().subscribe({
-      next: (position) => {
-        this.isLoading = true;
+    //start watching geo-location position updates/changes
+    this._geoLocServive.startMonitoring();
+
+    //laod first time
+    this.getCurrentLocation();
+  }
+
+  /**
+   * Requests and  monitors device current-geolocation.
+   * @position - tracking Id returned by the watchPosition method, used to clear the watch later.
+   * @returns location-coord object | null location-coord object | Error.
+   */
+  getCurrentLocation() {
+    //subscribe to changing geo-loc positions
+    this._locPosSub = this._geoLocServive.position$.subscribe((position) => {
+      this.isLoading = true;
+      if (position) {
         this.isPositionAvailable = true;
         this.getcurrentWeather(position);
-      },
-      error: (error) => {
-        // console.error('Error getting location:', error);
-        Swal.fire('No weather update!', error.message);
-        this.isLoading = false;
-        this.isPositionAvailable = false;
-      },
+      }
+    });
+
+    //subscribe to geo-loc errors
+    this._locErrSub = this._geoLocServive.error$.subscribe((_error) => {
+      if (_error) {
+        Swal.fire('Server Error!', '' + _error);
+      }
     });
   }
 
+  /**
+   * Requests and  monitors device current-geolocation.
+   * @param position - current current-geolocation position.
+   * @returns current geolocation-based weather object | server error object.
+   */
   getcurrentWeather(position: GeolocationPosition) {
-    this._weatherSub =  this._weatherService.getCurrentWeather(position).subscribe({
-      next: (weatherData) => {
-        this.currentWeather = weatherData;
-        this.temperature = Math.round(this.currentWeather?.main?.temp);
-        this.weatherIcon = this.currentWeather.weather[0]?.icon + '@2x.png';
-        this.isLoading = false;
-      },
-      error: (error) => {
-        console.error('Error fetching weather data:', error);
-        Swal.fire('Server Error!', 'Error fetching weather data');
-        this.isLoading = false;
-      },
-    });
+    this._weatherSub = this._weatherService
+      .getCurrentWeather(position.coords.latitude, position.coords.longitude)
+      .subscribe({
+        next: (weatherData) => {
+          this.currentWeather = weatherData;
+          this.temperature = Math.round(this.currentWeather?.main?.temp);
+          this.weatherIcon = this.currentWeather.weather[0]?.icon + '@2x.png';
+          this.isLoading = false;
+        },
+        error: (_error) => {
+          console.error('Error fetching weather data:', _error);
+          Swal.fire('Server Error!', 'Error fetching weather data');
+          this.isLoading = false;
+        },
+      });
   }
 
   /**
@@ -105,6 +130,7 @@ export class PageIntroductionComponent {
 
   ngOnDestroy() {
     this._weatherSub?.unsubscribe();
-    this._posSub?.unsubscribe();
+    this._locPosSub?.unsubscribe();
+    this._locErrSub?.unsubscribe();
   }
 }
