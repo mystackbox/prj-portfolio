@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProjectsService } from '../../../../core/services/projects/projects.service';
+import { ProjectsService } from '../../../../core/services/service-projects/projects.service';
 import { IProject } from '../../../../shared/models/project.model';
 import { Subscription } from 'rxjs';
-import { HyperLinkService } from '../../../../core/services/hyper-link/hyper-link.service';
+import { HyperLinkService } from '../../../../core/services/service-hyper-link/hyper-link.service';
 
 @Component({
   selector: 'app-home',

@@ -1,10 +1,11 @@
-import { Component, Output } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map, mergeMap, Subscription } from 'rxjs';
-import { WeatherService } from '../../../core/services/weather/weather.service';
-import { GeoLocationService } from '../../../core/services/geo-location/geo-location.service';
+import { WeatherService } from '../../../core/services/service-weather/weather.service';
+import { GeoLocationService } from '../../../core/services/service-geo-location/geo-location.service';
 import Swal from 'sweetalert2';
+import { BrowserCheckService } from '../../../core/services/service-browser-check/browser-check.service';
 
 @Component({
   selector: 'app-page-introduction',
@@ -12,7 +13,7 @@ import Swal from 'sweetalert2';
   templateUrl: './page-introduction.component.html',
   styleUrl: './page-introduction.component.scss',
 })
-export class PageIntroductionComponent {
+export class PageIntroductionComponent implements OnInit {
   pageTitle: any;
   pageHeading: any;
   pageDesc: any;
@@ -34,16 +35,20 @@ export class PageIntroductionComponent {
     private _activatedRoute: ActivatedRoute,
     private _titleService: Title,
     private _weatherService: WeatherService,
-    private _geoLocServive: GeoLocationService
+    private _geoLocServive: GeoLocationService,
+    private browserCheck: BrowserCheckService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.setPageTitleFromRoute();
 
-    //start watching geo-location position updates/changes
-    this._geoLocServive.startMonitoring();
+    //prevent SSR Error when client object Navigator now found
+    if (this.browserCheck.isBrowser()) {
+      //start watching geo-location position updates/changes
+      this._geoLocServive.startMonitoring();
+    }
 
-    //laod first time
+    //request geo-location position and weather data first time
     this.getCurrentLocation();
   }
 
@@ -65,13 +70,14 @@ export class PageIntroductionComponent {
     //subscribe to geo-loc errors
     this._locErrSub = this._geoLocServive.error$.subscribe((_error) => {
       if (_error) {
-        Swal.fire('Server Error!', '' + _error);
+        Swal.fire('Geo-location!', '' + _error);
+        this.isLoading = false;
       }
     });
   }
 
   /**
-   * Requests and  monitors device current-geolocation.
+   * Retrieves current-geolocation.
    * @param position - current current-geolocation position.
    * @returns current geolocation-based weather object | server error object.
    */
@@ -128,9 +134,11 @@ export class PageIntroductionComponent {
     this._router.navigate(['/projects']);
   }
 
-  ngOnDestroy() {
+  //Unsubscribe
+  ngOnDestroy(): void  {
     this._weatherSub?.unsubscribe();
     this._locPosSub?.unsubscribe();
     this._locErrSub?.unsubscribe();
+    this._geoLocServive.stopMonitoring();
   }
 }

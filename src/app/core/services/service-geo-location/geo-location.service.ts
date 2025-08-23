@@ -5,10 +5,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class GeoLocationService {
-  constructor() {}
 
   watchId: number | null = null;
-
   public position$ = new BehaviorSubject<GeolocationPosition | null>(null);
   public error$ = new BehaviorSubject<string | null>(null);
 
@@ -20,11 +18,6 @@ export class GeoLocationService {
   startMonitoring() {
     if (this.watchId != null) return; // avoid duplicates
 
-    if (!navigator.geolocation) {
-      this.error$.next('Geolocation is not supported by this browser.'); //check if browser supports geolocation
-      return;
-    }
-
     this.watchId = navigator.geolocation.watchPosition(
       (position) => {
         this.position$.next(position);
@@ -32,10 +25,10 @@ export class GeoLocationService {
       },
       (error) => {
         this.position$.next(null);
-        
+
         switch(error.code) {
           case error.PERMISSION_DENIED:
-            this.error$.next('Device geo-location access denied');
+            this.error$.next('Device geo-location position access denied');
             break;
           case error.POSITION_UNAVAILABLE:
             this.error$.next('GeoLocation position currently unavailable');
@@ -53,6 +46,12 @@ export class GeoLocationService {
         maximumAge: 0,
       }
     );
+
+    if (!navigator.geolocation) {
+      this.error$.next('Geolocation is not supported by this browser.'); //check if browser supports geolocation
+      return;
+    }
+
   }
 
    /**
