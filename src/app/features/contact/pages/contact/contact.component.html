@@ -1,5 +1,5 @@
 <div class="contact-page-main" id="contact-page-main">
-  <div class="page-content-intro-hr">get in touch</div>
+  <div class="page-content-intro-hr">contact form</div>
 
   <div class="contact-form-container">
 
@@ -7,11 +7,6 @@
       
       <div *ngIf="isSending == true" id="spinner-container">
          <app-spinner [processMessage]="isSendingMessage"></app-spinner >
-      </div>
-
-      <div *ngIf="isFormError" class="invalid-form-message">
-        <i class="bi bi-exclamation-square-fill"></i>
-        Please complete all required fields.
       </div>
 
       <div class="contact-info">
@@ -26,15 +21,21 @@
               class="input-form-control"
               placeholder="* First name"
               required
+               maxlength="21"
             />
 
             <div
               *ngIf="_firstName?.invalid && _firstName?.touched"
               class="form-validation-error-message"
             >
-              <div *ngIf="_firstName?.errors?.['required']">
+              <div *ngIf="_firstName?.hasError('required')">
                 * First name required
               </div>
+
+               <div *ngIf="_firstName?.hasError('maxlength')">
+                * Maximum 20 characters allowed.
+              </div>
+
             </div>
           </div>
 
@@ -46,15 +47,23 @@
               class="input-form-control"
               placeholder="* Last name"
               required
+              maxlength="21"
             />
 
             <div
               *ngIf="_lastName?.invalid && _lastName?.touched"
               class="form-validation-error-message"
             >
-              <div *ngIf="_lastName?.errors?.['required']">
+            <div *ngIf="_lastName?.hasError('maxlength')">
+                * Maximum 20 characters allowed.
+              </div>
+
+              <div *ngIf="_lastName?.hasError('required')">
                 * Last name required
               </div>
+
+              
+
             </div>
           </div>
 
@@ -66,6 +75,7 @@
               class="input-form-control"
               placeholder="* Email address"
               required
+              maxlength="31"
             />
 
             <div
@@ -75,11 +85,16 @@
               "
               class="form-validation-error-message"
             >
-              <div *ngIf="_emailAddress?.errors?.['required']">
+              <div *ngIf="_emailAddress?.hasError('required')">
                 *Email address required
               </div>
-              <div *ngIf="_emailAddress?.errors?.['pattern']">
+
+              <div *ngIf="_emailAddress?.hasError('email')">
                 *Enter valid mail address
+              </div>
+
+              <div *ngIf="_emailAddress?.hasError('maxlength')">
+                *Maximum 20 characters allowed.
               </div>
             </div>
           </div>
@@ -96,14 +111,19 @@
               class="input-form-control"
               placeholder="* Subject"
               required
+              maxlength="51"
             />
 
             <div
               *ngIf="_subject?.invalid && _subject?.touched"
               class="form-validation-error-message"
             >
-              <div *ngIf="_subject?.errors?.['required']">
+              <div *ngIf="_subject?.hasError('required')">
                 *Subject required
+              </div>
+
+              <div *ngIf="_subject?.hasError('maxlength')">
+                *Maximum 50 characters allowed.
               </div>
             </div>
           </div>
@@ -116,23 +136,31 @@
               placeholder="* Message"
               required
               rows="4"
-            >
-            </textarea>
+                maxlength="201"
+            ></textarea>
 
             <div
               *ngIf="_message?.invalid && _message?.touched"
               class="form-validation-error-message text-area-error-message"
             >
-              <div *ngIf="_message?.errors?.['required']">
+              <div *ngIf="_message?.hasError('required')">
                 *Message required
               </div>
+
+               <div *ngIf="_message?.hasError('maxlength')">
+                *Maximum 200 characters allowed.
+              </div>
+
             </div>
           </div>
         </fieldset>
       </div>
 
       <div class="contact-buttons">
-        <button id="submit-button" type="submit" class="submit-button button">
+        <!-- <button id="submit-button" type="submit" [disabled]="contactForm.invalid" class="submit-button button">
+          submit
+        </button> -->
+        <button id="submit-button" type="submit"  class="submit-button button">
           submit
         </button>
         <div id="reset-button" class="reset-button button" (click)="onReset()">

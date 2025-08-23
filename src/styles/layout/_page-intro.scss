@@ -125,7 +125,6 @@
 @include respond-to("sm") {
 
     #page-instroduction {
-
         .current-weather-container {
             padding: $spacing-md + 10px $spacing-xl 0 $spacing-md;
         }
@@ -167,7 +166,6 @@
 
 @include respond-to("pre-sm") {
     #page-instroduction {
-
         .call-to-acltion-container {
             padding: $spacing-md $spacing-lg + 10px $spacing-lg + 10px;
 
@@ -200,10 +198,8 @@
 
 @include respond-to("pro-xs") {
     #page-instroduction {
-
         .current-weather-container {
             padding: $spacing-sm + 5px $spacing-lg 0 0;
-            //  border: 1px solid $light-neutral-font-color;
         }
 
         .call-to-acltion-container {

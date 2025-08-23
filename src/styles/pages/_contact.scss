@@ -32,9 +32,10 @@
                 left: 0;
                 right: 0;
             }
+            
             .invalid-form-message {
                 color: $error-color;
-                font-size: $font-size-md + 2px;
+                font-size: $font-size-md ;
                 margin-top: 10px;
             }
 
@@ -83,7 +84,7 @@
                                 border-color: red;
                             }
 
-                            &::placeholder {
+                            &::-webkit-input-placeholder {
                                 @include global-font-Ubuntu-light;
                                 font-size: 11px;
                                 color: lightgrey;

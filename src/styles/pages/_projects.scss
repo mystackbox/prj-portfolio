@@ -3,7 +3,7 @@
 #projects-page-main {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 20px;
+    row-gap: 10px;
     margin-bottom: 15px;
 
     //hr line styles
@@ -78,13 +78,15 @@
                         display: flex;
                         flex-direction: row;
                         justify-content: flex-start;
-                        gap: 10px;
+                        gap: 5px;
                         flex-wrap: wrap;
                         border-radius: $spacing-xs;
                         margin-left: $spacing-sm;
 
                         .view {
                             @include button;
+                            padding: $spacing-xs - 1px $spacing-sm;
+                            min-width: 55px;
                         }
 
                     }
@@ -205,6 +207,7 @@
         }
     }
 
+
     @include respond-to("lg") {
         .featured-projects {
             .project-container {
@@ -298,14 +301,14 @@
     @include respond-to("pro-sm") {
 
         .project-details {
-            row-gap: 10px;
+            row-gap: 15px;
             padding-bottom: $spacing-sm;
             padding: $spacing-sm + 2px;
             border-radius: $spacing-xs;
 
             .top-container {
                 grid-template-columns: 1fr;
-                row-gap: 5px;
+                row-gap: 10px;
 
                 .top-left-details {
                     grid-template-columns: 1fr 4fr;
@@ -363,6 +366,7 @@
                     row-gap: 5px;
                 }
             }
+
         }
 
         .featured-projects {
@@ -459,9 +463,9 @@
     }
 
     @include respond-to("pro-xs") {
-        row-gap: 15px;
 
         .project-details {
+
             .top-container {
                 .top-left-details {
                     grid-template-columns: 3fr 5fr;
@@ -517,9 +521,10 @@
 
         .project-details {
             .top-container {
+                row-gap: 20px;
+
                 .top-left-details {
                     grid-template-columns: 1fr;
-                    text-align: center;
 
                     .project-img-container {
                         img {
@@ -535,33 +540,34 @@
                         }
 
                         .project-views {
-                            justify-content: center;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-start;
+                            gap: 5px;
+                            flex-wrap: wrap;
+                            border-radius: $spacing-xs;
+                            margin-left: $spacing-sm;
+
+                            .view {
+                                padding: $spacing-xs - 1px $spacing-sm;
+                                min-width: 65px;
+                                margin-right: $spacing-xs - 2px;
+                            }
+
                         }
                     }
                 }
 
                 .top-right-details {
-                    display: none;
+                    font-size: $font-size-md - 1px;
                 }
             }
 
-            .bottom-container {
-                .project-concepts {
-                    display: none;
-                }
-
-                .details-container {
-                    .heading {
-                        text-align: center;
-                    }
-                }
-            }
         }
 
         .featured-projects {
             grid-template-columns: 1fr;
             row-gap: 15px;
-            padding: 0;
 
             .project-container {
                 grid-template-columns: 2fr 5fr;
@@ -589,7 +595,7 @@
 
                     .project-view-btns {
                         justify-content: flex-start;
-                        column-gap: 10px;
+                        column-gap: 6px;
 
                         .view-btn {
                             min-width: 45px;

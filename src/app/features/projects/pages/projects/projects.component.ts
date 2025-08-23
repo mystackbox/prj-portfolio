@@ -16,11 +16,17 @@ export class ProjectsComponent {
   projectsList: IProject[] = [];
   project?: IProject;
   error?: string;
+  isCollapsed: boolean = false;
+  isBtnLabel: string = 'More';
 
   private _projectSub?: Subscription;
   private _projectsSub?: Subscription;
 
-  constructor(private router: Router, private _products: ProjectsService, private _hyperLink: HyperLinkService) {}
+  constructor(
+    private router: Router,
+    private _products: ProjectsService,
+    private _hyperLink: HyperLinkService
+  ) {}
 
   //load list of projects
   ngOnInit() {
@@ -67,12 +73,24 @@ export class ProjectsComponent {
     this._projectSub = this._products.getFeaturedProject().subscribe({
       next: (project: IProject) => {
         this.project = project;
-  
       },
       error: (err: any) => {
         this.error = 'Failed to load project';
       },
     });
+  }
+
+  expandCollapseDetails() {
+    this.isCollapsed = !this.isCollapsed;
+    console.log(this.isCollapsed);
+
+    if (this.isCollapsed === true) {
+      this.isBtnLabel = 'Less';
+    } else {
+      this.isBtnLabel = 'More';
+    }
+
+    console.log(this.isBtnLabel);
   }
 
   openHyperLink(hyterLink: string) {
