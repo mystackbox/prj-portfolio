@@ -37,12 +37,17 @@
                     padding: 11px 13px;
 
                 }
+
             }
 
             .card-title {
                 text-transform: uppercase;
                 color: $comp-default-font-color;
+                font-size: $font-size-sm + 2px;
                 font-weight: bold;
+                border-bottom: 1px solid #e5e5e5;
+                padding-bottom: 5px;
+
             }
 
             .card-description {
@@ -90,6 +95,7 @@
             font-size: $font-size-lg + 8px;
             font-weight: bold;
             margin-bottom: 5px;
+
             .name {
                 color: $error-color;
             }
@@ -98,7 +104,7 @@
         .developer-title {
             text-transform: uppercase;
             font-size: $font-size-md + 2px;
-            font-family: 50;   
+            font-family: 50;
         }
 
         p {
@@ -340,7 +346,7 @@
 
         //features section
         .intro-container {
-             padding: $spacing-sm ;
+            padding: $spacing-sm ;
 
         }
     }
