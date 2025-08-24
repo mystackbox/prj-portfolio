@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class GeoLocationService {
 
-  watchId: number | null = null;
+  watchId: any | null = null;
   public position$ = new BehaviorSubject<GeolocationPosition | null>(null);
   public error$ = new BehaviorSubject<string | null>(null);
 
@@ -18,7 +18,8 @@ export class GeoLocationService {
   startMonitoring() {
     if (this.watchId != null) return; // avoid duplicates
 
-    this.watchId = navigator.geolocation.watchPosition(
+    if (navigator.geolocation) {
+          this.watchId = navigator.geolocation.getCurrentPosition(
       (position) => {
         this.position$.next(position);
         this.error$.next(null);
@@ -46,6 +47,7 @@ export class GeoLocationService {
         maximumAge: 0,
       }
     );
+    }
 
     if (!navigator.geolocation) {
       this.error$.next('Geolocation is not supported by this browser.'); //check if browser supports geolocation

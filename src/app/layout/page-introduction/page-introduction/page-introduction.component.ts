@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, inject, NgZone, OnInit, Output } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map, mergeMap, Subscription } from 'rxjs';
@@ -24,6 +24,9 @@ export class PageIntroductionComponent implements OnInit {
   isPositionAvailable: boolean = false;
   geoLocErrMessage: string | null = null;
 
+  private intervalId: any;
+  private timeoutId: any;
+
   @Output() isLoadingMessage: string = 'loading';
 
   private _weatherSub?: Subscription;
@@ -46,6 +49,14 @@ export class PageIntroductionComponent implements OnInit {
     if (this.browserCheck.isBrowser()) {
       //start watching geo-location position updates/changes
       this._geoLocServive.startMonitoring();
+
+      this.timeoutId = setTimeout(() => {
+        console.log('Timeout completed, starting interval...');
+
+        this.intervalId = setInterval(() => {
+          this._geoLocServive.startMonitoring();
+        }, 60000);
+      }, 0);
     }
 
     //request geo-location position and weather data first time
@@ -135,10 +146,17 @@ export class PageIntroductionComponent implements OnInit {
   }
 
   //Unsubscribe
-  ngOnDestroy(): void  {
+  ngOnDestroy(): void {
     this._weatherSub?.unsubscribe();
     this._locPosSub?.unsubscribe();
     this._locErrSub?.unsubscribe();
     this._geoLocServive.stopMonitoring();
+
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
   }
 }
