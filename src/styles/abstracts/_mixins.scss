@@ -30,7 +30,7 @@
     &::after {
       content: '';
       flex: 1;
-      border-bottom: 1px solid #e5e5e5;
+      // border-bottom: 1px solid #e5e5e5;
     }
 
     &:not(:empty)::before {
@@ -109,7 +109,7 @@
   @include respond-to("xs") {
     .page-content-intro-hr {
       padding: 0 3em;
-      font-size: $font-size-md + 2px;
+      font-size: $font-size-sm + 4px;
       margin: $spacing-xs - 4px;
     }
   }
@@ -175,7 +175,7 @@
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 14px;
+  font-size: $font-size-sm + 1px;
   line-height: 1.5;
 }
 

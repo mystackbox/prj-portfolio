@@ -12,7 +12,7 @@ const routes: Routes = [
       title: 'Contact',
       metaTags: [
         { name: 'short-desc', content: 'what is your thought?' },
-        { name: 'page-desc', content: 'let me know your thought!' },
+        { name: 'page-desc', content: 'let me know whta\'s your thought!' },
       ],
     },
   },

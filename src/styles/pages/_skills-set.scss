@@ -78,14 +78,13 @@
          margin-bottom: -10px;
 
         .sets-container {
-
+            
             .set-container {
                 text-align: center;
 
-                &.frameworks {
+                &.frameworks, &.tools{
                     display: none;
                 }
-
 
                 .set {
                     display: grid;
@@ -96,26 +95,24 @@
                     i {
                         display: none;
                     }
-
                 }
 
                 .btn-container {
                     text-align: center;
                     font-size: $font-size-xs;
+                    margin-bottom: $spacing-xs;
 
                     .explore {
                         display: block;
                         text-transform: uppercase;
                         padding: $spacing-sm - 2px;
                         background-color: red;
-                        margin: $spacing-md 30% 0;
+                        margin: $spacing-md 25% 0;
                         border-radius: $spacing-xs;
                         color: $light-neutral-font-color;
                     }
                 }
             }
-
-
         }
     }
 }

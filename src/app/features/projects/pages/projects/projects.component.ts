@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProjectsService } from '../../../../core/services/projects/projects.service';
+import { ProjectsService } from '../../../../core/services/service-projects/projects.service';
 import { IProject } from '../../../../shared/models/project.model';
 import { BehaviorSubject, Subscriber, Subscription, switchMap } from 'rxjs';
-import { HyperLinkService } from '../../../../core/services/hyper-link/hyper-link.service';
+import { HyperLinkService } from '../../../../core/services/service-hyper-link/hyper-link.service';
 
 @Component({
   selector: 'app-projects',
@@ -16,11 +16,17 @@ export class ProjectsComponent {
   projectsList: IProject[] = [];
   project?: IProject;
   error?: string;
+  isCollapsed: boolean = false;
+  isBtnLabel: string = 'More';
 
   private _projectSub?: Subscription;
   private _projectsSub?: Subscription;
 
-  constructor(private router: Router, private _products: ProjectsService, private _hyperLink: HyperLinkService) {}
+  constructor(
+    private router: Router,
+    private _products: ProjectsService,
+    private _hyperLink: HyperLinkService
+  ) {}
 
   //load list of projects
   ngOnInit() {
@@ -67,12 +73,24 @@ export class ProjectsComponent {
     this._projectSub = this._products.getFeaturedProject().subscribe({
       next: (project: IProject) => {
         this.project = project;
-  
       },
       error: (err: any) => {
         this.error = 'Failed to load project';
       },
     });
+  }
+
+  expandCollapseDetails() {
+    this.isCollapsed = !this.isCollapsed;
+    console.log(this.isCollapsed);
+
+    if (this.isCollapsed === true) {
+      this.isBtnLabel = 'Less';
+    } else {
+      this.isBtnLabel = 'More';
+    }
+
+    console.log(this.isBtnLabel);
   }
 
   openHyperLink(hyterLink: string) {

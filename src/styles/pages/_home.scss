@@ -45,6 +45,10 @@
                 font-weight: bold;
             }
 
+            .card-description {
+                font-size: $font-size-sm + 2px;
+            }
+
             .card-button {
                 .explore {
                     background-color: $error-color;

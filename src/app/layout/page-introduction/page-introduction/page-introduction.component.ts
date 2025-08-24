@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject, NgZone, OnInit, Output } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map, mergeMap, Subscription } from 'rxjs';
-import { WeatherService } from '../../../core/services/weather/weather.service';
-import { GeoLocationService } from '../../../core/services/geo-location/geo-location.service';
+import { WeatherService } from '../../../core/services/service-weather/weather.service';
+import { GeoLocationService } from '../../../core/services/service-geo-location/geo-location.service';
 import Swal from 'sweetalert2';
+import { BrowserCheckService } from '../../../core/services/service-browser-check/browser-check.service';
 
 @Component({
   selector: 'app-page-introduction',
@@ -12,7 +13,7 @@ import Swal from 'sweetalert2';
   templateUrl: './page-introduction.component.html',
   styleUrl: './page-introduction.component.scss',
 })
-export class PageIntroductionComponent {
+export class PageIntroductionComponent implements OnInit {
   pageTitle: any;
   pageHeading: any;
   pageDesc: any;
@@ -20,52 +21,93 @@ export class PageIntroductionComponent {
   weatherIcon?: string = '';
   currentWeather: any;
   isLoading?: boolean = false;
-  isLoadingMessage: string = 'loading...';
   isPositionAvailable: boolean = false;
+  geoLocErrMessage: string | null = null;
+
+  private intervalId: any;
+  private timeoutId: any;
+
+  @Output() isLoadingMessage: string = 'loading';
 
   private _weatherSub?: Subscription;
-  private _posSub?: Subscription;
+  private _locPosSub?: Subscription;
+  private _locErrSub?: Subscription;
 
   constructor(
     private _router: Router,
     private _activatedRoute: ActivatedRoute,
     private _titleService: Title,
     private _weatherService: WeatherService,
-    private _geoLocServive: GeoLocationService
+    private _geoLocServive: GeoLocationService,
+    private browserCheck: BrowserCheckService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.setPageTitleFromRoute();
 
-    this._posSub = this._geoLocServive.getCurrentPosition().subscribe({
-      next: (position) => {
-        this.isLoading = true;
+    //prevent SSR Error when client object Navigator now found
+    if (this.browserCheck.isBrowser()) {
+      //start watching geo-location position updates/changes
+      this._geoLocServive.startMonitoring();
+
+      this.timeoutId = setTimeout(() => {
+        console.log('Timeout completed, starting interval...');
+
+        this.intervalId = setInterval(() => {
+          this._geoLocServive.startMonitoring();
+        }, 60000);
+      }, 0);
+    }
+
+    //request geo-location position and weather data first time
+    this.getCurrentLocation();
+  }
+
+  /**
+   * Requests and  monitors device current-geolocation.
+   * @position - tracking Id returned by the watchPosition method, used to clear the watch later.
+   * @returns location-coord object | null location-coord object | Error.
+   */
+  getCurrentLocation() {
+    //subscribe to changing geo-loc positions
+    this._locPosSub = this._geoLocServive.position$.subscribe((position) => {
+      this.isLoading = true;
+      if (position) {
         this.isPositionAvailable = true;
         this.getcurrentWeather(position);
-      },
-      error: (error) => {
-        // console.error('Error getting location:', error);
-        Swal.fire('No weather update!', error.message);
+      }
+    });
+
+    //subscribe to geo-loc errors
+    this._locErrSub = this._geoLocServive.error$.subscribe((_error) => {
+      if (_error) {
+        Swal.fire('Geo-location!', '' + _error);
         this.isLoading = false;
-        this.isPositionAvailable = false;
-      },
+      }
     });
   }
 
+  /**
+   * Retrieves current-geolocation.
+   * @param position - current current-geolocation position.
+   * @returns current geolocation-based weather object | server error object.
+   */
   getcurrentWeather(position: GeolocationPosition) {
-    this._weatherSub =  this._weatherService.getCurrentWeather(position).subscribe({
-      next: (weatherData) => {
-        this.currentWeather = weatherData;
-        this.temperature = Math.round(this.currentWeather?.main?.temp);
-        this.weatherIcon = this.currentWeather.weather[0]?.icon + '@2x.png';
-        this.isLoading = false;
-      },
-      error: (error) => {
-        console.error('Error fetching weather data:', error);
-        Swal.fire('Server Error!', 'Error fetching weather data');
-        this.isLoading = false;
-      },
-    });
+    this._weatherSub = this._weatherService
+      .getCurrentWeather(position.coords.latitude, position.coords.longitude)
+      .subscribe({
+        next: (weatherData) => {
+          this.currentWeather = weatherData;
+          this.temperature = Math.round(this.currentWeather?.main?.temp);
+          this.weatherIcon = this.currentWeather.weather[0]?.icon + '@2x.png';
+          this.isLoading = false;
+        },
+        error: (_error) => {
+          console.error('Error fetching weather data:', _error);
+          Swal.fire('Server Error!', 'Error fetching weather data');
+          this.isLoading = false;
+        },
+      });
   }
 
   /**
@@ -103,8 +145,18 @@ export class PageIntroductionComponent {
     this._router.navigate(['/projects']);
   }
 
-  ngOnDestroy() {
+  //Unsubscribe
+  ngOnDestroy(): void {
     this._weatherSub?.unsubscribe();
-    this._posSub?.unsubscribe();
+    this._locPosSub?.unsubscribe();
+    this._locErrSub?.unsubscribe();
+    this._geoLocServive.stopMonitoring();
+
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
   }
 }

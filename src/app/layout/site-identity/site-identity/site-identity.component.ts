@@ -1,7 +1,8 @@
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToggleThemeService } from '../../../core/services/toggle-theme/toggle-theme.service';
+import { ToggleThemeService } from '../../../core/services/service-toggle-theme/toggle-theme.service';
 import { isPlatformBrowser } from '@angular/common';
+import { BrowserCheckService } from '../../../core/services/service-browser-check/browser-check.service';
 
 @Component({
   selector: 'app-site-identity',
@@ -14,13 +15,13 @@ export class SiteIdentityComponent {
   constructor(
     private router: Router,
     private themeService: ToggleThemeService,
-    @Inject(PLATFORM_ID) private platformId: Object
+     private browserCheck: BrowserCheckService
   ) {}
 
 
 //load theme on init
   ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
+    if (this.browserCheck.isBrowser()) {
       this.themeService.initTheme();
     }
   }

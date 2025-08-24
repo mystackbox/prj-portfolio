@@ -26,23 +26,16 @@
             position: relative;
 
             #spinner-container {
-                background: rgba(0, 0, 0, 0.6);
                 position: absolute;
                 top: 0;
                 bottom: 0;
                 left: 0;
                 right: 0;
-
-                .spinner {
-                    img {
-                        margin-top: 70px;
-                        height: 45px;
-                    }
-                }
             }
+            
             .invalid-form-message {
                 color: $error-color;
-                font-size: $font-size-md + 2px;
+                font-size: $font-size-md ;
                 margin-top: 10px;
             }
 
@@ -91,7 +84,7 @@
                                 border-color: red;
                             }
 
-                            &::placeholder {
+                            &::-webkit-input-placeholder {
                                 @include global-font-Ubuntu-light;
                                 font-size: 11px;
                                 color: lightgrey;
