@@ -1,7 +1,14 @@
-import { Component, inject, NgZone, OnInit, Output } from '@angular/core';
+import {
+  ApplicationRef,
+  Component,
+  inject,
+  NgZone,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter, map, mergeMap, Subscription } from 'rxjs';
+import { filter, first, map, mergeMap, Subscription, tap } from 'rxjs';
 import { WeatherService } from '../../../core/services/service-weather/weather.service';
 import { GeoLocationService } from '../../../core/services/service-geo-location/geo-location.service';
 import Swal from 'sweetalert2';
@@ -24,9 +31,6 @@ export class PageIntroductionComponent implements OnInit {
   isPositionAvailable: boolean = false;
   geoLocErrMessage: string | null = null;
 
-  private intervalId: any;
-  private timeoutId: any;
-
   @Output() isLoadingMessage: string = 'loading';
 
   private _weatherSub?: Subscription;
@@ -39,40 +43,27 @@ export class PageIntroductionComponent implements OnInit {
     private _titleService: Title,
     private _weatherService: WeatherService,
     private _geoLocServive: GeoLocationService,
-    private browserCheck: BrowserCheckService
+
   ) {}
 
   ngOnInit(): void {
     this.setPageTitleFromRoute();
 
-    //prevent SSR Error when client object Navigator now found
-    if (this.browserCheck.isBrowser()) {
-      //start watching geo-location position updates/changes
-      this._geoLocServive.startMonitoring();
+    this._geoLocServive.getLocation();
 
-      this.timeoutId = setTimeout(() => {
-        console.log('Timeout completed, starting interval...');
-
-        this.intervalId = setInterval(() => {
-          this._geoLocServive.startMonitoring();
-        }, 60000);
-      }, 0);
-    }
-
-    //request geo-location position and weather data first time
     this.getCurrentLocation();
   }
 
   /**
-   * Requests and  monitors device current-geolocation.
+   * Requests device current-geolocation every 60000 milli-seconds.
    * @position - tracking Id returned by the watchPosition method, used to clear the watch later.
    * @returns location-coord object | null location-coord object | Error.
    */
   getCurrentLocation() {
     //subscribe to changing geo-loc positions
     this._locPosSub = this._geoLocServive.position$.subscribe((position) => {
-      this.isLoading = true;
       if (position) {
+        console.log('Loc position received ...' + position.coords.latitude);
         this.isPositionAvailable = true;
         this.getcurrentWeather(position);
       }
@@ -112,7 +103,6 @@ export class PageIntroductionComponent implements OnInit {
 
   /**
    * Sets the page title and meta tags based on the current route.
-   * It listens for navigation events and updates the title accordingly.
    */
   setPageTitleFromRoute() {
     this._router.events
@@ -150,13 +140,5 @@ export class PageIntroductionComponent implements OnInit {
     this._weatherSub?.unsubscribe();
     this._locPosSub?.unsubscribe();
     this._locErrSub?.unsubscribe();
-    this._geoLocServive.stopMonitoring();
-
-    if (this.timeoutId) {
-      clearTimeout(this.timeoutId);
-    }
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-    }
   }
 }

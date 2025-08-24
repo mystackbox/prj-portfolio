@@ -3,7 +3,7 @@
 #projects-page-main {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 10px;
+    row-gap: 25px;
     margin-bottom: 15px;
 
     //hr line styles
@@ -15,7 +15,6 @@
         padding: $spacing-lg $spacing-sm;
         box-shadow: $light-box-shadow;
         border-radius: $spacing-xs;
-        margin-bottom: 15px;
 
         .details-container {
             text-align: left;
