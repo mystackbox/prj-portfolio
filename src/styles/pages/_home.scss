@@ -45,9 +45,6 @@
                 color: $comp-default-font-color;
                 font-size: $font-size-sm + 2px;
                 font-weight: bold;
-                border-bottom: 1px solid #e5e5e5;
-                padding-bottom: 5px;
-
             }
 
             .card-description {
@@ -83,7 +80,14 @@
     }
 
     //hr line styles
-    @include page-content-intro-hr;
+    .page-content-intro-hr {
+        @include page-content-intro-hr;
+
+        &::before,
+        &::after {
+            border-bottom: 1px solid #e5e5e5;
+        }
+    }
 
     //features section
     .intro-container {
@@ -105,6 +109,29 @@
             text-transform: uppercase;
             font-size: $font-size-md + 2px;
             font-family: 50;
+            margin-bottom: 8px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            column-gap: 10px;
+             row-gap: 10px;
+            justify-content: center;
+            font-size: $font-size-sm;
+            
+            .skill {
+                background-color: $light-secondery-bg-color;
+                padding: $spacing-xxs $spacing-sm;
+                 border-radius: $spacing-md;
+                 
+                 min-width: 156px;
+                 i {
+                    margin-right: 5px;
+                    color: $error-color;
+                 }
+            }
         }
 
         p {
@@ -347,7 +374,6 @@
         //features section
         .intro-container {
             padding: $spacing-sm ;
-
         }
     }
 
@@ -360,7 +386,7 @@
 
         //features section
         .intro-container {
-            margin-top: 0;
+            margin-bottom: -15px;
             padding: $spacing-sm ;
 
             .intro-btn-container {
