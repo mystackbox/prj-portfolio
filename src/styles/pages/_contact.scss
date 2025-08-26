@@ -8,7 +8,14 @@
     margin-bottom: 15px;
 
     //hr line styles
-    @include page-content-intro-hr;
+    .page-content-intro-hr {
+        @include page-content-intro-hr;
+
+        &::before,
+        &::after {
+            border-bottom: 1px solid #e5e5e5;
+        }
+    }
 
     .contact-form-container {
         box-shadow: $light-box-shadow;
@@ -32,7 +39,7 @@
                 left: 0;
                 right: 0;
             }
-            
+
             .invalid-form-message {
                 color: $error-color;
                 font-size: $font-size-md ;
@@ -160,7 +167,17 @@
         }
     }
 
-      @include respond-to("xs") {
+    @include respond-to("xs") {
         margin-bottom: -10px;
+
+        //hr line styles
+        .page-content-intro-hr {
+
+            &::before,
+            &::after {
+                border-bottom: none
+            }
+        }
+
     }
 }

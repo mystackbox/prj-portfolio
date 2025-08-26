@@ -7,7 +7,14 @@
     margin-bottom: 15px;
 
     //hr line styles
-    @include page-content-intro-hr;
+    .page-content-intro-hr {
+        @include page-content-intro-hr;
+
+        &::before,
+        &::after {
+            border-bottom: 1px solid #e5e5e5;
+        }
+    }
 
     .project-details {
         display: grid;
@@ -523,9 +530,20 @@
 
     @include respond-to("xs") {
 
-        margin-bottom: -5px;
+        margin-bottom: 0px;
+
+        //hr line styles
+        .page-content-intro-hr {
+
+            &::before,
+            &::after {
+                border-bottom: none
+            }
+        }
+
         .project-details {
             row-gap: 5px;
+
             .top-container {
                 row-gap: 20px;
 
@@ -582,6 +600,7 @@
             .bottom-container {
                 .details-container {
                     text-align: center;
+
                     i {
                         display: none;
                     }
@@ -592,6 +611,7 @@
         .featured-projects {
             grid-template-columns: 1fr;
             row-gap: 15px;
+
             .project-container {
                 grid-template-columns: 2fr 5fr;
                 column-gap: 15px;

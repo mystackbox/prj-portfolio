@@ -17,115 +17,101 @@
 }
 
 @mixin page-content-intro-hr {
-  .page-content-intro-hr {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    text-transform: uppercase;
-    padding: 0 14em;
-    font-size: $font-size-lg;
-    margin: $spacing-sm;
 
-    &::before,
-    &::after {
-      content: '';
-      flex: 1;
-      border-bottom: 1px solid #e5e5e5;
-    }
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0 14em;
+  font-size: $font-size-lg;
+  margin: $spacing-sm;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+  }
+
+  &:not(:empty)::before {
+    margin-right: 1.70em;
+  }
+
+  &:not(:empty)::after {
+    margin-left: 1.70em;
+  }
+
+
+  @include respond-to("md") {
+
+    padding: 0 18em;
 
     &:not(:empty)::before {
-      margin-right: 1.70em;
+      margin-right: 1.60em;
     }
 
     &:not(:empty)::after {
-      margin-left: 1.70em;
-    }
-  }
-
-  @include respond-to("md") {
-    .page-content-intro-hr {
-      padding: 0 18em;
-
-      &:not(:empty)::before {
-        margin-right: 1.60em;
-      }
-
-      &:not(:empty)::after {
-        margin-left: 1.60em;
-      }
+      margin-left: 1.60em;
     }
   }
 
   @include respond-to("pro-sm") {
-    .page-content-intro-hr {
-      padding: 0 14em;
 
-      &:not(:empty)::before {
-        margin-right: 1.60em;
-      }
+    padding: 0 14em;
 
-      &:not(:empty)::after {
-        margin-left: 1.60em;
-      }
+    &:not(:empty)::before {
+      margin-right: 1.60em;
+    }
+
+    &:not(:empty)::after {
+      margin-left: 1.60em;
     }
   }
 
   @include respond-to("sm") {
 
-    .page-content-intro-hr {
-      padding: 0 8em;
+    padding: 0 8em;
 
-      &:not(:empty)::before {
-        margin-right: 1.50em;
-      }
-
-      &:not(:empty)::after {
-        margin-left: 1.50em;
-      }
+    &:not(:empty)::before {
+      margin-right: 1.50em;
     }
 
+    &:not(:empty)::after {
+      margin-left: 1.50em;
+    }
   }
 
   @include respond-to("pre-sm") {
-    .page-content-intro-hr {
-      padding: 0 6em;
+    padding: 0 6em;
 
-      &:not(:empty)::before {
-        margin-right: 1.50em;
-      }
+    &:not(:empty)::before {
+      margin-right: 1.50em;
+    }
 
-      &:not(:empty)::after {
-        margin-left: 1.50em;
-      }
+    &:not(:empty)::after {
+      margin-left: 1.50em;
     }
   }
 
   @include respond-to("pro-xs") {
-    .page-content-intro-hr {
-      padding: 0 4em;
-    }
+    padding: 0 4em;
   }
 
   @include respond-to("xs") {
-    .page-content-intro-hr {
-      padding: 0 3em;
-      font-size: $font-size-sm + 4px;
-      margin: $spacing-xs;
-           &::before,
+
+    padding: 0 3em;
+    font-size: $font-size-sm + 4px;
+    margin: $spacing-xs;
+
+    &::before,
     &::after {
       border-bottom: none;
     }
-    }
+
   }
 
   @include respond-to("pre-xs") {
-    .page-content-intro-hr {
-      padding: 0 2em;
-
-   
-    }
+    padding: 0 2em;
   }
-
 
 }
 

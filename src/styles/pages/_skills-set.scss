@@ -7,7 +7,14 @@
     margin-bottom: 15px;
 
     //hr line styles
-    @include page-content-intro-hr;
+    .page-content-intro-hr {
+        @include page-content-intro-hr;
+
+        &::before,
+        &::after {
+            border-bottom: 1px solid #e5e5e5;
+        }
+    }
 
     .sets-container {
         display: grid;
@@ -75,14 +82,24 @@
     }
 
     @include respond-to("xs") {
-         margin-bottom: -10px;
+        margin-bottom: -10px;
+
+        //hr line styles
+        .page-content-intro-hr {
+
+            &::before,
+            &::after {
+                border-bottom: none
+            }
+        }
 
         .sets-container {
-            
+
             .set-container {
                 text-align: center;
 
-                &.frameworks, &.tools{
+                &.frameworks,
+                &.tools {
                     display: none;
                 }
 
@@ -106,7 +123,7 @@
                         display: block;
                         text-transform: uppercase;
                         padding: $spacing-sm - 2px;
-                       background-color: $error-color;
+                        background-color: $error-color;
                         margin: $spacing-md 25% 0;
                         border-radius: $spacing-xs;
                         color: $light-neutral-font-color;

@@ -7,12 +7,12 @@ const routes: Routes = [
     path: '',
     component: NotFoundComponent,
     data: {
-      title: 'sorry!',
+      title: 'Oops!',
       metaTags: [
         { name: 'short-desc', content: ' page currently unavailable' },
         {
           name: 'page-desc',
-          content: 'A brief about the portfolio and the developer',
+          content: 'the resource could not be found ',
         },
       ],
     },

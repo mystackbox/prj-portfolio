@@ -7,7 +7,14 @@
     margin-bottom: 15px;
 
     //hr line styles
-    @include page-content-intro-hr;
+    .page-content-intro-hr {
+        @include page-content-intro-hr;
+
+        &::before,
+        &::after {
+            border-bottom: 1px solid #e5e5e5;
+        }
+    }
 
     //standard local styles
     .about-content {
@@ -57,6 +64,15 @@
 
     @include respond-to("xs") {
         margin-bottom: -10px;
+
+        //hr line styles
+        .page-content-intro-hr {
+
+            &::before,
+            &::after {
+                border-bottom: none
+            }
+        }
 
         .about-content {
             grid-template-columns: 1fr;

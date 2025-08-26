@@ -104,8 +104,6 @@
                     }
                 }
             }
-
-
         }
 
         .footer-item {
@@ -117,8 +115,6 @@
                 margin-bottom: $spacing-xs + 4px;
                 @include heading-light;
             }
-
-
         }
 
         //floating WhatsApp button
@@ -141,8 +137,6 @@
                 margin: auto;
             }
         }
-
-
     }
 
     .footer-bottom-section {
@@ -152,7 +146,7 @@
         border-radius: $spacing-xs;
     }
 
-    //Media queries for responsive design
+    //media queries for responsive design
     @include respond-to("pro-sm") {
         .footer-top-section {
             grid-template-columns: 1fr 1fr 1fr;
@@ -180,7 +174,8 @@
     }
 
     @include respond-to("xs") {
-        border: none;
+        border-top: none;
+        
         .footer-top-section {
             grid-template-columns: 1fr;
             row-gap: 0px;
@@ -209,4 +204,5 @@
             }
         }
     }
+
 }
