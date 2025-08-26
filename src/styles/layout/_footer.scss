@@ -122,7 +122,7 @@
         }
 
         //floating WhatsApp button
-        .float {
+        .whats-app-btn {
             position: fixed;
             width: 50px;
             height: 50px;
@@ -132,13 +132,13 @@
             color: white;
             border-radius: 50px;
             text-align: center;
-            font-size: 20px;
-            box-shadow: 2px 2px 11px #999;
+            box-shadow: $light-hover-box-shadow;
             z-index: 100;
             padding: 3px;
 
-            .my-float {
-                font-size: 32px;
+            .whats-app-icon {
+                font-size: 30px;
+                margin: auto;
             }
         }
 
@@ -169,7 +169,6 @@
     }
 
     @include respond-to("pro-xs") {
-
         .footer-top-section {
             grid-template-columns: 1fr 1fr;
 
@@ -181,9 +180,7 @@
     }
 
     @include respond-to("xs") {
-
         border: none;
-
         .footer-top-section {
             grid-template-columns: 1fr;
             row-gap: 0px;
@@ -198,19 +195,16 @@
 
             .footer-item {
                 text-align: center;
-                padding-bottom: 0px;
-                margin-bottom: 0px;
+                padding: 0px;
+                margin: 0px;
 
                 .contact-items {
                     .contact-item {
                         .item {
+                            justify-content: center;
                             row-gap: 8px;
                         }
                     }
-                }
-
-                .contact-pages {
-                    justify-content: center;
                 }
             }
         }

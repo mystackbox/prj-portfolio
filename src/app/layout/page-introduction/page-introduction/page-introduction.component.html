@@ -9,9 +9,11 @@
         [src]="'http://openweathermap.org/img/wn/' + weatherIcon"
         alt="Icon"
         class="weather-icon-img"
+        [title]="weatherDescription  | titlecase"
       />
     </div>
-    <div class="weather-temp">{{ temperature }}°C</div>
+    <div class="weather-temp" title="Temperature">{{ temperature }}°C</div>
+
   </div>
 
   <div

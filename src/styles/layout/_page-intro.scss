@@ -20,6 +20,7 @@
         display: flex;
         align-items: flex-start;
         flex-direction: row;
+        column-gap: 3px;
         justify-content: flex-end;
         padding: $spacing-md + 10px $spacing-xl $spacing-md 0;
         color: $light-secondery-font-color;

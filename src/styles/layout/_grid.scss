@@ -55,7 +55,7 @@
 //Media queries for responsive design
 @include respond-to("xs") {
   .site-grid-container {
-    padding: 0 $spacing-sm;
+    padding: $spacing-sm;
     row-gap: 15px;
     justify-content: center;
     grid-template-areas: "navbar"

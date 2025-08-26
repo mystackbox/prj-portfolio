@@ -110,13 +110,19 @@
     .page-content-intro-hr {
       padding: 0 3em;
       font-size: $font-size-sm + 4px;
-      margin: $spacing-xs - 4px;
+      margin: $spacing-xs;
+           &::before,
+    &::after {
+      border-bottom: none;
+    }
     }
   }
 
   @include respond-to("pre-xs") {
     .page-content-intro-hr {
       padding: 0 2em;
+
+   
     }
   }
 
@@ -126,9 +132,10 @@
 @mixin heading-light {
   text-transform: uppercase;
   background-color: $light-primary-bg-color;
-  border-radius: $spacing-xs;
+  border-radius: $spacing-xxs;
   padding: $spacing-xs $spacing-sm;
   font-weight: bold;
+  margin-bottom: $spacing-xs + 2px;
 }
 
 @mixin heading-dark {

@@ -1,8 +1,8 @@
 <div class="projects-page-main" id="projects-page-main">
 
-  <div class="page-content-intro-hr">project</div>
+  <div class="page-content-intro-hr">Featured project</div>
 
-  <section class="project-details">
+  <section class="project-details container">
     <div class="top-container">
       <div *ngIf="project" class="details-container top-left-details">
         <div class="project-img-container">
@@ -15,7 +15,9 @@
           />
         </div>
         <div class="project-description">
-          <div class="heading project">{{ project.name }}</div>
+
+            <div class="heading"  (click)="openHyperLink(project.hyperlinks[1])"> {{ project.name }}</div> 
+
           <div class="details">
             <p>
               {{ project.introduction }}
@@ -63,6 +65,7 @@
       
       <div class="details-container project-concepts">
         <div class="heading">concepts</div>
+
         <div class="list-container">
           <div class="details">
             <ul>
@@ -105,9 +108,9 @@
     
   </section>
 
-   <div class="page-content-intro-hr">selection</div>
+   <div class="page-content-intro-hr">projects selection</div>
 
-  <section *ngIf="projectsList" class="featured-projects">
+  <section *ngIf="projectsList" class="featured-projects container">
     <div *ngFor="let project of projectsList; let i = index" [class]="'project-container prj-' + i">
       <div class="project-image-container">
         <img

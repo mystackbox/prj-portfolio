@@ -106,7 +106,7 @@
                         display: block;
                         text-transform: uppercase;
                         padding: $spacing-sm - 2px;
-                        background-color: red;
+                       background-color: $error-color;
                         margin: $spacing-md 25% 0;
                         border-radius: $spacing-xs;
                         color: $light-neutral-font-color;
