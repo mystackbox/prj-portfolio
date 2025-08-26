@@ -12,7 +12,7 @@ const routes: Routes = [
         { name: 'short-desc', content: 'recently completed project' },
         {
           name: 'page-desc',
-          content: 'explore the selection of my project.',
+          content: 'explore some of my project selection.',
         },
       ],
     },

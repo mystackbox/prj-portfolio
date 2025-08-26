@@ -34,7 +34,7 @@
 
             .set-container {
                 padding: 4px $spacing-sm;
-                  font-size: $font-size-sm + 2px;
+                font-size: $font-size-sm + 2px;
 
                 i {
                     padding-right: 3px;
@@ -56,7 +56,7 @@
     }
 
     @include respond-to("xs") {
-             margin-bottom: -10px;
+        margin-bottom: -10px;
 
         .about-content {
             grid-template-columns: 1fr;
@@ -67,7 +67,8 @@
             .about-container {
                 text-align: center;
 
-                &.background,  &.portfolio {
+                &.background,
+                &.portfolio {
                     display: none;
                 }
 
@@ -79,12 +80,13 @@
                     text-align: center;
                     font-size: $font-size-xs;
                     margin-bottom: $spacing-xs;
+
                     .explore {
                         display: block;
                         text-transform: uppercase;
-                          padding: $spacing-sm - 2px;
-                        background-color: red;
-                        margin: $spacing-md 25% 0;
+                        padding: $spacing-sm - 2px;
+                        background-color: $error-color;
+                        margin: $spacing-sm 25% -5px;
                         border-radius: $spacing-xs;
                         color: $light-neutral-font-color;
                     }

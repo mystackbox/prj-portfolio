@@ -58,9 +58,6 @@ export class GeoLocationService {
                   default:
                     this.error$.next('An unknown error occurred');
                 }
-
-                this.clearRequestTimer();
-
               },
               {
                 enableHighAccuracy: true,

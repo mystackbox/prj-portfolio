@@ -26,6 +26,7 @@ export class PageIntroductionComponent implements OnInit {
   pageDesc: any;
   temperature?: number = 0;
   weatherIcon?: string = '';
+  weatherDescription: string = 'No Data';
   currentWeather: any;
   isLoading?: boolean = false;
   isPositionAvailable: boolean = false;
@@ -42,15 +43,12 @@ export class PageIntroductionComponent implements OnInit {
     private _activatedRoute: ActivatedRoute,
     private _titleService: Title,
     private _weatherService: WeatherService,
-    private _geoLocServive: GeoLocationService,
-
+    private _geoLocServive: GeoLocationService
   ) {}
 
   ngOnInit(): void {
     this.setPageTitleFromRoute();
-
     this._geoLocServive.getLocation();
-
     this.getCurrentLocation();
   }
 
@@ -63,7 +61,6 @@ export class PageIntroductionComponent implements OnInit {
     //subscribe to changing geo-loc positions
     this._locPosSub = this._geoLocServive.position$.subscribe((position) => {
       if (position) {
-        console.log('Loc position received ...' + position.coords.latitude);
         this.isPositionAvailable = true;
         this.getcurrentWeather(position);
       }
@@ -74,6 +71,7 @@ export class PageIntroductionComponent implements OnInit {
       if (_error) {
         Swal.fire('Geo-location!', '' + _error);
         this.isLoading = false;
+        this._geoLocServive.clearRequestTimer();
       }
     });
   }
@@ -91,6 +89,7 @@ export class PageIntroductionComponent implements OnInit {
           this.currentWeather = weatherData;
           this.temperature = Math.round(this.currentWeather?.main?.temp);
           this.weatherIcon = this.currentWeather.weather[0]?.icon + '@2x.png';
+          this.weatherDescription = this.currentWeather.weather[0]?.description;
           this.isLoading = false;
         },
         error: (_error) => {
