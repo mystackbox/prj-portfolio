@@ -1,0 +1,174 @@
+[
+  {
+    "id": 1,
+    "name": "my portfolio",
+    "heading": "Personal portfolio",
+    "imageName": "prj-portfolio",
+    "introduction": "Personal portfolio developed using Angular framework.",
+    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS.",
+    "concepts": [
+      "Responsive UI",
+      "Angular 16+",
+      "RESTful APIs",
+      "Unit Tests",
+      "SEO (OG)",
+      "GitHub and Git"
+    ],
+    "features": [
+      "Weather API",
+      "News API",
+      "WhatsApp Button",
+      "Share Buttons",
+      "Contact Form",
+      "Toggle Themes"
+    ],
+    "hyperlinks": [
+      "https://github.com/mystackbox/prj-portfolio",
+      "https://mystackbox.github.io/prj-portfolio/home"
+    ]
+  },
+
+  {
+    "id": 2,
+    "name": "KM attorneys",
+    "heading": "Business Website",
+    "imageName": "prj-mk",
+    "introduction": "Law-firm website developed using Angular framework.",
+    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS.",
+    "concepts": [
+      "Responsive UI",
+      "Angular 16+",
+      "Social Buttons",
+      "Unit Tests",
+      "SEO (OG)",
+      "GitHub and Git"
+    ],
+    "features": [
+      "Fully Responsive",
+       "Carousel",
+      "Share Buttons",
+      "Google Maps",
+      "Contact Form",
+      " -- -- -- "
+    ],
+    "hyperlinks": [
+      "https://github.com/mystackbox/prj-monakali-attorneys.inc",
+      "https://mystackbox.github.io/prj-portfolio/home"
+    ]
+  },
+
+  {
+    "id": 4,
+    "name": "weather App",
+    "heading": "Real-time Weather",
+    "imageName": "prj-weather",
+    "introduction": "Weather API integrated App developed using Angular",
+    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS.",
+    "concepts": [
+      "Geo-location",
+      "Responsive UI",
+      "Angular 16+",
+      "RESTful APIs",
+      "Unit Tests",
+      "GitHub and Git"
+    ],
+    "features": [
+      "Location request",
+      "Rea-time Weather",
+      "Location tracking",
+      "12hrs Forecast",
+      "Fully Responsive",
+      "Loading Spinner"
+    ],
+    "hyperlinks": [
+      "https://github.com/mystackbox/prj-geolocation-weather-forecast",
+      "https://mystackbox.github.io/prj-portfolio/home"
+    ]
+  },
+
+  {
+    "id": 5,
+    "name": "v-loc system",
+    "heading": "Vehicle Locator App",
+    "imageName": "prj-vloc",
+    "introduction": "Locator App developed using Angular, and GoogleMaps.",
+    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS. ",
+    "concepts": [
+      "Fetch API",
+      "Json-Server",
+      "Angular 18+",
+      "Responsive UI",
+      "Unit Tests",
+      "GitHub and Git"
+    ],
+    "features": [
+      "Google Maps",
+      "Search Form",
+      "Loading Spinner",
+      "Fully Responsive",
+      " -- -- -- ",
+      " -- -- -- "
+    ],
+    "hyperlinks": [
+      "https://github.com/mystackbox/prj-vehicle-tracking-system",
+      "https://mystackbox.github.io/prj-portfolio/home"
+    ]
+  },
+
+  {
+    "id": 6,
+    "name": "my portfolio",
+    "heading": "Personal portfolio",
+    "imageName": "prj-portfolio",
+    "introduction": "Personal portfolio developed using Angular framework.",
+    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS.",
+    "concepts": [
+      "Responsive UI",
+      "Angular 16+",
+      "RESTful APIs",
+      "Unit Tests",
+      "SEO (OG)",
+      "GitHub and Git"
+    ],
+    "features": [
+      "Weather API",
+      "News API",
+      "WhatsApp Button",
+      "Share Buttons",
+      "Contact Form",
+      "Toggle Themes"
+    ],
+    "hyperlinks": [
+      "https://github.com/mystackbox/prj-portfolio",
+      "https://mystackbox.github.io/prj-portfolio/home"
+    ]
+  },
+    {
+    "id": 3,
+    "name": "mabunda group",
+    "heading": "Business Website",
+    "imageName": "prj-mbg",
+    "introduction": "EHS Business website developed using Angular framework.",
+    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS.",
+    "concepts": [
+      "Responsive UI",
+      "Angular 16+",
+      "RESTful APIs",
+      "Unit Tests",
+      "SEO & PO",
+      "GitHub and Git"
+    ],
+    "features": [
+      "Rea-time Weather",
+      "Photo Gallery",
+      "Google Maps",
+      "Share Buttons",
+      "Contact Form",
+      "Toggle Themes"
+    ],
+    "hyperlinks": [
+      "https://github.com/mystackbox/prj-mabunda-group",
+      "https://mabundagroup.com/home"
+    ]
+  }
+]
