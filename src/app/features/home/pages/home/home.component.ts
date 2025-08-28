@@ -15,11 +15,17 @@ export class HomeComponent {
   private _projectSub?: Subscription;
   project?: IProject;
   error?: string;
+  isCollapsed: boolean = false;
+  moreLessText: string = 'more...';
 
   gitHubRepo: string = 'https://github.com/mystackbox';
   linkedIn: string = 'https://www.linkedin.com/in/yingisani-chiqinda-545a062bb/';
 
-  constructor(private router: Router, private _products: ProjectsService, private _hyperLink: HyperLinkService) {}
+  constructor(
+    private router: Router,
+    private _products: ProjectsService,
+    private _hyperLink: HyperLinkService
+  ) {}
 
   //load list of projects
   ngOnInit() {
@@ -41,6 +47,15 @@ export class HomeComponent {
     });
   }
 
+  readMore() {
+    this.isCollapsed = !this.isCollapsed;
+    if (this.isCollapsed === true) {
+      this.moreLessText = 'less...';
+    } else {
+      this.moreLessText = 'more ';
+    }
+  }
+
   redirectToContactUs() {
     this.router.navigate(['/contact']);
   }
@@ -49,7 +64,7 @@ export class HomeComponent {
     this.router.navigate(['/projects']);
   }
 
-    openHyperLink(hyterLink: string) {
+  openHyperLink(hyterLink: string) {
     this._hyperLink.openNewTab(hyterLink);
   }
 }

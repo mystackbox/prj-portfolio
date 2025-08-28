@@ -12,6 +12,8 @@ import { BrowserCheckService } from '../../../core/services/service-browser-chec
 })
 export class SiteIdentityComponent {
 
+  isChecked: boolean = false;
+
   constructor(
     private router: Router,
     private themeService: ToggleThemeService,
@@ -27,6 +29,8 @@ export class SiteIdentityComponent {
   }
 
   toggleTheme(): void {
+
+    this.isChecked = !this.isChecked;
     this.themeService.toggleTheme();
   }
 

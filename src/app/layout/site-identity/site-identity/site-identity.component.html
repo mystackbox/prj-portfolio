@@ -3,12 +3,18 @@
     <div class="site-logo" (click)="redirectToHome()">
       <img src="./img/site-logo/logo.png" alt="Site Logo" />
     </div>
-    <div class="site-title-and-description" >
+    <div class="site-title-and-description">
       <div class="site-title">
-        <div class="title-name" (click)="redirectToHome()"><h1>PORTFOLIO</h1></div>
-        <div class="site-theme" (click)="toggleTheme()"><i class="bi bi-circle-half"></i></div>
+        <div class="title-name" (click)="redirectToHome()">
+          <h1>PORTFOLIO</h1>
+        </div>
+        <div class="site-theme" title="Toggle Theme" (click)="toggleTheme()">
+          <i class="bi bi-circle-half"></i>
+        </div>
       </div>
-      <p class="site-description" (click)="redirectToHome()">Front-End Developer (Angular)</p>
+      <p class="site-description" (click)="redirectToHome()">
+        Front-End Developer (Angular)
+      </p>
     </div>
   </div>
 
@@ -28,8 +34,13 @@
         </span>
       </div>
 
-      <div class="site-contact-text theme-button" (click)="toggleTheme()">
-        <div class="site-theme contact-icon" title="Toggle Theme">
+      <div class="site-contact-text theme-button" >
+        <!-- <label class="toggle-switch" title="Toggle theme">
+          <input type="checkbox" [checked]="isChecked" title="Toggle theme" (click)="toggleTheme()" />
+          <span class="slider"></span>
+        </label> -->
+
+        <div class="site-theme contact-icon" title="Toggle Theme" (click)="toggleTheme()">
           <i class="bi bi-circle-half"></i>
         </div>
       </div>
