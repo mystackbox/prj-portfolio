@@ -31,12 +31,8 @@
             cursor: pointer;
 
             .heading {
-                margin-bottom: $spacing-xs + 4px;
-                text-transform: uppercase;
-                background-color: $light-primary-bg-color;
-                border-radius: $spacing-xs;
-                padding: $spacing-xs $spacing-sm;
-                font-weight: bold;
+               margin-bottom: $spacing-xs + 4px;
+                @include heading-light;
             }
 
             .set {
@@ -48,7 +44,7 @@
                 .skill {
                     padding: $spacing-xs - 3px;
                     padding-left: $spacing-xs - 2px;
-                    background-color: $light-secondery-bg-color;
+                    background-color: $light-primary-bg-color;
                     border-radius: $spacing-xs;
 
                     i {

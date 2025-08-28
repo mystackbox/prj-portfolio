@@ -25,7 +25,6 @@
         padding: $spacing-md + 10px $spacing-xl $spacing-md 0;
         color: $light-secondery-font-color;
         cursor: pointer;
-
         .weather-icon {
             align-content: center;
 
@@ -53,7 +52,7 @@
             display: flex;
             flex-direction: column;
             row-gap: 11px;
-            text-align: left;
+            text-align: left;   
 
             .page-title {
                 text-transform: uppercase;
@@ -159,7 +158,6 @@
                     height: 130px;
                     cursor: pointer;
                 }
-
             }
         }
     }
@@ -236,5 +234,4 @@
             }
         }
     }
-
 }

@@ -45,25 +45,48 @@
     </div>
   </div>
 
-  <!-- <div class="page-content-intro-hr">INTRODUCTION</div> -->
-
   <div class="homepage-content-section intro-container">
     <div class="developer-name">Hi, I’m <span class="name">Yingi</span></div>
+    
     <div class="developer-title">Front-End Developer</div>
 
-       <div class="skills-container">
-      <div class="skill"> <i class="bi bi-check-circle-fill"></i>Responsive UI Design</div>
-      <div class="skill"><i class="bi bi-check-circle-fill"></i>Angular/TypeScript</div>
-      <div class="skill"><i class="bi bi-check-circle-fill"></i>RESTful API </div>
-      <div class="skill"><i class="bi bi-check-circle-fill"></i>Unit Testing</div>
-      <div class="skill"><i class="bi bi-check-circle-fill"></i>Source Control (GitHub)</div>
-
+    <div class="developer-skills-container">
+      <div class="developer-skill">
+        <i class="bi bi-check-circle-fill"></i>Responsive UI Design
+      </div>
+      <div class="developer-skill">
+        <i class="bi bi-check-circle-fill"></i>Angular/TypeScript
+      </div>
+      <div class="developer-skill">
+        <i class="bi bi-check-circle-fill"></i>RESTful API
+      </div>
+      <div class="developer-skill">
+        <i class="bi bi-check-circle-fill"></i>Unit Testing
+      </div>
+      <div class="developer-skill">
+        <i class="bi bi-check-circle-fill"></i>Source Control (GitHub)
+      </div>
     </div>
-    <p>
+
+    <p class="developer-intro first-paragraph">
       I craft responsive, scalable, and user-friendly Single-Page applications
       (SPA) using
       <span class="highlight">Angular Framework</span>. 
-      The structured, component-based architecture of Angular allows me to create clean, maintainable, and robust applications that provide an excellent user experience.
+
+        <span *ngIf="isCollapsed" class="second-pargraph">
+          The structured, component-based architecture of Angular allows me to
+          create clean, maintainable, and robust applications that provide an
+          excellent user experience.
+        </span>
+
+        <span *ngIf="!isCollapsed" class="third-pargraph">
+          The structured, component-based architecture of Angular allows me to
+          create clean, maintainable, and robust applications that provide an
+          excellent user experience.
+        </span>
+
+        <span class="read" (click)="readMore()">{{moreLessText}}</span>
+
     </p>
 
     <div class="intro-btn-container">

@@ -101,22 +101,26 @@
                     font-family: 50;
                 }
 
-                .skills-container {
+                .developer-skills-container {
 
-                    .skill {
+                    .developer-skill {
                         background-color: $light-primary-bg-color;
                     }
                 }
 
-                p {
+              .developer-intro  {
                     margin: 15px 0;
-                    font-size: $font-size-md;
                     line-height: 1.6;
+                     background-color: rgb($dark-primary-bg-color, 0.1);
 
                     .highlight {
                         font-weight: bold;
-                        color: $comp-default-font-color;
+                        color: $light-default-font-color;
                     }
+
+                        .read {
+                            color: $comp-default-font-color;
+                        }
                 }
 
                 .intro-btn-container {

@@ -79,27 +79,20 @@
         }
     }
 
-    //hr line styles
-    .page-content-intro-hr {
-        @include page-content-intro-hr;
-
-        &::before,
-        &::after {
-            border-bottom: 1px solid #e5e5e5;
-        }
-    }
-
     //features section
     .intro-container {
         padding: 0 10% 15px;
         border-radius: $spacing-sm;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        // background-color: rgb($light-secondery-bg-color, 0.2);
 
         .developer-name {
             font-size: $font-size-lg + 8px;
             font-weight: bold;
-            margin-bottom: 5px;
-
+            margin-bottom: -10px;
             .name {
                 color: $error-color;
             }
@@ -109,45 +102,54 @@
             text-transform: uppercase;
             font-size: $font-size-md + 2px;
             font-family: 50;
-            margin-bottom: 8px;
         }
 
-        .skills-container {
+        .developer-skills-container {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            column-gap: 10px;
-             row-gap: 10px;
+            gap: 10px;
             justify-content: center;
             font-size: $font-size-sm;
-            
-            .skill {
+
+            .developer-skill {
                 background-color: $light-secondery-bg-color;
                 padding: $spacing-xxs $spacing-sm;
-                 border-radius: $spacing-md;
-                 text-align: left;
-                 min-width: 156px;
-                 i {
+                border-radius: $spacing-md;
+                text-align: left;
+                min-width: 156px;
+
+                i {
                     margin-right: 5px;
                     color: $error-color;
-                 }
+                }
             }
         }
 
-        p {
-            margin: 15px 0;
+        .developer-intro {
+
             font-size: $font-size-md + 1px;
             line-height: 1.6;
+            background-color: rgb($light-secondery-bg-color, 0.3);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            padding: $spacing-md;
+            border-radius: $spacing-md;
 
             .highlight {
                 font-weight: bold;
                 color: $comp-default-font-color;
             }
+
+            .read {
+                cursor: pointer;
+                color: $error-color;
+                display: none;
+            }
         }
 
         .intro-btn-container {
             text-align: center;
-            margin-top: 15px;
             display: flex;
             flex-direction: row;
             column-gap: 15px;
@@ -179,6 +181,8 @@
             }
         }
     }
+
+
 
     //Media queries for responsive design
     @include respond-to("md") {
@@ -388,6 +392,19 @@
         .intro-container {
             margin-bottom: -15px;
             padding: $spacing-sm ;
+
+            .developer-intro {
+               
+                .read {
+                    cursor: pointer;
+                    color: $error-color;
+                    display: block;
+                }
+
+                .third-pargraph {
+                    display: none;
+                }
+            }
 
             .intro-btn-container {
                 column-gap: 10px;

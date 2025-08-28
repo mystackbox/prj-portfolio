@@ -165,15 +165,14 @@
                 text-align: left;
 
                 .project-name {
-                    text-transform: uppercase;
-                    background-color: $light-primary-bg-color;
+                    @include heading-light;
+                    margin-bottom: 0;
                     border-radius: 0 $spacing-xxs $spacing-xxs 0;
                     border-left: 5px solid red;
-                    padding: 3px $spacing-sm;
+                    padding: 4px $spacing-sm;
                     cursor: pointer;
                     color: brown;
                     font-size: $font-size-sm - 2px;
-                    font-weight: bold;
                 }
 
                 .project-summary {
@@ -263,12 +262,8 @@
                     text-align: left;
 
                     .project-name {
-                        text-transform: uppercase;
-                        background-color: $light-primary-bg-color;
-                        border-radius: 0 $spacing-xs $spacing-xs 0;
-                        border-left: 5px solid red;
+                       background-color: $light-secondery-bg-color;
                         padding: 2px $spacing-sm;
-                        cursor: pointer;
                     }
 
                     .project-summary {
@@ -281,15 +276,6 @@
                         column-gap: 5px;
                         flex-wrap: wrap;
 
-                        .view-btn {
-                            padding: $spacing-xs - 2px $spacing-sm;
-                            background-color: $light-secondery-bg-color;
-                            border-radius: $spacing-xs - 1px;
-                            font-size: $font-size-xs - 2px;
-                            min-width: 45px;
-                            color: $light-neutral-font-color;
-                            cursor: pointer;
-                        }
 
                         .git-hub-repo {
                             // color: #000;
