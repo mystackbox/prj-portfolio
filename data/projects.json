@@ -31,7 +31,7 @@
   {
     "id": 2,
     "name": "KM attorneys",
-    "heading": "Business Website",
+    "heading": "Law-firm Business Website",
     "imageName": "prj-mk",
     "introduction": "Law-firm website developed using Angular framework.",
     "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS.",
@@ -74,7 +74,7 @@
     ],
     "features": [
       "Location request",
-      "Rea-time Weather",
+      "Real-time Weather",
       "Location tracking",
       "12hrs Forecast",
       "Fully Responsive",
@@ -146,7 +146,7 @@
     {
     "id": 3,
     "name": "mabunda group",
-    "heading": "Business Website",
+    "heading": "EHS Business Website",
     "imageName": "prj-mbg",
     "introduction": "EHS Business website developed using Angular framework.",
     "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS.",
@@ -159,12 +159,12 @@
       "GitHub and Git"
     ],
     "features": [
-      "Rea-time Weather",
+      "Real-time Weather",
       "Photo Gallery",
       "Google Maps",
-      "Share Buttons",
+      "Social-share Buttons",
       "Contact Form",
-      "Toggle Themes"
+      "Themes(Light/Dark)"
     ],
     "hyperlinks": [
       "https://github.com/mystackbox/prj-mabunda-group",
