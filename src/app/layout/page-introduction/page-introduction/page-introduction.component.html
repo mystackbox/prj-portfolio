@@ -9,11 +9,10 @@
         [src]="'http://openweathermap.org/img/wn/' + weatherIcon"
         alt="Icon"
         class="weather-icon-img"
-        [title]="weatherDescription  | titlecase"
+        [title]="weatherDescription | titlecase"
       />
     </div>
     <div class="weather-temp" title="Temperature">{{ temperature }}°C</div>
-
   </div>
 
   <div
@@ -25,10 +24,10 @@
   </div>
 
   <div class="call-to-acltion-container">
-    <div class="intro-text">
-      <div class="page-title">{{ pageTitle }}</div>
-      <div class="page-description">{{ pageDesc }}</div>
-      <div class="page-intro-buttons">
+    <div @staggerInFromLeft class="intro-text">
+      <div class="staggered-from-left page-title">{{ pageTitle }}</div>
+      <div class="staggered-from-left page-description">{{ pageDesc }}</div>
+      <div class="staggered-from-left page-intro-buttons">
         <button
           name="projects"
           class="button projects"
@@ -50,14 +49,11 @@
 
     <div class="intro-image">
       <img
+      @fadeIn 
         class="project-img"
         src="./img/call-to-action/ui.png"
         alt="recent project"
       />
     </div>
   </div>
-
-  <!-- <div *ngIf="isLoading == true" id="spinner-container">
-    <app-spinner [processMessage]="isLoadingMessage"></app-spinner>
-  </div> -->
 </div>

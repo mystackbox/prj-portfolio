@@ -6,11 +6,11 @@ import { ProjectsService } from './services/service-projects/projects.service';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   providers: [
     ToggleThemeService,
-    ProjectsService
+    ProjectsService,
   ]
 })
 export class CoreModule { }

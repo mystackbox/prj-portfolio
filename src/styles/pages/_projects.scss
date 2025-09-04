@@ -20,8 +20,11 @@
         display: grid;
         row-gap: 5px;
         padding: $spacing-lg $spacing-sm;
-        box-shadow: $light-box-shadow;
+        margin: -10px 0;
+        // box-shadow: $light-box-shadow;
+        background-color: rgba($light-secondery-bg-color, 0.4);
         border-radius: $spacing-xs;
+
 
         .top-container {
             display: grid;
@@ -262,7 +265,7 @@
                     text-align: left;
 
                     .project-name {
-                       background-color: $light-secondery-bg-color;
+                        background-color: $light-secondery-bg-color;
                         padding: 2px $spacing-sm;
                     }
 
@@ -398,7 +401,7 @@
             .bottom-container {
                 display: grid;
                 grid-template-columns: 1fr;
-                row-gap: 6px;
+                row-gap: 15px;
 
                 .project-concepts,
                 .project-features {
@@ -529,6 +532,10 @@
 
         .project-details {
             row-gap: 5px;
+            padding-top: $spacing-md + 2px;
+
+            box-shadow: $light-box-shadow;
+            background-color: transparent;
 
             .top-container {
                 row-gap: 20px;

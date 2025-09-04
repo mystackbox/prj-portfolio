@@ -3,5 +3,5 @@
 body {
     @include global-font-Ubuntu-light ;
     color: $light-primary-font-color;
-    background-color: $light-secondery-bg-color;
+    background-color: $light-primary-bg-color;
 }

@@ -1,56 +1,24 @@
 <div id="home-page-main" class="home-page-main">
-  <div class="homepage-content-section cards-container">
-    <div class="card card-ui" (click)="redirectToProjects()">
-      <div class="card-icon">
-        <i class="bi bi-code-slash"></i>
-      </div>
-      <div class="card-title">ui Designs</div>
-      <div class="card-description">Responsive and Mobile-friendly UIs.</div>
-      <div class="card-button">
-        <button name="explore-1" class="explore" type="button">explore</button>
-      </div>
-    </div>
-
-    <div class="card card-api" (click)="redirectToProjects()">
-      <div class="card-icon">
-        <i class="bi bi-plug"></i>
-      </div>
-      <div class="card-title">restful api</div>
-      <div class="card-description">Fast and Real-time data sync.</div>
-      <div class="card-button">
-        <button name="explore-2" class="explore" type="button">explore</button>
-      </div>
-    </div>
-
-    <div class="card card-test" (click)="redirectToProjects()">
-      <div class="card-icon">
-        <i class="bi bi-flask-florence"></i>
-      </div>
-      <div class="card-title">unit testing</div>
-      <div class="card-description">Optimized and Tested quality code.</div>
-      <div class="card-button">
-        <button name="explore-3" class="explore" type="button">explore</button>
-      </div>
-    </div>
-
-    <div class="card card-git" (click)="redirectToProjects()">
-      <div class="card-icon">
-        <i class="bi bi-github"></i>
-      </div>
-      <div class="card-title">Git & GitHub</div>
-      <div class="card-description">Tracking source code changes.</div>
-      <div class="card-button">
-        <button name="explore-4" class="explore" type="button">explore</button>
-      </div>
-    </div>
-  </div>
-
   <div class="homepage-content-section intro-container">
-    <div class="developer-name">Hi, I’m <span class="name">Yingi</span></div>
-    
+    <div  @fadeIn class="developer-name">
+      Hi, I’m <span class="name">Yingi</span>
+    </div>
+
     <div class="developer-title">Front-End Developer</div>
 
-    <div class="developer-skills-container">
+    <div @staggerInFromBottom class="quick-links">
+      <span class="staggered-from-bottom link-item"  (click)="openHyperLink(gitHubRepo)">
+        <i class="bi bi-github"></i>
+      </span>
+      <span class="staggered-from-bottom  link-item in" (click)="openHyperLink(linkedIn)">
+        <i class="bi bi-linkedin"></i
+      ></span>
+      <span class="staggered-from-bottom  link-item" (click)="openHyperLink(whatsapp)">
+        <i class="bi bi-whatsapp"></i>
+      </span>
+    </div>
+
+    <div  @fadeIn  class="developer-skills-container">
       <div class="developer-skill">
         <i class="bi bi-check-circle-fill"></i>Responsive UI Design
       </div>
@@ -71,41 +39,31 @@
     <p class="developer-intro first-paragraph">
       I craft responsive, scalable, and user-friendly Single-Page applications
       (SPA) using
-      <span class="highlight">Angular Framework</span>. 
+      <span class="highlight">Angular Framework</span>.
 
-        <span *ngIf="isCollapsed" class="second-pargraph">
-          The structured, component-based architecture of Angular allows me to
-          create clean, maintainable, and robust applications that provide an
-          excellent user experience.
-        </span>
+      <span *ngIf="isCollapsed" class="second-pargraph">
+        The structured, component-based architecture of Angular allows me to
+        create clean, maintainable, and robust applications that provide an
+        excellent user experience.
+      </span>
 
-        <span *ngIf="!isCollapsed" class="third-pargraph">
-          The structured, component-based architecture of Angular allows me to
-          create clean, maintainable, and robust applications that provide an
-          excellent user experience.
-        </span>
+      <span *ngIf="!isCollapsed" class="third-pargraph">
+        The structured, component-based architecture of Angular allows me to
+        create clean, maintainable, and robust applications that provide an
+        excellent user experience.
+      </span>
 
-        <span class="read" (click)="readMore()">{{moreLessText}}</span>
-
+      <span class="read" (click)="readMore()">{{ moreLessText }}</span>
     </p>
 
     <div class="intro-btn-container">
       <button
         type="button"
-        class="intro-btn gitHub-btn"
+        class="intro-btn projects-btn"
         (click)="openHyperLink(gitHubRepo)"
       >
-        <i class="bi bi-github"></i>
-        GitHub
-      </button>
-
-      <button
-        type="button"
-        class="intro-btn linkedin-btn"
-        (click)="openHyperLink(linkedIn)"
-      >
-        <i class="bi bi-linkedin"></i>
-        LinkedIn
+        <i class="bi bi-box-arrow-up-right"></i>
+        Explore projects
       </button>
     </div>
   </div>
