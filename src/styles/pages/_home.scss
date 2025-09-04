@@ -5,94 +5,19 @@
     grid-template-rows: 1fr;
     row-gap: 25px;
 
-    //cards section
-    .cards-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 25px;
-        justify-items: center;
-        margin-top: 15px;
-
-        .card {
-            display: grid;
-            grid-template-columns: 1fr;
-            row-gap: 5px;
-            cursor: pointer;
-            box-shadow: $light-box-shadow;
-            width: 210px;
-            padding: $spacing-md;
-            border-radius: $spacing-sm;
-
-            .card-icon {
-                margin: 8px 0;
-
-                .bi {
-                    font-size: 1.2rem;
-                    border-radius: 29px;
-                    height: 46px;
-                    width: 40px;
-
-                    color: $light-neutral-font-color;
-                    background-color: $dark-primary-bg-color;
-                    padding: 11px 13px;
-
-                }
-
-            }
-
-            .card-title {
-                text-transform: uppercase;
-                color: $comp-default-font-color;
-                font-size: $font-size-sm + 2px;
-                font-weight: bold;
-            }
-
-            .card-description {
-                font-size: $font-size-sm + 2px;
-            }
-
-            .card-button {
-                .explore {
-                    background-color: $error-color;
-                    width: 100%;
-                    padding: 9px 20px;
-                    text-transform: uppercase;
-                    color: $light-neutral-font-color;
-                    cursor: pointer;
-                    border: none;
-                    border-radius: $spacing-xs;
-                    font-size: $font-size-xs + 2px;
-                }
-            }
-
-            &.card-git {
-                display: none;
-            }
-
-            &:hover {
-                background-color: $light-primary-bg-color;
-
-                .explore {
-                    background-color: $comp-default-font-color;
-                }
-            }
-        }
-    }
-
     //features section
     .intro-container {
-        padding: 0 10% 15px;
-        border-radius: $spacing-sm;
+        padding: 20px 10%;
         text-align: center;
         display: flex;
         flex-direction: column;
-        row-gap: 20px;
-        // background-color: rgb($light-secondery-bg-color, 0.2);
+        row-gap: 18px;
 
         .developer-name {
             font-size: $font-size-lg + 8px;
             font-weight: bold;
             margin-bottom: -10px;
+
             .name {
                 color: $error-color;
             }
@@ -102,6 +27,37 @@
             text-transform: uppercase;
             font-size: $font-size-md + 2px;
             font-family: 50;
+        }
+
+        .quick-links {
+            display: flex;
+            flex-direction: row;
+            column-gap: 20px;
+            justify-content: center;
+            margin: 0px 8% 8px;
+            border-bottom: 0.1em solid rgb(#e5e5e5, 1);
+            padding-bottom: 25px;
+
+            i {
+                font-size: 20px;
+                cursor: pointer;
+                padding: 5px 7px;
+                border-radius: 50px;
+                border: 0.1em solid rgb(#e5e5e5, 1);
+
+                &.bi-github {
+                    color: $dark-secondery-bg-color;
+                }
+
+                &.bi-linkedin {
+                    color: #004182;
+                }
+
+                &.bi-whatsapp {
+                    color: #25d366;
+                }
+            }
+
         }
 
         .developer-skills-container {
@@ -114,27 +70,33 @@
 
             .developer-skill {
                 background-color: $light-secondery-bg-color;
-                padding: $spacing-xxs $spacing-sm;
+                padding: $spacing-xs $spacing-sm;
                 border-radius: $spacing-md;
                 text-align: left;
                 min-width: 156px;
+                cursor: pointer;
 
                 i {
                     margin-right: 5px;
                     color: $error-color;
                 }
+
+                &:hover {
+
+                    background-color: $error-color;
+                    color: $light-neutral-font-color;
+
+                    i {
+                        color: $light-neutral-font-color;
+                    }
+
+                }
             }
         }
 
         .developer-intro {
-
             font-size: $font-size-md + 1px;
             line-height: 1.6;
-            background-color: rgb($light-secondery-bg-color, 0.3);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            padding: $spacing-md;
-            border-radius: $spacing-md;
 
             .highlight {
                 font-weight: bold;
@@ -145,34 +107,28 @@
                 cursor: pointer;
                 color: $error-color;
                 display: none;
+                font-weight: 700;
             }
         }
 
         .intro-btn-container {
-            text-align: center;
-            display: flex;
-            flex-direction: row;
-            column-gap: 15px;
+
             justify-content: center;
 
             .intro-btn {
-                padding: 6px 15px;
-                max-width: 220px;
+                padding: 7px 25px;
                 border: none;
                 border-radius: $spacing-xs;
                 color: $light-neutral-font-color;
                 cursor: pointer;
 
                 &.projects-btn {
+                    text-transform: uppercase;
                     background-color: $error-color;
-                }
 
-                &.gitHub-btn {
-                    background-color: $dark-secondery-bg-color;
-                }
-
-                &.linkedin-btn {
-                    background-color: $dark-primary-bg-color;
+                    i {
+                        margin-right: 3px;
+                    }
                 }
 
                 &:hover {
@@ -181,8 +137,6 @@
             }
         }
     }
-
-
 
     //Media queries for responsive design
     @include respond-to("md") {
@@ -220,28 +174,6 @@
 
     @include respond-to("pro-sm") {
 
-        .cards-container {
-            justify-content: space-evenly;
-            padding-top: $spacing-md;
-            column-gap: 5px;
-
-            .card {
-                column-gap: 5px;
-
-                .card-description {
-                    min-height: 25%;
-                }
-
-                .card {
-                    width: 55%;
-                }
-
-                &.card-git {
-                    display: none;
-                }
-            }
-        }
-
         //features section
         .intro-container {
             grid-template-columns: 1fr;
@@ -271,18 +203,6 @@
 
     @include respond-to("sm") {
 
-        .cards-container {
-
-            .card-description {
-                min-height: 35%;
-            }
-
-            // font-size: $font-size-sm;
-            .card {
-                width: 95%;
-            }
-        }
-
         //features section
         .intro-container {
             .news-feed-container {
@@ -307,16 +227,6 @@
 
     @include respond-to("pre-sm") {
 
-        .cards-container {
-            .card-title {
-                font-size: $font-size-sm + 2px;
-            }
-
-            .card-description {
-                font-size: $font-size-sm;
-            }
-        }
-
         //features section
         .intro-container {
             padding: 0 5% 15px;
@@ -334,47 +244,7 @@
     }
 
     @include respond-to("pro-xs") {
-        row-gap: 10px;
-
-        .cards-container {
-            padding: 0;
-            gap: 15px;
-
-            .card {
-                font-size: $font-size-sm;
-
-                .card-icon {
-                    margin-bottom: 10px;
-
-                    .bi {
-                        font-size: 0.8rem;
-                        border-radius: 29px;
-                        height: 46px;
-                        width: 40px;
-
-                        color: $light-neutral-font-color;
-                        background-color: intro-container$dark-primary-bg-color;
-                        padding: 10px 12px;
-
-                    }
-                }
-
-                .card-title {
-                    font-size: $font-size-sm;
-                }
-
-                .card-description {
-                    min-height: 30%;
-                }
-
-                .card-button {
-                    .explore {
-                        font-size: $font-size-xs;
-                    }
-                }
-            }
-        }
-
+ 
         //features section
         .intro-container {
             padding: $spacing-sm ;
@@ -383,7 +253,6 @@
 
     @include respond-to("xs") {
 
-        .cards-container,
         .page-content-intro-hr {
             display: none;
         }
@@ -391,10 +260,21 @@
         //features section
         .intro-container {
             margin-bottom: -15px;
-            padding: $spacing-sm ;
+            padding: $spacing-sm $spacing-sm $spacing-md ;
+            border-radius: $spacing-sm;
+            box-shadow: $light-box-shadow;
+
+            .developer-title {
+                margin: 0 10%;
+            }
 
             .developer-intro {
-               
+                background-color: rgb($light-secondery-bg-color, 0.5);
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+                padding: $spacing-md ;
+                border-radius: $spacing-sm;
+
                 .read {
                     cursor: pointer;
                     color: $error-color;

@@ -176,7 +176,9 @@
 }
 
 @mixin heading-dark {
-  background-color: #12202e;
+  // background-color: #12202e;
+  background-color: rgba($dark-primary-bg-color, 0.2);
+  color: $light-default-font-color;
 }
 
 @mixin button {
@@ -207,13 +209,13 @@
   -------------------------  FONTS  FIRST PREF --------------------------
 */
 
-// @mixin global-font-jura {
-//   font-family: "Jura", sans-serif;
-//   font-optical-sizing: auto;
-//   font-weight: 300;
-//   font-style: normal;
-//   font-size: 16px;
-// }
+@mixin global-font-jura {
+  font-family: "Jura", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
+}
 
 @mixin global-font-Ubuntu-light {
   font-family: "Ubuntu", sans-serif;
@@ -223,8 +225,9 @@
   line-height: 1.5;
 }
 
-// @mixin global-font-Ubuntu-regular {
-//   font-family: "Ubuntu", sans-serif;
-//   font-weight: 400;
-//   font-style: normal;
-// }
+@mixin global-font-Ubuntu-regular {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  
+}

@@ -89,7 +89,7 @@ export class ContactComponent implements CanDeactivateIF {
     );
   }
 
-  //Unsaved changes prompt
+  //deactivate onUnsaved changes 
   onUnsavedChanges(): Observable<boolean> | Promise<boolean> | boolean {
     //if the form is not dirty and not submitted, allow proceeding
     if (this.contactForm.pristine) {
@@ -155,7 +155,6 @@ export class ContactComponent implements CanDeactivateIF {
   onReset() {
     this.contactForm.reset();
     this.contactForm.markAsPristine;
-    this.isFormError = false;
   }
 
   ngOnDestroy(): void {}

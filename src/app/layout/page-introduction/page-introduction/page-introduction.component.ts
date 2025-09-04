@@ -12,13 +12,19 @@ import { filter, first, map, mergeMap, Subscription, tap } from 'rxjs';
 import { WeatherService } from '../../../core/services/service-weather/weather.service';
 import { GeoLocationService } from '../../../core/services/service-geo-location/geo-location.service';
 import Swal from 'sweetalert2';
-import { BrowserCheckService } from '../../../core/services/service-browser-check/browser-check.service';
+import { slideInFromRightTrigger, staggerInFromLeftTrigger } from '../../../core/animations/slide-animations';
+import { fadeInTrigger } from '../../../core/animations/fade-animations';
 
 @Component({
   selector: 'app-page-introduction',
   standalone: false,
   templateUrl: './page-introduction.component.html',
   styleUrl: './page-introduction.component.scss',
+  animations: [
+    staggerInFromLeftTrigger,
+    slideInFromRightTrigger,
+    fadeInTrigger,
+  ]
 })
 export class PageIntroductionComponent implements OnInit {
   pageTitle: any;
@@ -94,7 +100,7 @@ export class PageIntroductionComponent implements OnInit {
         },
         error: (_error) => {
           console.error('Error fetching weather data:', _error);
-          Swal.fire('Server Error!', 'Error fetching weather data');
+          Swal.fire('Server Error!', 'Fetching weather data failed');
           this.isLoading = false;
         },
       });

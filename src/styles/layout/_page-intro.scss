@@ -55,10 +55,9 @@
             text-align: left;   
 
             .page-title {
+                @include global-font-jura;
                 text-transform: uppercase;
-                font-size: $font-size-xl;
-                font-weight: bolder;
-                color: $light-neutral-font-color;
+                color: $light-secondery-font-color;
             }
 
             .page-description {
