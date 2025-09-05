@@ -4,12 +4,32 @@ import { ProjectsService } from '../../../../core/services/service-projects/proj
 import { IProject } from '../../../../shared/models/project.model';
 import { BehaviorSubject, Subscriber, Subscription, switchMap } from 'rxjs';
 import { HyperLinkService } from '../../../../core/services/service-hyper-link/hyper-link.service';
+import { fadeInTrigger, fadeOutTrigger, slideInFromLeftTrigger, slideInFromRightTrigger, slideInFromTopTrigger, slideInFromBottomTrigger, basicStaggerTrigger, staggerInFromBottomTrigger, staggerInFromTopTrigger, zoomInTrigger, basicStaggerReverseTrigger } from '../../../../core/animations/animations';
 
 @Component({
   selector: 'app-projects',
   standalone: false,
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
+    animations: [
+     fadeInTrigger,
+    fadeOutTrigger,
+
+    slideInFromLeftTrigger,
+    slideInFromRightTrigger,
+    slideInFromTopTrigger,
+    slideInFromBottomTrigger,
+
+    basicStaggerTrigger,
+    basicStaggerReverseTrigger,
+    staggerInFromBottomTrigger,
+    staggerInFromTopTrigger,
+
+    // example1Trigger,
+    // example2Trigger,
+
+    zoomInTrigger,
+    ],
 })
 export class ProjectsComponent {
   projects$ = new BehaviorSubject<void>(undefined); // trigger refresh
@@ -21,6 +41,8 @@ export class ProjectsComponent {
 
   private _projectSub?: Subscription;
   private _projectsSub?: Subscription;
+
+   myDelayVariable = 200;
 
   constructor(
     private router: Router,

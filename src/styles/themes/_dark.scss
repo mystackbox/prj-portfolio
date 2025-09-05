@@ -69,7 +69,6 @@
                     column-gap: 20px;
                     justify-content: center;
                     margin: -5px 8% 5px;
-
                     border-bottom: 0.1em solid rgb($light-default-font-color, 1);
                     padding-bottom: 25px;
 
@@ -80,14 +79,18 @@
                         padding: 5px 7px;
                         border-radius: 50px;
                         border: 0.1em solid rgb($light-default-font-color, 0.5);
-                        
 
-                        &.bi-github,  &.bi-linkedin,  &.bi-whatsapp {
-                            color: rgba($light-primary-bg-color, 0.4);
+                        &.bi-github,
+                        &.bi-linkedin,
+                        &.bi-whatsapp,
+                        &.bi-envelope-fill {
+                            color: rgba($light-default-font-color, 0.5);
                         }
 
+                        &:hover {
+                            box-shadow: $dark-hover-box-shadow;
+                        }
                     }
-
                 }
 
                 .developer-skills-container {
@@ -124,7 +127,6 @@
                         color: $comp-default-font-color;
                     }
                 }
-
             }
 
             @include respond-to("pro-xs") {

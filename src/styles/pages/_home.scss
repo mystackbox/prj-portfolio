@@ -56,6 +56,10 @@
                 &.bi-whatsapp {
                     color: #25d366;
                 }
+
+                &:hover {
+                    box-shadow: $light-hover-box-shadow;
+                }
             }
 
         }

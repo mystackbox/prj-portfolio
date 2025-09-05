@@ -40,7 +40,7 @@
 
             .site-description {
                 color: $comp-default-font-color;
-                font-size: $font-size-md;
+                font-size: $font-size-md + 2px;
             }
         }
     }
@@ -104,11 +104,13 @@
             }
 
             .site-title-and-description {
+                  padding-left: 5px;
                 .site-title {
 
                     display: flex;
                     justify-content: space-between;
                     column-gap: 15px;
+                  
 
                     .title-name {
                         font-size: $font-size-sm + 1px;
@@ -119,11 +121,12 @@
                         display: block;
                         font-size: $font-size-lg;
                         cursor: pointer;
+                        padding-right: 5px;
                     }
                 }
 
                 .site-description {
-                    font-size: $font-size-sm + 2px;
+                    font-size: $font-size-md;
                 }
             }
         }

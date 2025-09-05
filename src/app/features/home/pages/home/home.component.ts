@@ -4,9 +4,20 @@ import { ProjectsService } from '../../../../core/services/service-projects/proj
 import { IProject } from '../../../../shared/models/project.model';
 import { Subscription } from 'rxjs';
 import { HyperLinkService } from '../../../../core/services/service-hyper-link/hyper-link.service';
-import { fadeInTrigger } from '../../../../core/animations/fade-animations';
-import { slideInFromLeftTrigger, slideInFromRightTrigger, slideInFromTopTrigger, staggerInFromBottomTrigger } from '../../../../core/animations/slide-animations';
 
+import {
+  basicStaggerReverseTrigger,
+  basicStaggerTrigger,
+  fadeInTrigger,
+  fadeOutTrigger,
+  slideInFromBottomTrigger,
+  slideInFromLeftTrigger,
+  slideInFromRightTrigger,
+  slideInFromTopTrigger,
+  staggerInFromBottomTrigger,
+  staggerInFromTopTrigger,
+  zoomInTrigger,
+} from '../../../../core/animations/animations';
 
 @Component({
   selector: 'app-home',
@@ -15,10 +26,19 @@ import { slideInFromLeftTrigger, slideInFromRightTrigger, slideInFromTopTrigger,
   styleUrl: './home.component.scss',
   animations: [
     fadeInTrigger,
+    fadeOutTrigger,
+
     slideInFromLeftTrigger,
     slideInFromRightTrigger,
     slideInFromTopTrigger,
-    staggerInFromBottomTrigger
+    slideInFromBottomTrigger,
+
+    basicStaggerTrigger,
+    basicStaggerReverseTrigger,
+    staggerInFromBottomTrigger,
+    staggerInFromTopTrigger,
+
+    zoomInTrigger,
   ],
 })
 export class HomeComponent {
@@ -27,6 +47,7 @@ export class HomeComponent {
   error?: string;
   isCollapsed: boolean = false;
   moreLessText: string = 'more...';
+  myDelayVariable = 200;
 
   gitHubRepo: string = 'https://github.com/mystackbox';
   linkedIn: string =
@@ -37,10 +58,8 @@ export class HomeComponent {
   constructor(
     private router: Router,
     private _products: ProjectsService,
-    private _hyperLink: HyperLinkService,
+    private _hyperLink: HyperLinkService
   ) {}
-
-
 
   //load list of projects
   ngOnInit() {
@@ -83,5 +102,3 @@ export class HomeComponent {
     this._hyperLink.openNewTab(hyterLink);
   }
 }
-
-

@@ -5,6 +5,7 @@ import {
   NgZone,
   OnInit,
   Output,
+  SimpleChanges,
 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
@@ -12,8 +13,18 @@ import { filter, first, map, mergeMap, Subscription, tap } from 'rxjs';
 import { WeatherService } from '../../../core/services/service-weather/weather.service';
 import { GeoLocationService } from '../../../core/services/service-geo-location/geo-location.service';
 import Swal from 'sweetalert2';
-import { slideInFromRightTrigger, staggerInFromLeftTrigger } from '../../../core/animations/slide-animations';
-import { fadeInTrigger } from '../../../core/animations/fade-animations';
+import {
+  basicStaggerTrigger,
+  fadeInTrigger,
+  fadeOutTrigger,
+  slideInFromBottomTrigger,
+  slideInFromLeftTrigger,
+  slideInFromRightTrigger,
+  slideInFromTopTrigger,
+  staggerInFromBottomTrigger,
+  staggerInFromTopTrigger,
+  zoomInTrigger,
+} from '../../../core/animations/animations';
 
 @Component({
   selector: 'app-page-introduction',
@@ -21,10 +32,20 @@ import { fadeInTrigger } from '../../../core/animations/fade-animations';
   templateUrl: './page-introduction.component.html',
   styleUrl: './page-introduction.component.scss',
   animations: [
-    staggerInFromLeftTrigger,
-    slideInFromRightTrigger,
     fadeInTrigger,
-  ]
+    fadeOutTrigger,
+
+    slideInFromLeftTrigger,
+    slideInFromRightTrigger,
+    slideInFromTopTrigger,
+    slideInFromBottomTrigger,
+
+    basicStaggerTrigger,
+    staggerInFromBottomTrigger,
+    staggerInFromTopTrigger,
+
+    zoomInTrigger,
+  ],
 })
 export class PageIntroductionComponent implements OnInit {
   pageTitle: any;
@@ -43,6 +64,7 @@ export class PageIntroductionComponent implements OnInit {
   private _weatherSub?: Subscription;
   private _locPosSub?: Subscription;
   private _locErrSub?: Subscription;
+  public _titleSub?: Subscription;
 
   constructor(
     private _router: Router,
@@ -110,26 +132,36 @@ export class PageIntroductionComponent implements OnInit {
    * Sets the page title and meta tags based on the current route.
    */
   setPageTitleFromRoute() {
-    this._router.events
+   this._router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd),
         map(() => this._activatedRoute),
         map((route) => {
           while (route.firstChild) route = route.firstChild;
           return route;
+
         }),
         mergeMap((route) => route.data)
       )
       .subscribe((data) => {
+        
         this.pageTitle = data['title'];
         this.pageHeading = data['metaTags'][0].content;
         this.pageDesc = data['metaTags'][1].content;
+
+        console.log('New page title - ' +  this.pageTitle );
 
         if (this.pageTitle) {
           let _title = `Portfolio - ${this.pageTitle}`;
           this._titleService.setTitle(_title);
         }
       });
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes[this.pageTitle]) {
+      console.log('Value changed:', changes['value'].currentValue);
+    }
   }
 
   redirectToContactUs() {

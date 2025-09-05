@@ -142,16 +142,17 @@
         gap: 15px;
         margin-top: -10px;
         //  border: 1px solid #e5e5e5;
+        
 
         .project-container {
             display: grid;
             grid-template-columns: 2fr 5fr;
             column-gap: 5px;
             padding: $spacing-sm;
-
             box-shadow: $light-box-shadow;
             border-radius: $spacing-xs;
             border: none;
+            opacity: 1;
 
             .project-image-container {
                 cursor: pointer;

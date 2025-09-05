@@ -1,42 +1,58 @@
-<div id="home-page-main" class="home-page-main">
+<div  id="home-page-main" class="home-page-main">
   <div class="homepage-content-section intro-container">
-    <div  @fadeIn class="developer-name">
+    <div @animateSlideInFromTop class="developer-name">
       Hi, I’m <span class="name">Yingi</span>
     </div>
 
-    <div class="developer-title">Front-End Developer</div>
+    <div @animateFadeIn class="developer-title">Front-End Developer</div>
 
-    <div @staggerInFromBottom class="quick-links">
-      <span class="staggered-from-bottom link-item"  (click)="openHyperLink(gitHubRepo)">
+    <div  @basicStagger class="quick-links">
+      <span
+        class="animate-stagger link-item"
+        (click)="openHyperLink(gitHubRepo)"
+      >
         <i class="bi bi-github"></i>
       </span>
-      <span class="staggered-from-bottom  link-item in" (click)="openHyperLink(linkedIn)">
+      <span
+        class="animate-stagger link-item in"
+        (click)="openHyperLink(linkedIn)"
+      >
         <i class="bi bi-linkedin"></i
       ></span>
-      <span class="staggered-from-bottom  link-item" (click)="openHyperLink(whatsapp)">
+      <span
+        class="animate-stagger link-item"
+        (click)="openHyperLink(whatsapp)"
+      >
         <i class="bi bi-whatsapp"></i>
+      </span>
+
+      <span
+        class="animate-stagger link-item"
+        (click)="openHyperLink(whatsapp)"
+      >
+        <i class="bi bi-envelope-fill"></i>
       </span>
     </div>
 
-    <div  @fadeIn  class="developer-skills-container">
-      <div class="developer-skill">
+    <div @basicStagger class="developer-skills-container">
+      <div class="developer-skill animate-stagger">
         <i class="bi bi-check-circle-fill"></i>Responsive UI Design
       </div>
-      <div class="developer-skill">
+      <div class="developer-skill animate-stagger">
         <i class="bi bi-check-circle-fill"></i>Angular/TypeScript
       </div>
-      <div class="developer-skill">
+      <div class="developer-skill animate-stagger">
         <i class="bi bi-check-circle-fill"></i>RESTful API
       </div>
-      <div class="developer-skill">
+      <div class="developer-skill animate-stagger">
         <i class="bi bi-check-circle-fill"></i>Unit Testing
       </div>
-      <div class="developer-skill">
+      <div class="developer-skill animate-stagger">
         <i class="bi bi-check-circle-fill"></i>Source Control (GitHub)
       </div>
     </div>
 
-    <p class="developer-intro first-paragraph">
+    <p @animateFadeIn class="developer-intro first-paragraph">
       I craft responsive, scalable, and user-friendly Single-Page applications
       (SPA) using
       <span class="highlight">Angular Framework</span>.
@@ -56,15 +72,16 @@
       <span class="read" (click)="readMore()">{{ moreLessText }}</span>
     </p>
 
-    <div class="intro-btn-container">
+    <div @animateSlideInFromBottom class="intro-btn-container">
       <button
         type="button"
         class="intro-btn projects-btn"
-        (click)="openHyperLink(gitHubRepo)"
+        (click)="redirectToProjects()"
       >
         <i class="bi bi-box-arrow-up-right"></i>
         Explore projects
       </button>
     </div>
+
   </div>
 </div>
