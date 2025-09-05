@@ -122,7 +122,7 @@
   <section
     *ngIf="projectsList"
     class="featured-projects container"
-    [@basicStaggerReverse] = "{ value: 'in', params: { staggerInterval: 150,  duration: 500 } }" 
+    @basicStagger
   >
     <div
       *ngFor="let project of projectsList; let i = index"
