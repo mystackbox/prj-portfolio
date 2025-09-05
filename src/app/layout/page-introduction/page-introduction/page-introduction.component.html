@@ -23,11 +23,12 @@
     <div class="weather-temp">{{ temperature }}°C</div>
   </div>
 
-  <div class="call-to-acltion-container">
-    <div @staggerInFromLeft class="intro-text">
-      <div class="staggered-from-left page-title">{{ pageTitle }}</div>
-      <div class="staggered-from-left page-description">{{ pageDesc }}</div>
-      <div class="staggered-from-left page-intro-buttons">
+  <div *ngIf="pageTitle"  class="call-to-acltion-container">
+    
+    <div @basicStagger class="intro-text">
+      <div class="animate-stagger page-title">{{ pageTitle }}</div>
+      <div class="animate-stagger page-description">{{ pageDesc }}</div>
+      <div class="animate-stagger page-intro-buttons">
         <button
           name="projects"
           class="button projects"
@@ -47,13 +48,14 @@
       </div>
     </div>
 
-    <div class="intro-image">
+    <div @animateFadeIn  class="intro-image">
       <img
-      @fadeIn 
+      
         class="project-img"
         src="./img/call-to-action/ui.png"
         alt="recent project"
       />
     </div>
   </div>
+  
 </div>

@@ -34,7 +34,7 @@ export class SiteIdentityComponent {
   }
 
   redirectToHome() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/']);
   }
   
 }

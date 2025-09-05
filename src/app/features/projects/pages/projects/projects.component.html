@@ -1,5 +1,4 @@
 <div class="projects-page-main" id="projects-page-main">
-
   <div class="page-content-intro-hr">Featured project</div>
 
   <section class="project-details container">
@@ -12,11 +11,14 @@
             [alt]="project.imageName"
             title="View Site"
             loading="eager"
+            @animateZoomIn
           />
         </div>
-        <div class="project-description">
 
-            <div class="heading"  (click)="openHyperLink(project.hyperlinks[1])"> {{ project.name }}</div> 
+        <div  class="project-description">
+          <div  class="heading" (click)="openHyperLink(project.hyperlinks[1])">
+            {{ project.name }}
+          </div>
 
           <div class="details">
             <p>
@@ -25,44 +27,40 @@
           </div>
           <div class="project-views">
             <span
-              class="view git-btn "
+              class="view git-btn"
               (click)="openHyperLink(project.hyperlinks[0])"
             >
               <i class="bi bi-github"></i>
               GitHub
             </span>
             <span
-              class="view view-btn "
+              class="view view-btn"
               (click)="openHyperLink(project.hyperlinks[1])"
             >
               <i class="bi bi-box-arrow-up-right"></i>
               Online
             </span>
 
-            <span
-              class="view detail-btn "
-              (click)="expandCollapseDetails()"
-            >
-            <i *ngIf="isCollapsed === false"  class="bi bi-chevron-down"></i>
-            <i *ngIf="isCollapsed === true" class="bi bi-chevron-up"></i>
-              {{isBtnLabel}}
+            <span class="view detail-btn" (click)="expandCollapseDetails()">
+              <i *ngIf="isCollapsed === false" class="bi bi-chevron-down"></i>
+              <i *ngIf="isCollapsed === true" class="bi bi-chevron-up"></i>
+              {{ isBtnLabel }}
             </span>
           </div>
         </div>
       </div>
 
-      <div class="details-container top-right-details">
+      <div  class="details-container top-right-details">
         <div class="project-description">
           <div class="heading">description</div>
-          <div class="details">
+          <div  class="details">
             {{ project?.description }}
           </div>
         </div>
       </div>
     </div>
 
-    <div *ngIf=" (project && (isCollapsed))" class="bottom-container">
-      
+    <div *ngIf="project && isCollapsed" class="bottom-container">
       <div class="details-container project-concepts">
         <div class="heading">concepts</div>
 
@@ -89,36 +87,55 @@
         <div class="list-container">
           <div class="details">
             <ul>
-              <li><i class="bi bi-check2-square"></i> {{ project.features[0] }}</li>
-              <li><i class="bi bi-check2-square"></i> {{ project.features[1] }}</li>
-              <li><i class="bi bi-check2-square"></i> {{ project.features[2] }}</li>
+              <li>
+                <i class="bi bi-check2-square"></i> {{ project.features[0] }}
+              </li>
+              <li>
+                <i class="bi bi-check2-square"></i> {{ project.features[1] }}
+              </li>
+              <li>
+                <i class="bi bi-check2-square"></i> {{ project.features[2] }}
+              </li>
             </ul>
           </div>
           <div class="details">
             <ul>
-              <li><i class="bi bi-check2-square"></i> {{ project.features[3] }}</li>
-              <li><i class="bi bi-check2-square"></i> {{ project.features[4] }}</li>
+              <li>
+                <i class="bi bi-check2-square"></i> {{ project.features[3] }}
+              </li>
+              <li>
+                <i class="bi bi-check2-square"></i> {{ project.features[4] }}
+              </li>
 
-              <li><i class="bi bi-check2-square"></i> {{ project.features[5] }}</li>
+              <li>
+                <i class="bi bi-check2-square"></i> {{ project.features[5] }}
+              </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    
   </section>
 
-   <div class="page-content-intro-hr">projects selection</div>
+  <div class="page-content-intro-hr">projects selection</div>
 
-  <section *ngIf="projectsList" class="featured-projects container">
-    <div *ngFor="let project of projectsList; let i = index" [class]="'project-container prj-' + i">
+  <section
+    *ngIf="projectsList"
+    class="featured-projects container"
+    [@basicStaggerReverse] = "{ value: 'in', params: { staggerInterval: 150,  duration: 500 } }" 
+  >
+    <div
+      *ngFor="let project of projectsList; let i = index"
+      [class]="'project-container prj-' + i"
+      class="animate-stagger"
+    >
       <div class="project-image-container">
         <img
           class="project-img"
           [src]="'./img/projects/' + project.imageName + '.png'"
           alt="featured project"
           (click)="getProject(project.id)"
-           loading="lazy"
+          loading="lazy"
         />
       </div>
 
@@ -146,6 +163,5 @@
         </div>
       </div>
     </div>
-    
   </section>
 </div>
