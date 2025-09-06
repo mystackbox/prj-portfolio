@@ -23,9 +23,9 @@
     <div class="weather-temp">{{ temperature }}°C</div>
   </div>
 
-  <div *ngIf="pageTitle"  class="call-to-acltion-container">
+  <div class="call-to-acltion-container">
     
-    <div @basicStagger class="intro-text">
+    <div @animateForwardStagger class="intro-text">
       <div class="animate-stagger page-title">{{ pageTitle }}</div>
       <div class="animate-stagger page-description">{{ pageDesc }}</div>
       <div class="animate-stagger page-intro-buttons">
@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    <div @animateFadeIn  class="intro-image">
+    <div @animateZoomIn  class="intro-image">
       <img
       
         class="project-img"

@@ -4,20 +4,8 @@ import { ProjectsService } from '../../../../core/services/service-projects/proj
 import { IProject } from '../../../../shared/models/project.model';
 import { Subscription } from 'rxjs';
 import { HyperLinkService } from '../../../../core/services/service-hyper-link/hyper-link.service';
+import { fadeInTrigger, forwardStaggerTrigger, reverseStaggerTrigger, slideInFromBottomTrigger, slideInFromTopTrigger, staggerInFromBottomTrigger, zoomInTrigger } from '../../../../core/animations/animations';
 
-import {
-  basicStaggerReverseTrigger,
-  basicStaggerTrigger,
-  fadeInTrigger,
-  fadeOutTrigger,
-  slideInFromBottomTrigger,
-  slideInFromLeftTrigger,
-  slideInFromRightTrigger,
-  slideInFromTopTrigger,
-  staggerInFromBottomTrigger,
-  staggerInFromTopTrigger,
-  zoomInTrigger,
-} from '../../../../core/animations/animations';
 
 @Component({
   selector: 'app-home',
@@ -25,21 +13,8 @@ import {
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   animations: [
-    fadeInTrigger,
-    fadeOutTrigger,
-
-    slideInFromLeftTrigger,
-    slideInFromRightTrigger,
-    slideInFromTopTrigger,
-    slideInFromBottomTrigger,
-
-    basicStaggerTrigger,
-    basicStaggerReverseTrigger,
-    staggerInFromBottomTrigger,
-    staggerInFromTopTrigger,
-
-    zoomInTrigger,
-  ],
+  fadeInTrigger, forwardStaggerTrigger, reverseStaggerTrigger,staggerInFromBottomTrigger, zoomInTrigger, slideInFromTopTrigger
+  ,slideInFromBottomTrigger ],
 })
 export class HomeComponent {
   private _projectSub?: Subscription;

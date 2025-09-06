@@ -2,34 +2,28 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProjectsService } from '../../../../core/services/service-projects/projects.service';
 import { IProject } from '../../../../shared/models/project.model';
-import { BehaviorSubject, Subscriber, Subscription, switchMap } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { HyperLinkService } from '../../../../core/services/service-hyper-link/hyper-link.service';
-import { fadeInTrigger, fadeOutTrigger, slideInFromLeftTrigger, slideInFromRightTrigger, slideInFromTopTrigger, slideInFromBottomTrigger, basicStaggerTrigger, staggerInFromBottomTrigger, staggerInFromTopTrigger, zoomInTrigger, basicStaggerReverseTrigger } from '../../../../core/animations/animations';
+import {
+  fadeInTrigger,
+  zoomInTrigger,
+  forwardStaggerTrigger,
+  toggleSlideTrigger,
+} from '../../../../core/animations/animations';
 
 @Component({
   selector: 'app-projects',
   standalone: false,
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
-    animations: [
-     fadeInTrigger,
-    fadeOutTrigger,
+  animations: [
 
-    slideInFromLeftTrigger,
-    slideInFromRightTrigger,
-    slideInFromTopTrigger,
-    slideInFromBottomTrigger,
-
-    basicStaggerTrigger,
-    basicStaggerReverseTrigger,
-    staggerInFromBottomTrigger,
-    staggerInFromTopTrigger,
-
-    // example1Trigger,
-    // example2Trigger,
-
+    fadeInTrigger,
+    forwardStaggerTrigger,
     zoomInTrigger,
-    ],
+    toggleSlideTrigger
+
+  ],
 })
 export class ProjectsComponent {
   projects$ = new BehaviorSubject<void>(undefined); // trigger refresh
@@ -37,12 +31,12 @@ export class ProjectsComponent {
   project?: IProject;
   error?: string;
   isCollapsed: boolean = false;
-  isBtnLabel: string = 'More';
+  isBtnLabel: string = 'Details';
 
   private _projectSub?: Subscription;
   private _projectsSub?: Subscription;
 
-   myDelayVariable = 200;
+  myDelayVariable = 200;
 
   constructor(
     private router: Router,
@@ -102,14 +96,14 @@ export class ProjectsComponent {
     });
   }
 
-  expandCollapseDetails() {
+  toggleProjectDetails() {
     this.isCollapsed = !this.isCollapsed;
     console.log(this.isCollapsed);
 
     if (this.isCollapsed === true) {
-      this.isBtnLabel = 'Less';
+      this.isBtnLabel = 'Collapse';
     } else {
-      this.isBtnLabel = 'More';
+      this.isBtnLabel = 'Details';
     }
 
     console.log(this.isBtnLabel);

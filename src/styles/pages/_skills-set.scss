@@ -22,7 +22,7 @@
         row-gap: 10px;
         column-gap: 10px;
         text-align: left;
-        
+
 
         .set-container {
             border-radius: $spacing-xs;
@@ -33,7 +33,6 @@
             .heading {
                 @include heading-light;
                 margin-bottom: $spacing-xs + 4px;
-
             }
 
             .set {
@@ -52,6 +51,56 @@
                         padding-right: 3px;
                         color: brown;
                     }
+                }
+
+                .underlying-bar {
+                    border-radius: $spacing-xs - 2px;
+                    font-size: $font-size-xs;
+                    max-width: 100%;
+                    background-color: #ddd;
+
+                    margin: $spacing-xs - 5px;
+
+
+                    .skill-bar {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 2px $spacing-xs;
+                        border-radius: $spacing-xs - 2px $spacing-xs $spacing-xs $spacing-xs - 2px;
+                        background: linear-gradient(90deg, hsla(197, 14%, 57%, 1) 0%, hsla(192, 17%, 94%, 1) 100%);
+
+                        //   margin: $spacing-xs - 2px;
+                    }
+
+                    .html {
+                        width: 80%;
+                    }
+
+                    /* Green */
+                    .scss {
+                        width: 65%;
+                    }
+
+                    /* Green */
+                    .RxJs {
+                        width: 50%;
+                    }
+
+                    /* Blue */
+                    .js {
+                        width: 55%;
+                    }
+
+                    /* Red */
+                    .angular {
+                        width: 70%;
+                    }
+
+                    /* Red */
+                    .git {
+                        width: 60%;
+                    }
+
                 }
             }
 
