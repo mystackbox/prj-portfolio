@@ -23,7 +23,12 @@
         margin: -10px 0;
         // box-shadow: $light-box-shadow;
         background-color: rgba($light-secondery-bg-color, 0.4);
+        // background: linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
         border-radius: $spacing-xs;
+
+        
+         background-image: linear-gradient(to right, #ECE9E6 0%, #FFFFFF  30%, #FFFFFF  70%, #ECE9E6  100%);
+         
 
 
         .top-container {
@@ -142,7 +147,7 @@
         gap: 15px;
         margin-top: -10px;
         //  border: 1px solid #e5e5e5;
-        
+
 
         .project-container {
             display: grid;
@@ -533,7 +538,7 @@
 
         .project-details {
             row-gap: 5px;
-            padding-top: $spacing-md + 2px;
+            padding-top: $spacing-lg + 2px;
 
             box-shadow: $light-box-shadow;
             background-color: transparent;

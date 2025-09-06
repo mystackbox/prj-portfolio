@@ -2,6 +2,7 @@
   <div class="page-content-intro-hr">Featured project</div>
 
   <section class="project-details container">
+    
     <div class="top-container">
       <div *ngIf="project" class="details-container top-left-details">
         <div class="project-img-container">
@@ -15,7 +16,7 @@
           />
         </div>
 
-        <div  class="project-description">
+        <div @animateFadeIn  class="project-description">
           <div  class="heading" (click)="openHyperLink(project.hyperlinks[1])">
             {{ project.name }}
           </div>
@@ -41,7 +42,7 @@
               Online
             </span>
 
-            <span class="view detail-btn" (click)="expandCollapseDetails()">
+            <span class="view detail-btn" (click)="toggleProjectDetails()">
               <i *ngIf="isCollapsed === false" class="bi bi-chevron-down"></i>
               <i *ngIf="isCollapsed === true" class="bi bi-chevron-up"></i>
               {{ isBtnLabel }}
@@ -50,7 +51,7 @@
         </div>
       </div>
 
-      <div  class="details-container top-right-details">
+      <div @animateFadeIn   class="details-container top-right-details">
         <div class="project-description">
           <div class="heading">description</div>
           <div  class="details">
@@ -60,10 +61,10 @@
       </div>
     </div>
 
-    <div *ngIf="project && isCollapsed" class="bottom-container">
+    <div *ngIf="project && isCollapsed" @animateToggleSlide  class="bottom-container">
+      
       <div class="details-container project-concepts">
         <div class="heading">concepts</div>
-
         <div class="list-container">
           <div class="details">
             <ul>
@@ -81,6 +82,7 @@
           </div>
         </div>
       </div>
+
       <div class="details-container project-features">
         <div class="heading">features</div>
 
@@ -115,14 +117,14 @@
         </div>
       </div>
     </div>
+
   </section>
 
   <div class="page-content-intro-hr">projects selection</div>
 
   <section
-    *ngIf="projectsList"
     class="featured-projects container"
-    @basicStagger
+    @animateForwardStagger
   >
     <div
       *ngFor="let project of projectsList; let i = index"

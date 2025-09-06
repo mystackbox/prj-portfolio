@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { fadeInTrigger, fadeOutTrigger, slideInFromLeftTrigger, slideInFromRightTrigger, slideInFromTopTrigger, slideInFromBottomTrigger, basicStaggerTrigger, staggerInFromBottomTrigger, staggerInFromTopTrigger, zoomInTrigger } from '../../../../core/animations/animations';
+import { forwardStaggerTrigger } from '../../../../core/animations/animations';
 
 @Component({
   selector: 'app-skills-set',
@@ -8,19 +8,7 @@ import { fadeInTrigger, fadeOutTrigger, slideInFromLeftTrigger, slideInFromRight
   templateUrl: './skills-set.component.html',
   styleUrl: './skills-set.component.scss',
       animations: [
-        fadeInTrigger,
-        fadeOutTrigger,
-    
-        slideInFromLeftTrigger,
-        slideInFromRightTrigger,
-        slideInFromTopTrigger,
-        slideInFromBottomTrigger,
-    
-        basicStaggerTrigger,
-        staggerInFromBottomTrigger,
-        staggerInFromTopTrigger,
-    
-        zoomInTrigger,
+        forwardStaggerTrigger,
       ],
 })
 export class SkillsSetComponent {

@@ -10,6 +10,8 @@ import {
   state,
 } from '@angular/animations';
 
+
+
 /* ----------------------------  FADES  -------------------------------- */
 //animation - fade
 export const fadeAnimation = animation(
@@ -49,8 +51,6 @@ export const fadeOutTrigger = trigger('animateFadeOut', [
 
 
 
-
-
 /* ----------------------------  ZOOM  -------------------------------- */
 //animation - fade
 export const zoomAnimation = animation(
@@ -77,7 +77,7 @@ export const zoomInTrigger = trigger('animateZoomIn', [
       params: {
         scaleBefore: 'scale(0)',
         scaleAfter: 'scale(1)',
-        time: '500ms',
+        time: '1200ms',
       },
     }),
   ]),
@@ -95,8 +95,6 @@ export const zoomOutTrigger = trigger('animateZoomOut', [
     }),
   ]),
 ]);
-
-
 
 // export const exampleAnimation = animation(
 //   [
@@ -151,7 +149,6 @@ export const zoomOutTrigger = trigger('animateZoomOut', [
 //     ),
 //   ]),
 // ]);
-
 
 
 
@@ -239,56 +236,80 @@ export const slideInFromRightTrigger = trigger('animateSlideInFromRight', [
   ]),
 ]);
 
-
+//Trigger - toggleSlideTrigger
+export const toggleSlideTrigger = trigger('animateToggleSlide', [
+  transition(':enter', [
+    // when element is added
+    style({ opacity: 0 }),
+    animate('2000ms ease-in', style({ opacity: 1 })),
+  ]),
+  transition(':leave', [
+    // when element is removed
+    animate('1200ms ease-in', style({ opacity: 0 })),
+  ]),
+]);
 
 
 /* ----------------------------  STAGGERS  -------------------------------- */
-//Animation - Stagger
-export const basicStaggerAnimation = animation(
+//Animation - forwardStagger 
+export const forwardStaggerAnimation = animation(
   [
     query(
       '.animate-stagger',
       [
         style({ opacity: 0 }),
-        stagger(150, [
-          animate('{{duration}}ms ease-in')
-        ]),
+        stagger(150, [animate('{{duration}}ms ease-in')]),
       ],
       { optional: true }
     ),
   ],
   {
     params: {
-      staggerInterval: 150,
       duration: 400,
     },
   }
 );
 
-//Trigger - basic stagger
-export const basicStaggerTrigger = trigger('basicStagger', [
+//Trigger - forwardStagger
+export const forwardStaggerTrigger = trigger('animateForwardStagger', [
   transition(':enter', [
-    useAnimation(basicStaggerAnimation, {
+    useAnimation(forwardStaggerAnimation, {
       params: {
-        staggerInterval: 150,
         duration: 500,
       },
     }),
   ]),
 ]);
 
-//Trigger - basic stagger
-export const basicStaggerReverseTrigger = trigger('basicStaggerReverse', [
+//Animation - reverseStagger 
+export const reverseStaggerAnimation = animation(
+  [
+    query(
+      '.animate-stagger',
+      [
+        style({ opacity: 0 }),
+        stagger(-150, [animate('{{duration}}ms ease-in')]),
+      ],
+      { optional: true }
+    ),
+  ],
+  {
+    params: {
+      duration: 400,
+    },
+  }
+);
+
+//Trigger - reverseStagger 
+export const reverseStaggerTrigger = trigger('animateReverseStagger', [
   transition(':enter', [
-    useAnimation(basicStaggerAnimation, {
+    useAnimation(reverseStaggerAnimation, {
       params: {
-        staggerInterval: -150,
         duration: 500,
       },
     }),
   ]),
 ]);
-
 
 
 
@@ -311,7 +332,7 @@ export const staggerSlideAnimation = animation(
       time: '100ms',
       positionBefore: 0,
       positionAfter: 0,
-    }, // default values
+    },
   }
 );
 

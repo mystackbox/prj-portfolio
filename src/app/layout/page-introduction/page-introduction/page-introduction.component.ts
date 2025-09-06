@@ -1,28 +1,18 @@
 import {
-  ApplicationRef,
   Component,
-  inject,
-  NgZone,
   OnInit,
   Output,
   SimpleChanges,
 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter, first, map, mergeMap, Subscription, tap } from 'rxjs';
+import { filter, map, mergeMap, Subscription } from 'rxjs';
 import { WeatherService } from '../../../core/services/service-weather/weather.service';
 import { GeoLocationService } from '../../../core/services/service-geo-location/geo-location.service';
 import Swal from 'sweetalert2';
 import {
-  basicStaggerTrigger,
+  forwardStaggerTrigger,
   fadeInTrigger,
-  fadeOutTrigger,
-  slideInFromBottomTrigger,
-  slideInFromLeftTrigger,
-  slideInFromRightTrigger,
-  slideInFromTopTrigger,
-  staggerInFromBottomTrigger,
-  staggerInFromTopTrigger,
   zoomInTrigger,
 } from '../../../core/animations/animations';
 
@@ -31,21 +21,7 @@ import {
   standalone: false,
   templateUrl: './page-introduction.component.html',
   styleUrl: './page-introduction.component.scss',
-  animations: [
-    fadeInTrigger,
-    fadeOutTrigger,
-
-    slideInFromLeftTrigger,
-    slideInFromRightTrigger,
-    slideInFromTopTrigger,
-    slideInFromBottomTrigger,
-
-    basicStaggerTrigger,
-    staggerInFromBottomTrigger,
-    staggerInFromTopTrigger,
-
-    zoomInTrigger,
-  ],
+  animations: [fadeInTrigger, forwardStaggerTrigger, zoomInTrigger],
 })
 export class PageIntroductionComponent implements OnInit {
   pageTitle: any;
@@ -121,8 +97,9 @@ export class PageIntroductionComponent implements OnInit {
           this.isLoading = false;
         },
         error: (_error) => {
-          console.error('Error fetching weather data:', _error);
+          
           Swal.fire('Server Error!', 'Fetching weather data failed');
+          this._geoLocServive.clearRequestTimer();
           this.isLoading = false;
         },
       });
@@ -132,24 +109,22 @@ export class PageIntroductionComponent implements OnInit {
    * Sets the page title and meta tags based on the current route.
    */
   setPageTitleFromRoute() {
-   this._router.events
+    this._router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd),
         map(() => this._activatedRoute),
         map((route) => {
           while (route.firstChild) route = route.firstChild;
           return route;
-
         }),
         mergeMap((route) => route.data)
       )
       .subscribe((data) => {
-        
         this.pageTitle = data['title'];
         this.pageHeading = data['metaTags'][0].content;
         this.pageDesc = data['metaTags'][1].content;
 
-        console.log('New page title - ' +  this.pageTitle );
+        console.log('New page title - ' + this.pageTitle);
 
         if (this.pageTitle) {
           let _title = `Portfolio - ${this.pageTitle}`;
