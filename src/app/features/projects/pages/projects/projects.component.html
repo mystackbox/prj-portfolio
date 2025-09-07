@@ -1,9 +1,9 @@
 <div class="projects-page-main" id="projects-page-main">
   <div class="page-content-intro-hr">Featured</div>
 
-  <section class="project-details container">
-    <div class="top-container">
-      <div *ngIf="project" class="details-container top-left-details">
+  <section *ngIf="project"  class="project-details container">
+    <div  class="top-container">
+      <div class="details-container top-left-details">
         <div class="project-img-container">
           <img
             class="project-img"
@@ -50,7 +50,7 @@
         </div>
       </div>
 
-      <div @animateFadeIn  *ngIf="projectsList" class="details-container top-right-details">
+      <div @animateFadeIn class="details-container top-right-details">
         <div class="project-description">
           <div class="heading">contributions</div>
           <div class="details"  [innerHTML]="project?.description" >
@@ -61,8 +61,7 @@
     </div>
 
     <div
-      *ngIf="project && isCollapsed"
-      @animateToggleSlide
+      @animateToggleSlide *ngIf="isCollapsed"
       class="bottom-container"
     >
       <div class="details-container project-concepts">
@@ -123,12 +122,12 @@
 
   <div class="page-content-intro-hr">selection</div>
 
-  <section *ngIf="projectsListLoaded"
+  <section 
     class="featured-projects container"
     @animateForwardStagger
   >
     <div
-      *ngFor="let project of projectsList.reverse(); let i = index"
+      *ngFor="let project of projectsList; let i = index"
       class="project-container animate-stagger"
     >
  

@@ -43,12 +43,12 @@ export class ProjectsComponent {
     private _hyperLink: HyperLinkService,
     private cdr: ChangeDetectorRef
   ) {
-    this.projectsList.reverse();
+    // this.projectsList.reverse();
   }
 
   //load list of projects
   ngOnInit() {
-    // this.cdr.detach(); //prevent flickering whenever timer ticks
+    // this.cdr.markForCheck();
     this.getProjects();
   }
 
@@ -68,11 +68,11 @@ export class ProjectsComponent {
      
     this._projectsSub = this._products.getProjects().subscribe({
       next: (projects: IProject[]) => {
-        this.projectsList = projects;
-        this.getFeaturedProject(projects[projects.length - 1]);
-        this.projectsListLoaded = true;
+        
+        this.projectsList = projects.reverse();
         this.cdr.markForCheck();
-        //  this.cdr.detectChanges(); //prevent flickering whenever timer ticks
+        this.getFeaturedProject(projects[0]);
+  
       },
       error: (err: any) => {
         this.error = 'Failed to load projects';
@@ -89,6 +89,7 @@ export class ProjectsComponent {
     console.log('Selected Id = ' + _id);
     this._projectSub = this._products.getSelectedProject(_id).subscribe({
       next: (selectedProject: IProject) => {
+        this.cdr.markForCheck();
         this.project = selectedProject;
       },
       error: (err: any) => {
