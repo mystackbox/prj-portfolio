@@ -96,61 +96,6 @@ export const zoomOutTrigger = trigger('animateZoomOut', [
   ]),
 ]);
 
-// export const exampleAnimation = animation(
-//   [
-//     style({
-//       opacity: 0,
-//     }),
-//     animate(
-//       '{{ time }}  ease-in'
-//     ),
-//   ],
-//   {
-//     params: {
-//       time: '0ms',
-//     },
-//   }
-// );
-
-// //Trigger - stagger-in-from-left
-// export const example1Trigger = trigger('example1', [
-//   transition(':enter', [
-//     query(
-//       '.animate-stagger',
-//       [
-//         stagger(150, [
-//           useAnimation(exampleAnimation, {
-//             params: {
-//               time: '1500ms',
-//             },
-//           }),
-//         ]),
-//       ],
-//       { optional: true }
-//     ),
-//   ]),
-// ]);
-
-// //Trigger - stagger-in-from-left
-// export const example2Trigger = trigger('example2', [
-//   transition(':enter', [
-//     query(
-//       '.animate-stagger',
-//       [
-//         stagger(150, [
-//           useAnimation(exampleAnimation, {
-//             params: {
-//               time: '1500ms',
-//             },
-//           }),
-//         ]),
-//       ],
-//       { optional: true }
-//     ),
-//   ]),
-// ]);
-
-
 
 /* ----------------------------  SLIDES  ------------------------------ */
 //Animation - slide
