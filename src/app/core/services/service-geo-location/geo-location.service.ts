@@ -28,10 +28,10 @@ export class GeoLocationService {
     if (this.browserCheck.isBrowser()) {
 
       this.timeoutId = setTimeout(() => {
-        console.log('Once-off process launched...');
+        console.log('Geo-Loc request launched...');
 
         this.intervalId = setInterval(() => {
-          console.log('Requesing...');
+          console.log('Loc requested...');
 
           if (navigator.geolocation) {
             this.watchId = navigator.geolocation.getCurrentPosition(
@@ -82,7 +82,7 @@ export class GeoLocationService {
    * */
   clearRequestTimer() {
     //prevent continuous geo-location position requests
-    console.log('Loca request stopped...');
+    console.log('Geo-Loc request stopped...');
     clearTimeout(this.timeoutId);
     clearInterval(this.intervalId);
   }

@@ -74,7 +74,6 @@ export class PageIntroductionComponent implements OnInit {
     this._locErrSub = this._geoLocServive.error$.subscribe((_error) => {
       if (_error) {
         Swal.fire('Geo-location!', '' + _error);
-        this.isLoading = false;
         this._geoLocServive.clearRequestTimer();
       }
     });
@@ -94,13 +93,11 @@ export class PageIntroductionComponent implements OnInit {
           this.temperature = Math.round(this.currentWeather?.main?.temp);
           this.weatherIcon = this.currentWeather.weather[0]?.icon + '@2x.png';
           this.weatherDescription = this.currentWeather.weather[0]?.description;
-          this.isLoading = false;
         },
         error: (_error) => {
           
           Swal.fire('Server Error!', 'Fetching weather data failed');
           this._geoLocServive.clearRequestTimer();
-          this.isLoading = false;
         },
       });
   }
