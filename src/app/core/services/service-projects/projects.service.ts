@@ -12,14 +12,13 @@ export class ProjectsService {
 
   constructor(private _http: HttpClient) {}
 
-     /**
-     * Fetches data from the projects local JSON API.
-     * @returns An observable of type projects[] | API Server error.
-     */
+  /**
+   * Fetches data from the projects local JSON API.
+   * @returns An observable of type projects[] | API Server error.
+ */
   getProjects(): Observable<IProject[]> {
     return this._http.get<IProject[]>(this.apiUrl).pipe(
       catchError((err) => {
-        console.error('API error', err);
         return throwError(() => err);
       })
     );
@@ -35,7 +34,6 @@ export class ProjectsService {
         return projects[projects.length - 1];
       }),
       catchError((err) => {
-        console.error('API error', err);
         return throwError(() => err);
       })
     );

@@ -1,8 +1,7 @@
 <div class="projects-page-main" id="projects-page-main">
-  <div class="page-content-intro-hr">Featured project</div>
+  <div class="page-content-intro-hr">Featured</div>
 
   <section class="project-details container">
-    
     <div class="top-container">
       <div *ngIf="project" class="details-container top-left-details">
         <div class="project-img-container">
@@ -16,8 +15,8 @@
           />
         </div>
 
-        <div @animateFadeIn  class="project-description">
-          <div  class="heading" (click)="openHyperLink(project.hyperlinks[1])">
+        <div @animateFadeIn class="project-description">
+          <div class="heading" (click)="openHyperLink(project.hyperlinks[1])">
             {{ project.name }}
           </div>
 
@@ -51,18 +50,21 @@
         </div>
       </div>
 
-      <div @animateFadeIn   class="details-container top-right-details">
+      <div @animateFadeIn class="details-container top-right-details">
         <div class="project-description">
           <div class="heading">description</div>
-          <div  class="details">
+          <div class="details">
             {{ project?.description }}
           </div>
         </div>
       </div>
     </div>
 
-    <div *ngIf="project && isCollapsed" @animateToggleSlide  class="bottom-container">
-      
+    <div
+      *ngIf="project && isCollapsed"
+      @animateToggleSlide
+      class="bottom-container"
+    >
       <div class="details-container project-concepts">
         <div class="heading">concepts</div>
         <div class="list-container">
@@ -117,28 +119,26 @@
         </div>
       </div>
     </div>
-
   </section>
 
-  <div class="page-content-intro-hr">projects selection</div>
+  <div class="page-content-intro-hr">selection</div>
 
-  <section *ngIf="projectsList"
+  <section *ngIf="projectsList && isLoaded"
     class="featured-projects container"
-     @animateFadeIn
+    @animateForwardStagger
   >
-
-  <!-- @animateForwardStagger -->
-   
-    <div *ngFor="let project of projectsList; let i = index"
-         [class]="'project-container animate-stagger prj-' + i">
-
+    <div
+      *ngFor="let project of projectsList.reverse(); let i = index"
+      class="project-container animate-stagger"
+    >
+ 
       <div class="project-image-container">
         <img
           class="project-img"
           [src]="'./img/projects/' + project.imageName + '.png'"
           alt="featured project"
           (click)="getProject(project.id)"
-          loading="lazy"
+         loading="eager"
         />
       </div>
 
