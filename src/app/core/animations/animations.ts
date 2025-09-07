@@ -10,8 +10,6 @@ import {
   state,
 } from '@angular/animations';
 
-
-
 /* ----------------------------  FADES  -------------------------------- */
 //animation - fade
 export const fadeAnimation = animation(
@@ -48,8 +46,6 @@ export const fadeOutTrigger = trigger('animateFadeOut', [
     }),
   ]),
 ]);
-
-
 
 /* ----------------------------  ZOOM  -------------------------------- */
 //animation - fade
@@ -95,7 +91,6 @@ export const zoomOutTrigger = trigger('animateZoomOut', [
     }),
   ]),
 ]);
-
 
 /* ----------------------------  SLIDES  ------------------------------ */
 //Animation - slide
@@ -194,9 +189,8 @@ export const toggleSlideTrigger = trigger('animateToggleSlide', [
   ]),
 ]);
 
-
 /* ----------------------------  STAGGERS  -------------------------------- */
-//Animation - forwardStagger 
+//Animation - forwardStagger
 export const forwardStaggerAnimation = animation(
   [
     query(
@@ -217,6 +211,12 @@ export const forwardStaggerAnimation = animation(
 
 //Trigger - forwardStagger
 export const forwardStaggerTrigger = trigger('animateForwardStagger', [
+  state(
+    'enter',
+    style({
+      opacity: 0,
+    })
+  ),
   transition(':enter', [
     useAnimation(forwardStaggerAnimation, {
       params: {
@@ -226,7 +226,7 @@ export const forwardStaggerTrigger = trigger('animateForwardStagger', [
   ]),
 ]);
 
-//Animation - reverseStagger 
+//Animation - reverseStagger
 export const reverseStaggerAnimation = animation(
   [
     query(
@@ -245,7 +245,7 @@ export const reverseStaggerAnimation = animation(
   }
 );
 
-//Trigger - reverseStagger 
+//Trigger - reverseStagger
 export const reverseStaggerTrigger = trigger('animateReverseStagger', [
   transition(':enter', [
     useAnimation(reverseStaggerAnimation, {
@@ -255,8 +255,6 @@ export const reverseStaggerTrigger = trigger('animateReverseStagger', [
     }),
   ]),
 ]);
-
-
 
 //Animation - Stagger-with-Slide
 export const staggerSlideAnimation = animation(
