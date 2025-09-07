@@ -128,7 +128,7 @@
   >
     <div
       *ngFor="let project of projectsList; let i = index"
-      class="project-container animate-stagger"
+         [class]="'project-container animate-stagger prj-' + i"
     >
 
      <!-- [class]="'project-container animate-stagger prj-' + i" -->
@@ -138,11 +138,9 @@
           [src]="'./img/projects/' + project.imageName + '.png'"
           alt="featured project"
           (click)="getProject(project.id)"
-         
+          loading="lazy"
         />
       </div>
-
-       <!-- loading="lazy" -->
 
       <div class="project-details-container">
         <div class="project-name">{{ project.name }}</div>
