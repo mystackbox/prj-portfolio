@@ -38,22 +38,7 @@ export class HomeComponent {
 
   //load list of projects
   ngOnInit() {
-    this.getFeaturedProject();
-  }
 
-  /**
-   * Fetches data from the projects local JSON API.
-   * @returns An observable of type project object | API Server error.
-   */
-  getFeaturedProject() {
-    this._projectSub = this._products.getFeaturedProject().subscribe({
-      next: (project: IProject) => {
-        this.project = project;
-      },
-      error: (err: any) => {
-        this.error = 'Failed to load project';
-      },
-    });
   }
 
   readMore() {

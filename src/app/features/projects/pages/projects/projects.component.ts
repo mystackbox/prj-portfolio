@@ -20,7 +20,7 @@ import {
     fadeInTrigger,
     forwardStaggerTrigger,
     zoomInTrigger,
-    toggleSlideTrigger
+    toggleSlideTrigger,
   ],
 })
 export class ProjectsComponent {
@@ -31,12 +31,9 @@ export class ProjectsComponent {
   error?: string;
   isCollapsed: boolean = false;
   isBtnLabel: string = 'Expand';
-  isLoaded: boolean = false;
 
   private _projectSub?: Subscription;
   private _projectsSub?: Subscription;
-
-  myDelayVariable = 200;
 
   constructor(
     private router: Router,
@@ -46,7 +43,6 @@ export class ProjectsComponent {
 
   //load list of projects
   ngOnInit() {
-    this.getFeaturedProject();
     this.getProjects();
   }
 
@@ -57,12 +53,11 @@ export class ProjectsComponent {
   getProjects() {
     this._projectsSub = this._products.getProjects().subscribe({
       next: (projects: IProject[]) => {
-         this.isLoaded = true;
         this.projectsList = projects;
+        this.getFeaturedProject(this.projectsList[projects.length - 1]);
       },
       error: (err: any) => {
         this.error = 'Failed to load projects';
-        this.isLoaded = false;
       },
     });
   }
@@ -71,18 +66,11 @@ export class ProjectsComponent {
    * Fetches data from the projects local JSON API.
    * @returns An observable of type project object | API Server error.
    */
-  getFeaturedProject() {
-    this._projectSub = this._products.getFeaturedProject().subscribe({
-      next: (project: IProject) => {
-        this.project = project;
-      },
-      error: (err: any) => {
-        this.error = 'Failed to load project';
-      },
-    });
+  getFeaturedProject(_latestProject: IProject) {
+    this.project = _latestProject;
   }
 
-    /**
+  /**
    * Fetches single record of project with id.
    * @param id The unique identifier for the project.
    * @returns An observable type project object  | API Server error.

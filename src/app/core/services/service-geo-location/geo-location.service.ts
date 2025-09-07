@@ -67,7 +67,8 @@ export class GeoLocationService {
             );
           }
         }, 5000);
-      }, 500);
+
+      }, 0);
 
       if (!navigator.geolocation) {
         this.error$.next('Geolocation is not supported by this browser.'); //check if browser supports geolocation

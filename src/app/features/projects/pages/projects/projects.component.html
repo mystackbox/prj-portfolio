@@ -123,16 +123,16 @@
 
   <div class="page-content-intro-hr">selection</div>
 
-  <section *ngIf="projectsList && isLoaded"
+  <section *ngIf="projectsList"
     class="featured-projects container"
     @animateForwardStagger
   >
     <div
       *ngFor="let project of projectsList.reverse(); let i = index"
-      [class]="'project-container animate-stagger'"
+      class="project-container animate-stagger"
     >
  
-      <div [class]="'project-image-container'">
+      <div class="project-image-container">
         <img
           class="project-img"
           [src]="'./img/projects/' + project.imageName + '.png'"
