@@ -305,9 +305,23 @@
             }
 
             .project-details {
-                box-shadow: $dark-box-shadow;
-                background-color: transparent;
                 border-radius: $spacing-sm;
+                background-image: linear-gradient(to right, #000000 0%, #082036 45%, #082036 50%, #000000 100%);
+
+                .btn-grad:hover {
+                    background-position: right center;
+                    /* change the direction of the change here */
+                    color: #fff;
+                    text-decoration: none;
+                }
+
+                .btn-grad:hover {
+                    background-position: right center;
+                    /* change the direction of the change here */
+                    color: #fff;
+                    text-decoration: none;
+                }
+
 
                 .details-container {
                     text-align: left;

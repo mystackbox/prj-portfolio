@@ -19,7 +19,7 @@ export class ProjectsService {
   getProjects(): Observable<IProject[]> {
     return this._http.get<IProject[]>(this.apiUrl).pipe(
       map(
-        (projects) => projects.reverse()
+        (projects) => projects
       ),
       catchError((err) => {
         return throwError(() => err);
