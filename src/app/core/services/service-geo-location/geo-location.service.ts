@@ -22,6 +22,8 @@ export class GeoLocationService {
    */
   getLocation() {
 
+    console.log('Get Location Executed...')
+
     if (this.watchId != null) return; // avoid duplicates
 
     //prevent SSR Error when client object Navigator now found

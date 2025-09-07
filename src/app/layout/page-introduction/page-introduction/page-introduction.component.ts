@@ -52,7 +52,6 @@ export class PageIntroductionComponent implements OnInit {
 
   ngOnInit(): void {
     this.setPageTitleFromRoute();
-    this._geoLocServive.getLocation();
     this.getCurrentLocation();
   }
 
@@ -62,6 +61,7 @@ export class PageIntroductionComponent implements OnInit {
    * @returns location-coord object | null location-coord object | Error.
    */
   getCurrentLocation() {
+     this._geoLocServive.getLocation();
     //subscribe to changing geo-loc positions
     this._locPosSub = this._geoLocServive.position$.subscribe((position) => {
       if (position) {
