@@ -47,6 +47,9 @@ export const fadeOutTrigger = trigger('animateFadeOut', [
   ]),
 ]);
 
+
+
+
 /* ----------------------------  ZOOM  -------------------------------- */
 //animation - fade
 export const zoomAnimation = animation(
@@ -91,6 +94,9 @@ export const zoomOutTrigger = trigger('animateZoomOut', [
     }),
   ]),
 ]);
+
+
+
 
 /* ----------------------------  SLIDES  ------------------------------ */
 //Animation - slide
@@ -189,6 +195,9 @@ export const toggleSlideTrigger = trigger('animateToggleSlide', [
   ]),
 ]);
 
+
+
+
 /* ----------------------------  STAGGERS  -------------------------------- */
 //Animation - forwardStagger
 export const forwardStaggerAnimation = animation(
@@ -205,24 +214,18 @@ export const forwardStaggerAnimation = animation(
   {
     params: {
       duration: 400,
-      delayTime: 400
+      delayTime: 200
     },
   }
 );
 
 //Trigger - forwardStagger
 export const forwardStaggerTrigger = trigger('animateForwardStagger', [
-  state(
-    'enter',
-    style({
-      opacity: 0,
-    })
-  ),
   transition(':enter', [
     useAnimation(forwardStaggerAnimation, {
       params: {
         duration: 500,
-        delayTime: 400
+        delayTime: 200
       },
     }),
   ]),

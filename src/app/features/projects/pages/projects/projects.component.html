@@ -122,16 +122,16 @@
 
   <div class="page-content-intro-hr">projects selection</div>
 
-  <section
+  <section *ngIf="projectsList"
     class="featured-projects container"
-    @animateForwardStagger
+     @animateFadeIn
   >
-    <div
-      *ngFor="let project of projectsList; let i = index"
-         [class]="'project-container animate-stagger prj-' + i"
-    >
 
-     <!-- [class]="'project-container animate-stagger prj-' + i" -->
+  <!-- @animateForwardStagger -->
+   
+    <div *ngFor="let project of projectsList; let i = index"
+         [class]="'project-container animate-stagger prj-' + i">
+
       <div class="project-image-container">
         <img
           class="project-img"
