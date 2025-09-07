@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProjectsService } from '../../../../core/services/service-projects/projects.service';
 import { IProject } from '../../../../shared/models/project.model';
@@ -39,12 +39,13 @@ export class ProjectsComponent {
   constructor(
     private router: Router,
     private _products: ProjectsService,
-    private _hyperLink: HyperLinkService
+    private _hyperLink: HyperLinkService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   //load list of projects
   ngOnInit() {
-    
+    this.cdr.detach();
     this.getProjects();
   }
 
@@ -66,6 +67,7 @@ export class ProjectsComponent {
         this.projectsList = projects;
         this.getFeaturedProject(this.projectsList[projects.length - 1]);
         this.projectsListLoaded = true;
+        this.cdr.detectChanges();
       },
       error: (err: any) => {
         this.error = 'Failed to load projects';
