@@ -1,7 +1,7 @@
 <div class="projects-page-main" id="projects-page-main">
   <div class="page-content-intro-hr">Featured</div>
 
-  <section *ngIf="project"  class="project-details container">
+  <section *ngIf="project" class="project-details container">
     <div  class="top-container">
       <div class="details-container top-left-details">
         <div class="project-img-container">
@@ -10,7 +10,7 @@
             [src]="'./img/projects/' + project.imageName + '.png'"
             [alt]="project.imageName"
             title="View Site"
-            loading="eager"
+            loading="lazy"
             @animateZoomIn
           />
         </div>
@@ -50,18 +50,18 @@
         </div>
       </div>
 
-      <div @animateFadeIn class="details-container top-right-details">
+      <div @animateFadeIn  class="details-container top-right-details">
         <div class="project-description">
           <div class="heading">contributions</div>
           <div class="details"  [innerHTML]="project.description" >
-            <!-- {{ project?.description }} -->
           </div>
         </div>
       </div>
     </div>
 
     <div
-      @animateToggleSlide *ngIf="isCollapsed"
+      *ngIf="project && isCollapsed"
+      @animateToggleSlide
       class="bottom-container"
     >
       <div class="details-container project-concepts">
@@ -124,8 +124,8 @@
 
   <section 
     class="featured-projects container"
-    @animateForwardStagger
-  >
+    @animateForwardStagger >
+    
     <div
       *ngFor="let project of projectsList; let i = index"
       class="project-container animate-stagger"
@@ -137,7 +137,7 @@
           [src]="'./img/projects/' + project.imageName + '.png'"
           alt="featured project"
           (click)="getProject(project.id)"
-         loading="eager"
+         loading="lazy"
         />
       </div>
 

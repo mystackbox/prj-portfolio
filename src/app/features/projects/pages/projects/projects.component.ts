@@ -1,4 +1,8 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { ProjectsService } from '../../../../core/services/service-projects/projects.service';
 import { IProject } from '../../../../shared/models/project.model';
@@ -44,20 +48,15 @@ export class ProjectsComponent {
     private cdr: ChangeDetectorRef
   ) {
     // this.projectsList.reverse();
+    this.cdr.detach();
   }
 
   //load list of projects
   ngOnInit() {
-    // this.cdr.markForCheck();
     this.getProjects();
-  }
 
-    /**
-   * Fetches data from the projects local JSON API.
-   * @returns An observable of type project object | API Server error.
-   */
-  getFeaturedProject(_latestProject: IProject) {
-    this.project = _latestProject;
+    this.cdr.markForCheck();
+    this.cdr.detectChanges();
   }
 
   /**
@@ -65,14 +64,12 @@ export class ProjectsComponent {
    * @returns An observable of type projects[] | API Server error.
    */
   getProjects() {
-     
+    // this.cdr.detectChanges();
     this._projectsSub = this._products.getProjects().subscribe({
       next: (projects: IProject[]) => {
-        
         this.projectsList = projects.reverse();
-        this.cdr.markForCheck();
         this.getFeaturedProject(projects[0]);
-  
+        this.cdr.detectChanges();
       },
       error: (err: any) => {
         this.error = 'Failed to load projects';
@@ -81,16 +78,23 @@ export class ProjectsComponent {
   }
 
   /**
+   * Fetches data from the projects local JSON API.
+   * @returns An observable of type project object | API Server error.
+   */
+  getFeaturedProject(_latestProject: IProject) {
+    this.project = _latestProject;
+  }
+
+  /**
    * Fetches single record of project with id.
    * @param id The unique identifier for the project.
    * @returns An observable type project object  | API Server error.
    */
   getProject(_id?: number) {
-    console.log('Selected Id = ' + _id);
     this._projectSub = this._products.getSelectedProject(_id).subscribe({
       next: (selectedProject: IProject) => {
-        this.cdr.markForCheck();
         this.project = selectedProject;
+        this.cdr.detectChanges();
       },
       error: (err: any) => {
         this.error = 'Failed to load project';
@@ -100,15 +104,13 @@ export class ProjectsComponent {
 
   toggleProjectDetails() {
     this.isCollapsed = !this.isCollapsed;
-    console.log(this.isCollapsed);
+    this.cdr.detectChanges();
 
     if (this.isCollapsed === true) {
       this.isBtnLabel = 'Collapse';
     } else {
       this.isBtnLabel = 'Expand';
     }
-
-    console.log(this.isBtnLabel);
   }
 
   openHyperLink(hyterLink: string) {
