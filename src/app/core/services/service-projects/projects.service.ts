@@ -24,22 +24,7 @@ export class ProjectsService {
     );
   }
 
-  /**
-   * Fetches data from the projects local JSON API.
-   * @returns An observable of type project object | API Server error.
-   */
-  getFeaturedProject(): Observable<IProject> {
-    return this._http.get<IProject[]>(this.apiUrl).pipe(
-      map((projects) => {
-        return projects[projects.length - 1];
-      }),
-      catchError((err) => {
-        return throwError(() => err);
-      })
-    );
-  }
-
-  /**
+   /**
    * Fetches single record of project with id.
    * @param id The unique identifier for the project.
    * @returns An observable type project object  | API Server error.
