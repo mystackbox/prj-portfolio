@@ -73,7 +73,7 @@
 
                         .view {
                             @include button;
-                            padding: $spacing-xs - 1px $spacing-sm;
+                            padding: $spacing-xs - 1px $spacing-sm - 2px;
                             min-width: 55px;
                         }
 
