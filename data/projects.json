@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "my portfolio",
-    "heading": "Personal portfolio",
+    "heading": "Personal Portfolio",
     "imageName": "prj-portfolio",
     "introduction": "Personal portfolio developed using Angular framework.",
     "description": "A personal website developed with purpose of showcasing  my angular front-end development skills. ",
@@ -31,7 +31,7 @@
   {
     "id": 2,
     "name": "KM attorneys",
-    "heading": "Law-firm Business Website",
+    "heading": "Law-firm Website",
     "imageName": "prj-mk",
     "introduction": "Law-firm website developed using Angular framework.",
     "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS.",
