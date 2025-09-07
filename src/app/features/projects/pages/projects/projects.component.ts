@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProjectsService } from '../../../../core/services/service-projects/projects.service';
 import { IProject } from '../../../../shared/models/project.model';
@@ -16,6 +16,7 @@ import {
   standalone: false,
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     fadeInTrigger,
     forwardStaggerTrigger,
@@ -70,10 +71,8 @@ export class ProjectsComponent {
         this.projectsList = projects;
         this.getFeaturedProject(projects[projects.length - 1]);
         this.projectsListLoaded = true;
-        // if(this.projectsListLoaded){
-        //          this.cdr.detectChanges(); //prevent flickering whenever timer ticks
-        // }
-
+        this.cdr.markForCheck();
+        //  this.cdr.detectChanges(); //prevent flickering whenever timer ticks
       },
       error: (err: any) => {
         this.error = 'Failed to load projects';

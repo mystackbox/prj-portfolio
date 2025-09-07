@@ -50,7 +50,7 @@
         </div>
       </div>
 
-      <div @animateFadeIn class="details-container top-right-details">
+      <div @animateFadeIn  *ngIf="projectsList" class="details-container top-right-details">
         <div class="project-description">
           <div class="heading">contributions</div>
           <div class="details"  [innerHTML]="project?.description" >
