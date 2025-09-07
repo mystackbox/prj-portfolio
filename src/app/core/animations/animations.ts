@@ -197,7 +197,7 @@ export const forwardStaggerAnimation = animation(
       '.animate-stagger',
       [
         style({ opacity: 0 }),
-        stagger(150, [animate('{{duration}}ms ease-in')]),
+        stagger(150, [animate('{{duration}}ms {{delayTime}}ms ease-in')]),
       ],
       { optional: true }
     ),
@@ -205,6 +205,7 @@ export const forwardStaggerAnimation = animation(
   {
     params: {
       duration: 400,
+      delayTime: 400
     },
   }
 );
@@ -221,6 +222,7 @@ export const forwardStaggerTrigger = trigger('animateForwardStagger', [
     useAnimation(forwardStaggerAnimation, {
       params: {
         duration: 500,
+        delayTime: 400
       },
     }),
   ]),
