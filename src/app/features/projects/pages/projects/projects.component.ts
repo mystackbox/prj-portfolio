@@ -17,21 +17,21 @@ import {
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
   animations: [
-
     fadeInTrigger,
     forwardStaggerTrigger,
     zoomInTrigger,
     toggleSlideTrigger
-
   ],
 })
 export class ProjectsComponent {
   projects$ = new BehaviorSubject<void>(undefined); // trigger refresh
+
   projectsList: IProject[] = [];
   project?: IProject;
   error?: string;
   isCollapsed: boolean = false;
-  isBtnLabel: string = 'Details';
+  isBtnLabel: string = 'Expand';
+  isLoaded: boolean = false;
 
   private _projectSub?: Subscription;
   private _projectsSub?: Subscription;
@@ -58,25 +58,11 @@ export class ProjectsComponent {
     this._projectsSub = this._products.getProjects().subscribe({
       next: (projects: IProject[]) => {
         this.projectsList = projects;
+        this.isLoaded = true;
       },
       error: (err: any) => {
         this.error = 'Failed to load projects';
-      },
-    });
-  }
-
-  /**
-   * Fetches single record of project with id.
-   * @param id The unique identifier for the project.
-   * @returns An observable type project object  | API Server error.
-   */
-  getProject(_id?: number) {
-    this._projectSub = this._products.getSelectedProject(_id).subscribe({
-      next: (project: IProject) => {
-        this.project = project;
-      },
-      error: (err: any) => {
-        this.error = 'Failed to load project';
+        this.isLoaded = false;
       },
     });
   }
@@ -96,6 +82,22 @@ export class ProjectsComponent {
     });
   }
 
+    /**
+   * Fetches single record of project with id.
+   * @param id The unique identifier for the project.
+   * @returns An observable type project object  | API Server error.
+   */
+  getProject(_id?: number) {
+    this._projectSub = this._products.getSelectedProject(_id).subscribe({
+      next: (selectedProject: IProject) => {
+        this.project = selectedProject;
+      },
+      error: (err: any) => {
+        this.error = 'Failed to load project';
+      },
+    });
+  }
+
   toggleProjectDetails() {
     this.isCollapsed = !this.isCollapsed;
     console.log(this.isCollapsed);
@@ -103,7 +105,7 @@ export class ProjectsComponent {
     if (this.isCollapsed === true) {
       this.isBtnLabel = 'Collapse';
     } else {
-      this.isBtnLabel = 'Details';
+      this.isBtnLabel = 'Expand';
     }
 
     console.log(this.isBtnLabel);

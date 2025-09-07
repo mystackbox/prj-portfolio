@@ -648,13 +648,13 @@
                         }
                     }
                 }
+
+                &:nth-last-child(-n+4) {
+                    display: none;
+                }
             }
 
-            .prj-3,
-            .prj-4,
-            .prj-5 {
-                display: none;
-            }
+
         }
 
         .container {

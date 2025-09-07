@@ -9,7 +9,7 @@ import { EmailService } from '../../services/email.service';
   selector: 'app-contact',
   standalone: false,
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss',
+  styleUrl: './contact.component.scss'
 })
 export class ContactComponent implements CanDeactivateIF {
   contactForm!: FormGroup;
