@@ -5,7 +5,7 @@
     "heading": "Personal portfolio",
     "imageName": "prj-portfolio",
     "introduction": "Personal portfolio developed using Angular framework.",
-    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS.",
+    "description": "A personal website developed with purpose of showcasing  my angular front-end development skills. ",
     "concepts": [
       "Responsive UI",
       "Angular 16+",
@@ -16,7 +16,7 @@
     ],
     "features": [
       "Weather API",
-      "News API",
+      "Geo-Location API",
       "WhatsApp Button",
       "Share Buttons",
       "Contact Form",
@@ -91,7 +91,7 @@
     "name": "v-loc system",
     "heading": "Vehicle Locator App",
     "imageName": "prj-vloc",
-    "introduction": "Locator App developed using Angular, and GoogleMaps.",
+    "introduction": "Vehicle Locator developed using Angular, and GoogleMaps.",
     "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS. ",
     "concepts": [
       "Fetch API",
@@ -148,8 +148,8 @@
     "name": "mabunda group",
     "heading": "EHS Business Website",
     "imageName": "prj-mbg",
-    "introduction": "EHS Business website developed using Angular framework.",
-    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS.",
+    "introduction": "EHS company website developed using Angular framework.",
+    "description": "<i class='bi bi-stop-fill'></i> Designed responsive UI using <span class=\"highlighted-text\">HTML5</span>, <span class=\"highlighted-text\">SCSS</span>. <i class='bi bi-stop-fill'></i> Implemented <span class=\"highlighted-text\">lazy loading</span> to optimize performance. <i class='bi bi-stop-fill'></i> Integrated weather RESTful API using <span class=\"highlighted-text\">RxJS</span>. <i class='bi bi-stop-fill'></i> Build validated contact form using <span class=\"highlighted-text\">Reactive Forms</span>. <i class='bi bi-stop-fill'></i> Optimized <span class=\"highlighted-text\">SEO</span> using SSR, Open Graph, Meta, & Title interface.  <i class='bi bi-stop-fill'></i> Wrote unit tests for critical components using <span class=\"highlighted-text\">Jasmine & Karma</span>.",
     "concepts": [
       "Responsive UI",
       "Angular 16+",
