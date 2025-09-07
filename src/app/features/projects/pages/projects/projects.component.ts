@@ -56,7 +56,7 @@ export class ProjectsComponent {
     this.getProjects();
 
     this.cdr.markForCheck();
-    this.cdr.detectChanges();
+    // this.cdr.detectChanges();
   }
 
   /**
