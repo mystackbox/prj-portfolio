@@ -31,6 +31,7 @@ export class ProjectsComponent {
   error?: string;
   isCollapsed: boolean = false;
   isBtnLabel: string = 'Expand';
+  projectsListLoaded: boolean = false;
 
   private _projectSub?: Subscription;
   private _projectsSub?: Subscription;
@@ -43,7 +44,16 @@ export class ProjectsComponent {
 
   //load list of projects
   ngOnInit() {
+    
     this.getProjects();
+  }
+
+    /**
+   * Fetches data from the projects local JSON API.
+   * @returns An observable of type project object | API Server error.
+   */
+  getFeaturedProject(_latestProject: IProject) {
+    this.project = _latestProject;
   }
 
   /**
@@ -55,19 +65,12 @@ export class ProjectsComponent {
       next: (projects: IProject[]) => {
         this.projectsList = projects;
         this.getFeaturedProject(this.projectsList[projects.length - 1]);
+        this.projectsListLoaded = true;
       },
       error: (err: any) => {
         this.error = 'Failed to load projects';
       },
     });
-  }
-
-  /**
-   * Fetches data from the projects local JSON API.
-   * @returns An observable of type project object | API Server error.
-   */
-  getFeaturedProject(_latestProject: IProject) {
-    this.project = _latestProject;
   }
 
   /**
