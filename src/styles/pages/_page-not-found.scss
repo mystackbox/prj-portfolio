@@ -23,7 +23,7 @@
             padding: $spacing-sm $spacing-sm ;
             cursor: pointer;
             text-align: center;
-            box-shadow: $light-box-shadow;
+            // box-shadow: $light-box-shadow;
             border-radius: $spacing-xs;
 
             .heading {
@@ -33,6 +33,7 @@
 
             .content {
                 padding: $spacing-sm;
+                font-size: $font-size-sm + 2px;
 
                 .btn-container {
                     font-size: $font-size-xs + 1px;
@@ -52,7 +53,7 @@
             }
 
             &:hover {
-                box-shadow: $light-hover-box-shadow;
+                box-shadow: $light-box-shadow;
             }
         }
     }

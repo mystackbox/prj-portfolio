@@ -17,7 +17,7 @@
 
         <div @animateFadeIn class="project-description">
           <div class="heading" (click)="openHyperLink(project.hyperlinks[1])">
-            {{ project.name }}
+            <i class="bi bi-award"></i> {{ project.name }}
           </div>
 
           <div class="details">
@@ -52,9 +52,9 @@
 
       <div @animateFadeIn class="details-container top-right-details">
         <div class="project-description">
-          <div class="heading">description</div>
-          <div class="details">
-            {{ project?.description }}
+          <div class="heading">contributions</div>
+          <div class="details"  [innerHTML]="project?.description" >
+            <!-- {{ project?.description }} -->
           </div>
         </div>
       </div>

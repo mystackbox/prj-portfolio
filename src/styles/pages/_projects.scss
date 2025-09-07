@@ -18,14 +18,14 @@
 
     .project-details {
         display: grid;
-        row-gap: 5px;
+        row-gap: 15px;
         padding: $spacing-lg $spacing-sm;
         margin: -10px 0;
-        // box-shadow: $light-box-shadow;
-        background-color: rgba($light-secondery-bg-color, 0.4);
-        // background: linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
         border-radius: $spacing-xs;
+        background-color: rgba($light-secondery-bg-color, 0.4);
         background-image: linear-gradient(to right, #ECE9E6 0%, #FFFFFF 30%, #FFFFFF 70%, #ECE9E6 100%);
+
+        // background: linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
 
 
         .top-container {
@@ -49,7 +49,6 @@
                 .project-description {
                     display: flex;
                     flex-direction: column;
-
 
                     .heading {
                         @include heading-light;
@@ -87,7 +86,12 @@
                 .details {
                     border-left: 5px solid red;
                     padding: 0 $spacing-sm;
-                    font-size: $font-size-md;
+                    font-size: $font-size-md - 2px;
+
+                    .highlighted-text {
+                        font-weight: bold;
+                        font-size: $font-size-md - 2px;
+                    }
                 }
             }
         }

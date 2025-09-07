@@ -41,11 +41,13 @@ export class ProjectsComponent {
     private _products: ProjectsService,
     private _hyperLink: HyperLinkService,
     private cdr: ChangeDetectorRef
-  ) {}
+  ) {
+    this.projectsList.reverse();
+  }
 
   //load list of projects
   ngOnInit() {
-    this.cdr.detach();
+    // this.cdr.detach(); //prevent flickering whenever timer ticks
     this.getProjects();
   }
 
@@ -62,12 +64,16 @@ export class ProjectsComponent {
    * @returns An observable of type projects[] | API Server error.
    */
   getProjects() {
+     
     this._projectsSub = this._products.getProjects().subscribe({
       next: (projects: IProject[]) => {
         this.projectsList = projects;
-        this.getFeaturedProject(this.projectsList[projects.length - 1]);
+        this.getFeaturedProject(projects[projects.length - 1]);
         this.projectsListLoaded = true;
-        this.cdr.detectChanges();
+        // if(this.projectsListLoaded){
+        //          this.cdr.detectChanges(); //prevent flickering whenever timer ticks
+        // }
+
       },
       error: (err: any) => {
         this.error = 'Failed to load projects';
@@ -81,6 +87,7 @@ export class ProjectsComponent {
    * @returns An observable type project object  | API Server error.
    */
   getProject(_id?: number) {
+    console.log('Selected Id = ' + _id);
     this._projectSub = this._products.getSelectedProject(_id).subscribe({
       next: (selectedProject: IProject) => {
         this.project = selectedProject;
@@ -115,5 +122,6 @@ export class ProjectsComponent {
   ngOnDestroy() {
     this._projectSub?.unsubscribe();
     this._projectsSub?.unsubscribe();
+    this.projectsList.reverse();
   }
 }
