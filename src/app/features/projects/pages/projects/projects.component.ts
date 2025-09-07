@@ -57,8 +57,8 @@ export class ProjectsComponent {
   getProjects() {
     this._projectsSub = this._products.getProjects().subscribe({
       next: (projects: IProject[]) => {
+         this.isLoaded = true;
         this.projectsList = projects;
-        this.isLoaded = true;
       },
       error: (err: any) => {
         this.error = 'Failed to load projects';
