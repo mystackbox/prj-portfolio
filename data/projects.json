@@ -1,26 +1,26 @@
 [
-  {
+   {
     "id": 1,
     "name": "my portfolio",
-    "heading": "Personal Portfolio",
+    "heading": "Personal portfolio",
     "imageName": "prj-portfolio",
     "introduction": "Personal portfolio developed using Angular framework.",
-    "description": "A personal website developed with purpose of showcasing  my angular front-end development skills. ",
+    "description": "<i class='bi bi-stop-fill'></i> Designed responsive UI using <span class=\"highlighted-text\">HTML5</span>, <span class=\"highlighted-text\">SCSS</span>. <i class='bi bi-stop-fill'></i> Build validated contact form, integrated with <span class=\"highlighted-text\">MailJS</span> using <span class=\"highlighted-text\">Reactive Forms</span>.  <i class='bi bi-stop-fill'></i>. Integrated the Weather RESTful API using <span class=\"highlighted-text\">RxJS</span>. <i class='bi bi-stop-fill'></i> Implemented <span class=\"highlighted-text\">lazy loading</span> to optimize performance.  <i class='bi bi-stop-fill'></i> Wrote unit tests for critical components using <span class=\"highlighted-text\">Jasmine & Karma</span>.",
     "concepts": [
       "Responsive UI",
-      "Angular 16+",
+      "Angular/TypeScript",
       "RESTful APIs",
+      "Angular Animations",
       "Unit Tests",
-      "SEO (OG)",
       "GitHub and Git"
     ],
     "features": [
       "Weather API",
-      "Geo-Location API",
+      "Contact Form",
       "WhatsApp Button",
       "Share Buttons",
-      "Contact Form",
-      "Toggle Themes"
+      "Themes(Light/Dark)",
+       " Geo-Loc Request"
     ],
     "hyperlinks": [
       "https://github.com/mystackbox/prj-portfolio",
@@ -45,7 +45,7 @@
     ],
     "features": [
       "Fully Responsive",
-       "Carousel",
+      "Carousel",
       "Share Buttons",
       "Google Maps",
       "Contact Form",
@@ -121,38 +121,38 @@
     "heading": "Personal portfolio",
     "imageName": "prj-portfolio",
     "introduction": "Personal portfolio developed using Angular framework.",
-    "description": "A business website developed using web technologies SCSS, Angular. A website developed using web technologies HTML5, SCSS.",
+    "description": "<i class='bi bi-stop-fill'></i> Designed responsive UI using <span class=\"highlighted-text\">HTML5</span>, <span class=\"highlighted-text\">SCSS</span>. <i class='bi bi-stop-fill'></i> Build validated contact form, integrated with <span class=\"highlighted-text\">MailJS</span> using <span class=\"highlighted-text\">Reactive Forms</span>.  <i class='bi bi-stop-fill'></i>. Integrated the Weather RESTful API using <span class=\"highlighted-text\">RxJS</span>. <i class='bi bi-stop-fill'></i> Implemented <span class=\"highlighted-text\">lazy loading</span> to optimize performance.  <i class='bi bi-stop-fill'></i> Wrote unit tests for critical components using <span class=\"highlighted-text\">Jasmine & Karma</span>.",
     "concepts": [
       "Responsive UI",
-      "Angular 16+",
+      "Angular/TypeScript",
       "RESTful APIs",
+      "Angular Animations",
       "Unit Tests",
-      "SEO (OG)",
       "GitHub and Git"
     ],
     "features": [
       "Weather API",
-      "News API",
+      "Contact Form",
       "WhatsApp Button",
       "Share Buttons",
-      "Contact Form",
-      "Toggle Themes"
+      "Themes(Light/Dark)",
+       " Geo-Loc Request"
     ],
     "hyperlinks": [
       "https://github.com/mystackbox/prj-portfolio",
       "https://mystackbox.github.io/prj-portfolio/home"
     ]
   },
-    {
+  {
     "id": 3,
     "name": "mabunda group",
     "heading": "EHS Business Website",
     "imageName": "prj-mbg",
     "introduction": "EHS company website developed using Angular framework.",
-    "description": "<i class='bi bi-stop-fill'></i> Designed responsive UI using <span class=\"highlighted-text\">HTML5</span>, <span class=\"highlighted-text\">SCSS</span>. <i class='bi bi-stop-fill'></i> Implemented <span class=\"highlighted-text\">lazy loading</span> to optimize performance. <i class='bi bi-stop-fill'></i> Integrated weather RESTful API using <span class=\"highlighted-text\">RxJS</span>. <i class='bi bi-stop-fill'></i> Build validated contact form using <span class=\"highlighted-text\">Reactive Forms</span>. <i class='bi bi-stop-fill'></i> Optimized <span class=\"highlighted-text\">SEO</span> using SSR, Open Graph, Meta, & Title interface.  <i class='bi bi-stop-fill'></i> Wrote unit tests for critical components using <span class=\"highlighted-text\">Jasmine & Karma</span>.",
+    "description": "<i class='bi bi-stop-fill'></i> Designed responsive UI using <span class=\"highlighted-text\">HTML5</span>, <span class=\"highlighted-text\">SCSS</span>. <i class='bi bi-stop-fill'></i> Implemented <span class=\"highlighted-text\">Lazy loading</span> to optimize performance. <i class='bi bi-stop-fill'></i> Integrated weather RESTful API using <span class=\"highlighted-text\">RxJS</span>. <i class='bi bi-stop-fill'></i> Build validated contact form using <span class=\"highlighted-text\">Reactive Forms</span>. <i class='bi bi-stop-fill'></i>  Enhance <span class=\"highlighted-text\">SEO</span> by using SSR, Open Graph, Meta, & Title interface.  <i class='bi bi-stop-fill'></i> Wrote unit tests for critical components using <span class=\"highlighted-text\">Jasmine & Karma</span>.",
     "concepts": [
       "Responsive UI",
-      "Angular 16+",
+      "Angular ",
       "RESTful APIs",
       "Unit Tests",
       "SEO & PO",
@@ -162,9 +162,9 @@
       "Real-time Weather",
       "Photo Gallery",
       "Google Maps",
-      "Social-share Buttons",
+      "Share Buttons",
       "Contact Form",
-      "Themes(Light/Dark)"
+      "Themes (Light/Dark)"
     ],
     "hyperlinks": [
       "https://github.com/mystackbox/prj-mabunda-group",
