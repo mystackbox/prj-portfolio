@@ -52,7 +52,7 @@ export const fadeOutTrigger = trigger('animateFadeOut', [
 
 
 /* ----------------------------  ZOOM  -------------------------------- */
-//animation - fade
+//animation - zoom
 export const zoomAnimation = animation(
   [
     style({
@@ -70,7 +70,7 @@ export const zoomAnimation = animation(
   }
 );
 
-//trigger - fade-in
+//trigger - zoom-in
 export const zoomInTrigger = trigger('animateZoomIn', [
   transition(':enter', [
     useAnimation(zoomAnimation, {
@@ -83,7 +83,7 @@ export const zoomInTrigger = trigger('animateZoomIn', [
   ]),
 ]);
 
-//trigger - fade-out
+//trigger - zoom-out
 export const zoomOutTrigger = trigger('animateZoomOut', [
   transition(':leave', [
     useAnimation(zoomAnimation, {
@@ -199,9 +199,8 @@ export const toggleSlideTrigger = trigger('animateToggleSlide', [
 
 
 
-
 /* ----------------------------  STAGGERS  -------------------------------- */
-//Animation - forwardStagger
+//Animation - forward Stagger
 export const forwardStaggerAnimation = animation(
   [
     query(
@@ -216,7 +215,7 @@ export const forwardStaggerAnimation = animation(
   {
     params: {
       duration: 400,
-      delayTime: 300
+      delayTime: 300,
     },
   }
 );
@@ -227,7 +226,7 @@ export const forwardStaggerTrigger = trigger('animateForwardStagger', [
     useAnimation(forwardStaggerAnimation, {
       params: {
         duration: 500,
-        delayTime: 300
+        delayTime: 300,
       },
     }),
   ]),
@@ -265,8 +264,53 @@ export const reverseStaggerTrigger = trigger('animateReverseStagger', [
 
 
 
+//Animation - Generic Stagger-with-Slide 
+export const slideforwardStaggerAnimation = animation(
+  [
+    query(
+      '.animate-stagger',
+      [
+        style({
+          opacity: '{{ opecityBefore }}',
+          transform: '{{ positionBefore }}',
+        }),
+        stagger(150, [
+          animate('{{duration}}ms {{delayTime}}ms ease-in'),
+          style({
+            opacity: '{{ opecityAfter }}',
+            transform: '{{ positionAfter }}',
+        })
+        ]),
+      ],
+      { optional: true }
+    ),
+  ],
+  {
+    params: {
+      duration: 0,
+      delayTime: 0,
+      opecityBefore: 0,
+      positionBefore: 0,
+      positionAfter: 0,
+    },
+  }
+);
 
-
+//Trigger - stagger-in-from-left
+export const staggerInFromLeftTrigger = trigger('staggerInFromLeft', [
+  transition(':enter', [
+          useAnimation(slideforwardStaggerAnimation, {
+            params: {
+              opecityBefore: 0,
+              positionBefore: 'translateX(-10%)',
+              duration: 800,
+              delayTime: 200,   
+              opecityAfter: 1,           
+              positionAfter: 'translateX(0)',
+            },
+          }),
+    ]),
+  ]);
 
 //Animation - Stagger-with-Slide
 export const staggerSlideAnimation = animation(
@@ -292,7 +336,7 @@ export const staggerSlideAnimation = animation(
 );
 
 //Trigger - stagger-in-from-left
-export const staggerInFromLeftTrigger = trigger('staggerInFromLeft', [
+export const _staggerInFromLeftTrigger = trigger('staggerInFromLeft', [
   transition(':enter', [
     query(
       '.staggered-from-left',

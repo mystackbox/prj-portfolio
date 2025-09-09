@@ -1,4 +1,5 @@
 import {
+  ChangeDetectorRef,
   Component,
   OnInit,
   Output,
@@ -14,6 +15,7 @@ import {
   forwardStaggerTrigger,
   fadeInTrigger,
   zoomInTrigger,
+  staggerInFromLeftTrigger,
 } from '../../../core/animations/animations';
 
 @Component({
@@ -21,7 +23,7 @@ import {
   standalone: false,
   templateUrl: './page-introduction.component.html',
   styleUrl: './page-introduction.component.scss',
-  animations: [fadeInTrigger, forwardStaggerTrigger, zoomInTrigger],
+  animations: [fadeInTrigger, forwardStaggerTrigger, staggerInFromLeftTrigger, zoomInTrigger],
 })
 export class PageIntroductionComponent implements OnInit {
   pageTitle: any;
@@ -31,11 +33,9 @@ export class PageIntroductionComponent implements OnInit {
   weatherIcon?: string = '';
   weatherDescription: string = 'No Data';
   currentWeather: any;
-  isLoading?: boolean = false;
+  hasChanges?: boolean = false;
   isPositionAvailable: boolean = false;
   geoLocErrMessage: string | null = null;
-
-  @Output() isLoadingMessage: string = 'loading';
 
   private _weatherSub?: Subscription;
   private _locPosSub?: Subscription;
@@ -47,7 +47,8 @@ export class PageIntroductionComponent implements OnInit {
     private _activatedRoute: ActivatedRoute,
     private _titleService: Title,
     private _weatherService: WeatherService,
-    private _geoLocServive: GeoLocationService
+    private _geoLocServive: GeoLocationService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -61,7 +62,7 @@ export class PageIntroductionComponent implements OnInit {
    * @returns location-coord object | null location-coord object | Error.
    */
   getCurrentLocation() {
-     this._geoLocServive.getLocation();
+    this._geoLocServive.getLocation();
     //subscribe to changing geo-loc positions
     this._locPosSub = this._geoLocServive.position$.subscribe((position) => {
       if (position) {
@@ -95,7 +96,6 @@ export class PageIntroductionComponent implements OnInit {
           this.weatherDescription = this.currentWeather.weather[0]?.description;
         },
         error: (_error) => {
-          
           Swal.fire('Server Error!', 'Fetching weather data failed');
           this._geoLocServive.clearRequestTimer();
         },
@@ -117,23 +117,20 @@ export class PageIntroductionComponent implements OnInit {
         mergeMap((route) => route.data)
       )
       .subscribe((data) => {
+
+        this.hasChanges = false;
+        this.cdr.markForCheck();
+        this.cdr.detectChanges();
         this.pageTitle = data['title'];
         this.pageHeading = data['metaTags'][0].content;
         this.pageDesc = data['metaTags'][1].content;
 
-        console.log('New page title - ' + this.pageTitle);
-
         if (this.pageTitle) {
           let _title = `Portfolio - ${this.pageTitle}`;
+          this.hasChanges = true;
           this._titleService.setTitle(_title);
         }
       });
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes[this.pageTitle]) {
-      console.log('Value changed:', changes['value'].currentValue);
-    }
   }
 
   redirectToContactUs() {

@@ -18,7 +18,7 @@
 
     .project-details {
         display: grid;
-        row-gap: 15px;
+        row-gap: 25px;
         padding: $spacing-lg $spacing-sm;
         margin: -10px 0;
         border-radius: $spacing-xs;
@@ -54,8 +54,7 @@
                         @include heading-light;
                         color: $comp-default-font-color;
                         cursor: pointer;
-                        border-left: 8px solid red;
-                        border-radius: 0 $spacing-xxs $spacing-xxs 0;
+                        
                     }
 
                     .details {
@@ -585,14 +584,12 @@
                 }
 
                 .top-right-details {
-                    font-size: $font-size-md - 1px;
                     text-align: center;
 
                     .project-description {
                         .details {
                             border: none;
                         }
-
                     }
                 }
             }

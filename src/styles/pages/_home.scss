@@ -86,7 +86,7 @@
                 }
 
                 &:hover {
-
+                    box-shadow: $light-hover-box-shadow;
                     background-color: $error-color;
                     color: $light-neutral-font-color;
 
@@ -264,7 +264,7 @@
         //features section
         .intro-container {
             margin-bottom: -15px;
-            padding: $spacing-sm $spacing-sm $spacing-md ;
+            padding: $spacing-lg $spacing-sm $spacing-md ;
             border-radius: $spacing-sm;
             box-shadow: $light-box-shadow;
 

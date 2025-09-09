@@ -9,11 +9,11 @@
          <app-spinner [processMessage]="isSendingMessage"></app-spinner >
       </div>
 
-      <div class="contact-info">
-        <fieldset formGroupName="personalDetails">
+      <div @animateForwardStagger  class="contact-info">
+        <fieldset formGroupName="personalDetails" class="animate-stagger">
           <legend>Your Details</legend>
 
-          <div class="form-control-group">
+          <div class="form-control-group  animate-stagger">
             <input
               type="text"
               id="firstName"
@@ -39,7 +39,7 @@
             </div>
           </div>
 
-          <div class="form-control-group">
+          <div class="form-control-group  animate-stagger">
             <input
               type="text"
               id="lastName"
@@ -67,7 +67,7 @@
             </div>
           </div>
 
-          <div class="form-control-group">
+          <div class="form-control-group  animate-stagger">
             <input
               type="email"
               id="emailAddress"
@@ -100,10 +100,10 @@
           </div>
         </fieldset>
 
-        <fieldset formGroupName="messageDetails">
+        <fieldset formGroupName="messageDetails" class=" animate-stagger">
           <legend>Your Message</legend>
 
-          <div class="form-control-group">
+          <div class="form-control-group  animate-stagger">
             <input
               type="text"
               id="subject"
@@ -128,7 +128,7 @@
             </div>
           </div>
 
-          <div class="form-control-group">
+          <div class="form-control-group  animate-stagger">
             <textarea
               id="message"
               formControlName="message"
@@ -156,7 +156,7 @@
         </fieldset>
       </div>
 
-      <div class="contact-buttons">
+      <div @animateSlideInFromBottom class="contact-buttons">
         <button id="submit-button" type="submit"  class="submit-button button">
           submit
         </button>

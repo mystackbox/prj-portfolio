@@ -4,12 +4,15 @@ import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 import { CanDeactivateIF } from '../../../../core/route-guards/unsaved-changes/unsaved-change.guard';
 import { EmailService } from '../../services/email.service';
+import { fadeInTrigger, forwardStaggerTrigger, slideInFromBottomTrigger, staggerInFromLeftTrigger, zoomInTrigger } from '../../../../core/animations/animations';
 
 @Component({
   selector: 'app-contact',
   standalone: false,
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrl: './contact.component.scss',
+    animations: [fadeInTrigger, forwardStaggerTrigger, slideInFromBottomTrigger],
+  
 })
 export class ContactComponent implements CanDeactivateIF {
   contactForm!: FormGroup;
@@ -22,8 +25,6 @@ export class ContactComponent implements CanDeactivateIF {
   constructor(private _mailService: EmailService) {}
 
   ngOnInit(): void {
-    // const emailPattern = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
     //initialize the form
     this.contactForm = new FormGroup({
       personalDetails: new FormGroup({

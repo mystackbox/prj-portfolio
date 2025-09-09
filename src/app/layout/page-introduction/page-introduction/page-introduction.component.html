@@ -1,7 +1,7 @@
 <div id="page-instroduction" class="page-instroduction">
   <div
     class="current-weather-container"
-    title="Current Weather"
+
     *ngIf="isPositionAvailable"
   >
     <div class="weather-icon">
@@ -12,7 +12,7 @@
         [title]="weatherDescription | titlecase"
       />
     </div>
-    <div class="weather-temp" title="Temperature">{{ temperature }}°C</div>
+    <div class="weather-temp" title="Temp">{{ temperature }}°C</div>
   </div>
 
   <div
@@ -25,7 +25,7 @@
 
   <div class="call-to-acltion-container">
     
-    <div @animateForwardStagger class="intro-text">
+    <div *ngIf="hasChanges === true"  @staggerInFromLeft class="intro-text">
       <div class="animate-stagger page-title">{{ pageTitle }}</div>
       <div class="animate-stagger page-description">{{ pageDesc }}</div>
       <div class="animate-stagger page-intro-buttons">
@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    <div @animateZoomIn  class="intro-image">
+    <div  @animateZoomIn  class="intro-image">
       <img
       
         class="project-img"
@@ -56,6 +56,8 @@
         alt="recent project"
       />
     </div>
+
   </div>
-  
+
+
 </div>
