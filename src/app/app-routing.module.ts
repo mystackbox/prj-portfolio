@@ -26,11 +26,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/contact/contact.module').then((m) => m.ContactModule),
   },
-  {
-    path: 'news',
-    loadChildren: () =>
-      import('./features/news/news.module').then((m) => m.NewsModule),
-  },
 
   {
     path: 'not-found',

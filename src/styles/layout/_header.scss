@@ -16,7 +16,6 @@
         .site-logo {
             margin-right: 15px;
             display: none;
-            //  border: 1px solid #e5e5e5;
 
             img {
                 width: 100%;
@@ -55,19 +54,26 @@
             justify-content: end;
 
             .site-contact-text {
-                margin: 0 5px;
-                font-size: $font-size-md - 2px;
 
-                .contact-icon {
-                    margin-right: $spacing-xs + 1px;
+                margin-right: 5px;
+                font-size: $font-size-sm;
+                background-color: $light-secondery-bg-color;
+                padding: $spacing-xs - 2px $spacing-sm;
+                border-radius: $spacing-md;
+                text-align: center;
+
+                i {
+
+                    &.bi-telephone-fill,
+                    &.bi-envelope-fill {
+                        margin-right: 6px;
+                    }
                 }
 
                 a {
                     text-decoration: none;
                     color: $light-default-font-color;
                 }
-
-                // @include theme-toggle-btn ;
 
                 &.theme-button {
                     cursor: pointer;
@@ -104,13 +110,14 @@
             }
 
             .site-title-and-description {
-                  padding-left: 5px;
+                padding-left: 5px;
+
                 .site-title {
 
                     display: flex;
                     justify-content: space-between;
                     column-gap: 15px;
-                  
+
 
                     .title-name {
                         font-size: $font-size-sm + 1px;

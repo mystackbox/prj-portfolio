@@ -7,6 +7,23 @@
     .site-grid-container {
         background-color: var(--bg-color);
         color: var(--text-color);
+        
+        #site-identity {
+    
+    .site-contact-details {
+
+        .contact-details {
+   
+            .site-contact-text {
+               @include heading-dark;
+            }
+        }
+
+        .current-weather {
+            display: none;
+        }
+    }
+        }
 
         #page-instroduction {
             //  background-image: linear-gradient(to right, #abbaab 0%, #ffffff 51%, #abbaab 100%);
@@ -46,7 +63,6 @@
         #home-page-main {
 
             .page-content-intro-hr {
-
                 &::before,
                 &::after {
                     border-bottom: 1px solid $light-default-font-color;
@@ -151,7 +167,7 @@
 
                 .intro-container {
                     margin-top: 0;
-                    padding: $spacing-sm $spacing-sm $spacing-lg $spacing-sm ;
+                    padding: $spacing-lg $spacing-sm ;
                     box-shadow: $dark-box-shadow;
 
                     .developer-intro {
@@ -447,11 +463,20 @@
                 box-shadow: $dark-box-shadow;
                 padding: $spacing-sm;
                 border-radius: $spacing-xs;
-
+                
                 form {
                     .contact-info {
                         fieldset {
                             border: 1px solid $light-default-font-color;
+                            .input-form-control {
+                                background-color: rgba($dark-primary-bg-color, 0.1);
+                                border: 1px solid $light-default-font-color;
+
+                                  &::placeholder {
+                                font-size: 12px;
+                                color: rgb($light-default-font-color, 0.4);
+                            }
+                            }
                         }
                     }
                 }

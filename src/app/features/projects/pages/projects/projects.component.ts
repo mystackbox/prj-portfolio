@@ -47,16 +47,13 @@ export class ProjectsComponent {
     private _hyperLink: HyperLinkService,
     private cdr: ChangeDetectorRef
   ) {
-    // this.projectsList.reverse();
     this.cdr.detach();
   }
 
   //load list of projects
   ngOnInit() {
     this.getProjects();
-
     this.cdr.markForCheck();
-    // this.cdr.detectChanges();
   }
 
   /**
@@ -87,7 +84,7 @@ export class ProjectsComponent {
 
   /**
    * Fetches single record of project with id.
-   * @param id The unique identifier for the project.
+   * @param _id The unique identifier for the project.
    * @returns An observable type project object  | API Server error.
    */
   getProject(_id?: number) {
