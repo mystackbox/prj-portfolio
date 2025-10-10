@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { forwardStaggerTrigger } from '../../../../core/animations/animations';
+import { forwardStaggerTrigger, slideInFromTopTrigger } from '../../../../core/animations/animations';
 
 @Component({
   selector: 'app-about',
@@ -9,6 +9,7 @@ import { forwardStaggerTrigger } from '../../../../core/animations/animations';
   styleUrl: './about.component.scss',
     animations: [
       forwardStaggerTrigger,
+      slideInFromTopTrigger
     ],
 })
 export class AboutComponent {

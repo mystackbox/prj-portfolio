@@ -6,13 +6,16 @@
     grid-template-columns: 1fr;
     row-gap: 0px;
     border-radius: $spacing-sm;
-    background-image: linear-gradient(to right, #000428 0%, #004e92 51%, #000428 100%);
+    position: relative;
+    // background-image: linear-gradient(to right, #000428 0%, #004e92 51%, #000428 100%);
     // background-image: linear-gradient(to right, #abbaab 0%, #ffffff 51%, #abbaab 100%);
     // background-image: linear-gradient(to right, #ECE9E6 0%, #FFFFFF 51%, #ECE9E6 100%);
     // background-image: linear-gradient(to right, #8E0E00 0%, #1F1C18  51%, #8E0E00  100%);
     // background-image: linear-gradient(to right, #870000 0%, #190A05 51%, #870000 100%);
     // background-image: linear-gradient(to right, #200122 0%, #6f0000 51%, #200122 100%);
-    position: relative;
+
+    @include call-to-action-img-bg;
+
 
     .current-weather-container {
 
@@ -23,8 +26,9 @@
         column-gap: 3px;
         justify-content: flex-end;
         padding: $spacing-md + 10px $spacing-xl $spacing-md 0;
-        color: $light-secondery-font-color;
+        color: $light-neutral-font-color;
         cursor: pointer;
+
         .weather-icon {
             align-content: center;
 
@@ -58,7 +62,7 @@
             .page-title {
                 @include global-font-jura;
                 text-transform: uppercase;
-                color: $light-secondery-font-color;
+                color: $light-neutral-font-color;
             }
 
             .page-description {
@@ -87,7 +91,7 @@
                         background-color: $error-color;
 
                         &:hover {
-                            background-color: orange;
+                            background-color: blueviolet;
                         }
                     }
 

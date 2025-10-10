@@ -7,7 +7,7 @@ const routes: Routes = [{ path: '', component: AboutComponent,
             title: 'About',
             metaTags: [
               { name: 'short-desc', content: 'portfolio background' },
-              { name: 'page-desc', content: 'introduction about the developer' },
+              { name: 'page-desc', content: 'a brief about my skills and expertise' },
             ]
         }
  }];

@@ -21,7 +21,7 @@ export class HomeComponent {
   project?: IProject;
   error?: string;
   isCollapsed: boolean = false;
-  moreLessText: string = 'more...';
+  moreLessText: string = '..more..';
   myDelayVariable = 200;
 
   gitHubRepo: string = 'https://github.com/mystackbox';
@@ -44,9 +44,9 @@ export class HomeComponent {
   readMore() {
     this.isCollapsed = !this.isCollapsed;
     if (this.isCollapsed === true) {
-      this.moreLessText = 'less...';
+      this.moreLessText = '..hide..';
     } else {
-      this.moreLessText = 'more... ';
+      this.moreLessText = '..more..';
     }
   }
 
