@@ -112,6 +112,10 @@
                 color: $error-color;
                 display: none;
                 font-weight: 700;
+
+                .bi {
+                    font-size: 30px;
+                }
             }
         }
 
@@ -182,58 +186,19 @@
         .intro-container {
             grid-template-columns: 1fr;
             row-gap: 20px;
-
-            .news-feed-container {
-                .news-container {
-                    column-gap: 25px;
-
-                    .news {
-                        .news-img {
-                            height: 146px;
-                        }
-                    }
-                }
-
-                .weather-container {
-                    .weather-item {
-                        &.title {
-                            display: inline;
-                        }
-                    }
-                }
-            }
         }
     }
 
-    @include respond-to("sm") {
-
-        //features section
-        .intro-container {
-            .news-feed-container {
-                .news-container {
-                    .news {
-                        .news-img {
-                            height: 125px;
-                        }
-                    }
-                }
-
-                .weather-container {
-                    display: inline;
-
-                    .weather-item {
-                        margin-right: 5px;
-                    }
-                }
-            }
-        }
-    }
+    @include respond-to("sm") {}
 
     @include respond-to("pre-sm") {
 
         //features section
         .intro-container {
-            padding: 0 5% 15px;
+            // padding: 0 5% 15px;
+            padding: $spacing-lg $spacing-sm $spacing-md ;
+            border-radius: $spacing-sm;
+            box-shadow: $light-box-shadow;
 
             .recent-project-container {
                 .recent-project-details {
@@ -248,7 +213,7 @@
     }
 
     @include respond-to("pro-xs") {
- 
+
         //features section
         .intro-container {
             padding: $spacing-sm ;
@@ -264,9 +229,6 @@
         //features section
         .intro-container {
             margin-bottom: -15px;
-            padding: $spacing-lg $spacing-sm $spacing-md ;
-            border-radius: $spacing-sm;
-            box-shadow: $light-box-shadow;
 
             .developer-title {
                 margin: 0 10%;

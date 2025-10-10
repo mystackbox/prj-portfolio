@@ -1,5 +1,5 @@
 <div class="projects-page-main" id="projects-page-main">
-  <div class="page-content-intro-hr">Featured</div>
+  <div @animateSlideInFromTop class="page-content-intro-hr">Featured</div>
 
   <section *ngIf="project" class="project-details container">
     <div  class="top-container">
@@ -120,7 +120,7 @@
     </div>
   </section>
 
-  <div class="page-content-intro-hr">selection</div>
+  <div @animateSlideInFromBottom class="page-content-intro-hr">selection</div>
 
   <section 
     class="featured-projects container"
@@ -142,7 +142,7 @@
       </div>
 
       <div class="project-details-container">
-        <div class="project-name">{{ project.name }}</div>
+        <div class="project-name" (click)="getProject(project.id)"> <i class="bi bi-bookmark-fill"></i>  {{ project.name }}</div>
 
         <div class="project-summary">{{ project.heading }}</div>
 

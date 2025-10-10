@@ -13,6 +13,8 @@ import {
   zoomInTrigger,
   forwardStaggerTrigger,
   toggleSlideTrigger,
+  slideInFromTopTrigger,
+  slideInFromBottomTrigger,
 } from '../../../../core/animations/animations';
 
 @Component({
@@ -26,6 +28,8 @@ import {
     forwardStaggerTrigger,
     zoomInTrigger,
     toggleSlideTrigger,
+    slideInFromTopTrigger,
+    slideInFromBottomTrigger
   ],
 })
 export class ProjectsComponent {

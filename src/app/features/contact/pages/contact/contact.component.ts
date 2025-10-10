@@ -4,14 +4,14 @@ import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 import { CanDeactivateIF } from '../../../../core/route-guards/unsaved-changes/unsaved-change.guard';
 import { EmailService } from '../../services/email.service';
-import { fadeInTrigger, forwardStaggerTrigger, slideInFromBottomTrigger, staggerInFromLeftTrigger, zoomInTrigger } from '../../../../core/animations/animations';
+import { fadeInTrigger, forwardStaggerTrigger, slideInFromBottomTrigger, slideInFromTopTrigger, staggerInFromLeftTrigger, zoomInTrigger } from '../../../../core/animations/animations';
 
 @Component({
   selector: 'app-contact',
   standalone: false,
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
-    animations: [fadeInTrigger, forwardStaggerTrigger, slideInFromBottomTrigger],
+    animations: [fadeInTrigger, forwardStaggerTrigger, slideInFromBottomTrigger, slideInFromTopTrigger],
   
 })
 export class ContactComponent implements CanDeactivateIF {

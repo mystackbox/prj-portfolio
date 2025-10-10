@@ -55,7 +55,7 @@
     <p @animateFadeIn class="developer-intro first-paragraph">
       I craft responsive, scalable, and user-friendly Single-Page applications
       (SPA) using
-      <span class="highlight">Angular Framework</span>.
+      <span class="">Angular Framework</span>.
 
       <span *ngIf="isCollapsed" class="second-pargraph">
         The structured, component-based architecture of Angular allows me to
@@ -67,9 +67,11 @@
         The structured, component-based architecture of Angular allows me to
         create clean, maintainable, and robust applications that provide an
         excellent user experience.
+       
       </span>
 
-      <span class="read" (click)="readMore()">{{ moreLessText }}</span>
+      <span *ngIf="!isCollapsed"  class="read" (click)="readMore()"> <i class="bi bi-chevron-compact-down"></i></span>
+       <span *ngIf="isCollapsed"  class="read" (click)="readMore()"> <i class="bi bi-chevron-compact-up"></i></span>
     </p>
 
     <div @animateSlideInFromBottom class="intro-btn-container">
