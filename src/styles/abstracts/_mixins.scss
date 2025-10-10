@@ -69,7 +69,7 @@
 
 @mixin call-to-action-img-bg {
       background-color: $light-primary-bg-color;
-    background-image: url('/img/call-to-action/color-bg-9.jpg');
+    background-image: url('../../../public/img/call-to-action/color-bg-9.jpg');
     /* path to your image */
     background-size: cover;
     /* makes it fill the screen */
