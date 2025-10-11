@@ -17,7 +17,6 @@ import { fadeInTrigger, forwardStaggerTrigger, reverseStaggerTrigger, slideInFro
   ,slideInFromBottomTrigger ],
 })
 export class HomeComponent {
-  private _projectSub?: Subscription;
   project?: IProject;
   error?: string;
   isCollapsed: boolean = false;
@@ -32,7 +31,6 @@ export class HomeComponent {
 
   constructor(
     private router: Router,
-    private _products: ProjectsService,
     private _hyperLink: HyperLinkService
   ) {}
 

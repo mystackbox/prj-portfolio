@@ -1,5 +1,5 @@
-@use 'abstracts' as *;
-
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
 #about-page-main {
     display: grid;
     grid-template-columns: 1fr;

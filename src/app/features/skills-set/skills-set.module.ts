@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SkillsSetRoutingModule } from './skills-set-routing.module';
 import { SkillsSetComponent } from './pages/skills-set/skills-set.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -13,5 +14,6 @@ import { SkillsSetComponent } from './pages/skills-set/skills-set.component';
     CommonModule,
     SkillsSetRoutingModule
   ]
+
 })
 export class SkillsSetModule { }

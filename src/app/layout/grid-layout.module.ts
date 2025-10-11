@@ -20,6 +20,13 @@ import { SharedModule } from '../shared/shared.module';
     PageIntroductionComponent,
   ],
   imports: [NgbModule, CommonModule, AppRoutingModule, SharedModule],
-  exports: [GridLayoutComponent],
+  exports: [
+    GridLayoutComponent,
+    SiteIdentityComponent,
+    FooterComponent,
+    NavbarComponent,
+    CarouselComponent,
+    PageIntroductionComponent,
+  ],
 })
 export class GridLayoutModule {}

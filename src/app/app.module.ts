@@ -7,8 +7,7 @@ import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from './core/core.module';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AnimationsService } from './core/services/service-animations/animations.service';
+import { BrowserAnimationsModule, provideAnimations, provideNoopAnimations } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -22,18 +21,19 @@ import { AnimationsService } from './core/services/service-animations/animations
     AppRoutingModule,
     NgbModule,
     CoreModule,  
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    
   ],
   providers: [
-    
+
     //for animations
     provideClientHydration(withEventReplay()),
-
     /* 
       withFetch() - replaces XMLHttpRequest with fetch API for (SSR).
                   - Enables HttpClient to use get/post/delete/and put
     */
-    provideHttpClient(withFetch())
+    provideHttpClient(withFetch()),
+    
 
   ],
   bootstrap: [AppComponent]

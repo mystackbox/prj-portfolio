@@ -22,13 +22,13 @@ export class SiteIdentityComponent {
 
 //load theme on init
   ngOnInit(): void {
+    
     if (this.browserCheck.isBrowser()) {
-      this.themeService.initTheme();
+      this.themeService.initTheme(); //run on client-side (browser) only
     }
   }
 
   toggleTheme(): void {
-
     this.isChecked = !this.isChecked;
     this.themeService.toggleTheme();
   }

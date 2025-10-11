@@ -1,7 +1,7 @@
-@use 'abstracts' as *;
+@use '../../styles/abstracts' as *;
 
 body {
-    @include global-font-Ubuntu-light ;
+    @include global-font-Ubuntu-light;
     color: $light-primary-font-color;
     background-color: $light-primary-bg-color;
 }

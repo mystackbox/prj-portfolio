@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AboutComponent } from './about.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
-import { AboutComponent } from '../../about.component';
 
 describe('AboutComponent', () => {
   let component: AboutComponent;
@@ -8,7 +10,9 @@ describe('AboutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AboutComponent]
+      declarations: [AboutComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA], //ignore the components that are included but not part of this module
+       providers: [provideAnimations()],
     })
     .compileComponents();
 
