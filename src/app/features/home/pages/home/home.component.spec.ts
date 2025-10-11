@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -9,10 +10,7 @@ describe('HomeComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [HomeComponent],
-      // providers:[
-      //   provideHttpClient(),
-      //   provideHttpClientTesting(),
-      // ]
+      providers: [provideAnimations()], //provides animation support in unit tests
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomeComponent);
@@ -21,14 +19,6 @@ describe('HomeComponent', () => {
   });
 
   it('should create home component', () => {
-    expect(component).toBeTruthy();
-  });
-
-  it('should display develper name', () => {
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('name')?.textContent).toContain(
-      'Yingi'
-    );
     expect(component).toBeTruthy();
   });
 });

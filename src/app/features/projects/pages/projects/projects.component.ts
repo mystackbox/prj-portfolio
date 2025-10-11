@@ -44,6 +44,7 @@ export class ProjectsComponent {
 
   private _projectSub?: Subscription;
   private _projectsSub?: Subscription;
+  getSelectedProject: any;
 
   constructor(
     private router: Router,
