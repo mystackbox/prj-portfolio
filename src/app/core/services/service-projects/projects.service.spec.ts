@@ -16,8 +16,8 @@ describe('ProjectsService', () => {
     TestBed.configureTestingModule({
       providers: [
         ProjectsService,
-        provideHttpClient(withFetch()), // 1. Provide the HttpClient service
-        provideHttpClientTesting(), // 2. Enable the testing mock backend
+        provideHttpClient(withFetch()), //Provide the HttpClient service
+        provideHttpClientTesting(), //Enable the testing mock backend
       ],
     });
 

@@ -3,6 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ContactComponent } from './contact.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('ContactComponent', () => {
   let component: ContactComponent;
@@ -12,7 +14,8 @@ describe('ContactComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ContactComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA], //ignore the components that are included but not part of this module
-      providers: [provideAnimations()],
+      providers: [provideAnimations(), DatePipe],
+      imports:[ReactiveFormsModule]
     })
     .compileComponents();
 
@@ -21,7 +24,7 @@ describe('ContactComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create contact component', () => {
     expect(component).toBeTruthy();
   });
 });

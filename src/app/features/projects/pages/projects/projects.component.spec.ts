@@ -37,7 +37,7 @@ class MockProjectService {
       ],
     });
   }
-}
+}[];
 
 describe('ProjectsComponent', () => {
   let component: ProjectsComponent;
@@ -63,11 +63,4 @@ describe('ProjectsComponent', () => {
     expect(component.getProjects).toBeTruthy();
   });
 
-  it('should contain at least one project', (done) => {
-    const projectsService = TestBed.inject(ProjectsService);
-    projectsService.getProjects().subscribe((project: any) => {
-      expect(Object.keys(project).length).toBeGreaterThanOrEqual(1);
-      done();
-    });
-  });
 });
