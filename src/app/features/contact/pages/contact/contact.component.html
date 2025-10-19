@@ -1,27 +1,28 @@
 <div class="contact-page-main" id="contact-page-main">
-  <div @animateSlideInFromTop  class="page-content-intro-hr">contact form</div>
+  <div @animateSlideInFromTop class="page-content-intro-hr">contact form</div>
 
   <div class="contact-form-container">
-
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-      
       <div *ngIf="isSending == true" id="spinner-container">
-         <app-spinner [processMessage]="isSendingMessage"></app-spinner >
+        <app-spinner [processMessage]="isSendingMessage"></app-spinner>
       </div>
 
-      <div @animateForwardStagger  class="contact-info">
+      <div @animateForwardStagger class="contact-info">
         <fieldset formGroupName="personalDetails" class="animate-stagger">
           <legend>Personal Details</legend>
 
-          <div class="form-control-group  animate-stagger">
+          <div class="form-control-group animate-stagger">
+
+            <i class="bi bi-person-fill icon"></i>
+
             <input
               type="text"
               id="firstName"
               formControlName="name"
               class="input-form-control"
-              placeholder="* First name"
+              placeholder="First name *"
               required
-               maxlength="21"
+              maxlength="21"
             />
 
             <div
@@ -32,20 +33,23 @@
                 * First name required
               </div>
 
-               <div *ngIf="_firstName?.hasError('maxlength')">
+              <div *ngIf="_firstName?.hasError('maxlength')">
                 * Maximum 20 characters allowed.
               </div>
-
             </div>
+
           </div>
 
-          <div class="form-control-group  animate-stagger">
+          <div class="form-control-group animate-stagger">
+
+            <i class="bi bi-person-fill icon"></i>
+
             <input
               type="text"
               id="lastName"
               formControlName="surname"
               class="input-form-control"
-              placeholder="* Last name"
+              placeholder="Last name *"
               required
               maxlength="21"
             />
@@ -54,26 +58,26 @@
               *ngIf="_lastName?.invalid && _lastName?.touched"
               class="form-validation-error-message"
             >
-            <div *ngIf="_lastName?.hasError('maxlength')">
+              <div *ngIf="_lastName?.hasError('maxlength')">
                 * Maximum 20 characters allowed.
               </div>
 
               <div *ngIf="_lastName?.hasError('required')">
                 * Last name required
               </div>
-
-              
-
             </div>
           </div>
 
-          <div class="form-control-group  animate-stagger">
+          <div class="form-control-group animate-stagger">
+
+            <i class="bi bi-envelope icon"></i>
+
             <input
               type="email"
               id="emailAddress"
               formControlName="email"
               class="input-form-control"
-              placeholder="* Email address"
+              placeholder="Email address *"
               required
               maxlength="31"
             />
@@ -100,16 +104,19 @@
           </div>
         </fieldset>
 
-        <fieldset formGroupName="messageDetails" class=" animate-stagger">
-          <legend>Message</legend>
+        <fieldset formGroupName="messageDetails" class="animate-stagger">
+          <legend>Message Details</legend>
 
-          <div class="form-control-group  animate-stagger">
+          <div class="form-control-group animate-stagger">
+
+            <i class="bi bi-fonts icon"></i>
+
             <input
               type="text"
               id="subject"
               formControlName="subject"
               class="input-form-control"
-              placeholder="* Subject"
+              placeholder="Subject *"
               required
               maxlength="51"
             />
@@ -128,15 +135,17 @@
             </div>
           </div>
 
-          <div class="form-control-group  animate-stagger">
+          <div class="form-control-group animate-stagger">
+            <i class="bi bi-list icon"></i>
+
             <textarea
               id="message"
               formControlName="message"
               class="input-form-control"
-              placeholder="* Message"
+              placeholder="Message *"
               required
               rows="4"
-                maxlength="201"
+              maxlength="201"
             ></textarea>
 
             <div
@@ -147,17 +156,16 @@
                 *Message required
               </div>
 
-               <div *ngIf="_message?.hasError('maxlength')">
+              <div *ngIf="_message?.hasError('maxlength')">
                 *Maximum 200 characters allowed.
               </div>
-
             </div>
           </div>
         </fieldset>
       </div>
 
       <div @animateSlideInFromBottom class="contact-buttons">
-        <button id="submit-button" type="submit"  class="submit-button button">
+        <button id="submit-button" type="submit" class="submit-button button">
           submit
         </button>
         <div id="reset-button" class="reset-button button" (click)="onReset()">

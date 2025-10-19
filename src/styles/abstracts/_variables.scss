@@ -3,13 +3,6 @@
 /* -- FONT FAMILY -- */
 $font-stack: 'Helvetica Neue', Arial, sans-serif;
 
-/* -- LIGHT FONT COLORS -- */
-$light-neutral-font-color: #ffffff;
-$light-default-font-color: #415a77;
-$light-primary-font-color: #284b63;
-$light-secondery-font-color: #778da9;
-$light-tertiary-font-color: #e0e1dd;
-
 /* -- FONT SIZES -- */
 $font-size-xxs: 8px;
 $font-size-xs: 10px;
@@ -26,6 +19,13 @@ $spacing-sm: 10px;
 $spacing-md: 16px;
 $spacing-lg: 24px;
 $spacing-xl: 32px;
+
+/* -- LIGHT FONT COLORS -- */
+$light-neutral-font-color: #ffffff;
+$light-default-font-color: #415a77;
+$light-primary-font-color: #284b63;
+$light-secondery-font-color: #778da9;
+$light-tertiary-font-color: #e0e1dd;
 
 /* -- LIGHT BACKGROUND COLORS -- */
 $light-neutral-bg-color: #ffffff;

@@ -38,8 +38,13 @@
             }
 
             .site-description {
-                color: $comp-default-font-color;
+                color: grey;
                 font-size: $font-size-md + 2px;
+
+                .highlighter {
+                    font-weight: bold;
+                    color: red;
+                }
             }
         }
     }
