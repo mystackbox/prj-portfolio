@@ -2,7 +2,7 @@ export const environment = {
   //use on development mode
   production: false,
 
-  baseUrl: 'http://localhost:4200',
+  baseUrl: 'https://mystackbox.github.io/prj-portfolio/',
 
   //projects data
   projectsApi: 'data/projects.json',
