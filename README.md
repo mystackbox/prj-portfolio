@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-![alt text](public/github-doc-img/responsiveUI.png)
+![alt text](public/img/github-doc-img/ui.png)
  
 # Table of contents
 - [Description](#description)
@@ -40,12 +40,11 @@
   - Social Share Buttons
 - Features:
   - Themes Toggle (Dark vs Light)
-  - Contact Form (email integrated)
+  - Contact Form (MailJS integrated)
   - Social Share Buttons (Open Graphs | Meta Interface)
 - SEO (Angular Universal | Title Interface  | Meta Interface)
 - Performance Optimization (Lazy loading | SSR | Image Opimization)
  
-
 
 [Back to top](#table-of-contents)
 
