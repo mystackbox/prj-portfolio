@@ -17,6 +17,7 @@ import {
   zoomInTrigger,
   staggerInFromLeftTrigger,
 } from '../../../core/animations/animations';
+import { TitleMetadataService } from '../../../core/services/service-title-metadata/title-metadata.service';
 
 @Component({
   selector: 'app-page-introduction',
@@ -45,7 +46,7 @@ export class PageIntroductionComponent implements OnInit {
   constructor(
     private _router: Router,
     private _activatedRoute: ActivatedRoute,
-    private _titleService: Title,
+    private _metaService: TitleMetadataService,
     private _weatherService: WeatherService,
     private _geoLocServive: GeoLocationService,
     private cdr: ChangeDetectorRef
@@ -118,18 +119,29 @@ export class PageIntroductionComponent implements OnInit {
       )
       .subscribe((data) => {
 
+        //detect route changes
         this.hasChanges = false;
         this.cdr.markForCheck();
         this.cdr.detectChanges();
+
+        //upate call-to-action as per route changes
         this.pageTitle = data['title'];
         this.pageHeading = data['metaTags'][0].content;
         this.pageDesc = data['metaTags'][1].content;
 
         if (this.pageTitle) {
-          let _title = `Portfolio - ${this.pageTitle}`;
-          this.hasChanges = true;
-          this._titleService.setTitle(_title);
+          //retrieve data from the activated route
+          let _title = data['title']; 
+          let _metaData = data['metaTags']
+
+          //detect route data changes
+          this.hasChanges = true; 
+
+          //upate the meta tag using data from the component activated route
+          this._metaService.updateTitle(_title);
+          this._metaService.updateMetaTags(_metaData);
         }
+        
       });
   }
 

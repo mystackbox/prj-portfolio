@@ -2,6 +2,8 @@ export const environment = {
   //use on development mode
   production: false,
 
+  baseUrl: 'http://localhost:4200',
+
   //projects data
   projectsApi: 'data/projects.json',
 

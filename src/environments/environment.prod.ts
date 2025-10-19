@@ -2,6 +2,8 @@ export const environment = {
   //use on production mode
   production: true,
 
+  baseUrl: 'https://mystackbox.github.io/prj-portfolio/',
+
   //projects data
   projectsApi: 'data/projects.json',
 

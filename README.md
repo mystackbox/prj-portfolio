@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-![alt text](public/img/github-doc-img/ui.png)
+![alt text](public/img/github-doc-img/yingi-portfolio.png)
  
 # Table of contents
 - [Description](#description)
