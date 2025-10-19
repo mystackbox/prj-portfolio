@@ -23,7 +23,6 @@
         border: none;
         padding: $spacing-sm $spacing-sm ;
 
-
         form {
             padding: 0 $spacing-sm;
             display: grid;
@@ -67,29 +66,43 @@
                     .form-control-group {
                         margin: 7px 0px 7px 0px;
 
+                        .icon {
+                            position: absolute;
+                            font-size: 1.2rem;
+                            color: lightgrey;
+                            margin: 2px 5px 2px 10px;
+                        }
+
                         .input-form-control {
-                            padding: 6px 8px 8px;
+                            padding: 6px 8px 8px 35px;
                             min-width: 100%;
                             border: 1px solid #e5e5e5;
+                            color: grey;
 
                             &::placeholder {
-                                font-size: 12px;
+                                font-size: 14px;
                                 color: lightgrey;
                             }
 
-                            &:focus {
-                                border-color: red;
+                            &:focus-within {
+                                border: 1px solid #fff;
                                 outline: none;
+                                box-shadow: $light-box-shadow;
+
+                                //hide on click
+                                &::placeholder {
+                                    color: transparent;
+                                }
                             }
+                        }
+
+                        .input-form-control:not(:placeholder-shown) ~ .icon {
+                            display: none;
                         }
 
                         textarea {
                             resize: none;
                             margin-bottom: -6px;
-
-                            &:focus {
-                                border-color: red;
-                            }
 
                             &::-webkit-input-placeholder {
                                 @include global-font-Ubuntu-light;
@@ -104,6 +117,7 @@
                             font-weight: normal;
                             margin-top: 6px;
                         }
+
                     }
                 }
             }

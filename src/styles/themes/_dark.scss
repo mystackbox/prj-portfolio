@@ -474,6 +474,10 @@
                         fieldset {
                             border: 1px solid $light-default-font-color;
 
+                            .icon {
+                                color: rgb($light-default-font-color, 0.8);
+                            }
+
                             .input-form-control {
                                 background-color: rgba($dark-primary-bg-color, 0.1);
                                 border: 1px solid $light-default-font-color;
@@ -482,6 +486,17 @@
                                     font-size: 12px;
                                     color: rgb($light-default-font-color, 0.4);
                                 }
+
+                                 &:focus-within {
+                                border: 1px solid rgba($dark-primary-bg-color, 0.1);
+                                outline: none;
+                                box-shadow: $dark-box-shadow;
+
+                                //hide on click
+                                &::placeholder {
+                                    color: transparent;
+                                }
+                            }
                             }
                         }
                     }
