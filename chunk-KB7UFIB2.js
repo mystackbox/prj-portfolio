@@ -1,1 +1,0 @@
-import{E as t}from"./chunk-CXFEMMXO.js";var e=class n{constructor(){}openSameTab(o){window.open(o)}openNewTab(o){window.open(o,"_blank")}static \u0275fac=function(r){return new(r||n)};static \u0275prov=t({token:n,factory:n.\u0275fac,providedIn:"root"})};export{e as a};
