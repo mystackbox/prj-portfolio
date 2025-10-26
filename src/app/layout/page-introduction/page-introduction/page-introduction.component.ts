@@ -18,6 +18,7 @@ import {
   staggerInFromLeftTrigger,
 } from '../../../core/animations/animations';
 import { TitleMetadataService } from '../../../core/services/service-title-metadata/title-metadata.service';
+import { IWeather } from '../../../shared/models/weather.model';
 
 @Component({
   selector: 'app-page-introduction',
@@ -33,7 +34,7 @@ export class PageIntroductionComponent implements OnInit {
   temperature?: number = 0;
   weatherIcon?: string = '';
   weatherDescription: string = 'No Data';
-  currentWeather: any;
+  currentWeather?: IWeather;
   hasChanges?: boolean = false;
   isPositionAvailable: boolean = false;
   geoLocErrMessage: string | null = null;
@@ -50,7 +51,8 @@ export class PageIntroductionComponent implements OnInit {
     private _weatherService: WeatherService,
     private _geoLocServive: GeoLocationService,
     private cdr: ChangeDetectorRef
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.setPageTitleFromRoute();
@@ -91,10 +93,16 @@ export class PageIntroductionComponent implements OnInit {
       .getCurrentWeather(position.coords.latitude, position.coords.longitude)
       .subscribe({
         next: (weatherData) => {
-          this.currentWeather = weatherData;
-          this.temperature = Math.round(this.currentWeather?.main?.temp);
-          this.weatherIcon = this.currentWeather.weather[0]?.icon + '@2x.png';
-          this.weatherDescription = this.currentWeather.weather[0]?.description;
+
+          this.currentWeather = {
+            temperature: weatherData?.main?.temp,
+            weatherIconPath: weatherData.weather[0]?.icon + '@2x.png',
+            weatherDescription: weatherData.weather[0]?.description
+          };
+
+          this.temperature = Math.round(this.currentWeather.temperature);
+          this.weatherIcon = this.currentWeather.weatherIconPath;
+          this.weatherDescription = this.currentWeather.weatherDescription;
         },
         error: (_error) => {
           Swal.fire('Server Error!', 'Fetching weather data failed');
