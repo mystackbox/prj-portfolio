@@ -7,42 +7,53 @@
     row-gap: 0px;
     border-radius: $spacing-sm;
     position: relative;
-    // background-image: linear-gradient(to right, #000428 0%, #004e92 51%, #000428 100%);
-    // background-image: linear-gradient(to right, #abbaab 0%, #ffffff 51%, #abbaab 100%);
-    // background-image: linear-gradient(to right, #ECE9E6 0%, #FFFFFF 51%, #ECE9E6 100%);
-    // background-image: linear-gradient(to right, #8E0E00 0%, #1F1C18  51%, #8E0E00  100%);
-    // background-image: linear-gradient(to right, #870000 0%, #190A05 51%, #870000 100%);
-    // background-image: linear-gradient(to right, #200122 0%, #6f0000 51%, #200122 100%);
 
     @include call-to-action-img-bg;
 
     .current-weather-container {
-
-        text-align: right;
         display: flex;
-        align-items: flex-start;
-        flex-direction: row;
-        column-gap: 3px;
         justify-content: flex-end;
         padding: $spacing-md + 10px $spacing-xl $spacing-md 0;
-        color: $light-neutral-font-color;
-        cursor: pointer;
 
-        .weather-icon {
-            align-content: center;
+        .weather-nfo {
+            display: flex;
+            flex-direction: row;
+            row-gap: 0px;
+            align-items: center;
+            justify-content: center;
+            max-width: 95px;
+            max-height: 35px;
+            padding: $spacing-xs - 6px $spacing-md;
+            border-radius: $spacing-sm + 2px;
+            background-color: rgb(251, 251, 251, 0.2);
+            color: $light-neutral-font-color;
+            cursor: pointer;
+ 
+            .weather-icon {
+                align-content: center;
+                margin-top: 2px;
 
-            img {
-                height: 38px;
+                img {
+                    height: 38px;
+                }
+            }
+
+            .weather-temp {
+                align-content: center;
+                margin-top: -2px;
+                height: 42px;
+                margin-left: 2px;
+
+            }
+
+            .zero-temp {
+                min-width: 55px;
+                padding: 10px $spacing-lg + 2px;
+                align-content: center;
             }
         }
 
-        .weather-temp {
-            align-content: center;
-            padding-top: -2px;
-            margin-left: -5px;
-            height: 38px;
-            // border: 1px solid $light-neutral-font-color;
-        }
+
     }
 
     .call-to-acltion-container {
@@ -87,10 +98,11 @@
                     border-radius: $spacing-xs - 2px;
 
                     &.projects {
-                        background-color: $error-color;
+                        
+                        background-color: blueviolet;
 
                         &:hover {
-                            background-color: blueviolet;
+                           background-color: $error-color;
                         }
                     }
 
@@ -100,8 +112,8 @@
                         border: 1px solid $light-neutral-font-color;
 
                         &:hover {
-                            background-color: $comp-default-font-color;
-                            border-color: $comp-default-font-color;
+                              background-color: red;
+                            border-color: red;
                         }
                     }
                 }
@@ -129,7 +141,22 @@
 
     #page-instroduction {
         .current-weather-container {
-            padding: $spacing-md + 10px $spacing-xl 0 $spacing-md;
+            padding: $spacing-md + 10px $spacing-lg 0 $spacing-md;
+
+            .weather-nfo {
+                .weather-icon {
+                    img {
+                        height: 36px;
+                    }
+                }
+
+                .weather-temp {
+                    align-content: center;
+                    padding-top: -2px;
+                    height: 38px;
+
+                }
+            }
         }
 
         .call-to-acltion-container {
@@ -201,7 +228,25 @@
 @include respond-to("pro-xs") {
     #page-instroduction {
         .current-weather-container {
-            padding: $spacing-sm + 5px $spacing-lg 0 0;
+            padding: $spacing-sm + 5px $spacing-md 0 0;
+
+            .weather-nfo {
+
+                .weather-icon {
+                    img {
+                        height: 25px;
+                    }
+                }
+
+                .weather-temp {
+                    align-content: center;
+                    padding-top: -2px;
+                    margin-left: 2px;
+                    height: 30px;
+
+                }
+            }
+
         }
 
         .call-to-acltion-container {
