@@ -240,6 +240,7 @@
                 backdrop-filter: blur(10px);
                 padding: $spacing-md ;
                 border-radius: $spacing-sm;
+                display: none;
 
                 .read {
                     cursor: pointer;

@@ -17,10 +17,10 @@
                 margin-left: $spacing-xs;
 
                 img {
-                    
+
                     border-radius: $spacing-sm + 50px;
-                     border: 1px solid $light-primary-bg-color;
-                     background-color: $light-primary-bg-color;
+                    border: 1px solid $light-primary-bg-color;
+                    background-color: $light-primary-bg-color;
                 }
 
                 .introduction-img {
@@ -28,7 +28,7 @@
                     height: 70px;
                     margin: 0 12px 2px 0;
                     border-radius: $spacing-xl + 10px;
-                   
+
                 }
             }
         }
@@ -156,7 +156,7 @@
             grid-template-columns: 1fr 1fr 1fr;
             row-gap: 15px;
 
-            .item-introduction {
+            .item-resources {
                 display: none;
             }
         }
@@ -171,7 +171,7 @@
             grid-template-columns: 1fr 1fr;
 
             .item-resources,
-            .item-introduction {
+            .item-technology {
                 display: none;
             }
         }
@@ -179,18 +179,41 @@
 
     @include respond-to("xs") {
         border-top: none;
-        
+
         .footer-top-section {
             grid-template-columns: 1fr;
             row-gap: 0px;
             padding-bottom: 0px;
             margin-bottom: 0px;
+            font-size: $font-size-md;
+
+            .item-introduction {
+                padding: 35px 0;
+
+                p {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 25px;
+
+                    img {
+                        
+                        margin: 20px 0;
+                    }
+
+                    .introduction-img {
+                        height: 110px;
+                        border-radius: $spacing-xl + 25px;
+                    }
+                }
+
+            }
 
             .item-resources,
-            .item-introduction,
             .item-technology {
                 display: none;
             }
+
 
             .footer-item {
                 text-align: center;
