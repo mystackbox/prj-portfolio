@@ -17,9 +17,7 @@
                 margin-left: $spacing-xs;
 
                 img {
-
                     border-radius: $spacing-sm + 50px;
-                    border: 1px solid $light-primary-bg-color;
                     background-color: $light-primary-bg-color;
                 }
 
@@ -28,7 +26,6 @@
                     height: 70px;
                     margin: 0 12px 2px 0;
                     border-radius: $spacing-xl + 10px;
-
                 }
             }
         }
@@ -197,7 +194,6 @@
                     margin: 25px;
 
                     img {
-                        
                         margin: 20px 0;
                     }
 
@@ -210,6 +206,7 @@
             }
 
             .item-resources,
+            .item-introduction,
             .item-technology {
                 display: none;
             }

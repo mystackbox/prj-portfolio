@@ -13,25 +13,25 @@
     .current-weather-container {
         display: flex;
         justify-content: flex-end;
-        padding: $spacing-md + 10px $spacing-xl $spacing-md 0;
+        padding: $spacing-md + 10px $spacing-lg $spacing-md 0;
 
         .weather-nfo {
             display: flex;
             flex-direction: row;
-            row-gap: 0px;
+            column-gap: 3px;
             align-items: center;
             justify-content: center;
-            max-width: 95px;
-            max-height: 35px;
-            padding: $spacing-xs - 6px $spacing-md;
+            width: 75px;
+            max-height: 30px;
+            padding-right: $spacing-xs + 2px;
             border-radius: $spacing-sm + 2px;
             background-color: rgb(251, 251, 251, 0.2);
             color: $light-neutral-font-color;
             cursor: pointer;
- 
+
             .weather-icon {
                 align-content: center;
-                margin-top: 2px;
+                margin-top: 4px;
 
                 img {
                     height: 38px;
@@ -40,20 +40,17 @@
 
             .weather-temp {
                 align-content: center;
-                margin-top: -2px;
+                margin-top: -1px;
+                margin-left: -5px;
                 height: 42px;
-                margin-left: 2px;
-
             }
 
             .zero-temp {
-                min-width: 55px;
-                padding: 10px $spacing-lg + 2px;
+                width: 25px;
+                padding: 10px $spacing-lg;
                 align-content: center;
             }
         }
-
-
     }
 
     .call-to-acltion-container {
@@ -98,11 +95,11 @@
                     border-radius: $spacing-xs - 2px;
 
                     &.projects {
-                        
+
                         background-color: blueviolet;
 
                         &:hover {
-                           background-color: $error-color;
+                            background-color: $error-color;
                         }
                     }
 
@@ -112,7 +109,7 @@
                         border: 1px solid $light-neutral-font-color;
 
                         &:hover {
-                              background-color: red;
+                            background-color: red;
                             border-color: red;
                         }
                     }
@@ -155,6 +152,13 @@
                     padding-top: -2px;
                     height: 38px;
 
+                }
+
+                .zero-temp {
+                    width: 0px;
+                    max-height: 26px;
+                    padding: 5px;
+                    align-content: center;
                 }
             }
         }
@@ -231,19 +235,30 @@
             padding: $spacing-sm + 5px $spacing-md 0 0;
 
             .weather-nfo {
+                max-height: 26px;
+                width: 70px;
 
                 .weather-icon {
+                    align-content: center;
+                    margin-top: 4px;
+
                     img {
-                        height: 25px;
+                        height: 34px;
+                        margin-left: 5px;
                     }
                 }
 
                 .weather-temp {
                     align-content: center;
-                    padding-top: -2px;
-                    margin-left: 2px;
-                    height: 30px;
+                    padding-top: 0px;
+                    height: 20px;
 
+                }
+
+                .zero-temp {
+                    height: 26px;
+                    padding: 4px 0;
+                    align-content: center;
                 }
             }
 

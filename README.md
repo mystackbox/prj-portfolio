@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-![alt text](../prj-portfolio/public/img/site-ui/yngi-portfolio.png)
+![alt text](/prj-portfolio/public/img/site-ui/yngi-portfolio.png)
  
 # Table of contents
 - [Description](#description)

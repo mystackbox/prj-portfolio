@@ -1,12 +1,18 @@
-<div  id="home-page-main" class="home-page-main">
+<div id="home-page-main" class="home-page-main">
   <div class="homepage-content-section intro-container">
+    <div class="developer-image-container">
+      <img
+        @animateZoomIn
+        class="developer-image"
+        src="./img/developer/yingi.png"
+        alt="Yingisani"
+        (click)="openHyperLink(linkedIn)"
+      />
+    </div>
     <div @animateSlideInFromTop class="developer-name">
       Hi, I’m <span class="name">Yingi</span>
     </div>
-
-    <div @animateFadeIn class="developer-title">Front-End Developer</div>
-
-    <div  @animateForwardStagger class="quick-links">
+    <div @animateForwardStagger class="quick-links">
       <span
         class="animate-stagger link-item"
         (click)="openHyperLink(gitHubRepo)"
@@ -19,19 +25,30 @@
       >
         <i class="bi bi-linkedin"></i
       ></span>
-      <span
-        class="animate-stagger link-item"
-        (click)="openHyperLink(whatsapp)"
-      >
+      <span class="animate-stagger link-item" (click)="openHyperLink(whatsapp)">
         <i class="bi bi-whatsapp"></i>
       </span>
 
-      <span
-        class="animate-stagger link-item"
-        (click)="redirectToContactUs()"
-      >
+      <span class="animate-stagger link-item" (click)="redirectToContactUs()">
         <i class="bi bi-envelope-fill"></i>
       </span>
+    </div>
+
+    <div class="developer-title">
+      <div @animateFadeIn class="titles-container">
+        <div class="title-item">
+          <i class="bi bi-award-fill"></i> front-end developer
+        </div>
+        <div class="title-item">
+          <i class="bi bi-award-fill"></i> UI Designer
+        </div>
+        <div class="title-item">
+          <i class="bi bi-award-fill"></i> Engineering
+        </div>
+        <div class="title-item">
+          <i class="bi bi-award-fill"></i> B.Sc Hon. Computing (Cum Lauda)
+        </div>
+      </div>
     </div>
 
     <div @animateReverseStagger class="developer-skills-container">
@@ -55,7 +72,7 @@
     <p @animateFadeIn class="developer-intro first-paragraph">
       I craft responsive, scalable, and user-friendly Single-Page applications
       (SPA) using
-      <span class="">Angular Framework</span>.
+      <span class="highlight">Angular Framework</span>.
 
       <span *ngIf="isCollapsed" class="second-pargraph">
         The structured, component-based architecture of Angular allows me to
@@ -67,11 +84,14 @@
         The structured, component-based architecture of Angular allows me to
         create clean, maintainable, and robust applications that provide an
         excellent user experience.
-       
       </span>
 
-      <span *ngIf="!isCollapsed"  class="read" (click)="readMore()"> <i class="bi bi-chevron-compact-down"></i></span>
-       <span *ngIf="isCollapsed"  class="read" (click)="readMore()"> <i class="bi bi-chevron-compact-up"></i></span>
+      <span *ngIf="!isCollapsed" class="read" (click)="readMore()">
+        <i class="bi bi-chevron-compact-down"></i
+      ></span>
+      <span *ngIf="isCollapsed" class="read" (click)="readMore()">
+        <i class="bi bi-chevron-compact-up"></i
+      ></span>
     </p>
 
     <div @animateSlideInFromBottom class="intro-btn-container">
@@ -80,10 +100,9 @@
         class="intro-btn projects-btn"
         (click)="redirectToProjects()"
       >
-        <i class="bi bi-box-arrow-up-right"></i>
         Explore projects
+        <i class="bi bi-box-arrow-up-right"></i>
       </button>
     </div>
-
   </div>
 </div>
