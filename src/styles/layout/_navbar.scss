@@ -21,6 +21,11 @@ $breakpoint: 768px;
     font-size: $font-size-md;
     border-radius: 0;
 
+
+    i {
+      display: none;
+    }
+
     &__brand {
       font-size: 1.5rem;
       font-weight: bold;
@@ -63,7 +68,6 @@ $breakpoint: 768px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         text-align: center;
 
-
         a {
           display: block;
           padding: 0.6rem;
@@ -86,13 +90,16 @@ $breakpoint: 768px;
         position: static;
         flex-direction: row;
         width: auto;
-        // border-radius: $spacing-xs;
 
         li {
           border: none;
 
           a {
             padding: 0.6rem 1rem;
+
+            i {
+              display: inline;
+            }
 
             &.active {
               color: $light-neutral-font-color;
