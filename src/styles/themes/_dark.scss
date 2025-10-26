@@ -26,10 +26,7 @@
         }
 
         #page-instroduction {
-            //  background-image: linear-gradient(to right, #abbaab 0%, #ffffff 51%, #abbaab 100%);
-            // background-image: linear-gradient(to right, #000428 0%, #004e92  51%, #000428  100%);
-            // background-image: linear-gradient(to right, #200122 0%, #6f0000 51%, #200122 100%);
-            @include call-to-action-img-bg;
+           @include call-to-action-img-bg;
 
             .page-description {
                 color: $light-neutral-font-color;
@@ -75,11 +72,16 @@
                 padding: 18px 10%;
                 border-radius: $spacing-sm;
                 text-align: center;
-                // box-shadow: $dark-box-shadow;
+                box-shadow: $dark-box-shadow;
 
                 .developer-name {
                     font-size: $font-size-lg + 8px;
                     font-weight: bold;
+                }
+
+                .developer-title {
+                    margin: -5px 4% 5px;
+                    border-bottom: 0.1em solid rgb($light-default-font-color, 1);
                 }
 
                 .quick-links {
@@ -87,7 +89,7 @@
                     flex-direction: row;
                     column-gap: 20px;
                     justify-content: center;
-                    margin: -5px 8% 5px;
+                    margin: -5px 20% 5px;
                     border-bottom: 0.1em solid rgb($light-default-font-color, 1);
                     padding-bottom: 25px;
 
@@ -138,7 +140,6 @@
                     margin: 5px 0;
                     line-height: 1.6;
 
-
                     .highlight {
                         font-weight: bold;
                         color: $light-default-font-color;
@@ -149,7 +150,7 @@
                     }
                 }
             }
-
+            
             @include respond-to("pro-xs") {
                 .intro-container {
                     padding: $spacing-sm $spacing-sm $spacing-lg $spacing-sm ;
