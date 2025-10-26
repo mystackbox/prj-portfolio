@@ -17,14 +17,18 @@
                 margin-left: $spacing-xs;
 
                 img {
-                    border-radius: $spacing-sm;
+                    
+                    border-radius: $spacing-sm + 50px;
+                     border: 1px solid $light-primary-bg-color;
+                     background-color: $light-primary-bg-color;
                 }
 
                 .introduction-img {
                     float: left;
-                    height: 60px;
+                    height: 70px;
                     margin: 0 12px 2px 0;
-                    border-radius: $spacing-xs;
+                    border-radius: $spacing-xl + 10px;
+                   
                 }
             }
         }

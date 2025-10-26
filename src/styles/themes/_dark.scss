@@ -327,7 +327,8 @@
 
             .project-details {
                 border-radius: $spacing-sm;
-                background-image: linear-gradient(to right, #000000 0%, #082036 45%, #082036 50%, #000000 100%);
+                background-color: var(--bg-color);
+                 box-shadow: $dark-box-shadow;
 
                 .btn-grad:hover {
                     background-position: right center;
@@ -342,7 +343,6 @@
                     color: #fff;
                     text-decoration: none;
                 }
-
 
                 .details-container {
                     text-align: left;

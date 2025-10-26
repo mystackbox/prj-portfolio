@@ -1,9 +1,7 @@
 <div id="page-instroduction" class="page-instroduction">
-  <div
-    class="current-weather-container"
 
-    *ngIf="isPositionAvailable"
-  >
+  <div
+    class="current-weather-container" *ngIf="isPositionAvailable">
     <div class="weather-icon">
       <img
         [src]="'http://openweathermap.org/img/wn/' + weatherIcon"
@@ -15,11 +13,7 @@
     <div class="weather-temp" title="Temp">{{ temperature }}°C</div>
   </div>
 
-  <div
-    class="current-weather-container"
-    title="Current Weather"
-    *ngIf="!isPositionAvailable"
-  >
+  <div class="current-weather-container" title="Current Weather" *ngIf="!isPositionAvailable">
     <div class="weather-temp">{{ temperature }}°C</div>
   </div>
 
@@ -58,6 +52,5 @@
     </div>
 
   </div>
-
 
 </div>
