@@ -52,7 +52,7 @@
 
       <div @animateFadeIn  class="details-container top-right-details">
         <div class="project-description">
-          <div class="heading">contributions</div>
+          <div class="heading"> <i class="bi bi-box"></i> contributions</div>
           <div class="details"  [innerHTML]="project.description" >
           </div>
         </div>
@@ -65,7 +65,7 @@
       class="bottom-container"
     >
       <div class="details-container project-concepts">
-        <div class="heading">concepts</div>
+        <div class="heading">angular concepts</div>
         <div class="list-container">
           <div class="details">
             <ul>
@@ -85,7 +85,7 @@
       </div>
 
       <div class="details-container project-features">
-        <div class="heading">features</div>
+        <div class="heading">key features</div>
 
         <div class="list-container">
           <div class="details">
@@ -142,7 +142,7 @@
       </div>
 
       <div class="project-details-container">
-        <div class="project-name" (click)="getProject(project.id)"> <i class="bi bi-bookmark-fill"></i>  {{ project.name }}</div>
+        <div class="project-name" (click)="getProject(project.id)"> <i class="bi bi-award-fill"></i>  {{ project.name }}</div>
 
         <div class="project-summary">{{ project.heading }}</div>
 
