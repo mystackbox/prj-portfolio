@@ -5,7 +5,7 @@
     "heading": "Personal portfolio",
     "imageName": "prj-portfolio",
     "introduction": "Personal portfolio developed using Angular framework.",
-    "description": "<i class='bi bi-stop-fill'></i> Designed responsive UI using <span class=\"highlighted-text\">HTML5</span>, <span class=\"highlighted-text\">SCSS</span>. <i class='bi bi-stop-fill'></i> Build validated contact form, integrated with <span class=\"highlighted-text\">MailJS</span> using <span class=\"highlighted-text\">Reactive Forms</span>.  <i class='bi bi-stop-fill'></i>. Integrated the Weather RESTful API using <span class=\"highlighted-text\">RxJS</span>. <i class='bi bi-stop-fill'></i> Implemented <span class=\"highlighted-text\">lazy loading</span> for optimize performance.  <i class='bi bi-stop-fill'></i> Wrote  <span class=\"highlighted-text\">unit tests</span> for critical components using .",
+    "description": "<i class='bi bi-stop-fill'></i> Designed responsive UI using <span class=\"highlighted-text\">HTML5</span>, <span class=\"highlighted-text\">SCSS</span>. <i class='bi bi-stop-fill'></i> Build validated contact form, integrated with <span class=\"highlighted-text\">MailJS</span> using <span class=\"highlighted-text\">Reactive Forms</span>.  <i class='bi bi-stop-fill'></i>. Integrated the Weather <span class=\"highlighted-text\">RESTful API</span>  using <span class=\"highlighted-text\">RxJS</span>. <i class='bi bi-stop-fill'></i> Implemented <span class=\"highlighted-text\">Lazy loading</span> to enhance <span class=\"highlighted-text\">SEO</span>.  <i class='bi bi-stop-fill'></i> Wrote  <span class=\"highlighted-text\">unit tests</span> for critical components using .",
     "concepts": [
       "Responsive UI",
       "Angular/TypeScript",
@@ -121,7 +121,7 @@
     "heading": "EHS Business Website",
     "imageName": "prj-mbg",
     "introduction": "EHS company website developed using Angular framework.",
-    "description": "<i class='bi bi-stop-fill'></i> Designed responsive UI using <span class=\"highlighted-text\">HTML5</span>, <span class=\"highlighted-text\">SCSS</span>. <i class='bi bi-stop-fill'></i> Implemented <span class=\"highlighted-text\">Lazy loading</span> to optimize performance. <i class='bi bi-stop-fill'></i> Integrated weather RESTful API using <span class=\"highlighted-text\">RxJS</span>. <i class='bi bi-stop-fill'></i> Build validated contact form using <span class=\"highlighted-text\">Reactive Forms</span>. <i class='bi bi-stop-fill'></i>  Enhance <span class=\"highlighted-text\">SEO</span> by using SSR, Open Graph, Meta, & Title interface.",
+    "description": "<i class='bi bi-stop-fill'></i> Designed responsive UI using <span class=\"highlighted-text\">HTML5</span>, <span class=\"highlighted-text\">SCSS</span>. <i class='bi bi-stop-fill'></i> Implemented <span class=\"highlighted-text\">Lazy loading</span> to optimize performance. <i class='bi bi-stop-fill'></i> Integrated weather <span class=\"highlighted-text\">RESTful API</span> using <span class=\"highlighted-text\">RxJS</span>. <i class='bi bi-stop-fill'></i> Build validated contact form using <span class=\"highlighted-text\">Reactive Forms</span>. <i class='bi bi-stop-fill'></i>  Enhance <span class=\"highlighted-text\">SEO</span> by using SSR, Open Graph, Meta, & Title interface.",
     "concepts": [
       "Responsive UI",
       "Angular ",
@@ -144,13 +144,13 @@
     ]
   },
 
-  {
+   {
     "id": 6,
     "name": "my portfolio",
     "heading": "Personal portfolio",
     "imageName": "prj-portfolio",
     "introduction": "Personal portfolio developed using Angular framework.",
-    "description": "<i class='bi bi-stop-fill'></i> Designed responsive UI using <span class=\"highlighted-text\">HTML5</span>, <span class=\"highlighted-text\">SCSS</span>. <i class='bi bi-stop-fill'></i> Build validated contact form, integrated with <span class=\"highlighted-text\">MailJS</span> using <span class=\"highlighted-text\">Reactive Forms</span>.  <i class='bi bi-stop-fill'></i>. Integrated the Weather RESTful API using <span class=\"highlighted-text\">RxJS</span>. <i class='bi bi-stop-fill'></i> Implemented <span class=\"highlighted-text\">lazy loading</span> to optimize performance.  <i class='bi bi-stop-fill'></i> Wrote  <span class=\"highlighted-text\">unit tests</span> for critical components using .",
+    "description": "<i class='bi bi-stop-fill'></i> Designed responsive UI using <span class=\"highlighted-text\">HTML5</span>, <span class=\"highlighted-text\">SCSS</span>. <i class='bi bi-stop-fill'></i> Build validated contact form, integrated with <span class=\"highlighted-text\">MailJS</span> using <span class=\"highlighted-text\">Reactive Forms</span>.  <i class='bi bi-stop-fill'></i>. Integrated the Weather <span class=\"highlighted-text\">RESTful API</span>  using <span class=\"highlighted-text\">RxJS</span>. <i class='bi bi-stop-fill'></i> Implemented <span class=\"highlighted-text\">Lazy loading</span> to enhance <span class=\"highlighted-text\">SEO</span>.  <i class='bi bi-stop-fill'></i> Wrote  <span class=\"highlighted-text\">unit tests</span> for critical components using .",
     "concepts": [
       "Responsive UI",
       "Angular/TypeScript",
