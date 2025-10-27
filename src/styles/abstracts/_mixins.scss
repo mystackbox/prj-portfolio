@@ -68,16 +68,16 @@
 }
 
 @mixin call-to-action-img-bg {
-      background-color: $light-primary-bg-color;
-    background-image: url('../../../public/img/call-to-action/color-bg-9.jpg');
-    /* path to your image */
-    background-size: cover;
-    /* makes it fill the screen */
-    background-position: center;
-    /* centers the image */
-    background-repeat: no-repeat;
-    /* prevents tiling */
-    margin: 0;
+  background-color: $light-primary-bg-color;
+  background-image: url('../../../public/img/call-to-action/color-bg-9.jpg');
+  /* path to your image */
+  background-size: cover;
+  /* makes it fill the screen */
+  background-position: center;
+  /* centers the image */
+  background-repeat: no-repeat;
+  /* prevents tiling */
+  margin: 0;
 }
 
 @mixin page-content-intro-hr {
@@ -179,6 +179,7 @@
 
 }
 
+
 @mixin heading-light {
   text-transform: uppercase;
   background-color: $light-secondery-bg-color;
@@ -241,5 +242,5 @@
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
   font-style: normal;
-  
+
 }

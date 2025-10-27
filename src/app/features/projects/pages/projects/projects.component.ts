@@ -70,6 +70,7 @@ export class ProjectsComponent {
     this._projectsSub = this._products.getProjects().subscribe({
       next: (projects: IProject[]) => {
         this.projectsList = projects.reverse();
+        this.projectsList  = this.projectsList.slice(0,4);
         this.getFeaturedProject(projects[0]);
         this.cdr.detectChanges();
       },

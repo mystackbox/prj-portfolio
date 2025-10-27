@@ -1,11 +1,11 @@
 [
-   {
+     {
     "id": 1,
     "name": "my portfolio",
     "heading": "Personal portfolio",
     "imageName": "prj-portfolio",
     "introduction": "Personal portfolio developed using Angular framework.",
-    "description": "<i class='bi bi-stop-fill'></i> Designed responsive UI using <span class=\"highlighted-text\">HTML5</span>, <span class=\"highlighted-text\">SCSS</span>. <i class='bi bi-stop-fill'></i> Build validated contact form, integrated with <span class=\"highlighted-text\">MailJS</span> using <span class=\"highlighted-text\">Reactive Forms</span>.  <i class='bi bi-stop-fill'></i>. Integrated the Weather RESTful API using <span class=\"highlighted-text\">RxJS</span>. <i class='bi bi-stop-fill'></i> Implemented <span class=\"highlighted-text\">lazy loading</span> to optimize performance.  <i class='bi bi-stop-fill'></i> Wrote unit tests for critical components using <span class=\"highlighted-text\">Jasmine & Karma</span>.",
+    "description": "<i class='bi bi-stop-fill'></i> Designed responsive UI using <span class=\"highlighted-text\">HTML5</span>, <span class=\"highlighted-text\">SCSS</span>. <i class='bi bi-stop-fill'></i> Build validated contact form, integrated with <span class=\"highlighted-text\">MailJS</span> using <span class=\"highlighted-text\">Reactive Forms</span>.  <i class='bi bi-stop-fill'></i>. Integrated the Weather RESTful API using <span class=\"highlighted-text\">RxJS</span>. <i class='bi bi-stop-fill'></i> Implemented <span class=\"highlighted-text\">lazy loading</span> for optimize performance.  <i class='bi bi-stop-fill'></i> Wrote  <span class=\"highlighted-text\">unit tests</span> for critical components using .",
     "concepts": [
       "Responsive UI",
       "Angular/TypeScript",
@@ -113,36 +113,8 @@
       "https://github.com/mystackbox/prj-vehicle-tracking-system",
       "https://mystackbox.github.io/prj-portfolio/home"
     ]
-  },
-
-  {
-    "id": 6,
-    "name": "my portfolio",
-    "heading": "Personal portfolio",
-    "imageName": "prj-portfolio",
-    "introduction": "Personal portfolio developed using Angular framework.",
-    "description": "<i class='bi bi-stop-fill'></i> Designed responsive UI using <span class=\"highlighted-text\">HTML5</span>, <span class=\"highlighted-text\">SCSS</span>. <i class='bi bi-stop-fill'></i> Build validated contact form, integrated with <span class=\"highlighted-text\">MailJS</span> using <span class=\"highlighted-text\">Reactive Forms</span>.  <i class='bi bi-stop-fill'></i>. Integrated the Weather RESTful API using <span class=\"highlighted-text\">RxJS</span>. <i class='bi bi-stop-fill'></i> Implemented <span class=\"highlighted-text\">lazy loading</span> to optimize performance.  <i class='bi bi-stop-fill'></i> Wrote unit tests for critical components using <span class=\"highlighted-text\">Jasmine & Karma</span>.",
-    "concepts": [
-      "Responsive UI",
-      "Angular/TypeScript",
-      "RESTful APIs",
-      "Angular Animations",
-      "Unit Tests",
-      "GitHub and Git"
-    ],
-    "features": [
-      "Weather API",
-      "Contact Form",
-      "WhatsApp Button",
-      "Share Buttons",
-      "Themes(Light/Dark)",
-       " Geo-Loc Request"
-    ],
-    "hyperlinks": [
-      "https://github.com/mystackbox/prj-portfolio",
-      "https://mystackbox.github.io/prj-portfolio/home"
-    ]
-  },
+  }
+  ,
   {
     "id": 3,
     "name": "mabunda group",
@@ -169,6 +141,35 @@
     "hyperlinks": [
       "https://github.com/mystackbox/prj-mabunda-group",
       "https://mabundagroup.com/home"
+    ]
+  },
+
+  {
+    "id": 6,
+    "name": "my portfolio",
+    "heading": "Personal portfolio",
+    "imageName": "prj-portfolio",
+    "introduction": "Personal portfolio developed using Angular framework.",
+    "description": "<i class='bi bi-stop-fill'></i> Designed responsive UI using <span class=\"highlighted-text\">HTML5</span>, <span class=\"highlighted-text\">SCSS</span>. <i class='bi bi-stop-fill'></i> Build validated contact form, integrated with <span class=\"highlighted-text\">MailJS</span> using <span class=\"highlighted-text\">Reactive Forms</span>.  <i class='bi bi-stop-fill'></i>. Integrated the Weather RESTful API using <span class=\"highlighted-text\">RxJS</span>. <i class='bi bi-stop-fill'></i> Implemented <span class=\"highlighted-text\">lazy loading</span> to optimize performance.  <i class='bi bi-stop-fill'></i> Wrote  <span class=\"highlighted-text\">unit tests</span> for critical components using .",
+    "concepts": [
+      "Responsive UI",
+      "Angular/TypeScript",
+      "RESTful APIs",
+      "Angular Animations",
+      "Unit Tests",
+      "GitHub and Git"
+    ],
+    "features": [
+      "Weather API",
+      "Contact Form",
+      "WhatsApp Button",
+      "Share Buttons",
+      "Themes(Light/Dark)",
+       " Geo-Loc Request"
+    ],
+    "hyperlinks": [
+      "https://github.com/mystackbox/prj-portfolio",
+      "https://mystackbox.github.io/prj-portfolio/home"
     ]
   }
 ]

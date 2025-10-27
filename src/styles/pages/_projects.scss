@@ -477,7 +477,7 @@
 
         .featured-projects {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             column-gap: 10px;
 
             .project-container {
@@ -499,6 +499,8 @@
 
                     .project-name {
                         border-radius: $spacing-xs;
+                        padding: $spacing-xs $spacing-xs;
+                        margin: 0 10%;
                         border: none;
                     }
 
@@ -510,8 +512,10 @@
                             min-width: 40px;
                         }
 
-                        .details {
-                            display: none;
+                         .details {
+                            display: block;
+                            color: $light-neutral-font-color;
+                            background-color: orangered;
                         }
                     }
                 }
@@ -624,6 +628,10 @@
                         padding: $spacing-xs - 2px;
                     }
 
+                     .project-name {
+                        margin: 0%;
+                    }
+
                     .project-view-btns {
                         justify-content: flex-start;
                         column-gap: 6px;
@@ -641,7 +649,7 @@
                     }
                 }
 
-                &:nth-last-child(-n+4) {
+                &:nth-last-child(-n+2) {
                     display: none;
                 }
             }
