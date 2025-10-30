@@ -11,11 +11,11 @@
         text-align: center;
         display: flex;
         flex-direction: column;
-        row-gap: 18px;
-        
+        row-gap: 15px;
+
         .developer-image-container {
             .developer-image {
-                height: 150px;
+                height: 130px;
                 border-radius: 50%;
                 background-color: $light-primary-bg-color;
                 cursor: pointer;
@@ -25,8 +25,6 @@
         .developer-name {
             font-size: $font-size-lg + 8px;
             font-weight: bold;
-            margin-bottom: 5px;
-
             .name {
                 color: $error-color;
             }
@@ -35,11 +33,11 @@
         .quick-links {
             display: flex;
             flex-direction: row;
-            column-gap: 20px;
+            column-gap: 15px;
             justify-content: center;
-            margin: 0px 20% 8px;
+            margin: 0px 20%;
             border-bottom: 0.1em solid rgb(#e5e5e5, 1);
-            padding-bottom: 25px;
+            padding-bottom: 22px;
 
             i {
                 font-size: 20px;
@@ -64,21 +62,20 @@
                     box-shadow: $light-hover-box-shadow;
                 }
             }
-
         }
 
         .developer-title {
             text-transform: capitalize;
             font-size: $font-size-md + 2px;
-            margin: 0px 4% 8px;
-            border-bottom: 0.1em solid rgb(#e5e5e5, 1);
-            padding-bottom: 15px;
+            // margin: 0px 4% 8px;
+            // border-bottom: 0.1em solid rgb(#e5e5e5, 1);
+            // padding-bottom: 15px;
 
             .titles-container {
                 display: flex;
                 flex-wrap: wrap;
                 flex-direction: row;
-                column-gap: 5px;
+                column-gap: 10px;
                 justify-content: center;
 
                 .title-item {
@@ -117,7 +114,6 @@
                     i {
                         color: $light-neutral-font-color;
                     }
-
                 }
             }
         }
@@ -125,6 +121,9 @@
         .developer-intro {
             font-size: $font-size-md + 1px;
             line-height: 1.6;
+            margin: 8px 0% 0px;
+            border-top: 0.1em solid rgb(#e5e5e5, 1);
+            padding-top: 15px;
 
             .highlight {
                 font-weight: bold;
@@ -175,21 +174,26 @@
         //features section
         .intro-container {
             grid-template-columns: 1fr;
-            row-gap: 20px;
+            // row-gap: 20px;
         }
     }
 
     @include respond-to("pre-sm") {
         .intro-container {
-            padding: $spacing-lg $spacing-sm $spacing-md ;
+            // padding: $spacing-lg $spacing-sm $spacing-md ;
+            padding: 20px 5%;
             border-radius: $spacing-sm;
             box-shadow: $light-box-shadow;
 
-            .developer-title {
+            .developer-image-container {
+                .developer-image {
+                    height: 110px;
+                }
+            }
 
+            .developer-title {
                 .titles-container {
                     column-gap: 8px;
-
                     .title-item {
                         // border: 0.1em solid rgb(#e5e5e5, 1);
                         min-width: 80px;
@@ -203,13 +207,14 @@
 
         //features section
         .intro-container {
-            padding: $spacing-sm ;
+            .developer-title {
+                font-size: $font-size-md + 1px;
+            }
 
-            .developer-image-container {
-                .developer-image {
-                    margin-top: 8px;
-                    height: 140px;
-                }
+            .developer-intro {
+                padding: $spacing-sm $spacing-xs ;
+                margin: 0 5%;
+
             }
         }
     }
@@ -222,13 +227,13 @@
 
         //features section
         .intro-container {
+            padding: 20px 0%;
+
             .developer-title {
-                margin: 0 5%;
+                font-size: $font-size-md;
             }
 
             .developer-intro {
-                padding: $spacing-xs $spacing-md ;
-                border-radius: $spacing-sm;
 
                 .read {
                     cursor: pointer;
@@ -249,8 +254,9 @@
 
             .intro-btn-container {
                 margin-top: -14px;
+
                 .intro-btn {
-                                        padding: 9px 15px;
+                    padding: 9px 15px;
                     max-width: 200px;
                     margin-bottom: 10px;
 
