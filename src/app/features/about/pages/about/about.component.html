@@ -1,6 +1,25 @@
 <div class="about-page-main" id="about-page-main">
   <div @animateSlideInFromTop class="page-content-intro-hr"> about developer </div>
 
+  <div @animateForwardStagger class="cards-container">
+
+    <div class="card-container animate-stagger card-left">
+      <div class="card-icon" (click)="redirectToProjects()"><i class="bi bi-phone"></i></div>
+      <div class="card-title">Responsive UI</div>
+    </div>
+
+    <div class="card-container animate-stagger card-center">
+      <div class="card-icon" (click)="redirectToProjects()"><i class="bi bi-code-slash"></i></div>
+      <div class="card-title">Angular 16+</div>
+    </div>
+
+    <div class="card-container animate-stagger card-right">
+      <div class="card-icon" (click)="redirectToProjects()"><i class="bi bi-plug"></i></div>
+      <div class="card-title">RESTful APIs</div>
+    </div>
+
+  </div>
+
   <div @animateForwardStagger  class="about-content">
 
     <div class="animate-stagger about-container">
@@ -30,37 +49,16 @@
           <span class="key-skills">RESTful API integration</span>,
           <span class="key-skills">Unit Testing</span>,
           <span class="key-skills">RxJs</span>,
-          <span class="key-skills">SEO & PO</span>, and
+          <span class="key-skills">Search Engine Opitization & Performance Optimization</span>, and
           <span class="key-skills">Source Control</span> (GitHub & GitHub).
-        </p>
+        </p> 
 
         <div class="btn-container">
           <div name="explore" class="explore" (click)="redirectToProjects()">
             explore projects
           </div>
         </div>
-      </div>
-    </div>
-    
-    <div class="animate-stagger about-container portfolio">
-      <div class="set-heading">portfolio</div>
-      <div class="set-container">
-        <p>
-          <i class="bi bi-exclamation-square-fill"></i> This portfolio serves as a
-          demonstration of my technical proficiency, problem-solving abilities,
-          and dedication to creating exceptional user experiences.
-        </p>
-      </div>
-    </div>
 
-     <div class="animate-stagger about-container background">
-      <div class="set-heading">Background</div>
-      <div class="set-container">
-        <p>
-          <i class="bi bi-exclamation-square-fill"></i> My journey into front-end
-          development led me to discover Angular's robust framework, and I've
-          since focused on crafting intuitive and efficient user interfaces.
-        </p>
       </div>
     </div>
 
