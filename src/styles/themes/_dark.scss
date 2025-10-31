@@ -25,8 +25,115 @@
             }
         }
 
+        #main-navbar {
+            $breakpoint: 768px;
+            background-color: rgba($dark-primary-bg-color, 0.2);
+            
+            .navbar {
+                
+                background-color: rgba($dark-primary-bg-color, 0);
+                  
+                i {
+                    display: none;
+                }
+
+                &__brand {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+
+                &__toggle {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 22px;
+                    width: 25px;
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+
+                    .bar {
+                        height: 3px;
+                        width: 100%;
+                        background-color: lightgray;
+                        transition: all 0.3s ease;
+                    }
+
+                    @media (min-width: $breakpoint) {
+                        display: none;
+                    }
+                }
+
+                &__menu {
+                    list-style: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    background-color: rgba($dark-primary-bg-color, 0.9);
+                    flex-direction: column;
+                    display: none;
+
+                    li {
+                        border-top: 1px solid rgba(255, 255, 255, 0.1);
+                        text-align: center;
+                        a {
+                            display: block;
+                            padding: 0.6rem;
+                            // color: $light;
+                            color: $light-neutral-font-color;
+                            text-decoration: none;
+
+                            &:hover {
+                                background-color: brown;
+                            }
+                        }
+                    }
+
+                    &.active {
+                        display: flex;
+                    }
+
+                    @media (min-width: $breakpoint) {
+                        display: flex !important;
+                        position: static;
+                        flex-direction: row;
+                        width: auto;
+                        background-color: rgba($dark-primary-bg-color, 0);
+
+                        li {
+                            border: none;
+
+                            a {
+                                padding: 0.6rem 1rem;
+
+                                i {
+                                    display: inline;
+                                }
+
+                                &.active {
+                                    color: $light-neutral-font-color;
+                                }
+                            }
+
+                            &.active {
+                                background-color: red;
+                                color: $light-neutral-font-color;
+                            }
+                        }
+                    }
+                }
+
+                @media (min-width: $breakpoint) {
+                    
+                    border-radius: $spacing-xs;
+                    padding: 0rem;
+                }
+            }
+        }
+
         #page-instroduction {
-           @include call-to-action-img-bg;
+            @include call-to-action-img-bg;
 
             .page-description {
                 color: $light-neutral-font-color;
@@ -36,7 +143,7 @@
                 button {
                     &.projects {
 
-                          background-color: blueviolet;
+                        background-color: blueviolet;
                     }
 
                     &:hover {
@@ -55,7 +162,6 @@
                     }
                 }
             }
-
         }
 
         #home-page-main {
@@ -79,10 +185,7 @@
                     font-weight: bold;
                 }
 
-                .developer-title {
-                    margin: -5px 4% 5px;
-                    border-bottom: 0.1em solid rgb($light-default-font-color, 1);
-                }
+
 
                 .quick-links {
                     display: flex;
@@ -139,6 +242,7 @@
                 .developer-intro {
                     margin: 5px 0;
                     line-height: 1.6;
+                    border-top: 0.1em solid rgb($light-default-font-color, 1);
 
                     .highlight {
                         font-weight: bold;
@@ -150,10 +254,16 @@
                     }
                 }
             }
-            
+
             @include respond-to("pro-xs") {
                 .intro-container {
                     padding: $spacing-sm $spacing-sm $spacing-lg $spacing-sm ;
+
+                    .developer-intro {
+                        padding: $spacing-sm $spacing-xs ;
+                        margin: 0 5%;
+
+                    }
                 }
             }
 
@@ -176,9 +286,9 @@
                     padding: $spacing-lg $spacing-sm ;
                     box-shadow: $dark-box-shadow;
 
-                    .developer-intro {
-                        background-color: $dark-secondery-bg-color;
-                    }
+                    // .developer-intro {
+                    //     background-color: $dark-secondery-bg-color;
+                    // }
 
                     .intro-btn-container {
                         column-gap: 10px;
@@ -201,6 +311,10 @@
                 &::after {
                     border-bottom: 1px solid $light-default-font-color;
                 }
+            }
+
+            .cards-container {
+                border-bottom: 1px solid rgb($light-default-font-color, 1);
             }
 
             .about-content {
@@ -329,7 +443,7 @@
             .project-details {
                 border-radius: $spacing-sm;
                 background-color: var(--bg-color);
-                 box-shadow: $dark-box-shadow;
+                box-shadow: $dark-box-shadow;
 
                 .btn-grad:hover {
                     background-position: right center;
@@ -488,16 +602,16 @@
                                     color: rgb($light-default-font-color, 0.4);
                                 }
 
-                                 &:focus-within {
-                                border: 1px solid rgba($dark-primary-bg-color, 0.1);
-                                outline: none;
-                                box-shadow: $dark-box-shadow;
+                                &:focus-within {
+                                    border: 1px solid rgba($dark-primary-bg-color, 0.1);
+                                    outline: none;
+                                    box-shadow: $dark-box-shadow;
 
-                                //hide on click
-                                &::placeholder {
-                                    color: transparent;
+                                    //hide on click
+                                    &::placeholder {
+                                        color: transparent;
+                                    }
                                 }
-                            }
                             }
                         }
                     }

@@ -174,13 +174,12 @@
         //features section
         .intro-container {
             grid-template-columns: 1fr;
-            // row-gap: 20px;
         }
     }
 
     @include respond-to("pre-sm") {
         .intro-container {
-            // padding: $spacing-lg $spacing-sm $spacing-md ;
+
             padding: 20px 5%;
             border-radius: $spacing-sm;
             box-shadow: $light-box-shadow;
@@ -214,7 +213,6 @@
             .developer-intro {
                 padding: $spacing-sm $spacing-xs ;
                 margin: 0 5%;
-
             }
         }
     }

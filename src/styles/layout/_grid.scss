@@ -3,7 +3,6 @@
 // layout/_grid.scss
 .site-grid-container {
 
-
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
@@ -33,12 +32,13 @@
 
   .grid-area-navbar {
     grid-area: navbar;
-     z-index: 100;
+    z-index: 10;
     padding: 0;
   }
 
   .grid-area-page-intro {
     grid-area: page-intro;
+    z-index: 0;
   }
 
   .grid-area-main-content {

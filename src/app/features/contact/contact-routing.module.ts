@@ -13,7 +13,7 @@ const routes: Routes = [
       title: 'Contact',
       metaTags: [
          { name: 'description', content: 'Yingisani Angular Personal Portfolio' },
-        { name: 'short-desc', content: 'drop a text, let me know your thought?' },
+        { name: 'short-desc', content: 'Please, let me know your thought?' },
         { name: 'image', content: environment.baseUrl + 'public/img/site-ui/yingi-portfolio.png'},
         { name: 'robots', content: 'index, follow'},
         { property: 'article:author', content: 'Yingisani Chiqinda'},
