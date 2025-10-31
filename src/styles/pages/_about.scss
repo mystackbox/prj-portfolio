@@ -20,7 +20,6 @@
     .cards-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        // column-gap: 30px;
         justify-content: space-around;
         padding: $spacing-md 0;
 
@@ -30,21 +29,18 @@
         .card-container {
             display: flex;
             flex-direction: column;
-            row-gap: 18px;
+            row-gap: 20px;
             padding: $spacing-sm;
 
             .card-icon {
 
                 i {
                     // font-size: $font-size-xxl;
-                    background-color: $light-secondery-bg-color;
-                    color: $error-color;
+                   @include heading-dark;
                     font-size: 28px;
                     cursor: pointer;
                     padding: 16px 19px;
                     border-radius: 50px;
-
-
                     &:hover {
                         box-shadow: $light-hover-box-shadow;
                         background-color: $dark-primary-bg-color;
@@ -90,14 +86,21 @@
                 }
             }
 
-            .btn-container {
-                .explore {
-                    display: none;
-                    margin: $spacing-md 0;
-                }
-            }
-
             &:hover {
+                box-shadow: $light-box-shadow;
+            }
+        }
+    }
+
+    @include respond-to("pro-sm") { 
+         .about-content {
+            grid-template-columns: 1fr;
+            row-gap: 15px;
+            padding: 0;
+            text-align: center;
+
+            .about-container {
+                text-align: center;
                 box-shadow: $light-box-shadow;
             }
         }
@@ -109,17 +112,11 @@
             margin: 0px 8%;
 
             .card-container {
-
                 .card-icon {
 
                     i {
-                        // font-size: $font-size-xxl;
-                        background-color: $light-secondery-bg-color;
                         font-size: 18px;
-                        cursor: pointer;
                         padding: 15px 19px;
-                        border-radius: 50px;
-                        // border: 0.1em solid rgb(#e5e5e5, 1);
                     }
                 }
 
@@ -143,7 +140,6 @@
         }
 
         .cards-container {
-            // padding: 4px 0 8px;
             margin: 0px 6%;
 
             .card-container {
@@ -151,54 +147,15 @@
                 .card-icon {
 
                     i {
-                        background-color: $light-secondery-bg-color;
+
                         font-size: 20px;
-                        cursor: pointer;
                         padding: 17px 20px;
                         border-radius: 50px;
-                        // border: 0.1em solid rgb(#e5e5e5, 1);
                     }
                 }
 
                 .card-title {
                     font-size: $font-size-sm;
-                }
-            }
-        }
-
-        .about-content {
-            grid-template-columns: 1fr;
-            row-gap: 15px;
-            padding: 0;
-            text-align: center;
-
-            .about-container {
-                text-align: center;
-                box-shadow: $light-box-shadow;
-
-                &.background,
-                &.portfolio {
-                    display: none;
-                }
-
-                i {
-                    display: none;
-                }
-
-                .btn-container {
-                    text-align: center;
-                    font-size: $font-size-xs;
-                    margin-bottom: $spacing-xs;
-
-                    .explore {
-                        display: block;
-                        text-transform: uppercase;
-                        padding: $spacing-sm - 2px;
-                        background-color: $error-color;
-                        margin: $spacing-sm 25% -5px;
-                        border-radius: $spacing-xs;
-                        color: $light-neutral-font-color;
-                    }
                 }
             }
         }

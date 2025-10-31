@@ -1,6 +1,6 @@
 @use '../../styles/abstracts' as *;
 
-$primary: #2c3e50;
+$primary: #0d1b2a;
 $light: #ecf0f1;
 $breakpoint: 768px;
 
@@ -10,8 +10,11 @@ $breakpoint: 768px;
   border-radius: 0;
 
   .navbar {
+
+    position: sticky;
+    top: 0px;
+
     border: none;
-    background-color: $primary;
     color: $light;
     padding: 0.6rem;
     display: flex;
@@ -20,7 +23,6 @@ $breakpoint: 768px;
     position: relative;
     font-size: $font-size-md;
     border-radius: 0;
-
 
     i {
       display: none;
@@ -59,10 +61,9 @@ $breakpoint: 768px;
       top: 100%;
       left: 0;
       width: 100%;
-      background-color: $primary;
+      background-color: rgb(#0d1b2a, 0.9);
       flex-direction: column;
       display: none;
-
 
       li {
         border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -90,6 +91,7 @@ $breakpoint: 768px;
         position: static;
         flex-direction: row;
         width: auto;
+        border-radius: $spacing-xs;
 
         li {
           border: none;
@@ -116,9 +118,13 @@ $breakpoint: 768px;
     }
 
     @media (min-width: $breakpoint) {
-      // border-radius: $spacing-xs;
+      border-radius: $spacing-md;
       padding: 0rem;
     }
+  }
+
+  @media (min-width: $breakpoint) {
+    border-radius: $spacing-xs;
   }
 
 }

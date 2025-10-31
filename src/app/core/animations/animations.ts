@@ -47,10 +47,6 @@ export const fadeOutTrigger = trigger('animateFadeOut', [
   ]),
 ]);
 
-
-
-
-
 /* ----------------------------  ZOOM  -------------------------------- */
 //animation - zoom
 export const zoomAnimation = animation(
@@ -95,9 +91,6 @@ export const zoomOutTrigger = trigger('animateZoomOut', [
     }),
   ]),
 ]);
-
-
-
 
 /* ----------------------------  SLIDES  ------------------------------ */
 //Animation - slide
@@ -196,9 +189,6 @@ export const toggleSlideTrigger = trigger('animateToggleSlide', [
   ]),
 ]);
 
-
-
-
 /* ----------------------------  STAGGERS  -------------------------------- */
 //Animation - forward Stagger
 export const forwardStaggerAnimation = animation(
@@ -262,10 +252,8 @@ export const reverseStaggerTrigger = trigger('animateReverseStagger', [
   ]),
 ]);
 
-
-
-//Animation - Generic Stagger-with-Slide 
-export const slideforwardStaggerAnimation = animation(
+//Animation - Generic Stagger-with-Slide
+export const slidetaggerAnimation = animation(
   [
     query(
       '.animate-stagger',
@@ -279,7 +267,7 @@ export const slideforwardStaggerAnimation = animation(
           style({
             opacity: '{{ opecityAfter }}',
             transform: '{{ positionAfter }}',
-        })
+          }),
         ]),
       ],
       { optional: true }
@@ -299,18 +287,18 @@ export const slideforwardStaggerAnimation = animation(
 //Trigger - stagger-in-from-left
 export const staggerInFromLeftTrigger = trigger('staggerInFromLeft', [
   transition(':enter', [
-          useAnimation(slideforwardStaggerAnimation, {
-            params: {
-              opecityBefore: 0,
-              positionBefore: 'translateX(-10%)',
-              duration: 800,
-              delayTime: 200,   
-              opecityAfter: 1,           
-              positionAfter: 'translateX(0)',
-            },
-          }),
-    ]),
-  ]);
+    useAnimation(slidetaggerAnimation, {
+      params: {
+        opecityBefore: 0,
+        positionBefore: 'translateX(-10%)',
+        duration: 800,
+        delayTime: 200,
+        opecityAfter: 1,
+        positionAfter: 'translateX(0)',
+      },
+    }),
+  ]),
+]);
 
 //Animation - Stagger-with-Slide
 export const staggerSlideAnimation = animation(
@@ -361,12 +349,13 @@ export const _staggerInFromLeftTrigger = trigger('staggerInFromLeft', [
 //Trigger - stagger-in-from-right
 export const staggerInFromRightTrigger = trigger('staggerInFromRight', [
   transition(':enter', [
-    useAnimation(slideAnimation, {
+    useAnimation(slidetaggerAnimation, {
       params: {
         opecityBefore: 0,
         opecityAfter: 1,
-        time: '1500ms',
-        positionBefore: 'translateX(500%)',
+        duration:  800,
+        delayTime: 400,
+        positionBefore: 'translateX(10%)',
         positionAfter: 'translateY(0)',
       },
     }),
