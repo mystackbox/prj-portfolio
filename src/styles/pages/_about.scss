@@ -21,7 +21,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         justify-content: space-around;
-        padding: $spacing-md 0;
+        padding: $spacing-md 0 $spacing-lg;
 
         margin: 0px 10%;
         border-bottom: 0.1em solid rgb(#e5e5e5, 1);
@@ -95,7 +95,7 @@
     @include respond-to("pro-sm") { 
          .about-content {
             grid-template-columns: 1fr;
-            row-gap: 15px;
+            row-gap: 25px;
             padding: 0;
             text-align: center;
 
